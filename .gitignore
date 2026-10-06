@@ -1,0 +1,20 @@
+# Source data and downloaded archives stay local.
+data/
+
+# Python and notebook caches.
+__pycache__/
+.ipynb_checkpoints/
+.pytest_cache/
+.venv/
+venv/
+env/
+*.pyc
+
+# Local credentials and editor state.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.json.key
+.vscode/
