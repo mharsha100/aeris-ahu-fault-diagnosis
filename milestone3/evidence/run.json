@@ -1,0 +1,36 @@
+{
+  "version": "m3-v1",
+  "audit_utc": "2026-10-12T22:44:03.482196+00:00",
+  "python": "3.12.14",
+  "pandas": "3.0.1",
+  "numpy": "2.3.5",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "pipeline_sha256": "ef9469fb46ce0dd8c152ff19cde8314d8ad50a57a8d4bed6e611a7bb527cb611",
+  "archives": {
+    "Public_ScientificData_AHUFaults.zip": {
+      "bytes": 928675992,
+      "sha256": "243f48c505dc7320cfef8d22911d7fa82fa6f9a19e99132d29aa1d988ebff954"
+    },
+    "lbnl_2019_afdd.zip": {
+      "bytes": 7010416,
+      "sha256": "68c58568e3f0e4e7d0f0de3194a2ce7ca80703c057325ee402a94d3eab5a76c1"
+    }
+  },
+  "elapsed_seconds": 15.95,
+  "checks_passed": 10,
+  "split": {
+    "status": "blocked_insufficient_independent_cases",
+    "source_development_runs": 33,
+    "source_condition_groups": 3,
+    "target_exploratory_days": 26,
+    "sealed_target_cases": 0,
+    "trained_models": 0,
+    "windows_created": 0,
+    "learned_transform_fits": 0,
+    "minimum_final_cases_per_class_per_season": 5,
+    "source_validation_minimum_per_class_per_season": 5,
+    "source_train_minimum_per_class_per_season": 5,
+    "group_overlap_between_roles": 0,
+    "target_labels_previously_exposed": true
+  }
+}

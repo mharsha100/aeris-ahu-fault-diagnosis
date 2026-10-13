@@ -1,0 +1,6 @@
+data/
+processed/
+__pycache__/
+.venv/
+run/
+*.partial

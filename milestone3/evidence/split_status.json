@@ -1,0 +1,15 @@
+{
+  "status": "blocked_insufficient_independent_cases",
+  "source_development_runs": 33,
+  "source_condition_groups": 3,
+  "target_exploratory_days": 26,
+  "sealed_target_cases": 0,
+  "trained_models": 0,
+  "windows_created": 0,
+  "learned_transform_fits": 0,
+  "minimum_final_cases_per_class_per_season": 5,
+  "source_validation_minimum_per_class_per_season": 5,
+  "source_train_minimum_per_class_per_season": 5,
+  "group_overlap_between_roles": 0,
+  "target_labels_previously_exposed": true
+}
