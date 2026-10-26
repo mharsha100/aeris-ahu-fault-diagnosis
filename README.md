@@ -1,36 +1,81 @@
-# AERIS — dataset access warm-up
+# AERIS — AHU fault diagnosis
 
-This folder supports the EGN 6216 Module 7 data collection warm-up. `playground.ipynb` retrieves both planned AHU sources: real LBNL-2019-2 target CSVs and selected simulated G36-1wk source runs. The data files are cached under `data/`, which is ignored by Git. No credentials or private operational data are needed.
+AERIS studies a hybrid Random Forest and temporal neural network for AHU diagnosis,
+confidence handling and human review. V0, V1 and V2 denote evolving architectures;
+cross-setting adaptation, technician-verified feedback, comparison and the operator
+interface belong to the same project. V2 and the complete UI remain future work.
 
-## Source and rights
+## First Model Exploration — October 26, 2026
 
-- Source dataset: Ghalamsiah et al., *Labeled Datasets for Air Handling Units Operating in Faulted and Fault-free States*, Figshare article 29297999, DOI [10.6084/m9.figshare.29297999](https://doi.org/10.6084/m9.figshare.29297999). The notebook requests the live article metadata and prints the retrieved version and date.
-- Target dataset: Lin and Mitchell (2019), *Data Sets for Evaluation of Building Fault Detection and Diagnostics Algorithms*, [OEDI DOI 10.25984/1824861](https://doi.org/10.25984/1824861), last updated 2021-10-15. The real FLEXLAB `SZVAV.csv` and `SZCAV.csv` files correspond to the LBNL-2019-2 target named in the project blueprint.
-- Licenses: **CC BY 4.0** for the Figshare dataset and **CC BY 4.0** for the OEDI release according to their respective dataset records. Cite both releases when reusing data. The articles may have different terms.
-- Scope: the warm-up audits both target CSVs and selected G36-1wk source runs. Full source/target channel, unit and seasonal mapping remains future Milestone 3 work.
-- Storage: authoritative files are on Figshare and OEDI, with downloaded files cached locally under `data/`. This follows the laptop/local storage choice in Milestone 2 §2.5–2.7. The GitHub repository contains code and small, displayed notebook outputs only.
+**Start with the [complete assignment report](experiments/model_exploration/REPORT.md).**
+It covers all six homework steps and includes actual configurations, specific
+mistakes, practical timing measurements, interpretation and limitations.
 
-## Infrastructure decision to update
+- [Measured experiment table](experiments/model_exploration/experiment_results.csv)
+- [V0 evidence](experiments/model_exploration/v0/)
+- [V1 attention evidence](experiments/model_exploration/v1_attention/)
+- [Preparation/split audit](experiments/model_exploration/data_audit/)
+- [Organized experiment scripts](scripts/)
+- [Text-box submission draft](experiments/model_exploration/SUBMISSION_DRAFT.md)
 
-Milestone 2 §2.4 and §2.7 planned a local Python/Streamlit prototype without a container. Module 7 now states that the **final deployment will use Docker**. The notebook still runs locally for data exploration, but the project blueprint should be revised to name Docker as the eventual deployment environment. A Dockerfile and container test belong to the deployment work; they are not claimed as completed in this warm-up. The `requirements.txt` and recorded Python version provide the starting point for that environment.
+| Run | Source-validation windows | Macro F1 | Accuracy | CPU inference p95 |
+|---|---:|---:|---:|---:|
+| V0: RF + final-step TCN | 6,930 | 0.688665 | 76.10% | 22.28 ms |
+| V1: fresh RF + attention TCN | 6,930 | 0.688413 | 74.66% | 16.63 ms |
 
-## Reproduce
+V1 completed 50 neural epochs, retaining checkpoint 18; V0 completed 37, retaining
+29. V1 raises normal recall but lowers accuracy and does not improve overall macro
+F1. Training budgets and selected fusion weights differ, so this is an initial
+system comparison, not an isolated test of attention. CPU timing uses the same
+100 development windows and excludes loading, preprocessing and UI rendering.
+The full UI latency target and real-target transfer quality remain unverified.
 
-Use Python 3.11.9 and run from this repository folder in Anaconda Prompt:
+## Implementation and reproduction
+
+Python 3.11.9 is the recorded training version. Dependencies are pinned in
+[requirements.txt](requirements.txt), including PyTorch 2.9.1+cu128 for the verified
+Windows RTX 4070 laptop. The [training guide](docs/training_v1.md) provides explicit
+PowerShell commands and operating-scope details.
 
 ```powershell
-conda create -n aeris-data python=3.11.9 -y
-conda activate aeris-data
-python -m pip install -r requirements.txt
-jupyter lab
+& "C:\Users\mhars\miniconda3\envs\aeris-data\python.exe" -m pip install -r requirements.txt
 ```
 
-Open `playground.ipynb` and select the `aeris-data` Python kernel. Run all cells in order while connected to the internet. The small OEDI target archive downloads first; the larger Figshare source archive may take longer. Later runs use the local cache. Review the Figshare file list and set `DATA_FILE_NAME` if automatic selection needs correction. Save the notebook after the outputs appear.
+| Stage | Entry point |
+|---|---|
+| Extracted-file inventory | scripts/01_inventory.py |
+| Documented channel/label preparation | scripts/02_prepare_data.py |
+| Day-blocked splits and 15-minute windows | scripts/03_make_splits_windows.py |
+| Initial hybrid V0 | scripts/04_train_v0.py |
+| Fresh attention hybrid V1 | scripts/05_train_v1.py |
+| Cross-setting adaptation of selected architecture | scripts/06_cross_adapt.py |
+| Saved source-development comparison | scripts/07_compare_development.py |
+| Errors and CPU timing evidence | scripts/08_submission_evidence.py |
 
-## Initial audit scope
+Both initial runs use 27,720 source-training windows, 6,930 source-validation and
+6,930 separate source-calibration windows. Final source/target test packs remain
+unused during this exploration. The implemented source split holds out new weather
+days in the same scenarios, not entirely unseen buildings/fault injections.
+Training outputs are local under data/aeris_models/. Existing bundles are protected
+against accidental replacement. The legacy 05_adapt_v1.py command is retired; its
+skipped update is not a trained architecture V1 or proof of successful transfer.
 
-The notebook displays publisher metadata, archive/member names, CSV dimensions and types, five actual rows, null counts, duplicate rows and numeric ranges for both settings. It shows value counts for apparent target label fields but does not treat a binary fault indicator as the fault type. Source scenario labels are inferred only from filenames for *run inventory*, and are not presented as verified row labels. A few inspected source runs cannot establish class balance or coverage of the complete source/target study.
+## Dataset attribution and local storage
 
-## Note for the next milestone
+- Simulated source: Ghalamsiah et al., *Labeled Datasets for Air Handling Units
+  Operating in Faulted and Fault-free States*, Figshare article 29297999,
+  [DOI 10.6084/m9.figshare.29297999](https://doi.org/10.6084/m9.figshare.29297999).
+- Real target: Lin and Mitchell (2019), *Data Sets for Evaluation of Building Fault
+  Detection and Diagnostics Algorithms*, OEDI,
+  [DOI 10.25984/1824861](https://doi.org/10.25984/1824861).
 
-Record which exact runs and seasons are selected, their case-level fault labels and channel/unit mappings. Review the G36-1wk `00_explanations.pdf` and the separate LBNL-2019-2 documentation before fixing the shared classes. Split by scenario/run before creating windows to avoid leakage.
+Both dataset releases are documented as CC BY 4.0 in the original access audit;
+retain attribution when reusing them. See the executed [playground.ipynb](playground.ipynb),
+[Milestone 3 ingestion evidence](milestone3/evidence/) and
+[historical warm-up notes](docs/data_warmup_original.md). The current report's
+file hashes/manifests identify the selected inputs used for these experiments.
+
+Downloaded datasets, prepared arrays, model weights and local backups stay under
+Git-ignored data/. Only code and small audit/model-experiment outputs are included
+here. No credentials, paid API or live BMS control is required. This is an offline
+research diagnostic aid, not autonomous maintenance control.

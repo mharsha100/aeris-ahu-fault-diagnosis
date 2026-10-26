@@ -1,0 +1,19 @@
+{
+  "python": "3.11.9",
+  "python_executable": "C:\\Users\\mhars\\miniconda3\\envs\\aeris-data\\python.exe",
+  "device": "cuda",
+  "cuda_available": true,
+  "torch_cuda_runtime": "12.8",
+  "device_test": "passed",
+  "packages": {
+    "numpy": "2.4.6",
+    "pandas": "2.2.3",
+    "scipy": "1.16.3",
+    "scikit-learn": "1.7.2",
+    "joblib": "1.5.2",
+    "torch": "2.9.1+cu128"
+  },
+  "gpu": "NVIDIA GeForce RTX 4070 Laptop GPU",
+  "gpu_memory_bytes": 8585216000,
+  "cudnn_version": 91002
+}

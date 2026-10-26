@@ -1,4 +1,16 @@
-# Python 3.11.9, matching the proposed Milestone 2 development environment.
+# Python 3.11.9. Versions verified by the Windows/GPU V0 run on 2026-10-22.
+# Keep this as the single dependency list for data preparation and model training.
+# V1 attention pooling and cross-adaptation use these same verified dependencies.
+# The extra index supplies the exact CUDA 12.8 PyTorch build used by this project.
+--extra-index-url https://download.pytorch.org/whl/cu128
+
+numpy==2.4.6
 pandas==2.2.3
+scipy==1.16.3
+scikit-learn==1.7.2
+joblib==1.5.2
+torch==2.9.1+cu128
+
+# Existing notebook tools from the data-collection warm-up.
 jupyterlab==4.3.6
 ipykernel==6.29.5

@@ -1,0 +1,13 @@
+﻿feature,role,source_column,target_column,canonical_unit
+supply_temp_c,core,AHU Supply Air Temperature (°K),AHU: Supply Air Temperature,degC
+outdoor_temp_c,core,AHU Outdoor Air Dry Bulb Temperature (°K),AHU: Outdoor Air Temperature,degC
+mixed_temp_c,core,AHU Mixed Air Temperature (°K),AHU: Mixed Air Temperature,degC
+return_temp_c,core,AHU Return Air Temperature (°K),AHU: Return Air Temperature,degC
+fan_status,core,"AHU Supply Air Fan Status (0: off, 1: on)",AHU: Supply Air Fan Status,binary
+fan_speed_cmd,core,"AHU Supply Air Fan Speed Control Signal (fraction, 0: fan speed should be 0% to 1:fan speed should be 100%)",AHU: Supply Air Fan Speed Control Signal,fraction
+oa_damper_cmd,core,"Control Signal for AHU Outdoor Air Damper from BAS (fraction, 0: damper should be fully closed to 1: damper should be fully open)",AHU: Outdoor Air Damper Control Signal,fraction
+cooling_valve_cmd,core,"Control Signal for AHU Cooling Coil Valve from BAS (fraction, 0: valve should be fully closed to 1: valve should be fully open)",AHU: Cooling Coil Valve Control Signal,fraction
+heating_valve_cmd,core,"Control Signal for AHU Heating Coil Valve (fraction, 0: valve should be fully closed to 1: valve should be fully open)",AHU: Heating Coil Valve Control Signal,fraction
+occupied,core,"Indicator if the System Operates in Occupied Mode (0: unoccupied mode, 1: occupied mode)",Occupancy Mode Indicator,binary
+return_damper_cmd,auxiliary,"Control Signal for AHU Return Air Damper (fraction, 0: damper should be fully closed to 1: damper should be fully open)",AHU: Return Air Damper Control Signal,fraction
+exhaust_damper_cmd,auxiliary,"Control Signal for AHU Exhaust Air Damper (fraction, 0: damper should be fully closed to 1: damper should be fully open)",AHU: Exhaust Air Damper Control Signal,fraction

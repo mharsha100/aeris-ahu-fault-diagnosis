@@ -1,0 +1,62 @@
+{
+  "model_version": "v1",
+  "architecture_id": "rf_tcn_attention_v1",
+  "learning_stage": "initial_source_training",
+  "initialization": "fresh",
+  "parent_weights_loaded": false,
+  "completed_temporal_epochs": 50,
+  "early_stopping_enabled": false,
+  "comparison_baseline_hybrid_sha256": "39d342ef357d1214068ed59ea33d91f43b979493f655f3724837f073065a3ebb",
+  "training_windows": 27720,
+  "validation_windows": 6930,
+  "calibration_windows": 6930,
+  "best_temporal_epoch": 18,
+  "temporal_parameter_count": 18468,
+  "forest_fit_seconds": 6.473655499983579,
+  "seed": 42,
+  "forest_parameters": {
+    "bootstrap": true,
+    "ccp_alpha": 0.0,
+    "class_weight": "balanced_subsample",
+    "criterion": "gini",
+    "max_depth": 18,
+    "max_features": "sqrt",
+    "max_leaf_nodes": null,
+    "max_samples": null,
+    "min_impurity_decrease": 0.0,
+    "min_samples_leaf": 3,
+    "min_samples_split": 2,
+    "min_weight_fraction_leaf": 0.0,
+    "monotonic_cst": null,
+    "n_estimators": 200,
+    "n_jobs": -1,
+    "oob_score": false,
+    "random_state": 42,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "temporal_training": {
+    "maximum_epochs": 50,
+    "batch_size": 256,
+    "patience": 0,
+    "optimizer": "AdamW",
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "class_weighted_loss": true
+  },
+  "window_protocol_sha256": "3ac5c1e923f94312ff2b8feaa7fc10c7d11e5ed91997312772cf1f4e88181959",
+  "source_pack_sha256": {
+    "source_train": "a1ea90ee1714f45214b88e7c508ab175c95aa047ac9f79e618fc4193f645b3cb",
+    "source_validation": "6f6aa16c5034ac989a242af6efc29cb55fea0192959afbb57f8e75acfc4255c6",
+    "source_calibration": "350a4eab47cf207f46436f536f191bdd081a8d49b2e848d3b6058bfdc305af3b"
+  },
+  "source_only": true,
+  "final_tests_opened": false,
+  "saved_reload_max_abs_difference": 2.220446049250313e-16,
+  "notes": [
+    "Validation results were used for model/fusion choices and are not final generalization estimates.",
+    "Calibration parameters use source calibration days only; target calibration is not guaranteed.",
+    "The review confidence threshold is provisional. Branch agreement does not establish label correctness.",
+    "Global forest importances are not local or causal explanations."
+  ]
+}

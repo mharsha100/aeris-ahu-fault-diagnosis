@@ -1,0 +1,2 @@
+# Compatibility entry point. Keep all dependency versions in requirements.txt.
+-r requirements.txt

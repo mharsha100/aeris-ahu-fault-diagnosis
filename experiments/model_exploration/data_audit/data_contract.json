@@ -1,0 +1,86 @@
+{
+  "contract_version": "aeris-data-v1",
+  "class_ids": {
+    "normal": 0,
+    "damper_fault": 1,
+    "cooling_valve_fault": 2,
+    "heating_valve_fault": 3
+  },
+  "core_features": [
+    "supply_temp_c",
+    "outdoor_temp_c",
+    "mixed_temp_c",
+    "return_temp_c",
+    "fan_status",
+    "fan_speed_cmd",
+    "oa_damper_cmd",
+    "cooling_valve_cmd",
+    "heating_valve_cmd",
+    "occupied"
+  ],
+  "auxiliary_features_not_enabled_for_training": [
+    "return_damper_cmd",
+    "exhaust_damper_cmd"
+  ],
+  "source_columns": {
+    "supply_temp_c": "AHU Supply Air Temperature (°K)",
+    "outdoor_temp_c": "AHU Outdoor Air Dry Bulb Temperature (°K)",
+    "mixed_temp_c": "AHU Mixed Air Temperature (°K)",
+    "return_temp_c": "AHU Return Air Temperature (°K)",
+    "fan_status": "AHU Supply Air Fan Status (0: off, 1: on)",
+    "fan_speed_cmd": "AHU Supply Air Fan Speed Control Signal (fraction, 0: fan speed should be 0% to 1:fan speed should be 100%)",
+    "oa_damper_cmd": "Control Signal for AHU Outdoor Air Damper from BAS (fraction, 0: damper should be fully closed to 1: damper should be fully open)",
+    "cooling_valve_cmd": "Control Signal for AHU Cooling Coil Valve from BAS (fraction, 0: valve should be fully closed to 1: valve should be fully open)",
+    "heating_valve_cmd": "Control Signal for AHU Heating Coil Valve (fraction, 0: valve should be fully closed to 1: valve should be fully open)",
+    "occupied": "Indicator if the System Operates in Occupied Mode (0: unoccupied mode, 1: occupied mode)",
+    "return_damper_cmd": "Control Signal for AHU Return Air Damper (fraction, 0: damper should be fully closed to 1: damper should be fully open)",
+    "exhaust_damper_cmd": "Control Signal for AHU Exhaust Air Damper (fraction, 0: damper should be fully closed to 1: damper should be fully open)"
+  },
+  "target_columns_after_whitespace_strip": {
+    "supply_temp_c": "AHU: Supply Air Temperature",
+    "outdoor_temp_c": "AHU: Outdoor Air Temperature",
+    "mixed_temp_c": "AHU: Mixed Air Temperature",
+    "return_temp_c": "AHU: Return Air Temperature",
+    "fan_status": "AHU: Supply Air Fan Status",
+    "fan_speed_cmd": "AHU: Supply Air Fan Speed Control Signal",
+    "oa_damper_cmd": "AHU: Outdoor Air Damper Control Signal",
+    "cooling_valve_cmd": "AHU: Cooling Coil Valve Control Signal",
+    "heating_valve_cmd": "AHU: Heating Coil Valve Control Signal",
+    "occupied": "Occupancy Mode Indicator",
+    "return_damper_cmd": "AHU: Return Air Damper Control Signal",
+    "exhaust_damper_cmd": "AHU: Exhaust Air Damper Control Signal"
+  },
+  "temperature_conversions": {
+    "source": "C = K - 273.15",
+    "target": "C = (F - 32) * 5/9"
+  },
+  "sample_interval_seconds": 60,
+  "quality_policy": "Preserve rows and missing values; flag nonnumeric, nonfinite and out-of-range values. No imputation, scaling, clipping or statistical fitting.",
+  "sanity_bounds": {
+    "temperature_c": [
+      -60,
+      100
+    ],
+    "fraction_roundoff_tolerance": 1e-06,
+    "binary": [
+      0,
+      1
+    ]
+  },
+  "feature_policy": "Only core_features may enter either model branch. All other columns are metadata or disabled auxiliary signals.",
+  "source_group_policy": "condition_group blocks the same season/weather day across every fault severity and its baseline; run_id and segment_id are also retained.",
+  "target_group_policy": "Keep complete AHU-mode/calendar days together; split before windowing and keep windows within segment_id.",
+  "target_label_policy": "target_reference_labels.csv.gz is evaluation/review ground truth; V1 must not use its labels for target adaptation.",
+  "time_policy": "Source time is the publisher's simulation seconds. Target timestamps are recorded local naive times; timezone is not asserted or converted to UTC.",
+  "known_limits": [
+    "Only listed DomainPairs cases are exact publisher-listed pairs. Other included scenarios share parent classes but are not established equivalent faults or severities.",
+    "Source valve leakage ratios are flow-coefficient ratios, not the target experiment's percent-of-maximum-flow intensities.",
+    "Source heating-valve faults occur in HeatingSeason; cooling-valve faults occur in CoolingSeason and ShoulderSeason. Coverage is not a full class-by-season design.",
+    "Source AHU is multi-zone; real target AHU has single-zone VAV and CAV operation. This mapping is a feature contract, not proof of matching dynamics.",
+    "BAS requests and overridden control signals can have different semantics during faults. Command-based shortcuts and transfer errors must be evaluated.",
+    "Source has one supply temperature setpoint; target has heating/cooling setpoints. They are excluded from the initial common feature set.",
+    "Simulation-only true-position fields are excluded. Target labels, dates, IDs, modes and filenames are excluded as predictive features.",
+    "Scenario labels indicate an imposed condition; a fault can be inactive or unobservable at some timestamps. active_occupied is available for a restricted first experiment.",
+    "Metadata group counts are not counts of independent buildings, independent fault injections, or independent minute observations."
+  ]
+}

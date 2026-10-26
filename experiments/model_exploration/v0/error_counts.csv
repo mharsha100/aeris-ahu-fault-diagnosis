@@ -1,0 +1,11 @@
+true_condition,predicted_condition,windows
+cooling_valve_fault,damper_fault,397
+cooling_valve_fault,normal,239
+damper_fault,cooling_valve_fault,94
+damper_fault,heating_valve_fault,122
+damper_fault,normal,350
+heating_valve_fault,damper_fault,172
+heating_valve_fault,normal,34
+normal,cooling_valve_fault,20
+normal,damper_fault,173
+normal,heating_valve_fault,55

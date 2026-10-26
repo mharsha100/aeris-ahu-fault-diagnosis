@@ -1,0 +1,8 @@
+﻿partition,windows,condition_groups,eligible_rows,short_blocks_skipped
+source_train,27720,12,140402,0
+source_validation,6930,3,35100,0
+source_calibration,6930,3,35101,0
+source_test,6929,3,35099,0
+target_adapt,1420,10,7200,0
+target_feedback,1136,8,5760,0
+target_test,1136,8,5760,0

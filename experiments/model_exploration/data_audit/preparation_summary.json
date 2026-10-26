@@ -1,0 +1,25 @@
+{
+  "contract_version": "aeris-data-v1",
+  "prepared_utc": "2026-10-22T13:49:30.579807+00:00",
+  "source_files": 45,
+  "target_files": 2,
+  "core_feature_count": 10,
+  "source_files_by_class": {
+    "normal": 3,
+    "damper_fault": 21,
+    "cooling_valve_fault": 14,
+    "heating_valve_fault": 7
+  },
+  "target_days_by_class": {
+    "cooling_valve_fault": 7,
+    "heating_valve_fault": 8,
+    "damper_fault": 6,
+    "normal": 5
+  },
+  "source_rows": 453645,
+  "source_core_valid_rows": 453645,
+  "source_active_occupied_rows": 245702,
+  "target_rows": 37439,
+  "target_core_valid_rows": 37348,
+  "target_active_occupied_rows": 18720
+}

@@ -1,0 +1,9 @@
+{
+  "windows": 6930,
+  "incorrect_windows": 1656,
+  "incorrect_at_or_above_review_threshold": 0,
+  "review_threshold": 0.9,
+  "review_fraction": 0.4790764790764791,
+  "examples_selected": 10,
+  "examples_are_independent_cases": false
+}

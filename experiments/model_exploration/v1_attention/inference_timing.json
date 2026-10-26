@@ -1,0 +1,20 @@
+{
+  "requests": 100,
+  "warmup_requests": 3,
+  "p50_seconds": 0.014233399997465312,
+  "p95_seconds": 0.016630344971781594,
+  "max_seconds": 0.019787800032645464,
+  "under_5_seconds": 100,
+  "device": "cpu",
+  "torch_threads": 4,
+  "forest_jobs": 1,
+  "python": "3.11.9",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "processor": "Intel64 Family 6 Model 170 Stepping 4, GenuineIntel",
+  "torch": "2.9.1+cu128",
+  "included": "Input shape/finite validation, forest/TCN inference, calibration and review rule on prepared windows",
+  "excluded": "Disk loading, raw preprocessing, UI rendering, model loading and startup",
+  "section_2_1_target": "At least 95 of 100 full local UI requests render within 5 seconds",
+  "full_ui_target_verified": false,
+  "model_config_sha256": "d245ccc13ffd9ddfcf202eaeb243eaf800312a8c18cda0e0fd7e61cbbc0bb6e9"
+}

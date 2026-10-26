@@ -1,0 +1,47 @@
+{
+  "artifact_version": "aeris-hybrid-v1",
+  "model_version": "v0",
+  "classes": [
+    "normal",
+    "damper_fault",
+    "cooling_valve_fault",
+    "heating_valve_fault"
+  ],
+  "temporal_architecture": {
+    "input_features": 10,
+    "channels": 32,
+    "dropout": 0.15,
+    "dilations": [
+      1,
+      2,
+      4
+    ],
+    "classes": 4
+  },
+  "forest_weight": 0.75,
+  "temporal_weight": 0.25,
+  "temperatures": {
+    "forest": 1.6245047927124712,
+    "temporal": 2.0000000000000004,
+    "hybrid": 0.7320428479728127
+  },
+  "review_confidence_threshold": 0.9,
+  "review_policy": "Review below the provisional confidence threshold or when the two branches disagree. This is not a validated target error guarantee.",
+  "training_scope": "core-valid, occupied, fan-on; off/unoccupied cases are outside the first trained operating scope",
+  "training_partitions": [
+    "source_train",
+    "source_validation",
+    "source_calibration"
+  ],
+  "target_data_used": false,
+  "test_data_used": false,
+  "selected_temporal_epoch": 29,
+  "seed": 42,
+  "created_utc": "2026-10-22T15:20:34.492673+00:00",
+  "artifact_sha256": {
+    "forest.joblib": "5f4f5a2fbf54155800ad573aab97baa596347580be9efa1abd80c2d253549c52",
+    "temporal_state.pt": "f6292b98c1409780b8d36240084ad8ed3abdfded5416dee4d5de986315861b58",
+    "source_scaler.json": "33dd57ecef149ee0aa576399f4119851b81030ded30c07b8e553a2ea3e76e7ca",
+    "window_protocol.json": "3ac5c1e923f94312ff2b8feaa7fc10c7d11e5ed91997312772cf1f4e88181959"
+  }
+}
