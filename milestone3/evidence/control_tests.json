@@ -1,0 +1,88 @@
+[
+  {
+    "test": "valid_fixture",
+    "passed": true,
+    "state": "Candidate allowed",
+    "reasons": [],
+    "score": 0.99
+  },
+  {
+    "test": "high_score_unsupported_target",
+    "passed": true,
+    "state": "Needs review",
+    "reasons": [
+      "unsupported_setting"
+    ],
+    "score": 0.99
+  },
+  {
+    "test": "high_score_shoulder",
+    "passed": true,
+    "state": "Needs review",
+    "reasons": [
+      "unsupported_setting"
+    ],
+    "score": 0.99
+  },
+  {
+    "test": "high_score_6_of_60_out_of_support",
+    "passed": true,
+    "state": "Needs review",
+    "reasons": [
+      "outside_training_support:outdoor_air_c"
+    ],
+    "score": 0.99
+  },
+  {
+    "test": "5_of_60_boundary_does_not_trigger",
+    "passed": true,
+    "state": "Candidate allowed",
+    "reasons": [],
+    "score": 0.99
+  },
+  {
+    "test": "missing_required_reading",
+    "passed": true,
+    "state": "Needs review",
+    "reasons": [
+      "missing_or_nonfinite_required_input"
+    ],
+    "score": 0.99
+  },
+  {
+    "test": "time_gap",
+    "passed": true,
+    "state": "Needs review",
+    "reasons": [
+      "nonconsecutive_time"
+    ],
+    "score": 0.99
+  },
+  {
+    "test": "fan_off",
+    "passed": true,
+    "state": "Needs review",
+    "reasons": [
+      "unsupported_off_or_unoccupied_mode"
+    ],
+    "score": 0.99
+  },
+  {
+    "test": "no_fitted_support",
+    "passed": true,
+    "state": "Needs review",
+    "reasons": [
+      "training_support_not_fitted"
+    ],
+    "score": 0.99
+  },
+  {
+    "test": "low_score",
+    "passed": true,
+    "state": "Needs review",
+    "reasons": [
+      "low_score_provisional_threshold"
+    ],
+    "score": 0.79
+  }
+]

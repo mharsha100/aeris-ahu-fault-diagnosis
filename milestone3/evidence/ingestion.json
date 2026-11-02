@@ -1,0 +1,25 @@
+[
+  {
+    "name": "Public_ScientificData_AHUFaults.zip",
+    "doi": "10.6084/m9.figshare.29297999.v3",
+    "url": "https://ndownloader.figshare.com/files/57268553",
+    "license": "CC BY 4.0",
+    "bytes": 928675992,
+    "sha256": "243f48c505dc7320cfef8d22911d7fa82fa6f9a19e99132d29aa1d988ebff954",
+    "action": "verified_existing_cache",
+    "archive_members": 801,
+    "checked_utc": "2026-10-12T22:43:15.112260+00:00"
+  },
+  {
+    "name": "lbnl_2019_afdd.zip",
+    "doi": "10.25984/1824861",
+    "release_updated": "2021-10-15",
+    "url": "https://data.openei.org/files/910/Data%20Sets%20for%20AFDD%20Evauluation%20of%20Building%20FDD%20Algorithms.zip",
+    "license": "CC BY 4.0",
+    "bytes": 7010416,
+    "sha256": "68c58568e3f0e4e7d0f0de3194a2ce7ca80703c057325ee402a94d3eab5a76c1",
+    "action": "verified_existing_cache",
+    "archive_members": 7,
+    "checked_utc": "2026-10-12T22:43:15.122263+00:00"
+  }
+]

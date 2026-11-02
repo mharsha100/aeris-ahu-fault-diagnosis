@@ -1,0 +1,51 @@
+domain,season,canonical,raw_column,conversion,new_parse_missing
+source,CoolingSeason,supply_air_c,AHU Supply Air Temperature (°K),K to C,0
+source,CoolingSeason,outdoor_air_c,AHU Outdoor Air Dry Bulb Temperature (°K),K to C,0
+source,CoolingSeason,mixed_air_c,AHU Mixed Air Temperature (°K),K to C,0
+source,CoolingSeason,return_air_c,AHU Return Air Temperature (°K),K to C,0
+source,CoolingSeason,fan_on,"AHU Supply Air Fan Status (0: off, 1: on)",identity,0
+source,CoolingSeason,fan_speed,"AHU Supply Air Fan Speed Control Signal (fraction, 0: fan speed should be 0% to 1:fan speed should be 100%)",identity,0
+source,CoolingSeason,oa_command,"Control Signal for AHU Outdoor Air Damper from BAS (fraction, 0: damper should be fully closed to 1: damper should be fully open)",identity,0
+source,CoolingSeason,cooling_command,"Control Signal for AHU Cooling Coil Valve from BAS (fraction, 0: valve should be fully closed to 1: valve should be fully open)",identity,0
+source,CoolingSeason,heating_command,"Control Signal for AHU Heating Coil Valve (fraction, 0: valve should be fully closed to 1: valve should be fully open)",identity,0
+source,CoolingSeason,occupied,"Indicator if the System Operates in Occupied Mode (0: unoccupied mode, 1: occupied mode)",identity,0
+source,HeatingSeason,supply_air_c,AHU Supply Air Temperature (°K),K to C,0
+source,HeatingSeason,outdoor_air_c,AHU Outdoor Air Dry Bulb Temperature (°K),K to C,0
+source,HeatingSeason,mixed_air_c,AHU Mixed Air Temperature (°K),K to C,0
+source,HeatingSeason,return_air_c,AHU Return Air Temperature (°K),K to C,0
+source,HeatingSeason,fan_on,"AHU Supply Air Fan Status (0: off, 1: on)",identity,0
+source,HeatingSeason,fan_speed,"AHU Supply Air Fan Speed Control Signal (fraction, 0: fan speed should be 0% to 1:fan speed should be 100%)",identity,0
+source,HeatingSeason,oa_command,"Control Signal for AHU Outdoor Air Damper from BAS (fraction, 0: damper should be fully closed to 1: damper should be fully open)",identity,0
+source,HeatingSeason,cooling_command,"Control Signal for AHU Cooling Coil Valve from BAS (fraction, 0: valve should be fully closed to 1: valve should be fully open)",identity,0
+source,HeatingSeason,heating_command,"Control Signal for AHU Heating Coil Valve (fraction, 0: valve should be fully closed to 1: valve should be fully open)",identity,0
+source,HeatingSeason,occupied,"Indicator if the System Operates in Occupied Mode (0: unoccupied mode, 1: occupied mode)",identity,0
+source,ShoulderSeason,supply_air_c,AHU Supply Air Temperature (°K),K to C,0
+source,ShoulderSeason,outdoor_air_c,AHU Outdoor Air Dry Bulb Temperature (°K),K to C,0
+source,ShoulderSeason,mixed_air_c,AHU Mixed Air Temperature (°K),K to C,0
+source,ShoulderSeason,return_air_c,AHU Return Air Temperature (°K),K to C,0
+source,ShoulderSeason,fan_on,"AHU Supply Air Fan Status (0: off, 1: on)",identity,0
+source,ShoulderSeason,fan_speed,"AHU Supply Air Fan Speed Control Signal (fraction, 0: fan speed should be 0% to 1:fan speed should be 100%)",identity,0
+source,ShoulderSeason,oa_command,"Control Signal for AHU Outdoor Air Damper from BAS (fraction, 0: damper should be fully closed to 1: damper should be fully open)",identity,0
+source,ShoulderSeason,cooling_command,"Control Signal for AHU Cooling Coil Valve from BAS (fraction, 0: valve should be fully closed to 1: valve should be fully open)",identity,0
+source,ShoulderSeason,heating_command,"Control Signal for AHU Heating Coil Valve (fraction, 0: valve should be fully closed to 1: valve should be fully open)",identity,0
+source,ShoulderSeason,occupied,"Indicator if the System Operates in Occupied Mode (0: unoccupied mode, 1: occupied mode)",identity,0
+target,winter,supply_air_c,AHU: Supply Air Temperature,F to C,0
+target,winter,outdoor_air_c,AHU: Outdoor Air Temperature,F to C,0
+target,winter,mixed_air_c,AHU: Mixed Air Temperature,F to C,90
+target,winter,return_air_c,AHU: Return Air Temperature,F to C,0
+target,winter,fan_on,AHU: Supply Air Fan Status,identity,0
+target,winter,fan_speed,AHU: Supply Air Fan Speed Control Signal,identity,0
+target,winter,oa_command,AHU: Outdoor Air Damper Control Signal,identity,0
+target,winter,cooling_command,AHU: Cooling Coil Valve Control Signal,identity,0
+target,winter,heating_command,AHU: Heating Coil Valve Control Signal,identity,0
+target,winter,occupied,Occupancy Mode Indicator,identity,0
+target,summer,supply_air_c,AHU: Supply Air Temperature,F to C,0
+target,summer,outdoor_air_c,AHU: Outdoor Air Temperature,F to C,1
+target,summer,mixed_air_c,AHU: Mixed Air Temperature,F to C,0
+target,summer,return_air_c,AHU: Return Air Temperature,F to C,0
+target,summer,fan_on,AHU: Supply Air Fan Status,identity,0
+target,summer,fan_speed,AHU: Supply Air Fan Speed Control Signal,identity,0
+target,summer,oa_command,AHU: Outdoor Air Damper Control Signal,identity,0
+target,summer,cooling_command,AHU: Cooling Coil Valve Control Signal,identity,0
+target,summer,heating_command,AHU: Heating Coil Valve Control Signal,identity,0
+target,summer,occupied,Occupancy Mode Indicator,identity,0
