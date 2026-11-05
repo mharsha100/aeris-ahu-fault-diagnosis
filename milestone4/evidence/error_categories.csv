@@ -1,0 +1,22 @@
+model,role,category,sampled_windows
+m4_v0,source_test_within_condition,False fault alarm,4
+m4_v0,source_test_within_condition,Wrong fault family,16
+m4_v0,source_validation,False fault alarm,3
+m4_v0,source_validation,Fault predicted normal,5
+m4_v0,source_validation,Wrong fault family,12
+m4_v0,target_retrospective,False fault alarm,4
+m4_v0,target_retrospective,Wrong fault family,6
+m4_v1,source_test_within_condition,False fault alarm,4
+m4_v1,source_test_within_condition,Wrong fault family,16
+m4_v1,source_validation,False fault alarm,4
+m4_v1,source_validation,Fault predicted normal,4
+m4_v1,source_validation,Wrong fault family,12
+m4_v1,target_retrospective,False fault alarm,5
+m4_v1,target_retrospective,Wrong fault family,7
+m4_v2,source_test_within_condition,False fault alarm,3
+m4_v2,source_test_within_condition,Wrong fault family,17
+m4_v2,source_validation,False fault alarm,3
+m4_v2,source_validation,Fault predicted normal,4
+m4_v2,source_validation,Wrong fault family,13
+m4_v2,target_retrospective,False fault alarm,4
+m4_v2,target_retrospective,Wrong fault family,6

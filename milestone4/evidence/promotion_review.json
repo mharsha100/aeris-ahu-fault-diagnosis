@@ -1,0 +1,33 @@
+{
+  "operational_release_approved": false,
+  "selected_stage": "initial_source_training",
+  "selection_basis_unchanged": "Source validation only",
+  "finding": "Passing a global source F1/recall retention check did not prevent more fault\u2192normal errors. Target confidence errors also persist; better target F1 is not a safety result.",
+  "implemented_response": "Initial stage remains the default. Every feedback candidate and every target request requires review, even with high confidence and a passed source guard. No automatic weight promotion or AHU actuation.",
+  "analyses": [
+    {
+      "model": "m4_v0",
+      "source_fault_to_normal_before": 1076,
+      "source_fault_to_normal_feedback": 1143,
+      "target_confidently_wrong_before": 90,
+      "target_confidently_wrong_feedback": 64,
+      "automatically_promoted": false
+    },
+    {
+      "model": "m4_v1",
+      "source_fault_to_normal_before": 1088,
+      "source_fault_to_normal_feedback": 1233,
+      "target_confidently_wrong_before": 74,
+      "target_confidently_wrong_feedback": 79,
+      "automatically_promoted": false
+    },
+    {
+      "model": "m4_v2",
+      "source_fault_to_normal_before": 939,
+      "source_fault_to_normal_feedback": 1058,
+      "target_confidently_wrong_before": 44,
+      "target_confidently_wrong_feedback": 93,
+      "automatically_promoted": false
+    }
+  ]
+}

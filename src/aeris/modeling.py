@@ -153,11 +153,31 @@ class AttentionTemporalTCN(TemporalTCN):
         return self.classifier(pooled)
 
 
+class CombinedTemporalTCN(AttentionTemporalTCN):
+    """V2 combines the final encoded state and attention-pooled history."""
+
+    def __init__(self, input_features: int = 10, channels: int = 32,
+                 dropout: float = 0.15, dilations: tuple = (1, 2, 4), classes: int = 4):
+        super().__init__(input_features, channels, dropout, dilations, classes)
+        self.classifier = nn.Sequential(nn.Linear(2 * channels, channels), nn.GELU(),
+                                        nn.Dropout(dropout), nn.Linear(channels, classes))
+
+    def forward(self, sequence: torch.Tensor) -> torch.Tensor:
+        if sequence.ndim != 3 or sequence.shape[2] != self.input_features:
+            raise ValueError("Temporal input must have shape (batch, minutes, features)")
+        encoded = self.blocks(sequence.transpose(1, 2)).transpose(1, 2)
+        attention = torch.softmax(self.attention_score(encoded).squeeze(-1), dim=1)
+        pooled = (encoded * attention.unsqueeze(-1)).sum(dim=1)
+        return self.classifier(torch.cat([encoded[:, -1, :], pooled], dim=1))
+
+
 def create_temporal(kind: str, architecture: dict) -> TemporalTCN:
     if kind == "causal_tcn_last":
         return TemporalTCN(**architecture)
     if kind == "causal_tcn_attention":
         return AttentionTemporalTCN(**architecture)
+    if kind == "causal_tcn_combined":
+        return CombinedTemporalTCN(**architecture)
     raise ValueError(f"Unsupported temporal architecture: {kind}")
 
 

@@ -1,0 +1,16 @@
+{
+  "version": "m4-within-recording-v1",
+  "created_utc": "2026-11-02T20:45:13.293164+00:00",
+  "raw_files_verified": 47,
+  "representative_files_checked": 5,
+  "source_runs_current": 45,
+  "source_condition_groups": 3,
+  "feature_conversion_checks": 50,
+  "status": "passed_for_exploratory_experiments",
+  "independent_case_claims_released": false,
+  "target_automatic_escalation_released": false,
+  "original_m3_v1_preserved": true,
+  "new_test_or_target_labels_opened": false,
+  "prepared_contract_sha256": "9877da97d8e8bfb78bf5d39a823692ac5d14f7b512a47374a7953b143bc60343",
+  "script_sha256": "c9fb0dffce132023baf8707673a4d2b7cdcead48b2449a2b810ad2be469fa46a"
+}

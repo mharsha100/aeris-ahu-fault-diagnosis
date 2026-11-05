@@ -1,0 +1,4 @@
+condition_group,windows,observed_class_ids,accuracy,macro_f1_present_classes
+source:CoolingSeason:simday_208,2310,"0,1,2",0.7683982683982684,0.6952449488248883
+source:HeatingSeason:simday_7,2310,"0,1,3",0.7831168831168831,0.5988525518435027
+source:ShoulderSeason:simday_141,2310,"0,1,2",0.6805194805194805,0.613172057229281

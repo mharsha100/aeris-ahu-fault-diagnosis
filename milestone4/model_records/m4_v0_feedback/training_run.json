@@ -1,0 +1,15 @@
+{
+  "learning_stage": "verified_feedback",
+  "parent_bundle": "m4_v0_cross_adapted",
+  "parent_weights_loaded": true,
+  "completed_feedback_epochs": 5,
+  "seed": 44,
+  "feedback_status": "accepted_source_guard",
+  "source_pack_sha256": {
+    "source_train": "126104ec5350c11085f221dad6384f95c69fc1b18bbca97aca3f096c0adb4cc8",
+    "source_validation": "06a04691dc11c7aa69de884486be15b52a6d492edb2750b95185d40f1f25b304",
+    "source_calibration": "c0336055ec4b0c381a192f3b9906c15e0547bd1a11949466e4de512c9929e565"
+  },
+  "code_sha256": "e9f0c049b133dfd5d828c7ac098435e809335cb272bf679e20e54af0c3db312f",
+  "target_test_used_for_fitting": false
+}

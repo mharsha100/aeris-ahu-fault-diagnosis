@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "fresh_environment": true,
+  "python": "3.11.17",
+  "package_check": "uv pip check: all49installedpackages compatible",
+  "canonical_cpu_requirements_sha256": "52a40316bb80fb04d4fc4c0963c76fb13b9e49a56f6a90607d3a3a5015b43d97",
+  "actual_training_and_all_stage_reloads": true,
+  "CUDA_training_environment_retested": false,
+  "source_download": "Full pinned929MBarchive downloaded uncached and SHA256 verified",
+  "target_download": "Windows fresh bounded check passed; cloud direct attempt rejected195byteSiteUnavailable body; prior verified target archive used here",
+  "clean_full_source_and_training_scope": "This new clone and fresh CPUvenv rebuilt raw canonical observations and windows, trained all three fresh hybrids and executed all learning stages; no historical model weights were present."
+}

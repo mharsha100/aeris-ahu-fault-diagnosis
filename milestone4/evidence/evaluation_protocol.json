@@ -1,0 +1,22 @@
+{
+  "source_validation_used_for_selection": true,
+  "source_test_status": "Later days in same3conditions, descriptive only",
+  "target_status": "Retrospective exploratory: published labels exposed in earlier work; no sealed holdout claim",
+  "test_roles_used_for_training": false,
+  "prediction_unit": "15minwindow stride5",
+  "condition_unit": "3seasonalsharedweatherweeks",
+  "error_sampling": "Up to20 highest confidence errors per initial model/pool, diversified by true/predicted/run/day; not random prevalence sample",
+  "consequential_pattern": "Count actual fault\u2192normal errors in results.csv and inspect their confidence, setting and branch outputs; event labels do not establish active physical fault at every minute.",
+  "confidence_threshold_status": "Provisional; the threshold experiment measures tradeoffs on development recordings only.",
+  "peak_process_rss_kib": 601848,
+  "python": "3.11.17",
+  "source_pack_sha256": {
+    "source_train": "126104ec5350c11085f221dad6384f95c69fc1b18bbca97aca3f096c0adb4cc8",
+    "source_validation": "06a04691dc11c7aa69de884486be15b52a6d492edb2750b95185d40f1f25b304",
+    "source_calibration": "c0336055ec4b0c381a192f3b9906c15e0547bd1a11949466e4de512c9929e565",
+    "source_test": "326ee1436b20f2d2d70dd38bca86e0eb3c1e7d382323688e064be53c41bc137e",
+    "target_adapt": "4bef5dc8ba9db05d157b4849a3b9bcbaaa3a1a115a3bf7211f2a144c21352bda",
+    "target_feedback": "dacad50b253304ba269c75838fa911d41e499fb411136da8ccba92317c1e8d73",
+    "target_test": "cea9c2972f2e32e2ff44130b3f4771c800349613ae5466350387947e2a604fbe"
+  }
+}

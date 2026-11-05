@@ -1,0 +1,19 @@
+AERIS - hybrid V0 training complete
+Architecture: rf_tcn_last_v0
+Fresh Random Forest and temporal network trained; no parent weights loaded.
+Completed temporal epochs: 50 / 50
+Device: cpu
+Training windows: 27,720
+Best temporal epoch: 44
+Fusion: 0.50 Random Forest + 0.50 temporal network
+
+Source validation macro F1:
+  classical: 0.6884
+  temporal: 0.6666
+  hybrid_v0: 0.6840
+
+Saved/reloaded prediction check: passed
+Target adaptation, feedback and final test data were not used.
+Saved model: /workspace/scratch/1cf926906dfb/aeris-execution/data/aeris_models/m4_v0
+Review attachment: v0_review.zip (reports only)
+Next: review architecture training, then run cross-setting adaptation within AERIS.

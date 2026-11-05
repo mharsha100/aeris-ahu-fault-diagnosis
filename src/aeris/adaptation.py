@@ -262,14 +262,14 @@ def adapt_hybrid(project_root: Path, *, model_name: str = "v1_attention", device
     if epochs < 1 or batch_size < 1:
         raise ValueError("Epochs and batch size must be positive")
     windows = project_root / "data/aeris_windows_v1"
-    if model_name not in {"v0", "v1_attention"}:
+    if model_name not in {"v0", "v1_attention", "v2_combined", "m4_v0", "m4_v1", "m4_v2"}:
         raise ValueError("Choose a supported, initially trained architecture: v0 or v1_attention")
     parent = project_root / "data/aeris_models" / model_name
     output = project_root / "data/aeris_models" / f"{model_name}_cross_adapted"
     if output.exists() and any(output.iterdir()) and not overwrite:
         raise FileExistsError(f"Adaptation output already exists: {output}")
     environment = environment_check(device)
-    torch.set_num_threads(min(8, os.cpu_count() or 1))
+    torch.set_num_threads(min(2, os.cpu_count() or 1))
     random.seed(seed)
     np.random.seed(seed)
     torch.manual_seed(seed)
@@ -278,7 +278,7 @@ def adapt_hybrid(project_root: Path, *, model_name: str = "v1_attention", device
         torch.backends.cudnn.benchmark = False
         torch.backends.cudnn.deterministic = True
     baseline = load_hybrid(parent, device=device)
-    expected_version = "v0" if model_name == "v0" else "v1"
+    expected_version = {"v0":"v0", "v1_attention":"v1", "v2_combined":"v2", "m4_v0":"v0", "m4_v1":"v1", "m4_v2":"v2"}[model_name]
     if baseline.configuration["model_version"] != expected_version:
         raise ValueError("The adaptation parent does not match the requested architecture")
     if model_name == "v1_attention" and baseline.configuration.get("architecture_id") != "rf_tcn_attention_v1":

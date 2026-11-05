@@ -1,0 +1,13 @@
+partition,class,windows
+source_train,normal,1848
+source_train,damper_fault,12936
+source_train,cooling_valve_fault,8624
+source_train,heating_valve_fault,4312
+source_validation,normal,462
+source_validation,damper_fault,3234
+source_validation,cooling_valve_fault,2156
+source_validation,heating_valve_fault,1078
+source_calibration,normal,462
+source_calibration,damper_fault,3234
+source_calibration,cooling_valve_fault,2156
+source_calibration,heating_valve_fault,1078

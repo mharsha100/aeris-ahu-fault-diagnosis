@@ -1,0 +1,132 @@
+{
+  "artifact_version": "aeris-hybrid-v1",
+  "model_version": "v0",
+  "architecture_id": "rf_tcn_last_v0",
+  "temporal_kind": "causal_tcn_last",
+  "learning_stage": "initial_source_training",
+  "initialization": "fresh",
+  "parent_weights_loaded": false,
+  "comparison_baseline_hybrid_sha256": null,
+  "run_name": "m4_v0",
+  "fixed_fusion_weight": 0.5,
+  "experiment_scope": {
+    "version": "m4-within-recording-v1",
+    "question": "Within the selected AHU recordings, how do final-step, attention, and combined temporal summaries change descriptive diagnostic errors, class recall and review workload?",
+    "data": "Selected 45 G36-1wk source runs; existing LBNL SZVAV/SZCAV files are exploratory target data",
+    "prediction_unit": "15-minute sensor window, stride 5 minutes",
+    "condition_unit": "Seasonal shared-weather week across baseline and fault severities",
+    "source_condition_groups": 3,
+    "within_condition_time_separation": "Earlier/later days in the same shared-weather week; not independent-condition train/validation separation",
+    "retained_claim": "Descriptive, conditional results on these recordings and implemented workflow controls",
+    "independent_generalization_claims_allowed": false,
+    "target_labels_previously_exposed": true,
+    "target_is_sealed_holdout": false,
+    "target_benchmark_label": "Retrospective exploratory benchmark",
+    "original_independent_case_floor": 5,
+    "original_floor_lowered": false,
+    "window_count_is_independent_case_count": false,
+    "significance_or_population_CI_from_windows_allowed": false,
+    "independent_case_comparison_status": "blocked_under_original_m3_rule",
+    "fixed_training": {
+      "epochs": 50,
+      "patience": 0,
+      "seed": 42,
+      "batch_size": 256,
+      "rf_trees": 200,
+      "rf_weight": 0.5,
+      "temporal_weight": 0.5
+    },
+    "architecture_experiments": [
+      {
+        "name": "E1_pooling",
+        "question": "Does attention pooling change errors relative to final-step pooling?",
+        "variants": [
+          "m4_v0",
+          "m4_v1"
+        ],
+        "change": "Temporal summary",
+        "fixed": "Data, RF/encoder/optimizer settings, training budget, seed, fusion and scoring"
+      },
+      {
+        "name": "E2_combination",
+        "question": "Does combining final-step and attention summaries improve the diagnostic tradeoff?",
+        "variants": [
+          "m4_v1",
+          "m4_v2"
+        ],
+        "change": "Combine both summaries with a learned head",
+        "fixed": "Same data, RF/encoder/optimizer settings, training budget, seed, fusion and scoring; parameter count changes are reported"
+      }
+    ],
+    "interpretation_limits": [
+      "Data share weather, occupancy and simulated system dynamics; time separation does not create new independent conditions.",
+      "Macro F1 and per-class metrics are development descriptions, not estimates of transfer to unseen buildings.",
+      "Published target schedules/labels were explored earlier; withholding y arrays later does not restore a sealed holdout.",
+      "Matching units and nominal signal roles do not prove matching multi-zone and single-zone dynamics.",
+      "Probability thresholds and rule tests demonstrate policy behavior, not verified diagnostic safety."
+    ],
+    "data_rebuild": {
+      "mode": "fresh_public_data_rebuild",
+      "raw_file_and_split_records_match_historical": true,
+      "scaler_semantically_identical": true,
+      "serialized_pack_hashes_match_historical": false,
+      "historical_weights_available": false,
+      "note": "New pack hashes and protocol are frozen for ALL three new runs. Historical numbers remain separate; no historical model is reconstructed from metadata."
+    },
+    "source_runs_current": 45,
+    "source_runs_in_original_m3": 33,
+    "source_pack_sha256": {
+      "source_train": "126104ec5350c11085f221dad6384f95c69fc1b18bbca97aca3f096c0adb4cc8",
+      "source_validation": "06a04691dc11c7aa69de884486be15b52a6d492edb2750b95185d40f1f25b304",
+      "source_calibration": "c0336055ec4b0c381a192f3b9906c15e0547bd1a11949466e4de512c9929e565"
+    },
+    "window_protocol_sha256": "5ea370343e85a137ed1d1b0b64dfefa3367028a9619de12f6a542371fcd357b7"
+  },
+  "code_provenance": {
+    "commit": "8f7e81dc4efbadfe5d8a0164636291aa01d2d38b",
+    "tracked_worktree_dirty": false
+  },
+  "classes": [
+    "normal",
+    "damper_fault",
+    "cooling_valve_fault",
+    "heating_valve_fault"
+  ],
+  "temporal_architecture": {
+    "input_features": 10,
+    "channels": 32,
+    "dropout": 0.15,
+    "dilations": [
+      1,
+      2,
+      4
+    ],
+    "classes": 4
+  },
+  "forest_weight": 0.5,
+  "temporal_weight": 0.5,
+  "temperatures": {
+    "forest": 1.6245047927124712,
+    "temporal": 1.9318726578496912,
+    "hybrid": 0.5946035575013605
+  },
+  "review_confidence_threshold": 0.9,
+  "review_policy": "Review below the provisional confidence threshold or when the two branches disagree. This is not a validated target error guarantee.",
+  "training_scope": "core-valid, occupied, fan-on; off/unoccupied cases are outside the first trained operating scope",
+  "training_partitions": [
+    "source_train",
+    "source_validation",
+    "source_calibration"
+  ],
+  "target_data_used": false,
+  "test_data_used": false,
+  "selected_temporal_epoch": 44,
+  "seed": 42,
+  "created_utc": "2026-11-02T20:57:37.571094+00:00",
+  "artifact_sha256": {
+    "forest.joblib": "ade880f0b2f8f3a225907c1a288e162a97c1ad91c07d4ffc7a492f2df0e61133",
+    "temporal_state.pt": "37d8c9def5c758f0ad55e2afc4d4be9c3c1a8bae86d861ebec51a4a5f788f31a",
+    "source_scaler.json": "36cca5e3da0cf836802a0678f49a70976dd272a4caa53ca17d658ff2088b86bd",
+    "window_protocol.json": "5ea370343e85a137ed1d1b0b64dfefa3367028a9619de12f6a542371fcd357b7"
+  }
+}

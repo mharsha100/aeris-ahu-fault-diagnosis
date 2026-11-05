@@ -20,7 +20,7 @@ Read this file before changing training, adaptation, evaluation, or UI code.
 - Preserve the common data split and held-out evaluation protocol for comparisons.
   Introducing data again for fresh training does not authorize fitting on test data.
 - Keep requirements.txt current whenever dependencies change.
-- Give beginner-friendly PowerShell steps using the verified Python executable:
+- Historical Windows interpreter (the user now requests autonomous execution rather than PowerShell instructions):
   C:\Users\mhars\miniconda3\envs\aeris-data\python.exe
 - First deliver a working milestone demonstration with the UI and cross-adaptation;
   subsequent submissions improve the versions and repeat comparisons.
@@ -49,9 +49,36 @@ Read this file before changing training, adaptation, evaluation, or UI code.
 - Today's First Model Exploration evidence is in experiments/model_exploration/.
   Read REPORT.md for actual data separation, errors, timing scope and limitations.
   The full UI target and successful real-target adaptation remain unverified.
-- Exact V2 changes remain unspecified. Mark new V2 suggestions as proposals,
-  never as previously agreed facts.
+- On 2026-11-02 the user confirmed their professor requires the complete pipeline
+  and a working UI BEFORE filling the Milestone 4 documentation. This is the
+  implementation target even where the generic template has later dates.
+- On 2026-11-02 the user selected V2: freshly trained RF + a fresh TCN combining
+  final-step and attention-pooled representations. Keep encoder inputs/settings
+  fixed; the combined temporal head is the architectural change.
+- M4 comparisons use separate m4_v0/m4_v1/m4_v2 bundles, fresh training for 50
+  epochs, patience 0 and fixed 0.50 RF fusion. Keep all earlier bundles intact.
+- Professor's M3 feedback must affect implementation and documentation. Retain
+  original m3-v1 and its five-independent-case reporting floor. Additional windows
+  or severity variants are not additional independent conditions. Current source
+  experiments are descriptive, within-recording development studies of the three
+  shared-weather groups; independent generalization claims remain blocked.
+- M3 records that target labels were exposed earlier. Existing target files are
+  exploratory, not a newly sealed holdout. Channel units/roles/modes and command
+  semantics require explicit checks; high model confidence cannot override scope.
+- The bounded clean-data check passed on Windows on 2026-11-02: exact target ZIP
+  checksum/CRC, 91 parsing failures reproduced, m3-v1 unchanged. It does not verify
+  a fresh full CUDA environment or a fresh large-source download.
 
 These requirements supersede the conflicting version mapping in older project
 documentation. Source documents describe earlier scope; the user's latest
 explicit requirements govern implementation.
+
+- Autonomous execution now uses a separate Linux Python 3.11.17 CPU environment,
+  with exact raw manifest and split records matched to the historical project.
+  Current requirements.txt pins portable CPU training + Streamlit dependencies;
+  requirements-cuda.txt retains the Windows CUDA alternative.
+- Do not declare target transfer successful when gates skip an update or a source
+  retention guard rejects it. Published-reference feedback is explicitly simulated
+  technician feedback, not independent human inspection.
+- The user requested completion and thorough verification of the pipeline and UI
+  before beginning the M4 Word document. Do not fill that document prematurely.

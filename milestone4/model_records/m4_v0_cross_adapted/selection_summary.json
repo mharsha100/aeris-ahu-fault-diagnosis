@@ -1,0 +1,13 @@
+{
+  "adaptation_windows": 1420,
+  "base_gate_windows": 10,
+  "temporally_stable_windows": 6,
+  "selected_windows": 2,
+  "selected_days": 1,
+  "selected_predicted_classes": 1,
+  "selected_by_predicted_class": {
+    "cooling_valve_fault": 2
+  },
+  "selection_labels_are_unverified": true,
+  "enough_candidates": false
+}

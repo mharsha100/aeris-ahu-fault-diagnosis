@@ -1,0 +1,5 @@
+{
+  "model_version": "v1",
+  "architecture_id": "rf_tcn_attention_v1",
+  "hybrid_sha256": "19ea430fd597a85ac57a4b2d429adbe0c60af72d04d81e490b961019fcb1f206"
+}

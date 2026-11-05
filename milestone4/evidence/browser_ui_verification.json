@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "preview_url": "http://terminal.local:4173/",
+  "observed": [
+    "Actual V0,V1,V2 inference and architecture switching",
+    "Reference-feedback stage and unsupported target review",
+    "Valid canonical CSV paste accepted; uploaded context remains review-only",
+    "Time-gap and missing-sensor CSV data blocked",
+    "Inspection label required before verification",
+    "Unverified note saved separately; weights unchanged",
+    "Actual source and retrospective-target result tables",
+    "All three learning-stage reports reconcile with trained artifacts",
+    "100 visible warm V2 requests completed"
+  ],
+  "warm_interface_timing": {
+    "requests": 100,
+    "p50_ms": 2032.5,
+    "p95_ms": 2071.4,
+    "under_5_seconds": 100,
+    "model": "m4_v2",
+    "included": "Canonical inputs, features,actual RF/TCN,policy,DOM updates and2animationframes",
+    "excluded": "Cold download/page startup",
+    "environment": "Remote Linux Chrome155; observed browser scheduling overhead included"
+  },
+  "file_picker_automation": "Stalled; no claim that native chooser upload was automated successfully. The same CSV parser and analysis path were tested through the working paste input.",
+  "fixtures": "QA notes are interface tests, not actual technician inspections."
+}

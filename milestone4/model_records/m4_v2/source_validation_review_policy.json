@@ -1,0 +1,8 @@
+{
+  "provisional_review_threshold": 0.9,
+  "review_windows": 3192,
+  "accepted_windows": 3738,
+  "accepted_coverage": 0.5393939393939394,
+  "accepted_accuracy": 0.9997324772605671,
+  "branch_disagreement_windows": 1961
+}

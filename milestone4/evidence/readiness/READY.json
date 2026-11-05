@@ -1,0 +1,13 @@
+{
+  "version": "m4-within-recording-v1",
+  "artifact_sha256": {
+    "audit.json": "89826f541be5a79776b46c9d9a3e3ef3bb9b1617e001eca33ff9786a1a1dcf68",
+    "channel_compatibility.csv": "f105d404425ddeec3a064cf93a91f5e8b1c276990e223c1ef5e9240b7bdd1e6e",
+    "conversion_samples.csv": "74fa320c9c20ebadb13e331797646ff31929ca2438c6775c913b0ea4ac495ae3",
+    "raw_header_checks.csv": "e6e0a74665e42304439ad48d63a7b588ffccb241e18feb852407a954c572474c",
+    "reproduction_report.json": "8a6c1f9bd92af24fa1a37e87ae65928e972438c083e61293f0b2b9af991fc36f",
+    "scope.json": "fbb20ef81d201c4afe3f5ae57106df77189d32e6eb73c3162730b13edf9b863d",
+    "source_class_counts.csv": "1de018fb1950d54acd9afbf539208ddcfbe218215efc2bec533ffae4bcb0eb8b",
+    "supported_settings.json": "0250666bd22b5e65f25900f20c1c004e4d43acef6c1d34dedab667e26350c15c"
+  }
+}

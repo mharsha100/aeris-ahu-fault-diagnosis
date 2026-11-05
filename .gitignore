@@ -18,3 +18,12 @@ env/
 *.key
 *.json.key
 .vscode/
+
+# Generated browser model/data exports and release archives.
+/dist/models/
+/dist/downloads/
+/dist/cases.json
+/dist/evidence.json
+/dist/manifest.json
+/dist/validation_report.json
+/dist/release_manifest.json

@@ -1,0 +1,2 @@
+forest_weight,temporal_weight,validation_macro_f1,validation_log_loss
+0.5,0.5,0.6839751524925048,0.49196225851468484

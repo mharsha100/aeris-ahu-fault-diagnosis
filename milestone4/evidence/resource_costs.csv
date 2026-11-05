@@ -1,0 +1,4 @@
+model,temporal_parameters,forest_serialized_bytes,temporal_serialized_bytes,training_epoch_seconds_sum,rf_fit_seconds,warm_cpu_full_decision_p95_ms,paid_prediction_API_cost_USD,hardware_compute_cost,parallel_training
+m4_v0,17380,12163240,78717,633.4275963409998,9.068326940999896,15.990924399784486,0,Not metered,V0/V1 sequential; V2 concurrent. Wall timings are not a controlled speed comparison.
+m4_v1,18468,12163240,83913,511.3872999830012,8.422351226000046,16.68784529997538,0,Not metered,V0/V1 sequential; V2 concurrent. Wall timings are not a controlled speed comparison.
+m4_v2,20548,12163240,92817,465.1481257890007,23.571221294999987,17.847093100021993,0,Not metered,V0/V1 sequential; V2 concurrent. Wall timings are not a controlled speed comparison.

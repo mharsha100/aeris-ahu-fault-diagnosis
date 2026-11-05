@@ -1,0 +1,46 @@
+{
+  "fit_partition": "source_train",
+  "fit_rows": 140402,
+  "features": [
+    "supply_temp_c",
+    "outdoor_temp_c",
+    "mixed_temp_c",
+    "return_temp_c",
+    "fan_status",
+    "fan_speed_cmd",
+    "oa_damper_cmd",
+    "cooling_valve_cmd",
+    "heating_valve_cmd",
+    "occupied"
+  ],
+  "mean": [
+    15.723615955331377,
+    11.851547244819429,
+    18.03164524421463,
+    23.14700301666769,
+    1.0,
+    0.5084023106669123,
+    0.7996775937377076,
+    0.40760310886504847,
+    0.17883502409216123,
+    1.0
+  ],
+  "scale": [
+    4.628029210491177,
+    16.622471687088638,
+    7.673823322545251,
+    2.945799669063084,
+    1.0,
+    0.2851887261938389,
+    0.2868289642999793,
+    0.45864970387717324,
+    0.33332036242479907,
+    1.0
+  ],
+  "std_ddof": 0,
+  "constant_features": [
+    "fan_status",
+    "occupied"
+  ],
+  "applies_to": "X_seq only; X_tab retains Celsius/fraction/binary units"
+}

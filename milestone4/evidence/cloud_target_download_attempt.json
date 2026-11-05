@@ -1,0 +1,37 @@
+{
+  "version": "m4-repro-v1",
+  "started_utc": "2026-11-02T20:44:33.431243+00:00",
+  "status": "failed",
+  "python": "3.11.17",
+  "executable": "/workspace/scratch/1cf926906dfb/aeris-execution/data/m4_checks/run_cloud_20261102/env/bin/python",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "script_sha256": "31dd076fdb4ccccf5fe5421497707e9c6503829c947ae7beae1d6e4d4f0ce16a",
+  "root_requirements_sha256": "6d348d5d3b52492046b3a035a0d11b32cba8aa7be6f8db2c07e7a364654a31c3",
+  "scope": "Fresh NumPy/pandas environment and uncached complete target download/parse",
+  "full_training_environment_reproduced": false,
+  "uncached_large_source_download_tested": false,
+  "installed_data_dependencies": {
+    "numpy": "2.4.6",
+    "pandas": "2.2.3"
+  },
+  "m3_v1_original_hashes": {
+    ".gitignore": "340eff496938ee6ddeea77e2e7743135e79b23048dbace7faefd10e76128ed3d",
+    "README.md": "3c089e329aba65d4739dfeff0cebb242536e240d6ef22e98681d5ae5de56d833",
+    "evidence/channel_map.csv": "de50e7463e5f015eed2feeb88f42883fe6a46408e7f85f4314ece9d79fd090bf",
+    "evidence/control_tests.json": "a9f6b073c9cea69708b4e0b4152e623128d1262c12ac0a688243d32cc25463d9",
+    "evidence/figshare_v3.json": "fb415c7689fa393a08f9d1bf6c8a67e3ab7401da2e9b971634cf8743e8275f34",
+    "evidence/ingestion.json": "aae9512accd908c654f91e3097c94a184723cdb6b31c7202b976f80468c7f57d",
+    "evidence/manifest.csv": "810b9a3083234d0cd3f5a6e0156a17d6bbad35b57206218bef6ab39f0dd3ab41",
+    "evidence/quality.json": "f0085f7e825c1220afa84f404afd3a2aca4987d1e765f9154eb360434c40f1ea",
+    "evidence/run.json": "bf07de103a5a3b00126406ba3f36c59a4860b6a7bba837b29ac0f986713584a3",
+    "evidence/source_inventory.csv": "c698ec9b76a7fdb535c2f591337c1dfa298e5acef8413adf16b44dcb9a33c362",
+    "evidence/split_status.json": "d88b7a4ceaf779c5ba47b51402bf88931798df6875d20bd7ac7d8b0a29c2f562",
+    "evidence/target_day_inventory.csv": "ce378aa147885b6dcce6033b77f608365878452fac3a0ab0e503926107254c14",
+    "ingest.py": "3b1a29143e0abb43e6b31526740c8f7f7f2e101f7ecf085595578aeef09b938f",
+    "pipeline.py": "ef9469fb46ce0dd8c152ff19cde8314d8ad50a57a8d4bed6e611a7bb527cb611",
+    "requirements.txt": "f36cb59b3a3402cf36f4481c9f15fb2fd98e9961bf4b23cf18473155f5f02de9"
+  },
+  "error": "ValueError: Pinned snapshot mismatch: bytes=195, SHA256=5b131ca14aa96311d3432b0062c7443d3b0e6346ec279bd376a75f0a76bcd5d7",
+  "m3_v1_unchanged": true,
+  "finished_utc": "2026-11-02T20:44:38.762024+00:00"
+}

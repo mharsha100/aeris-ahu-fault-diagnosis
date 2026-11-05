@@ -1,0 +1,96 @@
+{
+  "status": "passed",
+  "scope": "900 prepared +900 canonical raw-window comparisons against actual PyTorch/sklearn probabilities; GELU erf approximation in JavaScript",
+  "records": [
+    {
+      "model": "m4_v0",
+      "windows": 100,
+      "max_abs_probability_difference": 1.2679877869903322e-7,
+      "class_disagreements": 0,
+      "raw_windows": 100,
+      "raw_max_abs_probability_difference": 1.2679877869903322e-7,
+      "raw_class_disagreements": 0,
+      "status": "passed"
+    },
+    {
+      "model": "m4_v0_cross_adapted",
+      "windows": 100,
+      "max_abs_probability_difference": 1.2679877869903322e-7,
+      "class_disagreements": 0,
+      "raw_windows": 100,
+      "raw_max_abs_probability_difference": 1.2679877869903322e-7,
+      "raw_class_disagreements": 0,
+      "status": "passed"
+    },
+    {
+      "model": "m4_v0_feedback",
+      "windows": 100,
+      "max_abs_probability_difference": 2.860906516688466e-7,
+      "class_disagreements": 0,
+      "raw_windows": 100,
+      "raw_max_abs_probability_difference": 2.860906516688466e-7,
+      "raw_class_disagreements": 0,
+      "status": "passed"
+    },
+    {
+      "model": "m4_v1",
+      "windows": 100,
+      "max_abs_probability_difference": 9.930622191234306e-8,
+      "class_disagreements": 0,
+      "raw_windows": 100,
+      "raw_max_abs_probability_difference": 9.930622191234306e-8,
+      "raw_class_disagreements": 0,
+      "status": "passed"
+    },
+    {
+      "model": "m4_v1_cross_adapted",
+      "windows": 100,
+      "max_abs_probability_difference": 9.930622191234306e-8,
+      "class_disagreements": 0,
+      "raw_windows": 100,
+      "raw_max_abs_probability_difference": 9.930622191234306e-8,
+      "raw_class_disagreements": 0,
+      "status": "passed"
+    },
+    {
+      "model": "m4_v1_feedback",
+      "windows": 100,
+      "max_abs_probability_difference": 1.0606840067373113e-7,
+      "class_disagreements": 0,
+      "raw_windows": 100,
+      "raw_max_abs_probability_difference": 1.0606840067373113e-7,
+      "raw_class_disagreements": 0,
+      "status": "passed"
+    },
+    {
+      "model": "m4_v2",
+      "windows": 100,
+      "max_abs_probability_difference": 2.424021500191387e-7,
+      "class_disagreements": 0,
+      "raw_windows": 100,
+      "raw_max_abs_probability_difference": 2.424021500191387e-7,
+      "raw_class_disagreements": 0,
+      "status": "passed"
+    },
+    {
+      "model": "m4_v2_cross_adapted",
+      "windows": 100,
+      "max_abs_probability_difference": 2.424021500191387e-7,
+      "class_disagreements": 0,
+      "raw_windows": 100,
+      "raw_max_abs_probability_difference": 2.424021500191387e-7,
+      "raw_class_disagreements": 0,
+      "status": "passed"
+    },
+    {
+      "model": "m4_v2_feedback",
+      "windows": 100,
+      "max_abs_probability_difference": 1.9091611214161475e-7,
+      "class_disagreements": 0,
+      "raw_windows": 100,
+      "raw_max_abs_probability_difference": 1.9091611214161475e-7,
+      "raw_class_disagreements": 0,
+      "status": "passed"
+    }
+  ]
+}

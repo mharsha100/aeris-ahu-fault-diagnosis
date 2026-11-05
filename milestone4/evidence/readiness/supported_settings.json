@@ -1,0 +1,50 @@
+{
+  "version": "m4-within-recording-v1",
+  "source_research_settings": {
+    "CoolingSeason": [
+      "normal",
+      "damper_fault",
+      "cooling_valve_fault"
+    ],
+    "HeatingSeason": [
+      "normal",
+      "damper_fault",
+      "heating_valve_fault"
+    ],
+    "ShoulderSeason": [
+      "normal",
+      "damper_fault",
+      "cooling_valve_fault"
+    ]
+  },
+  "source_modes": "Core-valid, occupied and supply fan on",
+  "source_status": "Within-recording research predictions; not verified operation on unseen AHUs",
+  "target_settings": {
+    "SZVAV": {
+      "mode": "Single-zone VAV, summer recordings",
+      "status": "exploratory_only",
+      "automatic_escalation_supported": false,
+      "publisher_pair_families": [
+        "damper_fault",
+        "cooling_valve_fault"
+      ]
+    },
+    "SZCAV": {
+      "mode": "Single-zone CAV, winter recordings",
+      "status": "exploratory_only",
+      "automatic_escalation_supported": false,
+      "publisher_pair_families": [
+        "damper_fault",
+        "heating_valve_fault"
+      ]
+    }
+  },
+  "target_conditions": "Any future adaptation/feedback demonstration must retain exploratory status and audit label exposure; no high score overrides unsupported scope.",
+  "mapping_sources": [
+    "G36-1wk/00_explanations.pdf pp.3,7-8,10",
+    "DomainPairs.pdf p.2",
+    "LBNLDataSynthesisInventory.pdf pp.17-19",
+    "data/aeris_prepared/data_contract.json"
+  ],
+  "command_limitation": "Signals are controller requests. Fault overrides, leakage intensities and CAV/VAV operation can change their relation to actual positions and flows."
+}

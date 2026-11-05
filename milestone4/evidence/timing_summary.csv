@@ -1,0 +1,10 @@
+model,requests,p50_ms,p95_ms,under_5s,included,excluded,device,torch_threads,forest_jobs
+m4_v0,100,11.10048099985761,15.990924399784486,100,"Canonical window reconstruction, validation, feature extraction, RF/TCN, calibration, scope/review decision","Model load, network and browser render",CPU,2,1
+m4_v0_cross_adapted,100,10.634129999971265,19.184861150210963,100,"Canonical window reconstruction, validation, feature extraction, RF/TCN, calibration, scope/review decision","Model load, network and browser render",CPU,2,1
+m4_v0_feedback,100,10.680154500050776,29.818249700360862,100,"Canonical window reconstruction, validation, feature extraction, RF/TCN, calibration, scope/review decision","Model load, network and browser render",CPU,2,1
+m4_v1,100,10.955621999983123,16.68784529997538,100,"Canonical window reconstruction, validation, feature extraction, RF/TCN, calibration, scope/review decision","Model load, network and browser render",CPU,2,1
+m4_v1_cross_adapted,100,11.435308000045552,22.694476349806788,100,"Canonical window reconstruction, validation, feature extraction, RF/TCN, calibration, scope/review decision","Model load, network and browser render",CPU,2,1
+m4_v1_feedback,100,10.800263499959328,15.404177349864764,100,"Canonical window reconstruction, validation, feature extraction, RF/TCN, calibration, scope/review decision","Model load, network and browser render",CPU,2,1
+m4_v2,100,10.936313000001974,17.847093100021993,100,"Canonical window reconstruction, validation, feature extraction, RF/TCN, calibration, scope/review decision","Model load, network and browser render",CPU,2,1
+m4_v2_cross_adapted,100,10.47650200030148,17.723106350058508,100,"Canonical window reconstruction, validation, feature extraction, RF/TCN, calibration, scope/review decision","Model load, network and browser render",CPU,2,1
+m4_v2_feedback,100,10.17063249992134,15.77477785008341,100,"Canonical window reconstruction, validation, feature extraction, RF/TCN, calibration, scope/review decision","Model load, network and browser render",CPU,2,1

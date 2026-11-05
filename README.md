@@ -3,7 +3,33 @@
 AERIS studies a hybrid Random Forest and temporal neural network for AHU diagnosis,
 confidence handling and human review. V0, V1 and V2 denote evolving architectures;
 cross-setting adaptation, technician-verified feedback, comparison and the operator
-interface belong to the same project. V2 and the complete UI remain future work.
+interface belong to the same project.
+
+## Current implementation checkpoint — November2,2026
+
+The M4 implementation is in [milestone4/](milestone4/README.md): three fresh50-epoch
+hybrids, gated cross-setting adaptation, simulated verified-reference feedback,
+comparison/error analysis and a working Streamlit plus browser interface. Actual
+completion gates are recorded in [pipeline status](milestone4/evidence/pipeline_status.json),
+[real results](milestone4/evidence/results.csv), [20-case error review](milestone4/evidence/error_review_20.csv)
+and [validation](milestone4/evidence/validation_report.json). The Word submission
+has not been filled as part of this implementation task.
+
+Current runs are Linux Python3.11.17 CPU runs, separate from the October Windows
+GPU exploration below. The root requirements now pin the portable CPU+Streamlit
+environment; `requirements-cuda.txt` preserves the CUDA alternative. For the
+runnable Streamlit interface, install the current requirements and run
+`python -m streamlit run app.py` with the packaged trained bundles and input packs.
+
+These experiments describe selected recordings with only three shared-weather
+conditions. Original m3-v1 and its five-independent-case floor are preserved.
+All target scores are retrospective/exploratory because labels were exposed in
+previous work. Skipped/rejected adaptation is reported as such. Published-reference
+feedback is explicitly simulated, and no confidence score authorizes AHU actuation.
+
+The current session cannot push to the original GitHub repository (read-only
+integration/no CLI credentials). The release preserves exact source and Git history;
+publication of the new original-repository branch remains an access limitation.
 
 ## First Model Exploration — October 26, 2026
 
@@ -32,9 +58,8 @@ The full UI latency target and real-target transfer quality remain unverified.
 
 ## Implementation and reproduction
 
-Python 3.11.9 is the recorded training version. Dependencies are pinned in
-[requirements.txt](requirements.txt), including PyTorch 2.9.1+cu128 for the verified
-Windows RTX 4070 laptop. The [training guide](docs/training_v1.md) provides explicit
+The October historical runs used Python3.11.9 and PyTorch2.9.1+cu128 on the
+Windows RTX4070 laptop. Those pins are retained in [requirements-cuda.txt](requirements-cuda.txt). The [training guide](docs/training_v1.md) provides explicit
 PowerShell commands and operating-scope details.
 
 ```powershell

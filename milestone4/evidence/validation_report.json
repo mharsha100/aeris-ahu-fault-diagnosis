@@ -1,0 +1,217 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "check": "Block missing",
+      "status": "passed"
+    },
+    {
+      "check": "Block fan_off",
+      "status": "passed"
+    },
+    {
+      "check": "Block unoccupied",
+      "status": "passed"
+    },
+    {
+      "check": "Block command_range",
+      "status": "passed"
+    },
+    {
+      "check": "Block timestamp gap",
+      "status": "passed"
+    },
+    {
+      "check": "High supplied confidence cannot override exploratory target",
+      "status": "passed"
+    },
+    {
+      "check": "High supplied confidence cannot override class/season scope",
+      "status": "passed"
+    },
+    {
+      "check": "Unverified uploaded source context always requires review",
+      "status": "passed"
+    },
+    {
+      "check": "v0 full50 fresh epochs",
+      "status": "passed"
+    },
+    {
+      "check": "v0 correct architecture/fusion",
+      "status": "passed"
+    },
+    {
+      "check": "v0 encoder causal prefix",
+      "status": "passed"
+    },
+    {
+      "check": "v0_cross_adapted architecture retained",
+      "status": "passed"
+    },
+    {
+      "check": "v0_cross_adapted no test fitting",
+      "status": "passed"
+    },
+    {
+      "check": "v0_feedback architecture retained",
+      "status": "passed"
+    },
+    {
+      "check": "v0_feedback no test fitting",
+      "status": "passed"
+    },
+    {
+      "check": "v1 full50 fresh epochs",
+      "status": "passed"
+    },
+    {
+      "check": "v1 correct architecture/fusion",
+      "status": "passed"
+    },
+    {
+      "check": "v1 encoder causal prefix",
+      "status": "passed"
+    },
+    {
+      "check": "v1_cross_adapted architecture retained",
+      "status": "passed"
+    },
+    {
+      "check": "v1_cross_adapted no test fitting",
+      "status": "passed"
+    },
+    {
+      "check": "v1_feedback architecture retained",
+      "status": "passed"
+    },
+    {
+      "check": "v1_feedback no test fitting",
+      "status": "passed"
+    },
+    {
+      "check": "v2 full50 fresh epochs",
+      "status": "passed"
+    },
+    {
+      "check": "v2 correct architecture/fusion",
+      "status": "passed"
+    },
+    {
+      "check": "v2 encoder causal prefix",
+      "status": "passed"
+    },
+    {
+      "check": "v2_cross_adapted architecture retained",
+      "status": "passed"
+    },
+    {
+      "check": "v2_cross_adapted no test fitting",
+      "status": "passed"
+    },
+    {
+      "check": "v2_feedback architecture retained",
+      "status": "passed"
+    },
+    {
+      "check": "v2_feedback no test fitting",
+      "status": "passed"
+    },
+    {
+      "check": "Source guard does not authorize feedback candidate promotion",
+      "status": "passed"
+    },
+    {
+      "check": "Preserved milestone3/README.md",
+      "status": "passed"
+    },
+    {
+      "check": "Preserved milestone3/pipeline.py",
+      "status": "passed"
+    },
+    {
+      "check": "Preserved milestone3/requirements.txt",
+      "status": "passed"
+    },
+    {
+      "check": "Preserved milestone3/ingest.py",
+      "status": "passed"
+    },
+    {
+      "check": "Preserved milestone3/.gitignore",
+      "status": "passed"
+    },
+    {
+      "check": "Preserved milestone3/evidence/ingestion.json",
+      "status": "passed"
+    },
+    {
+      "check": "Preserved milestone3/evidence/figshare_v3.json",
+      "status": "passed"
+    },
+    {
+      "check": "Preserved milestone3/evidence/split_status.json",
+      "status": "passed"
+    },
+    {
+      "check": "Preserved milestone3/evidence/manifest.csv",
+      "status": "passed"
+    },
+    {
+      "check": "Preserved milestone3/evidence/quality.json",
+      "status": "passed"
+    },
+    {
+      "check": "Preserved milestone3/evidence/run.json",
+      "status": "passed"
+    },
+    {
+      "check": "Preserved milestone3/evidence/control_tests.json",
+      "status": "passed"
+    },
+    {
+      "check": "Preserved milestone3/evidence/channel_map.csv",
+      "status": "passed"
+    },
+    {
+      "check": "Preserved milestone3/evidence/source_inventory.csv",
+      "status": "passed"
+    },
+    {
+      "check": "Preserved milestone3/evidence/target_day_inventory.csv",
+      "status": "passed"
+    },
+    {
+      "check": "Streamlit starts without exceptions",
+      "status": "passed"
+    },
+    {
+      "check": "Streamlit renders actual diagnosis",
+      "status": "passed"
+    },
+    {
+      "check": "CSV upload screen renders",
+      "status": "passed"
+    },
+    {
+      "check": "Target request requires review in UI",
+      "status": "passed"
+    },
+    {
+      "check": "Unverified label cannot be saved as verified",
+      "status": "passed"
+    },
+    {
+      "check": "Unverified observation saved without training",
+      "status": "passed"
+    },
+    {
+      "check": "Operator note excluded from learning",
+      "status": "passed"
+    }
+  ],
+  "passed_checks": 52,
+  "fixtures_are_real_model_accuracy_evidence": false,
+  "real_training_and_evaluation_evidence": "architecture_training.json,results.csv,error_examples.csv",
+  "ui": "Streamlit actual widget/runtime tests passed; hosted browser checked separately"
+}

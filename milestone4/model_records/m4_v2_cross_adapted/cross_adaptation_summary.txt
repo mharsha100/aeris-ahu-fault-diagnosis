@@ -1,0 +1,14 @@
+AERIS - cross-setting adaptation complete for m4_v2
+Status: skipped_insufficient_candidates
+Selected unverified pseudo-label windows: 2
+Selected days: 1
+Selected predicted classes: 1
+Retained temporal adaptation epoch: 0
+Before-adaptation source-validation macro F1: 0.6865
+After-adaptation source-validation macro F1: 0.6865
+Frozen parent unchanged: passed
+Saved/reloaded prediction check: passed
+Target labels, feedback pool and final test packs were not opened.
+These reports do not establish target accuracy or successful transfer.
+Saved model: /workspace/scratch/1cf926906dfb/aeris-execution/data/aeris_models/m4_v2_cross_adapted
+Review attachment: cross_adaptation_review.zip

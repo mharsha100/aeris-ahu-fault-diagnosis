@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "bundles_restored_and_loaded": [
+    "m4_v2_cross_adapted",
+    "m4_v1_cross_adapted",
+    "m4_v1",
+    "m4_v1_feedback",
+    "m4_v0_cross_adapted",
+    "m4_v2",
+    "m4_v2_feedback",
+    "m4_v0",
+    "m4_v0_feedback"
+  ],
+  "prepared_inputs_present": true,
+  "trained_weights_verified": true,
+  "raw_archives_or_existing_model_paths_used": false
+}

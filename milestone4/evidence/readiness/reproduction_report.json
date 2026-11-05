@@ -1,0 +1,115 @@
+{
+  "version": "m4-repro-v1",
+  "started_utc": "2026-11-02T19:36:58.571151+00:00",
+  "status": "passed",
+  "python": "3.11.9",
+  "executable": "C:\\MSAIS\\EGN6216-AI SYSTEMS\\AHU_PROJECT\\aeris-data-warmup_updated\\data\\m4_checks\\run_20261102_143450\\env\\Scripts\\python.exe",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "script_sha256": "31dd076fdb4ccccf5fe5421497707e9c6503829c947ae7beae1d6e4d4f0ce16a",
+  "root_requirements_sha256": "6d348d5d3b52492046b3a035a0d11b32cba8aa7be6f8db2c07e7a364654a31c3",
+  "scope": "Fresh NumPy/pandas environment and uncached complete target download/parse",
+  "full_training_environment_reproduced": false,
+  "uncached_large_source_download_tested": false,
+  "installed_data_dependencies": {
+    "numpy": "2.4.6",
+    "pandas": "2.2.3"
+  },
+  "m3_v1_original_hashes": {
+    ".gitignore": "b2cf6c25f25f131e9ce23f5e16eff73c99045a9285588114a9a9db7dc5afd991",
+    "evidence/channel_map.csv": "40445695450f06c387ca960ef9df9f70b5959913583a9cffa747d8b6925ae64f",
+    "evidence/control_tests.json": "50839337d11ae691e7847046bd6822a34819f788071e6a0268fd3f12eecfb6c5",
+    "evidence/figshare_v3.json": "fb415c7689fa393a08f9d1bf6c8a67e3ab7401da2e9b971634cf8743e8275f34",
+    "evidence/ingestion.json": "0a7db3f610fb37bfef6e6c9c80fbe7db6c9fcd85e3e3ddf8faeaa7f31187b3f0",
+    "evidence/manifest.csv": "5ef8395e0346152981b064028f77c301acec9701b9c46ef3011a67a4d2f20dce",
+    "evidence/quality.json": "1b3df2a19b68f11fe2cc1160ed363c874e3db8f7cef2aa6f669eac360a6b6097",
+    "evidence/run.json": "397e0af3b72f8f01cde2cfcb68adf8d921bd1456bb0d95ac1aa8f88e26c89dc4",
+    "evidence/source_inventory.csv": "9c19526b97aa0a711724c25fc10dd80c59674e02852ee9bc096bc12fcc460fdc",
+    "evidence/split_status.json": "eef34fec0c50ba18eec333c8083d9a2834b8da4ac3dbb98f381f41d5cc6fa068",
+    "evidence/target_day_inventory.csv": "8bf5cbd78fb1fd1d2143626f52f02c16a3f1ee08d111b7334b34fcf8903ea936",
+    "ingest.py": "12641131427a75d6b37be85df5270b6a1c8e22e8498359809ded309451ab0959",
+    "pipeline.py": "88baa0b0155291b73f8cd75cc098c721c5620e195326d0a4869cb04578bc4362",
+    "README.md": "21adfd8cf096768c064e2c8b1057f7074b7fb52d5ff45a3cf603098c58f6e60b",
+    "requirements.txt": "4832aea9f164dd349e62409b8eddc4114dbdc3e95dbd8f494190817a9f316567"
+  },
+  "acquisition": {
+    "name": "lbnl_2019_afdd.zip",
+    "url": "https://data.openei.org/files/910/Data%20Sets%20for%20AFDD%20Evauluation%20of%20Building%20FDD%20Algorithms.zip",
+    "bytes": 7010416,
+    "sha256": "68c58568e3f0e4e7d0f0de3194a2ce7ca80703c057325ee402a94d3eab5a76c1",
+    "doi": "10.25984/1824861",
+    "action": "downloaded_uncached_and_verified",
+    "received_bytes": 7010416,
+    "archive_members": 7,
+    "crc_check": "passed",
+    "download_and_integrity_seconds": 1.4266811000416055
+  },
+  "parsed_files": [
+    {
+      "file": "SZVAV.csv",
+      "rows": 15839,
+      "columns": 16,
+      "temperatures": {
+        "AHU: Supply Air Temperature": {
+          "raw_missing": 0,
+          "new_parse_failures": 0,
+          "converted_celsius_min": 9.749999999999998,
+          "converted_celsius_max": 40.355555555555554
+        },
+        "AHU: Outdoor Air Temperature": {
+          "raw_missing": 0,
+          "new_parse_failures": 1,
+          "converted_celsius_min": 11.83888888888889,
+          "converted_celsius_max": 30.84444444444444
+        },
+        "AHU: Mixed Air Temperature": {
+          "raw_missing": 0,
+          "new_parse_failures": 0,
+          "converted_celsius_min": 14.994444444444447,
+          "converted_celsius_max": 31.72222222222222
+        },
+        "AHU: Return Air Temperature": {
+          "raw_missing": 0,
+          "new_parse_failures": 0,
+          "converted_celsius_min": 19.07222222222222,
+          "converted_celsius_max": 32.37777777777777
+        }
+      },
+      "imputation_applied": false
+    },
+    {
+      "file": "SZCAV.csv",
+      "rows": 21600,
+      "columns": 16,
+      "temperatures": {
+        "AHU: Supply Air Temperature": {
+          "raw_missing": 0,
+          "new_parse_failures": 0,
+          "converted_celsius_min": 9.561111111111112,
+          "converted_celsius_max": 31.57222222222222
+        },
+        "AHU: Outdoor Air Temperature": {
+          "raw_missing": 0,
+          "new_parse_failures": 0,
+          "converted_celsius_min": 7.000000000000001,
+          "converted_celsius_max": 21.76666666666667
+        },
+        "AHU: Mixed Air Temperature": {
+          "raw_missing": 0,
+          "new_parse_failures": 90,
+          "converted_celsius_min": 7.933333333333334,
+          "converted_celsius_max": 27.150000000000002
+        },
+        "AHU: Return Air Temperature": {
+          "raw_missing": 0,
+          "new_parse_failures": 0,
+          "converted_celsius_min": 14.694444444444445,
+          "converted_celsius_max": 28.461111111111116
+        }
+      },
+      "imputation_applied": false
+    }
+  ],
+  "new_temperature_parse_failures": 91,
+  "m3_v1_unchanged": true,
+  "finished_utc": "2026-11-02T19:37:06.211254+00:00"
+}

@@ -1,0 +1,176 @@
+{
+  "status": "accepted_source_guard",
+  "selected_windows": 20,
+  "selected_days": 7,
+  "selection_labels_opened": false,
+  "simulated_technician": true,
+  "unverified_notes_used_for_training": false,
+  "completed_epochs": 5,
+  "retained_temporal_epoch": 5,
+  "seed": 44,
+  "source_guardrail": {
+    "passed": true,
+    "source_macro_f1_drop": 0.002632456209263778,
+    "source_per_class_recall_drop": {
+      "normal": -0.04978354978354982,
+      "damper_fault": 0.020098948670377204,
+      "cooling_valve_fault": 0.004174397031539878,
+      "heating_valve_fault": 0.005565862708719838
+    },
+    "interpretation": "A source-retention check; it does not establish a target-domain benefit."
+  },
+  "source_before": {
+    "windows": 6930,
+    "accuracy": 0.744011544011544,
+    "balanced_accuracy": 0.7220160791589363,
+    "macro_f1": 0.6865066428478072,
+    "log_loss": 0.48244721888655706,
+    "multiclass_brier": 0.2875855739752382,
+    "ece_10_bins": 0.022194020321257835,
+    "confusion_matrix": [
+      [
+        274,
+        109,
+        22,
+        57
+      ],
+      [
+        535,
+        2442,
+        128,
+        129
+      ],
+      [
+        364,
+        232,
+        1560,
+        0
+      ],
+      [
+        40,
+        158,
+        0,
+        880
+      ]
+    ],
+    "per_class": {
+      "normal": {
+        "precision": 0.22588623248145095,
+        "recall": 0.5930735930735931,
+        "f1-score": 0.3271641791044776,
+        "support": 462.0
+      },
+      "damper_fault": {
+        "precision": 0.8303298197891874,
+        "recall": 0.7551020408163265,
+        "f1-score": 0.7909311740890689,
+        "support": 3234.0
+      },
+      "cooling_valve_fault": {
+        "precision": 0.9122807017543859,
+        "recall": 0.7235621521335807,
+        "f1-score": 0.8070356958096223,
+        "support": 2156.0
+      },
+      "heating_valve_fault": {
+        "precision": 0.8255159474671669,
+        "recall": 0.8163265306122449,
+        "f1-score": 0.8208955223880597,
+        "support": 1078.0
+      },
+      "accuracy": 0.744011544011544,
+      "macro avg": {
+        "precision": 0.6985031753730477,
+        "recall": 0.7220160791589363,
+        "f1-score": 0.6865066428478072,
+        "support": 6930.0
+      },
+      "weighted avg": {
+        "precision": 0.8147805859966413,
+        "recall": 0.744011544011544,
+        "f1-score": 0.7696847909163336,
+        "support": 6930.0
+      }
+    }
+  },
+  "source_candidate": {
+    "windows": 6930,
+    "accuracy": 0.7357864357864358,
+    "balanced_accuracy": 0.7270021645021645,
+    "macro_f1": 0.6838741866385434,
+    "log_loss": 0.4889669438094724,
+    "multiclass_brier": 0.2926995292200247,
+    "ece_10_bins": 0.03468849921786295,
+    "confusion_matrix": [
+      [
+        297,
+        95,
+        16,
+        54
+      ],
+      [
+        603,
+        2377,
+        121,
+        133
+      ],
+      [
+        405,
+        200,
+        1551,
+        0
+      ],
+      [
+        50,
+        153,
+        1,
+        874
+      ]
+    ],
+    "per_class": {
+      "normal": {
+        "precision": 0.21918819188191882,
+        "recall": 0.6428571428571429,
+        "f1-score": 0.32691249312052834,
+        "support": 462.0
+      },
+      "damper_fault": {
+        "precision": 0.8414159292035398,
+        "recall": 0.7350030921459493,
+        "f1-score": 0.7846179237497937,
+        "support": 3234.0
+      },
+      "cooling_valve_fault": {
+        "precision": 0.9182948490230906,
+        "recall": 0.7193877551020408,
+        "f1-score": 0.8067620286085826,
+        "support": 2156.0
+      },
+      "heating_valve_fault": {
+        "precision": 0.823751178133836,
+        "recall": 0.8107606679035251,
+        "f1-score": 0.8172043010752689,
+        "support": 1078.0
+      },
+      "accuracy": 0.7357864357864358,
+      "macro avg": {
+        "precision": 0.7006625370605963,
+        "recall": 0.7270021645021645,
+        "f1-score": 0.6838741866385434,
+        "support": 6930.0
+      },
+      "weighted avg": {
+        "precision": 0.8211041160484492,
+        "recall": 0.7357864357864358,
+        "f1-score": 0.7660624974700955,
+        "support": 6930.0
+      }
+    }
+  },
+  "saved_reload_max_abs_difference": 2.220446049250313e-16,
+  "target_feedback_sha256": "dacad50b253304ba269c75838fa911d41e499fb411136da8ccba92317c1e8d73",
+  "selection_sha256": "e3d7d26868ee4d85281560a18fc3d652bf5cb999a00522e0d9915ea7b6f07b40",
+  "label_reference_sha256": "64ebfdb655bc2f769baa93602204dd1fcb3549a26566363674c4571c2a798caf",
+  "final_test_labels_used": false,
+  "note": "Source retention does not establish target benefit. Rejected updates preserve parent; all target evaluation is retrospective exploratory."
+}

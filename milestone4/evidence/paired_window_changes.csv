@@ -1,0 +1,7 @@
+partition,left,right,rescued_wrong_windows,new_wrong_windows,same_window_descriptive_only
+source_validation,m4_v0,m4_v1,64,70,True
+source_validation,m4_v1,m4_v2,149,86,True
+source_test_within_condition,m4_v0,m4_v1,120,150,True
+source_test_within_condition,m4_v1,m4_v2,205,164,True
+target_retrospective,m4_v0,m4_v1,157,169,True
+target_retrospective,m4_v1,m4_v2,174,180,True

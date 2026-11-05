@@ -8,7 +8,9 @@ import os
 from pathlib import Path
 import platform
 import random
+import re
 import shutil
+import subprocess
 import time
 import zipfile
 from datetime import datetime, timezone
@@ -27,6 +29,15 @@ from .modeling import CLASS_NAMES, HybridPredictor, TemporalTCN, create_temporal
 
 def write_json(path: Path, value: dict) -> None:
     path.write_text(json.dumps(value, indent=2, default=lambda item: item.item() if isinstance(item, np.generic) else str(item)), encoding="utf-8")
+
+
+def git_provenance(root: Path) -> dict:
+    try:
+        commit = subprocess.run(["git", "rev-parse", "HEAD"], cwd=root, capture_output=True, text=True, check=True, timeout=5).stdout.strip()
+        status = subprocess.run(["git", "status", "--porcelain", "--untracked-files=no"], cwd=root, capture_output=True, text=True, check=True, timeout=5).stdout.strip()
+        return {"commit": commit, "tracked_worktree_dirty": bool(status)}
+    except (OSError, subprocess.SubprocessError):
+        return {"commit": None, "tracked_worktree_dirty": None}
 
 
 def environment_check(requested_device: str = "cuda", temporal_kind: str = "causal_tcn_last") -> dict:
@@ -134,14 +145,22 @@ def train_temporal(model: TemporalTCN, train: dict, validation: dict, *, device:
 
 def train_source_hybrid(project_root: Path, *, model_version: str = "v0", device: str = "cuda", epochs: int = 50,
              batch_size: int = 256, patience: int = 8, seed: int = 42,
-             trees: int = 200, jobs: int = -1, overwrite: bool = False) -> Path:
-    if model_version not in {"v0", "v1"}:
-        raise ValueError("Only the implemented V0 and V1 architectures can be trained")
+             trees: int = 200, jobs: int = -1, overwrite: bool = False,
+             run_name: str | None = None, fusion_weight: float | None = None,
+             experiment_scope: dict | None = None) -> Path:
+    if model_version not in {"v0", "v1", "v2"}:
+        raise ValueError("Choose an implemented V0, V1 or V2 architecture")
     if epochs < 1 or batch_size < 1 or patience < 0 or trees < 1:
         raise ValueError("Training counts must be positive; patience=0 disables early stopping")
-    temporal_kind = "causal_tcn_last" if model_version == "v0" else "causal_tcn_attention"
-    architecture_id = "rf_tcn_last_v0" if model_version == "v0" else "rf_tcn_attention_v1"
-    bundle_name = "v0" if model_version == "v0" else "v1_attention"
+    if run_name is not None and not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9_-]{0,63}", run_name):
+        raise ValueError("Run names must be short folder names without paths")
+    if fusion_weight is not None and not 0 < fusion_weight < 1:
+        raise ValueError("Fixed fusion must retain both branches, with 0 < RF weight < 1")
+    kinds = {"v0": "causal_tcn_last", "v1": "causal_tcn_attention", "v2": "causal_tcn_combined"}
+    ids = {"v0": "rf_tcn_last_v0", "v1": "rf_tcn_attention_v1", "v2": "rf_tcn_combined_v2"}
+    names = {"v0": "v0", "v1": "v1_attention", "v2": "v2_combined"}
+    temporal_kind, architecture_id = kinds[model_version], ids[model_version]
+    bundle_name = run_name or names[model_version]
     windows_root = project_root / "data" / "aeris_windows_v1"
     output = project_root / "data" / "aeris_models" / bundle_name
     if output.exists() and any(output.iterdir()) and not overwrite:
@@ -157,7 +176,15 @@ def train_source_hybrid(project_root: Path, *, model_version: str = "v0", device
     if protocol["window_minutes"] != 15:
         raise ValueError("The first reviewed training configuration expects 15-minute windows")
     baseline_manifest_sha = None
-    if model_version == "v1":
+    if experiment_scope is not None:
+        if experiment_scope.get("independent_generalization_claims_allowed") is not False:
+            raise ValueError("An audited descriptive scope is required")
+        if sha256_file(windows_root / "window_protocol.json") != experiment_scope["window_protocol_sha256"]:
+            raise ValueError("Experiment protocol changed")
+        for role, expected in experiment_scope["source_pack_sha256"].items():
+            if role not in {"source_train", "source_validation", "source_calibration"} or sha256_file(windows_root / f"{role}.npz") != expected:
+                raise ValueError("Experiment inputs changed")
+    elif model_version in {"v1", "v2"} or run_name is not None:
         # Read provenance only. Neither V0 forest nor V0 neural weights is loaded.
         baseline = project_root / "data/aeris_models/v0"
         baseline_config = json.loads((baseline / "hybrid.json").read_text(encoding="utf-8"))
@@ -176,10 +203,11 @@ def train_source_hybrid(project_root: Path, *, model_version: str = "v0", device
             if sha256_file(windows_root / f"{role}.npz") != digest:
                 raise ValueError(f"{role} differs from V0; keep the frozen comparison split")
     environment = environment_check(device, temporal_kind)
+    code_provenance = git_provenance(project_root)
     print(f"Architecture: {architecture_id} | fresh RF fit + fresh neural initialization", flush=True)
     print(f"Temporal budget: {epochs} epochs | early stopping: {'disabled' if patience == 0 else patience}", flush=True)
     print(f"Training device: {environment.get('gpu', device)} | PyTorch {environment['packages']['torch']}", flush=True)
-    torch.set_num_threads(min(8, os.cpu_count() or 1))
+    torch.set_num_threads(min(2, os.cpu_count() or 1))
     random.seed(seed)
     np.random.seed(seed)
     torch.manual_seed(seed)
@@ -218,7 +246,7 @@ def train_source_hybrid(project_root: Path, *, model_version: str = "v0", device
     val_forest = temperature_probabilities(raw_val_forest, forest_temperature)
     val_temporal = temperature_probabilities(raw_val_temporal, temporal_temperature)
     candidates = []
-    for weight in [0.25, 0.5, 0.75]:
+    for weight in ([fusion_weight] if fusion_weight is not None else [0.25, 0.5, 0.75]):
         mixed = weight * val_forest + (1 - weight) * val_temporal
         result = metrics(validation["y"], mixed)
         candidates.append({"forest_weight": weight, "temporal_weight": 1 - weight,
@@ -232,6 +260,9 @@ def train_source_hybrid(project_root: Path, *, model_version: str = "v0", device
               "learning_stage": "initial_source_training", "initialization": "fresh",
               "parent_weights_loaded": False,
               "comparison_baseline_hybrid_sha256": baseline_manifest_sha,
+              "run_name": bundle_name, "fixed_fusion_weight": fusion_weight,
+              "experiment_scope": experiment_scope,
+              "code_provenance": code_provenance,
               "classes": CLASS_NAMES, "temporal_architecture": architecture,
               "forest_weight": weight, "temporal_weight": 1 - weight,
               "temperatures": {"forest": forest_temperature, "temporal": temporal_temperature, "hybrid": hybrid_temperature},
@@ -306,6 +337,11 @@ def train_source_hybrid(project_root: Path, *, model_version: str = "v0", device
                "parent_weights_loaded": False, "completed_temporal_epochs": len(history),
                "early_stopping_enabled": patience > 0,
                "comparison_baseline_hybrid_sha256": baseline_manifest_sha,
+               "run_name": bundle_name, "fixed_fusion_weight": fusion_weight,
+               "experiment_scope": experiment_scope,
+               "code_provenance": code_provenance,
+               "source_code_sha256": {name: sha256_file(Path(__file__).parent / name)
+                                      for name in ["training.py", "modeling.py", "features.py"]},
                "training_windows": len(train["y"]), "validation_windows": len(validation["y"]),
                "calibration_windows": len(calibration["y"]), "best_temporal_epoch": best_epoch,
                "temporal_parameter_count": sum(parameter.numel() for parameter in temporal.parameters()),
