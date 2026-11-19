@@ -1,0 +1,21 @@
+{
+  "purpose": "Test whether richer source sensor context contains diagnostic information missing from the 10-channel common contract. Separate source-only experiment, not a replacement or transfer claim.",
+  "channels": [
+    "AHU Supply Air Temperature Setpoint (\u00b0K)",
+    "Supply Air Mass Flow Rate (kg/s)",
+    "Outdoor Air Mass Flow Rate (kg/s)",
+    "Return Air Mass Flow Rate in the Mixing Box (kg/s)",
+    "Measured AHU Supply Air Duct Static Pressure (Pa)",
+    "AHU Supply Air Duct Static Pressure Setpoint (Pa)",
+    "AHU Outdoor Air Wet Bulb Temperature (\u00b0K)"
+  ],
+  "excluded": "true positions, labels, scenario identifiers, dates and time values as model inputs",
+  "alignment": "Original window IDs, row ranges and train/validation partitions unchanged. File identities only join rows; never features.",
+  "limitations": "Simulated source channels; sensor availability, measurement quality and semantics at target sites are not established. Any larger gain is not comparable as an algorithm-only improvement. No deployment from this script.",
+  "runs": 2,
+  "seeds": [
+    42,
+    43
+  ],
+  "iterations": 1200
+}

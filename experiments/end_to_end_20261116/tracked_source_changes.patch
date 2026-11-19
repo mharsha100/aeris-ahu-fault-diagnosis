@@ -1,0 +1,331 @@
+diff --git a/.gitignore b/.gitignore
+index 0ed39b4..36bde80 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -27,3 +27,7 @@ env/
+ /dist/manifest.json
+ /dist/validation_report.json
+ /dist/release_manifest.json
++
++# Local fitted checkpoints and full probability arrays from current experiments.
++experiments/end_to_end_20261116/*/best_state.pt
++experiments/end_to_end_20261116/*/predictions.npz
+diff --git a/README.md b/README.md
+index 25b8d2f..a60fe8a 100644
+--- a/README.md
++++ b/README.md
+@@ -1,5 +1,42 @@
+ # AERIS — AHU fault diagnosis
+ 
++## November 16 local implementation and deployment
++
++The new work is on `aeris-end-to-end-20261116`. Start with the
++[Windows runbook](docs/DEPLOYMENT_RUNBOOK.md), [current evidence](experiments/end_to_end_20261116/),
++[executed results and limitations](docs/RESULTS_20261116.md),
++[trustworthiness/risk update](docs/TRUSTWORTHINESS.md), and
++[verified course reference](docs/COURSE_REFERENCE.md). Historical milestone claims
++below are preserved and are not claims about the current live deployment.
++
++Run `docker compose up -d --build` from this checkout. The CPU demo is at
++http://127.0.0.1:8510, Prometheus at http://127.0.0.1:9091 and Grafana at
++http://127.0.0.1:3001/d/aeris-operations. Local fitted bundles and prepared inputs
++must exist under `data/`; they are intentionally outside Git and the image.
++Normal startup never trains. Use `python deployment/serve.py` for the host
++service plus UI; `streamlit run app.py` alone now requires the inference service.
++
++Predictions and optional technician feedback are linked in SQLite. Requests are
++explicit and idempotent; widget reruns do not count as new inference. Test and
++genuine cohorts are separate. No opinion, unverified correction or simulated
++reference label automatically enters training. Genuine reviewed candidate
++training is explicit in scripts/14_feedback_candidate.py and never promotes itself.
++
++New trials are fresh source-trained RF+TCN hybrids, with V0/V1/V2 architecture
++identities preserved, matched frozen partitions, and saved configs/curves.
++Model selection uses source development data only. Later-source and target
++scores are descriptive; target labels were historically exposed. Independent
++case coverage remains insufficient for new-setting claims. The deployed system
++is an offline research demonstration and does not control equipment.
++
++All 19 trials completed. The three tuned families failed the multi-seed safety
++guards, so their anchors are retained. The selected V2 anchor has source
++development macro F1 0.689975 and retrospective target macro F1 0.224315;
++this is not successful target transfer. Source development review coverage,
++missed-fault counts and the weak independent-case support are reported together.
++Browser visual verification remains pending after the computer-use safeguard
++stopped automation; live API and Streamlit server-side tests are recorded separately.
++
+ AERIS studies a hybrid Random Forest and temporal neural network for AHU diagnosis,
+ confidence handling and human review. V0, V1 and V2 denote evolving architectures;
+ cross-setting adaptation, technician-verified feedback, comparison and the operator
+diff --git a/app.py b/app.py
+index 2e9344a..471abcb 100644
+--- a/app.py
++++ b/app.py
+@@ -1,104 +1,114 @@
+-"""AERIS operator research interface. Run: python -m streamlit run app.py"""
++"""AERIS operator interface backed by the durable local inference service."""
+ from pathlib import Path
+-import json,sys,time,uuid
++import os,json,uuid,time
+ import numpy as np
+ import pandas as pd
++import requests
+ import streamlit as st
++from urllib.parse import urlparse
+ ROOT=Path(__file__).resolve().parent
+-sys.path.insert(0,str(ROOT/'src'))
+-from aeris.modeling import load_hybrid, CLASS_NAMES, sha256_file
+-from aeris.workflow import diagnose, canonical_window, feedback_update, restore_packaged_forests
+-restore_packaged_forests(ROOT)
++API=os.environ.get('AERIS_API','http://127.0.0.1:8001')
++CLASSES=['normal','damper_fault','cooling_valve_fault','heating_valve_fault']
+ st.set_page_config(page_title='AERIS · AHU diagnosis',page_icon='◉',layout='wide')
+-st.markdown('''<style>.stApp{background:#f5f7fb} h1,h2,h3{letter-spacing:-.025em} [data-testid="stMetric"]{background:white;padding:18px;border-radius:12px;border:1px solid #e3e8ef}</style>''',unsafe_allow_html=True)
+ st.title('AERIS · AHU diagnosis lab')
+-st.caption('Hybrid Random Forest + temporal neural networks · Research decision support · No automatic equipment actuation')
++st.caption('Random Forest + temporal neural network · Research decision support · No equipment control')
+ @st.cache_resource
+-def bundle(name, identity):
+- m=load_hybrid(ROOT/'data/aeris_models'/name);m.forest.n_jobs=1;return m
+-@st.cache_data
+-def data(role):
+- w=ROOT/'data/aeris_windows_v1';p={k:v for k,v in np.load(w/f'{role}.npz',allow_pickle=False).items()}
+- meta=pd.read_csv(w/'window_metadata.csv.gz').set_index('window_id').loc[p['window_id']].reset_index();return p,meta
+-available=[p.name for p in (ROOT/'data/aeris_models').glob('m4_*') if (p/'READY.json').exists()]
+-if not available:st.info('Training is running; complete bundles appear when checksum and reload checks pass.');st.stop()
+-selection=ROOT/'milestone4/evidence/component_selection.json'
+-default=json.loads(selection.read_text())['selected_initial_bundle'] if selection.exists() else 'm4_v0'
++def api_client():
++    client=requests.Session()
++    if urlparse(API).hostname in ['127.0.0.1','localhost','::1']:client.trust_env=False
++    return client
++client=api_client()
++def post(path,body):
++    r=client.post(API+path,json=body,timeout=60);r.raise_for_status();return r.json()
++try:ready=client.get(API+'/readyz',timeout=15).json()
++except requests.RequestException:
++    st.error('Inference service unavailable. Start with python deployment/serve.py or docker compose up -d.');st.stop()
+ with st.sidebar:
+- st.header('Model workspace')
+- name=st.selectbox('Trained bundle',sorted(available),index=sorted(available).index(default) if default in available else 0)
+- st.caption('V0: final step · V1: attention · V2: combined. Adaptation and feedback retain the architecture identity.')
+- st.warning('Three shared-weather source groups. Target data are retrospective and exploratory, not a sealed holdout.')
+-model=bundle(name,sha256_file(ROOT/'data/aeris_models'/name/'hybrid.json'))
++    st.header('Deployed model');st.write(ready.get('bundle') or 'Unavailable')
++    st.caption('V0: final state · V1: attention · V2: combined. Each prediction retains the bundle and adaptation stage.')
++    st.warning('Three shared-weather source conditions. Target recordings are retrospective. All unverified settings require technician review.')
++    cohort=st.selectbox('Feedback cohort',['test','genuine'],help='Use test for demonstrations. Genuine means actual operator feedback, not a reference-label simulation.')
++if not ready.get('model_ready'):st.error('Model not ready: '+str(ready.get('error')))
+ view,comparison,learning,evidence=st.tabs(['Diagnosis','Experiments','Adaptation & feedback','Evidence'])
+ with view:
+- source=st.radio('Input',['Recorded window','Upload canonical CSV'],horizontal=True)
+- raw=None;times=None;wid=None
+- if source=='Recorded window':
+-  role=st.selectbox('Recording pool',['source_validation','target_test'])
+-  pack,meta=data(role);ix=st.number_input('Window index',min_value=0,max_value=len(meta)-1,value=0,step=1)
+-  row=meta.iloc[ix];wid=str(row.window_id);raw=canonical_window(pack,ix,model.scaler);times=np.arange(15)*60+row.start_time_s
+-  setting=row.season if role.startswith('source') else row.dataset
+-  st.caption(f'{wid} · {setting} · {row.condition_group}')
+- else:
+-  st.caption('15 consecutive one-minute rows. Required: time_s, then 10 canonical columns. Temperatures in °C; commands 0–1. No imputation or silent unit inference.')
+-  features=model.protocol['core_features'];template=pd.DataFrame(columns=['time_s']+features)
+-  st.download_button('Download CSV template',template.to_csv(index=False),'aeris_input_template.csv','text/csv')
+-  file=st.file_uploader('Canonical sensor CSV',type='csv');setting=st.selectbox('AHU setting',['CoolingSeason','HeatingSeason','ShoulderSeason','SZVAV','SZCAV','Unknown'])
+-  if file:
+-   try:
+-    frame=pd.read_csv(file)
+-    if len(frame)!=15 or not set(['time_s']+features).issubset(frame.columns):raise ValueError('Expected exactly 15 rows and all required columns.')
+-    raw=frame[features].apply(pd.to_numeric,errors='raise').to_numpy('float32');times=pd.to_numeric(frame.time_s,errors='raise').to_numpy();wid='upload-'+uuid.uuid4().hex[:12]
+-   except (ValueError,KeyError) as exc:st.error(str(exc))
+- if raw is not None:
+-  started=time.perf_counter();result=diagnose(model,raw,setting=setting,timestamps=times,recorded_source=(source=='Recorded window' and role.startswith('source')));elapsed=time.perf_counter()-started
+-  st.session_state['last_result']=result
+-  if result['status']=='blocked':st.error('Input blocked: '+' '.join(result['reasons']))
+-  else:
+-   a,b,c=st.columns(3);a.metric('Suggested condition',result['class_name'].replace('_',' ').title());b.metric('Model confidence',f"{result['confidence']:.1%}");c.metric('Request compute',f'{elapsed*1000:.1f} ms')
+-   if result['reasons']:st.warning('Review required: '+' '.join(result['reasons']))
+-   else:st.info('Research prediction available. A technician must confirm the physical condition before action.')
+-   st.bar_chart(pd.DataFrame({'Hybrid':result['probabilities'],'Forest':result['forest_probabilities'],'Temporal':result['temporal_probabilities']},index=CLASS_NAMES))
+-   st.line_chart(pd.DataFrame(raw[:,:4],columns=features[:4] if source!='Recorded window' else model.protocol['core_features'][:4]))
+-   st.caption('Global forest feature importance and temporal attention describe model behavior; neither proves a physical cause.')
+-   with st.expander('Input rows and audit'):st.dataframe(pd.DataFrame(raw,columns=model.protocol['core_features']));st.json(result)
+-   st.download_button('Export diagnosis audit',json.dumps({'window_id':wid,'bundle':name,'setting':setting,'result':result},indent=2),'aeris_diagnosis.json','application/json')
+-   with st.form('operator_feedback'):
+-    st.subheader('Technician review queue')
+-    note=st.text_area('Observation / inspection note');label=st.selectbox('Inspection label',['Unverified']+CLASS_NAMES)
+-    verified=st.checkbox('I have independently verified this label by inspection (not by confidence alone).')
+-    if st.form_submit_button('Save review record'):
+-     if verified and label=='Unverified':st.error('Select an inspected label or leave the record unverified.')
+-     else:
+-      folder=ROOT/'data/operator_feedback';folder.mkdir(parents=True,exist_ok=True)
+-      record={'window_id':wid,'bundle':name,'note':note,'class_name':label,'verified':verified,'training_eligible':False,'reason':'Operator records require dataset alignment and a controlled reviewed update; saving never changes weights.'}
+-      (folder/f'{uuid.uuid4().hex}.json').write_text(json.dumps(record,indent=2));st.success('Review saved. Model weights are unchanged.')
++    source=st.radio('Input',['Recorded window','Upload canonical CSV'],horizontal=True)
++    body={'cohort':cohort};route='/recorded';valid=True
++    if source=='Recorded window':
++        body['role']=st.selectbox('Recording pool',['source_validation','target_test'])
++        body['index']=int(st.number_input('Window index',min_value=0,value=0,step=1))
++    else:
++        route='/infer';protocol=json.loads((ROOT/'data/aeris_windows_v1/window_protocol.json').read_text());features=protocol['core_features']
++        st.caption('Exactly 15 consecutive one-minute rows. Temperatures in °C; commands 0–1. Uploads always require review because site applicability has not been established.')
++        st.download_button('Download CSV template',pd.DataFrame(columns=['time_s']+features).to_csv(index=False),'aeris_input_template.csv')
++        body['setting']=st.selectbox('AHU setting',['CoolingSeason','HeatingSeason','ShoulderSeason','SZVAV','SZCAV','Unknown'])
++        file=st.file_uploader('Canonical sensor CSV',type='csv');valid=False
++        if file:
++            try:
++                frame=pd.read_csv(file)
++                if list(frame.columns)!=['time_s']+features or len(frame)!=15:raise ValueError('Require exact template columns and 15 rows; duplicate or extra columns are rejected.')
++                body['raw']=frame[features].apply(pd.to_numeric,errors='raise').to_numpy().tolist();body['timestamps']=pd.to_numeric(frame.time_s,errors='raise').tolist()
++                if not np.isfinite(np.asarray(body['raw'])).all():raise ValueError('Missing or nonfinite sensor data')
++                valid=True
++            except (ValueError,KeyError) as exc:st.error(str(exc))
++    if st.button('Diagnose',disabled=not valid or not ready.get('model_ready'),type='primary'):
++        started=time.perf_counter()
++        try:
++            record=post(route,{'request_id':uuid.uuid4().hex,**body});st.session_state['record']=record;st.session_state['ui_seconds']=time.perf_counter()-started
++        except requests.RequestException as exc:st.error('Diagnosis request failed: '+str(exc))
++    record=st.session_state.get('record')
++    if record:
++        r=record['result'];st.caption('Prediction '+record['prediction_id']+' · '+record['bundle']+' · '+record['cohort']+' · '+record['created'])
++        if r['status'] in ['blocked','error']:st.error(' '.join(r['reasons']))
++        else:
++            a,b,c=st.columns(3);a.metric('Suggested condition',r['class_name'].replace('_',' ').title());b.metric('Model confidence',f"{r['confidence']:.1%}");c.metric('UI request round trip',f"{st.session_state['ui_seconds']*1000:.1f} ms")
++            if r['reasons']:st.warning('Review required: '+' '.join(r['reasons']))
++            elif r.get('fault_review_priority'):st.warning('Escalate for technician review: both branches support a known fault in this recorded research setting. Confirm the physical condition before action.')
++            else:st.info('No confident known fault identified in this recorded research window. This is not clearance of the equipment; a technician must verify the physical condition before action.')
++            st.bar_chart(pd.DataFrame({'Hybrid':r['probabilities'],'Forest':r['forest_probabilities'],'Temporal':r['temporal_probabilities']},index=CLASSES))
++            with st.expander('Decision and prediction audit'):st.json(record)
++            st.download_button('Export diagnosis audit',json.dumps(record,indent=2),'aeris_diagnosis.json')
++            if st.button('Explain hybrid sensitivity'):
++                try:st.session_state['explanation']=(record['prediction_id'],post('/explain',{'prediction_id':record['prediction_id']}))
++                except requests.RequestException as exc:st.error(str(exc))
++            exp=st.session_state.get('explanation')
++            if exp and exp[0]==record['prediction_id']:
++                st.dataframe(exp[1]['values']);st.caption(exp[1]['limitation'])
++            with st.form('operator_feedback_'+record['prediction_id']):
++                st.subheader('Technician review queue')
++                agreement=st.selectbox('Agreement',['No response','agree','disagree','unsure'])
++                satisfaction=st.selectbox('Satisfaction',['No response',1,2,3,4,5])
++                corrected=st.selectbox('Override class',['No override']+CLASSES)
++                decision=st.selectbox('Override decision',['No override','review_required','escalate_for_review','research_prediction'])
++                note=st.text_area('Observation / inspection note')
++                label=st.selectbox('Independently inspected label',['Unverified']+CLASSES)
++                inspector=st.text_input('Inspector identity');provenance=st.text_input('Inspection evidence / work order reference')
++                verified=st.checkbox('I independently verified this label by inspection, not by confidence or a published reference.')
++                if st.form_submit_button('Save review record'):
++                    if verified and (label=='Unverified' or not inspector.strip() or not provenance.strip()):st.error('Verified inspection requires a class, inspector and evidence provenance.')
++                    else:
++                        payload=dict(agreement=None if agreement=='No response' else agreement,satisfaction=None if satisfaction=='No response' else satisfaction,corrected_class=None if corrected=='No override' else corrected,corrected_decision=None if decision=='No override' else decision,note=note,verified_class=label if verified else None,inspector=inspector,provenance=provenance)
++                        try:post('/feedback',{'prediction_id':record['prediction_id'],'feedback':payload});st.success('Review persisted. Training eligibility requires separate alignment and review. Model weights are unchanged.')
++                        except requests.RequestException as exc:st.error('Feedback was not saved: '+str(exc))
+ with comparison:
+- path=ROOT/'milestone4/evidence/results.csv'
+- if path.exists():st.dataframe(pd.read_csv(path),hide_index=True,width='stretch')
+- if selection.exists():st.json(json.loads(selection.read_text()))
+- st.caption('Controlled initial runs: fresh RF200 + fresh temporal NN50 epochs; seed42, fixed .5/.5 fusion, identical packs. All scores describe these recordings.')
+- errors=ROOT/'milestone4/evidence/error_examples.csv'
+- if errors.exists():st.subheader('Real model failures');st.dataframe(pd.read_csv(errors),hide_index=True)
++    st.subheader('Measured experiments');current=ROOT/'experiments/end_to_end_20261116/before_after.csv'
++    if current.exists():st.dataframe(pd.read_csv(current),hide_index=True)
++    else:st.info('New experiments are in progress; historical results below are separate evidence.')
++    historical=ROOT/'milestone4/evidence/results.csv'
++    if historical.exists():st.caption('Historical M4 reports — these are not live prediction measurements.');st.dataframe(pd.read_csv(historical),hide_index=True)
+ with learning:
+- st.subheader('Cross-setting adaptation and verified feedback')
+- st.write('Unlabeled target data pass fixed confidence, agreement, support, stability and diversity gates. Source replay and source retention checks control updates. A skipped or rejected update retains its parent.')
+- reports=[]
+- for p in (ROOT/'data/aeris_models').glob('m4_*'):
+-  for f in ['selection_summary.json','feedback_report.json']:
+-   if (p/f).exists():reports.append({'bundle':p.name,'report':f,**json.loads((p/f).read_text())})
+- for report in reports:
+-  with st.expander(report['bundle']+' · '+report['report']):st.json(report)
+- st.info('Published reference labels are used only in the explicitly simulated technician experiment. Unverified operator notes are never used as labels.')
+- fresh_name=st.selectbox('Architecture for controlled feedback replay',['m4_v0','m4_v1','m4_v2'])
+- if st.button('Run controlled reference-feedback experiment',disabled=(ROOT/'data/aeris_models'/f'{fresh_name}_feedback').exists()):
+-  with st.spinner('Training candidate and checking source retention…'):feedback_update(ROOT,fresh_name)
+-  st.success('Feedback experiment complete; inspect its acceptance/rollback report.');st.rerun()
++    st.subheader('Persistent feedback and reviewed updates')
++    try:
++        for k,s in client.get(API+'/summary',timeout=10).json().items():st.markdown('**'+k.title()+' cohort**');st.json(s)
++    except requests.RequestException as exc:st.error(str(exc))
++    st.info('Agreement and satisfaction are opinions. Independently inspected labels remain pending dataset alignment. Training and promotion are explicit offline steps with parent comparison and rollback; saving feedback never trains a model.')
++    if st.checkbox('Load historical adaptation reports'):
++        for p in (ROOT/'milestone4/model_records').glob('m4_*'):
++            for f in ['selection_summary.json','feedback_report.json']:
++                if (p/f).exists():
++                    with st.expander('Historical '+p.name+' / '+f):st.json(json.loads((p/f).read_text()))
+ with evidence:
+- st.subheader('Reproducibility and scope')
+- for f in ['readiness/audit.json','readiness/scope.json','validation_report.json','pipeline_status.json']:
+-  p=ROOT/'milestone4/evidence'/f
+-  if p.exists():
+-   with st.expander(f):st.json(json.loads(p.read_text()))
+- st.link_button('Original project repository','https://github.com/mharsha100/aeris-ahu-fault-diagnosis')
++    if st.checkbox('Load detailed evidence'):
++        for path in ['experiments/end_to_end_20261116/selection.json','experiments/end_to_end_20261116/audit.json','milestone4/evidence/readiness/scope.json']:
++            if (ROOT/path).exists():
++                with st.expander(path):st.json(json.loads((ROOT/path).read_text()))
++    st.link_button('Original project repository','https://github.com/mharsha100/aeris-ahu-fault-diagnosis')
+diff --git a/requirements.txt b/requirements.txt
+index 36db715..0f67593 100644
+--- a/requirements.txt
++++ b/requirements.txt
+@@ -8,3 +8,4 @@ scikit-learn==1.7.2
+ joblib==1.5.2
+ torch==2.9.1+cpu
+ streamlit==1.50.0
++requests==2.34.2
+diff --git a/src/aeris/modeling.py b/src/aeris/modeling.py
+index 47555c6..5f02da2 100644
+--- a/src/aeris/modeling.py
++++ b/src/aeris/modeling.py
+@@ -246,6 +246,12 @@ def load_hybrid(folder: str | Path, device: str = "cpu") -> HybridPredictor:
+     config = json.loads((folder / "hybrid.json").read_text(encoding="utf-8"))
+     if config["artifact_version"] != "aeris-hybrid-v1":
+         raise ValueError("Unsupported hybrid artifact version")
++    if config.get('classes') != CLASS_NAMES or not 0 < config.get('forest_weight', 0) < 1:
++        raise ValueError('AERIS requires the ordered four classes and both RF and temporal branches')
++    if set(config.get('temperatures', {})) != {'forest','temporal','hybrid'} or any(not np.isfinite(t) or t <= 0 for t in config['temperatures'].values()):
++        raise ValueError('All branch and hybrid calibration temperatures must be finite and positive')
++    if not 0 < config.get('review_confidence_threshold', 0) < 1:
++        raise ValueError('Invalid review confidence threshold')
+     required = {"forest.joblib", "temporal_state.pt", "source_scaler.json", "window_protocol.json"}
+     if set(config["artifact_sha256"]) != required:
+         raise ValueError("The model bundle does not contain the expected artifacts")
+diff --git a/src/aeris/training.py b/src/aeris/training.py
+index de9fc0f..f047a98 100644
+--- a/src/aeris/training.py
++++ b/src/aeris/training.py
+@@ -88,15 +88,17 @@ def load_source_partition(windows_root: Path, partition: str, protocol: dict) ->
+ 
+ 
+ def train_temporal(model: TemporalTCN, train: dict, validation: dict, *, device: str,
+-                   epochs: int, batch_size: int, patience: int, seed: int) -> tuple[list[dict], int]:
++                   epochs: int, batch_size: int, patience: int, seed: int,
++                   learning_rate: float = 0.001, weight_decay: float = 0.0001,
++                   class_weighted: bool = True, checkpoint_dir: Path | None = None) -> tuple[list[dict], int]:
+     class_counts = np.bincount(train["y"], minlength=4)
+     weights = len(train["y"]) / (4 * class_counts)
+-    criterion = nn.CrossEntropyLoss(weight=torch.tensor(weights, dtype=torch.float32, device=device))
++    criterion = nn.CrossEntropyLoss(weight=torch.tensor(weights, dtype=torch.float32, device=device) if class_weighted else None)
+     dataset = TensorDataset(torch.from_numpy(train["X_seq"]), torch.from_numpy(train["y"]))
+     generator = torch.Generator().manual_seed(seed)
+     loader = DataLoader(dataset, batch_size=batch_size, shuffle=True, generator=generator,
+                         num_workers=0, pin_memory=device == "cuda")
+-    optimizer = torch.optim.AdamW(model.parameters(), lr=0.001, weight_decay=0.0001)
++    optimizer = torch.optim.AdamW(model.parameters(), lr=learning_rate, weight_decay=weight_decay)
+     scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode="max", factor=0.5, patience=3, min_lr=0.00001)
+     best_score, best_loss, stale, best_epoch = -1.0, float("inf"), 0, 0
+     best_state = None
+@@ -132,6 +134,11 @@ def train_temporal(model: TemporalTCN, train: dict, validation: dict, *, device:
+                "learning_rate": optimizer.param_groups[0]["lr"],
+                "seconds": time.perf_counter() - started, "selected_checkpoint": improved}
+         history.append(row)
++        if checkpoint_dir is not None:
++            checkpoint_dir.mkdir(parents=True, exist_ok=True)
++            pd.DataFrame(history).to_csv(checkpoint_dir / 'learning_curve.csv', index=False)
++            if improved:
++                torch.save(best_state, checkpoint_dir / 'best_state.pt')
+         print(f"Epoch {epoch:02d}/{epochs} | loss={row['train_weighted_loss']:.4f} | val macro F1={score:.4f} | {row['seconds']:.1f}s", flush=True)
+         if patience > 0 and epoch >= min(10, epochs) and stale >= patience:
+             print(f"Early stopping; restoring epoch {best_epoch}.", flush=True)

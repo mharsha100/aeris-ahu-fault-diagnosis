@@ -1,0 +1,6 @@
+2026-11-16 18:44:04.202 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+20 server UI requests; p95=1.654s
+40 server UI requests; p95=1.858s
+60 server UI requests; p95=1.654s
+80 server UI requests; p95=1.654s
+100 server UI requests; p95=1.654s

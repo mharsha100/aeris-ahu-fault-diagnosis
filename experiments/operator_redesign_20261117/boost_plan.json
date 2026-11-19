@@ -1,0 +1,16 @@
+{
+  "created_before_results": true,
+  "method": "CatBoost 1.2.10; three representations; no target data or metadata features",
+  "representations": [
+    "66 summaries",
+    "112 physical features",
+    "112 physical features + all 150 standardized sequential values"
+  ],
+  "screening": 8,
+  "iterations_each": 1200,
+  "early_stopping": false,
+  "checkpoint_selection": "source validation macro F1; all 1200 iterations run",
+  "seed": 42,
+  "promotion": "Screening alone cannot promote. Require every seed42/43/44 of a hybrid retaining RF and temporal branches to improve matched-anchor macro F1 by >=.01, no recall loss >.03, no increase in fault-normal or accepted false-normal. Target never used for selection.",
+  "versions": "Existing V0/V1/V2 parents remain distinct; any successful boost is a same-architecture improvement stage."
+}

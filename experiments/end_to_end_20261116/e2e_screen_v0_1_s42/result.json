@@ -1,0 +1,160 @@
+{
+  "name": "e2e_screen_v0_1_s42",
+  "version": "v0",
+  "seed": 42,
+  "epochs": 10,
+  "best_epoch": 10,
+  "parameters": {
+    "trees": 300,
+    "depth": 24,
+    "leaf": 6,
+    "features": 0.5,
+    "rf_weight": "balanced_subsample",
+    "width": 48,
+    "dropout": 0.3,
+    "lr": 0.002,
+    "decay": 0.001,
+    "batch": 512,
+    "weighted": true,
+    "dilations": [
+      1,
+      2,
+      4
+    ]
+  },
+  "seconds": 30.645269399998142,
+  "runtime_scope": "Recovered completed trial: measured epoch time only; RF/calibration wall time was not persisted before failed cross-device check",
+  "rf_seconds": null,
+  "fusion": [
+    {
+      "weight": 0.25,
+      "macro_f1": 0.6804132396543671,
+      "log_loss": 0.5050236750759204,
+      "brier": 0.2964274602946749,
+      "fault_to_normal": 1246,
+      "fault_windows": 6468,
+      "normal_false_alarm": 134,
+      "recall": [
+        0.70995670995671,
+        0.7009894867037724,
+        0.7077922077922078,
+        0.8413729128014842
+      ],
+      "windows": 6930
+    },
+    {
+      "weight": 0.5,
+      "macro_f1": 0.6931726053116083,
+      "log_loss": 0.49731718919212947,
+      "brier": 0.28955781749354953,
+      "fault_to_normal": 721,
+      "fault_windows": 6468,
+      "normal_false_alarm": 212,
+      "recall": [
+        0.5411255411255411,
+        0.7943722943722944,
+        0.7119666048237476,
+        0.8376623376623377
+      ],
+      "windows": 6930
+    },
+    {
+      "weight": 0.75,
+      "macro_f1": 0.6921793544802077,
+      "log_loss": 0.49459811113543506,
+      "brier": 0.28794996327093186,
+      "fault_to_normal": 479,
+      "fault_windows": 6468,
+      "normal_false_alarm": 273,
+      "recall": [
+        0.4090909090909091,
+        0.8243661100803958,
+        0.7439703153988868,
+        0.8181818181818182
+      ],
+      "windows": 6930
+    },
+    {
+      "weight": 0.9,
+      "macro_f1": 0.6914043179504962,
+      "log_loss": 0.4953350452461429,
+      "brier": 0.28951090925504497,
+      "fault_to_normal": 418,
+      "fault_windows": 6468,
+      "normal_false_alarm": 288,
+      "recall": [
+        0.37662337662337664,
+        0.8330241187384044,
+        0.7509276437847866,
+        0.8107606679035251
+      ],
+      "windows": 6930
+    }
+  ],
+  "selected_weight": 0.5,
+  "hybrid": {
+    "macro_f1": 0.6931726053116083,
+    "log_loss": 0.4690564007684992,
+    "brier": 0.27824677881255405,
+    "fault_to_normal": 721,
+    "fault_windows": 6468,
+    "normal_false_alarm": 212,
+    "recall": [
+      0.5411255411255411,
+      0.7943722943722944,
+      0.7119666048237476,
+      0.8376623376623377
+    ],
+    "windows": 6930
+  },
+  "rf": {
+    "macro_f1": 0.6883049644256253,
+    "log_loss": 0.47697863769918175,
+    "brier": 0.2855482726621983,
+    "fault_to_normal": 405,
+    "fault_windows": 6468,
+    "normal_false_alarm": 293,
+    "recall": [
+      0.3658008658008658,
+      0.8302411873840445,
+      0.7546382189239332,
+      0.8051948051948052
+    ],
+    "windows": 6930
+  },
+  "temporal": {
+    "macro_f1": 0.6540620538911225,
+    "log_loss": 0.5331088327894462,
+    "brier": 0.31916312723080875,
+    "fault_to_normal": 1894,
+    "fault_windows": 6468,
+    "normal_false_alarm": 103,
+    "recall": [
+      0.7770562770562771,
+      0.5955473098330241,
+      0.7064007421150278,
+      0.7857142857142857
+    ],
+    "windows": 6930
+  },
+  "uncalibrated": {
+    "macro_f1": 0.6943094634808272,
+    "log_loss": 0.47465969377385847,
+    "brier": 0.28031331697002493,
+    "fault_to_normal": 650,
+    "fault_windows": 6468,
+    "normal_false_alarm": 227,
+    "recall": [
+      0.5086580086580087,
+      0.8073593073593074,
+      0.7175324675324676,
+      0.8293135435992579
+    ],
+    "windows": 6930
+  },
+  "status": "complete_recovered",
+  "bundle_sha256": "1e6c4dcc1857faa0001b2ecccc02db6e3307c92afc866c526d3ee51e2ca17890",
+  "cpu_cuda_max_abs_difference_all": 0.00021077737713448563,
+  "cpu_cuda_class_disagreements_all": 0,
+  "reload_cpu_max_abs_difference": 0
+}

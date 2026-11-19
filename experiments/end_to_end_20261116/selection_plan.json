@@ -1,0 +1,22 @@
+{
+  "screen_trials": 6,
+  "screen_epochs": 10,
+  "anchor_trials": 3,
+  "anchor_epochs": 50,
+  "finalist_seeds": [
+    42,
+    43,
+    44
+  ],
+  "finalist_epochs": 50,
+  "max_seconds": 14400,
+  "pilot_seconds": 30.430348299998514,
+  "criterion": "Source validation macro F1 primary. Relative to the matched anchor: no increase in fault-to-normal count or accepted false-normal count; no class recall drop >0.03. All thresholds provisional. Mandatory scope review. Choose within each architecture; deployment best eligible mean F1, then fewer false-normal errors. Retain anchor if no candidate passes.",
+  "target_scores_for_selection": false,
+  "hypotheses": [
+    "False-normal errors motivate RF leaf/depth/class balance and unweighted loss comparison.",
+    "Attention may overfit shared recordings: test width/dropout/weight decay.",
+    "Existing features already include rolling mean/std/min/max/last/trend; no missingness imputation without validation.",
+    "15-sample windows with RF=0.5 need fusion sensitivity and calibration checks."
+  ]
+}

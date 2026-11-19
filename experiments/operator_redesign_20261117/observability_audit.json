@@ -1,0 +1,61 @@
+{
+  "results": [
+    {
+      "temperature_rounding_C": 0,
+      "command_rounding": 0,
+      "windows": 6930,
+      "cross_label_collision_windows": 0,
+      "unique_windows": 6930,
+      "best_possible_lookup_correct_on_these_quantized_groups": 6930,
+      "class_collision_support": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "temperature_rounding_C": 0.001,
+      "command_rounding": 0.001,
+      "windows": 6930,
+      "cross_label_collision_windows": 927,
+      "unique_windows": 6234,
+      "best_possible_lookup_correct_on_these_quantized_groups": 6498,
+      "class_collision_support": [
+        147,
+        312,
+        188,
+        280
+      ]
+    },
+    {
+      "temperature_rounding_C": 0.01,
+      "command_rounding": 0.001,
+      "windows": 6930,
+      "cross_label_collision_windows": 1118,
+      "unique_windows": 6074,
+      "best_possible_lookup_correct_on_these_quantized_groups": 6367,
+      "class_collision_support": [
+        154,
+        426,
+        247,
+        291
+      ]
+    },
+    {
+      "temperature_rounding_C": 0.1,
+      "command_rounding": 0.001,
+      "windows": 6930,
+      "cross_label_collision_windows": 1167,
+      "unique_windows": 6027,
+      "best_possible_lookup_correct_on_these_quantized_groups": 6343,
+      "class_collision_support": [
+        154,
+        458,
+        259,
+        296
+      ]
+    }
+  ],
+  "interpretation": "This is an illustrative sensor-resolution study, not a bound on the original full-precision model or a proof of measurement uncertainty. Scenario labels can describe imposed faults that are inactive at a timestamp. Source validation only; not used to alter labels or choose a target model."
+}

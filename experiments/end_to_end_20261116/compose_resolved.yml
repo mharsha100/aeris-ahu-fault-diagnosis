@@ -1,0 +1,127 @@
+name: aeris
+services:
+  app:
+    build:
+      context: C:\MSAIS\EGN6216-AI SYSTEMS\AHU_PROJECT\aeris-data-warmup_updated
+      dockerfile: Dockerfile
+    image: aeris-local:20261116
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        host_ip: 127.0.0.1
+        target: 8501
+        published: "8510"
+        protocol: tcp
+      - mode: ingress
+        host_ip: 127.0.0.1
+        target: 8001
+        published: "8011"
+        protocol: tcp
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: C:\MSAIS\EGN6216-AI SYSTEMS\AHU_PROJECT\aeris-data-warmup_updated\data
+        target: /app/data
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: volume
+        source: feedback
+        target: /state
+        volume: {}
+  grafana:
+    environment:
+      GF_AUTH_ANONYMOUS_ENABLED: "true"
+      GF_AUTH_ANONYMOUS_ORG_ROLE: Viewer
+      GF_USERS_ALLOW_SIGN_UP: "false"
+    healthcheck:
+      test:
+        - CMD
+        - wget
+        - -q
+        - -O
+        - '-'
+        - http://localhost:3000/api/health
+      timeout: 5s
+      interval: 10s
+      retries: 12
+    image: grafana/grafana:12.2.1
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        host_ip: 127.0.0.1
+        target: 3000
+        published: "3001"
+        protocol: tcp
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: C:\MSAIS\EGN6216-AI SYSTEMS\AHU_PROJECT\aeris-data-warmup_updated\deployment\grafana\provisioning
+        target: /etc/grafana/provisioning
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\MSAIS\EGN6216-AI SYSTEMS\AHU_PROJECT\aeris-data-warmup_updated\deployment\grafana\dashboards
+        target: /var/lib/grafana/dashboards
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: volume
+        source: grafana
+        target: /var/lib/grafana
+        volume: {}
+  prometheus:
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+      - --storage.tsdb.path=/prometheus
+    healthcheck:
+      test:
+        - CMD
+        - wget
+        - -q
+        - -O
+        - '-'
+        - http://localhost:9090/-/healthy
+      timeout: 5s
+      interval: 10s
+      retries: 12
+    image: prom/prometheus:v3.7.3
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        host_ip: 127.0.0.1
+        target: 9090
+        published: "9091"
+        protocol: tcp
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: C:\MSAIS\EGN6216-AI SYSTEMS\AHU_PROJECT\aeris-data-warmup_updated\deployment\prometheus.yml
+        target: /etc/prometheus/prometheus.yml
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\MSAIS\EGN6216-AI SYSTEMS\AHU_PROJECT\aeris-data-warmup_updated\deployment\alerts.yml
+        target: /etc/prometheus/alerts.yml
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: volume
+        source: prometheus
+        target: /prometheus
+        volume: {}
+networks:
+  default:
+    name: aeris_default
+volumes:
+  feedback:
+    name: aeris_feedback
+  grafana:
+    name: aeris_grafana
+  prometheus:
+    name: aeris_prometheus

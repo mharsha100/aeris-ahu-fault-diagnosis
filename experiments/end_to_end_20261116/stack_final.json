@@ -1,0 +1,2155 @@
+{
+  "selected": "e2e_anchor_v2_s42",
+  "rollback_ready": {
+    "model_ready": true,
+    "app_up": true,
+    "bundle": "v1_attention",
+    "error": null
+  },
+  "rollback_prediction": {
+    "prediction_id": "228697489d2c488cbc672c420f074151",
+    "created": "2026-11-17T00:27:28.383371+00:00",
+    "bundle": "v1_attention",
+    "model_version": "v1",
+    "stage": "initial_source_training",
+    "setting": "CoolingSeason",
+    "cohort": "test",
+    "seconds": 0.41958756600070046,
+    "result": {
+      "status": "review_required",
+      "class_id": 2,
+      "class_name": "cooling_valve_fault",
+      "confidence": 0.37947355484819456,
+      "probabilities": [
+        0.29361476399638775,
+        0.3268006422523539,
+        0.37947355484819456,
+        0.00011103890306388844
+      ],
+      "forest_probabilities": [
+        0.2678303873879546,
+        0.3733793873068814,
+        0.3587901982408378,
+        2.706432599690619e-08
+      ],
+      "temporal_probabilities": [
+        0.3481201710291257,
+        0.28454054803400497,
+        0.36252125679003855,
+        0.004818024146830917
+      ],
+      "reasons": [
+        "Confidence is below the provisional 0.90 review threshold.",
+        "Classical and temporal branches disagree."
+      ],
+      "source_support_warning_samples": 0,
+      "policy_version": "m4-research-review-v2",
+      "automatic_actuation_allowed": false,
+      "fault_review_priority": false,
+      "limitation": "Research decision support. Confidence is not verified target accuracy.",
+      "unsupported_setting": false,
+      "shift_fraction": 0.0
+    }
+  },
+  "restored_ready": {
+    "model_ready": true,
+    "app_up": true,
+    "bundle": "e2e_anchor_v2_s42",
+    "error": null
+  },
+  "restored_prediction": {
+    "prediction_id": "8d18902d832c49b0b05ea88c556d10db",
+    "created": "2026-11-17T00:27:29.793892+00:00",
+    "bundle": "e2e_anchor_v2_s42",
+    "model_version": "v2",
+    "stage": "initial_source_training",
+    "setting": "CoolingSeason",
+    "cohort": "test",
+    "seconds": 0.1770231460004652,
+    "result": {
+      "status": "review_required",
+      "class_id": 1,
+      "class_name": "damper_fault",
+      "confidence": 0.3623135003375102,
+      "probabilities": [
+        0.2824745319693148,
+        0.3623135003375102,
+        0.3543431965249347,
+        0.0008687711682403119
+      ],
+      "forest_probabilities": [
+        0.2678303873879546,
+        0.3733793873068814,
+        0.3587901982408378,
+        2.706432599690619e-08
+      ],
+      "temporal_probabilities": [
+        0.36087441210033344,
+        0.3051349094566004,
+        0.3233823247999808,
+        0.010608353643085308
+      ],
+      "reasons": [
+        "Confidence is below the provisional 0.90 review threshold.",
+        "Classical and temporal branches disagree."
+      ],
+      "source_support_warning_samples": 0,
+      "policy_version": "m4-research-review-v2",
+      "automatic_actuation_allowed": false,
+      "fault_review_priority": false,
+      "limitation": "Research decision support. Confidence is not verified target accuracy.",
+      "unsupported_setting": false,
+      "shift_fraction": 0.0
+    }
+  },
+  "artifact_hashes_unchanged": true,
+  "targets": {
+    "status": "success",
+    "data": {
+      "activeTargets": [
+        {
+          "discoveredLabels": {
+            "__address__": "app:8001",
+            "__metrics_path__": "/metrics",
+            "__scheme__": "http",
+            "__scrape_interval__": "5s",
+            "__scrape_timeout__": "5s",
+            "job": "aeris"
+          },
+          "labels": {
+            "instance": "app:8001",
+            "job": "aeris"
+          },
+          "scrapePool": "aeris",
+          "scrapeUrl": "http://app:8001/metrics",
+          "globalUrl": "http://app:8001/metrics",
+          "lastError": "",
+          "lastScrape": "2026-11-17T00:27:25.391484138Z",
+          "lastScrapeDuration": 0.091968353,
+          "health": "up",
+          "scrapeInterval": "5s",
+          "scrapeTimeout": "5s"
+        }
+      ],
+      "droppedTargets": [],
+      "droppedTargetCounts": {
+        "aeris": 0
+      }
+    }
+  },
+  "container_health": [
+    {
+      "name": "/aeris-app-1",
+      "image": "aeris-local:20261116",
+      "image_id": "sha256:07a0481a5da65d6bc20e5c1c207d2f15bb9d1a7a6cc046ece29fd955fce41b1a",
+      "health": "healthy"
+    },
+    {
+      "name": "/aeris-grafana-1",
+      "image": "grafana/grafana:12.2.1",
+      "image_id": "sha256:35c41e0fd0295f5d0ee5db7e780cf33506abfaf47686196f825364889dee878b",
+      "health": "healthy"
+    },
+    {
+      "name": "/aeris-prometheus-1",
+      "image": "prom/prometheus:v3.7.3",
+      "image_id": "sha256:49214755b6153f90a597adcbff0252cc61069f8ab69ce8411285cd4a560e8038",
+      "health": "healthy"
+    }
+  ],
+  "dashboard": {
+    "meta": {
+      "type": "db",
+      "canSave": false,
+      "canEdit": false,
+      "canAdmin": false,
+      "canStar": false,
+      "canDelete": false,
+      "slug": "aeris-operations-and-feedback",
+      "url": "/d/aeris-operations/aeris-operations-and-feedback",
+      "expires": "0001-01-01T00:00:00Z",
+      "created": "2026-11-16T23:24:26Z",
+      "updated": "2026-11-16T23:37:08Z",
+      "updatedBy": "Anonymous",
+      "createdBy": "Anonymous",
+      "version": 2,
+      "hasAcl": false,
+      "isFolder": false,
+      "apiVersion": "v0alpha1",
+      "folderId": 0,
+      "folderUid": "",
+      "folderTitle": "General",
+      "folderUrl": "",
+      "provisioned": true,
+      "provisionedExternalId": "aeris.json",
+      "annotationsPermissions": {
+        "dashboard": {
+          "canAdd": false,
+          "canEdit": false,
+          "canDelete": false
+        },
+        "organization": {
+          "canAdd": false,
+          "canEdit": false,
+          "canDelete": false
+        }
+      }
+    },
+    "dashboard": {
+      "description": "Test and genuine cohorts separated. All feedback ratios show missing data for zero denominators. Verified labels do not establish independent operational accuracy. Inference timing excludes browser rendering.",
+      "id": 1,
+      "panels": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No data / insufficient support",
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 0,
+            "y": 0
+          },
+          "id": 1,
+          "options": {
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            }
+          },
+          "targets": [
+            {
+              "expr": "aeris_model_ready",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Model readiness",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No data / insufficient support",
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 6,
+            "y": 0
+          },
+          "id": 2,
+          "options": {
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            }
+          },
+          "targets": [
+            {
+              "expr": "aeris_app_up",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "UI availability",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No data / insufficient support",
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 12,
+            "y": 0
+          },
+          "id": 3,
+          "options": {
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            }
+          },
+          "targets": [
+            {
+              "expr": "up{job=\"aeris\"}",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Scrape availability",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No data / insufficient support",
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 18,
+            "y": 0
+          },
+          "id": 4,
+          "options": {
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            }
+          },
+          "targets": [
+            {
+              "expr": "aeris_eligible_predictions{cohort=\"$cohort\"}",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Eligible predictions",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No data / insufficient support",
+              "unit": "s"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 0,
+            "y": 4
+          },
+          "id": 5,
+          "options": {
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            }
+          },
+          "targets": [
+            {
+              "expr": "histogram_quantile(0.5, sum by(le)(rate(aeris_inference_seconds_bucket{cohort=\"$cohort\"}[5m])))",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Inference p50 seconds",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No data / insufficient support",
+              "unit": "s"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 6,
+            "y": 4
+          },
+          "id": 6,
+          "options": {
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            }
+          },
+          "targets": [
+            {
+              "expr": "histogram_quantile(0.95, sum by(le)(rate(aeris_inference_seconds_bucket{cohort=\"$cohort\"}[5m])))",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Inference p95 seconds",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No data / insufficient support",
+              "unit": "reqps"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 12,
+            "y": 4
+          },
+          "id": 7,
+          "options": {
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            }
+          },
+          "targets": [
+            {
+              "expr": "rate(aeris_requests_total{cohort=\"$cohort\"}[5m])",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Requests / second",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No data / insufficient support",
+              "unit": "percentunit"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 18,
+            "y": 4
+          },
+          "id": 8,
+          "options": {
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            }
+          },
+          "targets": [
+            {
+              "expr": "(rate(aeris_errors_total{cohort=\"$cohort\"}[5m]) / rate(aeris_requests_total{cohort=\"$cohort\"}[5m])) and (rate(aeris_requests_total{cohort=\"$cohort\"}[5m]) > 0)",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Error fraction",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No data / insufficient support",
+              "unit": "percentunit"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 0,
+            "y": 8
+          },
+          "id": 9,
+          "options": {
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            }
+          },
+          "targets": [
+            {
+              "expr": "(aeris_review_total{cohort=\"$cohort\"} / aeris_eligible_predictions{cohort=\"$cohort\"}) and (aeris_eligible_predictions{cohort=\"$cohort\"} > 0)",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Review fraction",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No data / insufficient support",
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 6,
+            "y": 8
+          },
+          "id": 10,
+          "options": {
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            }
+          },
+          "targets": [
+            {
+              "expr": "aeris_blocked_total{cohort=\"$cohort\"}",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Blocked inputs",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No data / insufficient support",
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 12,
+            "y": 8
+          },
+          "id": 11,
+          "options": {
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            }
+          },
+          "targets": [
+            {
+              "expr": "aeris_unsupported_total{cohort=\"$cohort\"}",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Unsupported inputs",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No data / insufficient support",
+              "unit": "percentunit"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 18,
+            "y": 8
+          },
+          "id": 12,
+          "options": {
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            }
+          },
+          "targets": [
+            {
+              "expr": "aeris_source_shift_fraction{cohort=\"$cohort\"}",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Fixed source shift fraction",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No data / insufficient support",
+              "unit": "percentunit"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 0,
+            "y": 12
+          },
+          "id": 13,
+          "options": {
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            }
+          },
+          "targets": [
+            {
+              "expr": "(aeris_predictions_with_feedback{cohort=\"$cohort\"} / aeris_eligible_predictions{cohort=\"$cohort\"}) and (aeris_eligible_predictions{cohort=\"$cohort\"} > 0)",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Feedback coverage",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No data / insufficient support",
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 6,
+            "y": 12
+          },
+          "id": 14,
+          "options": {
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            }
+          },
+          "targets": [
+            {
+              "expr": "aeris_predictions_with_feedback{cohort=\"$cohort\"}",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Feedback support",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No data / insufficient support",
+              "unit": "percentunit"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 12,
+            "y": 12
+          },
+          "id": 15,
+          "options": {
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            }
+          },
+          "targets": [
+            {
+              "expr": "(aeris_agree{cohort=\"$cohort\"} / (aeris_agree{cohort=\"$cohort\"} + aeris_disagree{cohort=\"$cohort\"})) and ((aeris_agree{cohort=\"$cohort\"} + aeris_disagree{cohort=\"$cohort\"}) > 0)",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Agreement fraction",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No data / insufficient support",
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 18,
+            "y": 12
+          },
+          "id": 16,
+          "options": {
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            }
+          },
+          "targets": [
+            {
+              "expr": "aeris_agree{cohort=\"$cohort\"} + aeris_disagree{cohort=\"$cohort\"}",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Agreement support",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No data / insufficient support",
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 0,
+            "y": 16
+          },
+          "id": 17,
+          "options": {
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            }
+          },
+          "targets": [
+            {
+              "expr": "aeris_unsure{cohort=\"$cohort\"}",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Unsure responses",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No data / insufficient support",
+              "unit": "percentunit"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 6,
+            "y": 16
+          },
+          "id": 18,
+          "options": {
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            }
+          },
+          "targets": [
+            {
+              "expr": "(aeris_overrides{cohort=\"$cohort\"} / aeris_reviewed_predictions{cohort=\"$cohort\"}) and (aeris_reviewed_predictions{cohort=\"$cohort\"} > 0)",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Override fraction",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No data / insufficient support",
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 12,
+            "y": 16
+          },
+          "id": 19,
+          "options": {
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            }
+          },
+          "targets": [
+            {
+              "expr": "(aeris_satisfaction_sum{cohort=\"$cohort\"} / aeris_satisfaction_responses{cohort=\"$cohort\"}) and (aeris_satisfaction_responses{cohort=\"$cohort\"} > 0)",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Satisfaction mean",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No data / insufficient support",
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 18,
+            "y": 16
+          },
+          "id": 20,
+          "options": {
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            }
+          },
+          "targets": [
+            {
+              "expr": "aeris_satisfaction_responses{cohort=\"$cohort\"}",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Satisfaction support",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No data / insufficient support",
+              "unit": "percentunit"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 0,
+            "y": 20
+          },
+          "id": 21,
+          "options": {
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            }
+          },
+          "targets": [
+            {
+              "expr": "(aeris_verified_labels{cohort=\"$cohort\"} / aeris_eligible_predictions{cohort=\"$cohort\"}) and (aeris_eligible_predictions{cohort=\"$cohort\"} > 0)",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Verified-label coverage",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No data / insufficient support",
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 6,
+            "y": 20
+          },
+          "id": 22,
+          "options": {
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            }
+          },
+          "targets": [
+            {
+              "expr": "aeris_verified_labels{cohort=\"$cohort\"}",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Verified labels (not independent cases)",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No data / insufficient support",
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 12,
+            "y": 20
+          },
+          "id": 23,
+          "options": {
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            }
+          },
+          "targets": [
+            {
+              "expr": "aeris_setting_requests_total{cohort=\"$cohort\"}",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Setting coverage",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No data / insufficient support",
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 18,
+            "y": 20
+          },
+          "id": 24,
+          "options": {
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            }
+          },
+          "targets": [
+            {
+              "expr": "aeris_shift_support{cohort=\"$cohort\"}",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Shift support (last 100)",
+          "type": "stat"
+        }
+      ],
+      "refresh": "5s",
+      "schemaVersion": 41,
+      "tags": [
+        "AERIS",
+        "EGN6216"
+      ],
+      "templating": {
+        "list": [
+          {
+            "current": {
+              "text": "test",
+              "value": "test"
+            },
+            "name": "cohort",
+            "options": [
+              {
+                "selected": true,
+                "text": "test",
+                "value": "test"
+              },
+              {
+                "selected": false,
+                "text": "genuine",
+                "value": "genuine"
+              }
+            ],
+            "query": "test,genuine",
+            "type": "custom"
+          }
+        ]
+      },
+      "time": {
+        "from": "now-30m",
+        "to": "now"
+      },
+      "title": "AERIS operations and feedback",
+      "uid": "aeris-operations",
+      "version": 2
+    }
+  },
+  "feedback_summary": {
+    "genuine": {
+      "cohort": "genuine",
+      "time_window": "all persisted records since deployment ledger creation",
+      "eligible_predictions": 0,
+      "predictions_with_feedback": 0,
+      "feedback_coverage": null,
+      "agree": 0,
+      "disagree": 0,
+      "unsure": 0,
+      "agreement": null,
+      "reviewed_predictions": 0,
+      "overrides": 0,
+      "override_rate": null,
+      "satisfaction_responses": 0,
+      "satisfaction_sum": 0,
+      "satisfaction_mean": null,
+      "verified_labels": 0,
+      "verified_label_coverage": null,
+      "verified_quality_status": "insufficient independent-case evidence; no operational accuracy claim",
+      "genuine_ground_truth": true
+    },
+    "test": {
+      "cohort": "test",
+      "time_window": "all persisted records since deployment ledger creation",
+      "eligible_predictions": 413,
+      "predictions_with_feedback": 5,
+      "feedback_coverage": 0.012106537530266344,
+      "agree": 0,
+      "disagree": 0,
+      "unsure": 5,
+      "agreement": null,
+      "reviewed_predictions": 5,
+      "overrides": 0,
+      "override_rate": 0.0,
+      "satisfaction_responses": 5,
+      "satisfaction_sum": 20,
+      "satisfaction_mean": 4.0,
+      "verified_labels": 0,
+      "verified_label_coverage": 0.0,
+      "verified_quality_status": "insufficient independent-case evidence; no operational accuracy claim",
+      "genuine_ground_truth": false
+    }
+  },
+  "grafana_queries": {
+    "aeris_eligible_predictions": {
+      "status": "success",
+      "data": {
+        "resultType": "vector",
+        "result": [
+          {
+            "metric": {
+              "__name__": "aeris_eligible_predictions",
+              "cohort": "test",
+              "instance": "app:8001",
+              "job": "aeris"
+            },
+            "value": [
+              1794875254.926,
+              "413"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "aeris_eligible_predictions",
+              "cohort": "genuine",
+              "instance": "app:8001",
+              "job": "aeris"
+            },
+            "value": [
+              1794875254.926,
+              "0"
+            ]
+          }
+        ]
+      }
+    },
+    "aeris_predictions_with_feedback": {
+      "status": "success",
+      "data": {
+        "resultType": "vector",
+        "result": [
+          {
+            "metric": {
+              "__name__": "aeris_predictions_with_feedback",
+              "cohort": "test",
+              "instance": "app:8001",
+              "job": "aeris"
+            },
+            "value": [
+              1794875254.932,
+              "5"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "aeris_predictions_with_feedback",
+              "cohort": "genuine",
+              "instance": "app:8001",
+              "job": "aeris"
+            },
+            "value": [
+              1794875254.932,
+              "0"
+            ]
+          }
+        ]
+      }
+    },
+    "aeris_model_ready": {
+      "status": "success",
+      "data": {
+        "resultType": "vector",
+        "result": [
+          {
+            "metric": {
+              "__name__": "aeris_model_ready",
+              "instance": "app:8001",
+              "job": "aeris"
+            },
+            "value": [
+              1794875254.955,
+              "1"
+            ]
+          }
+        ]
+      }
+    },
+    "aeris_app_up": {
+      "status": "success",
+      "data": {
+        "resultType": "vector",
+        "result": [
+          {
+            "metric": {
+              "__name__": "aeris_app_up",
+              "instance": "app:8001",
+              "job": "aeris"
+            },
+            "value": [
+              1794875254.984,
+              "1"
+            ]
+          }
+        ]
+      }
+    },
+    "aeris_setting_requests_total": {
+      "status": "success",
+      "data": {
+        "resultType": "vector",
+        "result": [
+          {
+            "metric": {
+              "__name__": "aeris_setting_requests_total",
+              "cohort": "test",
+              "instance": "app:8001",
+              "job": "aeris",
+              "setting": "CoolingSeason"
+            },
+            "value": [
+              1794875254.99,
+              "411"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "aeris_setting_requests_total",
+              "cohort": "test",
+              "instance": "app:8001",
+              "job": "aeris",
+              "setting": "HeatingSeason"
+            },
+            "value": [
+              1794875254.99,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "aeris_setting_requests_total",
+              "cohort": "test",
+              "instance": "app:8001",
+              "job": "aeris",
+              "setting": "ShoulderSeason"
+            },
+            "value": [
+              1794875254.99,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "aeris_setting_requests_total",
+              "cohort": "test",
+              "instance": "app:8001",
+              "job": "aeris",
+              "setting": "SZVAV"
+            },
+            "value": [
+              1794875254.99,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "aeris_setting_requests_total",
+              "cohort": "test",
+              "instance": "app:8001",
+              "job": "aeris",
+              "setting": "SZCAV"
+            },
+            "value": [
+              1794875254.99,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "aeris_setting_requests_total",
+              "cohort": "test",
+              "instance": "app:8001",
+              "job": "aeris",
+              "setting": "Unknown"
+            },
+            "value": [
+              1794875254.99,
+              "8"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "aeris_setting_requests_total",
+              "cohort": "genuine",
+              "instance": "app:8001",
+              "job": "aeris",
+              "setting": "CoolingSeason"
+            },
+            "value": [
+              1794875254.99,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "aeris_setting_requests_total",
+              "cohort": "genuine",
+              "instance": "app:8001",
+              "job": "aeris",
+              "setting": "HeatingSeason"
+            },
+            "value": [
+              1794875254.99,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "aeris_setting_requests_total",
+              "cohort": "genuine",
+              "instance": "app:8001",
+              "job": "aeris",
+              "setting": "ShoulderSeason"
+            },
+            "value": [
+              1794875254.99,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "aeris_setting_requests_total",
+              "cohort": "genuine",
+              "instance": "app:8001",
+              "job": "aeris",
+              "setting": "SZVAV"
+            },
+            "value": [
+              1794875254.99,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "aeris_setting_requests_total",
+              "cohort": "genuine",
+              "instance": "app:8001",
+              "job": "aeris",
+              "setting": "SZCAV"
+            },
+            "value": [
+              1794875254.99,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "aeris_setting_requests_total",
+              "cohort": "genuine",
+              "instance": "app:8001",
+              "job": "aeris",
+              "setting": "Unknown"
+            },
+            "value": [
+              1794875254.99,
+              "0"
+            ]
+          }
+        ]
+      }
+    },
+    "aeris_verified_class_support": {
+      "status": "success",
+      "data": {
+        "resultType": "vector",
+        "result": [
+          {
+            "metric": {
+              "__name__": "aeris_verified_class_support",
+              "class_name": "normal",
+              "cohort": "test",
+              "instance": "app:8001",
+              "job": "aeris",
+              "setting": "CoolingSeason"
+            },
+            "value": [
+              1794875255.012,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "aeris_verified_class_support",
+              "class_name": "damper_fault",
+              "cohort": "test",
+              "instance": "app:8001",
+              "job": "aeris",
+              "setting": "CoolingSeason"
+            },
+            "value": [
+              1794875255.012,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "aeris_verified_class_support",
+              "class_name": "cooling_valve_fault",
+              "cohort": "test",
+              "instance": "app:8001",
+              "job": "aeris",
+              "setting": "CoolingSeason"
+            },
+            "value": [
+              1794875255.012,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "aeris_verified_class_support",
+              "class_name": "heating_valve_fault",
+              "cohort": "test",
+              "instance": "app:8001",
+              "job": "aeris",
+              "setting": "CoolingSeason"
+            },
+            "value": [
+              1794875255.012,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "aeris_verified_class_support",
+              "class_name": "normal",
+              "cohort": "test",
+              "instance": "app:8001",
+              "job": "aeris",
+              "setting": "HeatingSeason"
+            },
+            "value": [
+              1794875255.012,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "aeris_verified_class_support",
+              "class_name": "damper_fault",
+              "cohort": "test",
+              "instance": "app:8001",
+              "job": "aeris",
+              "setting": "HeatingSeason"
+            },
+            "value": [
+              1794875255.012,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "aeris_verified_class_support",
+              "class_name": "cooling_valve_fault",
+              "cohort": "test",
+              "instance": "app:8001",
+              "job": "aeris",
+              "setting": "HeatingSeason"
+            },
+            "value": [
+              1794875255.012,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "aeris_verified_class_support",
+              "class_name": "heating_valve_fault",
+              "cohort": "test",
+              "instance": "app:8001",
+              "job": "aeris",
+              "setting": "HeatingSeason"
+            },
+            "value": [
+              1794875255.012,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "aeris_verified_class_support",
+              "class_name": "normal",
+              "cohort": "test",
+              "instance": "app:8001",
+              "job": "aeris",
+              "setting": "ShoulderSeason"
+            },
+            "value": [
+              1794875255.012,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "aeris_verified_class_support",
+              "class_name": "damper_fault",
+              "cohort": "test",
+              "instance": "app:8001",
+              "job": "aeris",
+              "setting": "ShoulderSeason"
+            },
+            "value": [
+              1794875255.012,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "aeris_verified_class_support",
+              "class_name": "cooling_valve_fault",
+              "cohort": "test",
+              "instance": "app:8001",
+              "job": "aeris",
+              "setting": "ShoulderSeason"
+            },
+            "value": [
+              1794875255.012,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "aeris_verified_class_support",
+              "class_name": "heating_valve_fault",
+              "cohort": "test",
+              "instance": "app:8001",
+              "job": "aeris",
+              "setting": "ShoulderSeason"
+            },
+            "value": [
+              1794875255.012,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "aeris_verified_class_support",
+              "class_name": "normal",
+              "cohort": "test",
+              "instance": "app:8001",
+              "job": "aeris",
+              "setting": "SZVAV"
+            },
+            "value": [
+              1794875255.012,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "aeris_verified_class_support",
+              "class_name": "damper_fault",
+              "cohort": "test",
+              "instance": "app:8001",
+              "job": "aeris",
+              "setting": "SZVAV"
+            },
+            "value": [
+              1794875255.012,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "aeris_verified_class_support",
+              "class_name": "cooling_valve_fault",
+              "cohort": "test",
+              "instance": "app:8001",
+              "job": "aeris",
+              "setting": "SZVAV"
+            },
+            "value": [
+              1794875255.012,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "aeris_verified_class_support",
+              "class_name": "heating_valve_fault",
+              "cohort": "test",
+              "instance": "app:8001",
+              "job": "aeris",
+              "setting": "SZVAV"
+            },
+            "value": [
+              1794875255.012,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "aeris_verified_class_support",
+              "class_name": "normal",
+              "cohort": "test",
+              "instance": "app:8001",
+              "job": "aeris",
+              "setting": "SZCAV"
+            },
+            "value": [
+              1794875255.012,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "aeris_verified_class_support",
+              "class_name": "damper_fault",
+              "cohort": "test",
+              "instance": "app:8001",
+              "job": "aeris",
+              "setting": "SZCAV"
+            },
+            "value": [
+              1794875255.012,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "aeris_verified_class_support",
+              "class_name": "cooling_valve_fault",
+              "cohort": "test",
+              "instance": "app:8001",
+              "job": "aeris",
+              "setting": "SZCAV"
+            },
+            "value": [
+              1794875255.012,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "aeris_verified_class_support",
+              "class_name": "heating_valve_fault",
+              "cohort": "test",
+              "instance": "app:8001",
+              "job": "aeris",
+              "setting": "SZCAV"
+            },
+            "value": [
+              1794875255.012,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "aeris_verified_class_support",
+              "class_name": "normal",
+              "cohort": "test",
+              "instance": "app:8001",
+              "job": "aeris",
+              "setting": "Unknown"
+            },
+            "value": [
+              1794875255.012,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "aeris_verified_class_support",
+              "class_name": "damper_fault",
+              "cohort": "test",
+              "instance": "app:8001",
+              "job": "aeris",
+              "setting": "Unknown"
+            },
+            "value": [
+              1794875255.012,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "aeris_verified_class_support",
+              "class_name": "cooling_valve_fault",
+              "cohort": "test",
+              "instance": "app:8001",
+              "job": "aeris",
+              "setting": "Unknown"
+            },
+            "value": [
+              1794875255.012,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "aeris_verified_class_support",
+              "class_name": "heating_valve_fault",
+              "cohort": "test",
+              "instance": "app:8001",
+              "job": "aeris",
+              "setting": "Unknown"
+            },
+            "value": [
+              1794875255.012,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "aeris_verified_class_support",
+              "class_name": "normal",
+              "cohort": "genuine",
+              "instance": "app:8001",
+              "job": "aeris",
+              "setting": "CoolingSeason"
+            },
+            "value": [
+              1794875255.012,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "aeris_verified_class_support",
+              "class_name": "damper_fault",
+              "cohort": "genuine",
+              "instance": "app:8001",
+              "job": "aeris",
+              "setting": "CoolingSeason"
+            },
+            "value": [
+              1794875255.012,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "aeris_verified_class_support",
+              "class_name": "cooling_valve_fault",
+              "cohort": "genuine",
+              "instance": "app:8001",
+              "job": "aeris",
+              "setting": "CoolingSeason"
+            },
+            "value": [
+              1794875255.012,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "aeris_verified_class_support",
+              "class_name": "heating_valve_fault",
+              "cohort": "genuine",
+              "instance": "app:8001",
+              "job": "aeris",
+              "setting": "CoolingSeason"
+            },
+            "value": [
+              1794875255.012,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "aeris_verified_class_support",
+              "class_name": "normal",
+              "cohort": "genuine",
+              "instance": "app:8001",
+              "job": "aeris",
+              "setting": "HeatingSeason"
+            },
+            "value": [
+              1794875255.012,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "aeris_verified_class_support",
+              "class_name": "damper_fault",
+              "cohort": "genuine",
+              "instance": "app:8001",
+              "job": "aeris",
+              "setting": "HeatingSeason"
+            },
+            "value": [
+              1794875255.012,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "aeris_verified_class_support",
+              "class_name": "cooling_valve_fault",
+              "cohort": "genuine",
+              "instance": "app:8001",
+              "job": "aeris",
+              "setting": "HeatingSeason"
+            },
+            "value": [
+              1794875255.012,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "aeris_verified_class_support",
+              "class_name": "heating_valve_fault",
+              "cohort": "genuine",
+              "instance": "app:8001",
+              "job": "aeris",
+              "setting": "HeatingSeason"
+            },
+            "value": [
+              1794875255.012,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "aeris_verified_class_support",
+              "class_name": "normal",
+              "cohort": "genuine",
+              "instance": "app:8001",
+              "job": "aeris",
+              "setting": "ShoulderSeason"
+            },
+            "value": [
+              1794875255.012,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "aeris_verified_class_support",
+              "class_name": "damper_fault",
+              "cohort": "genuine",
+              "instance": "app:8001",
+              "job": "aeris",
+              "setting": "ShoulderSeason"
+            },
+            "value": [
+              1794875255.012,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "aeris_verified_class_support",
+              "class_name": "cooling_valve_fault",
+              "cohort": "genuine",
+              "instance": "app:8001",
+              "job": "aeris",
+              "setting": "ShoulderSeason"
+            },
+            "value": [
+              1794875255.012,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "aeris_verified_class_support",
+              "class_name": "heating_valve_fault",
+              "cohort": "genuine",
+              "instance": "app:8001",
+              "job": "aeris",
+              "setting": "ShoulderSeason"
+            },
+            "value": [
+              1794875255.012,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "aeris_verified_class_support",
+              "class_name": "normal",
+              "cohort": "genuine",
+              "instance": "app:8001",
+              "job": "aeris",
+              "setting": "SZVAV"
+            },
+            "value": [
+              1794875255.012,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "aeris_verified_class_support",
+              "class_name": "damper_fault",
+              "cohort": "genuine",
+              "instance": "app:8001",
+              "job": "aeris",
+              "setting": "SZVAV"
+            },
+            "value": [
+              1794875255.012,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "aeris_verified_class_support",
+              "class_name": "cooling_valve_fault",
+              "cohort": "genuine",
+              "instance": "app:8001",
+              "job": "aeris",
+              "setting": "SZVAV"
+            },
+            "value": [
+              1794875255.012,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "aeris_verified_class_support",
+              "class_name": "heating_valve_fault",
+              "cohort": "genuine",
+              "instance": "app:8001",
+              "job": "aeris",
+              "setting": "SZVAV"
+            },
+            "value": [
+              1794875255.012,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "aeris_verified_class_support",
+              "class_name": "normal",
+              "cohort": "genuine",
+              "instance": "app:8001",
+              "job": "aeris",
+              "setting": "SZCAV"
+            },
+            "value": [
+              1794875255.012,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "aeris_verified_class_support",
+              "class_name": "damper_fault",
+              "cohort": "genuine",
+              "instance": "app:8001",
+              "job": "aeris",
+              "setting": "SZCAV"
+            },
+            "value": [
+              1794875255.012,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "aeris_verified_class_support",
+              "class_name": "cooling_valve_fault",
+              "cohort": "genuine",
+              "instance": "app:8001",
+              "job": "aeris",
+              "setting": "SZCAV"
+            },
+            "value": [
+              1794875255.012,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "aeris_verified_class_support",
+              "class_name": "heating_valve_fault",
+              "cohort": "genuine",
+              "instance": "app:8001",
+              "job": "aeris",
+              "setting": "SZCAV"
+            },
+            "value": [
+              1794875255.012,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "aeris_verified_class_support",
+              "class_name": "normal",
+              "cohort": "genuine",
+              "instance": "app:8001",
+              "job": "aeris",
+              "setting": "Unknown"
+            },
+            "value": [
+              1794875255.012,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "aeris_verified_class_support",
+              "class_name": "damper_fault",
+              "cohort": "genuine",
+              "instance": "app:8001",
+              "job": "aeris",
+              "setting": "Unknown"
+            },
+            "value": [
+              1794875255.012,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "aeris_verified_class_support",
+              "class_name": "cooling_valve_fault",
+              "cohort": "genuine",
+              "instance": "app:8001",
+              "job": "aeris",
+              "setting": "Unknown"
+            },
+            "value": [
+              1794875255.012,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "aeris_verified_class_support",
+              "class_name": "heating_valve_fault",
+              "cohort": "genuine",
+              "instance": "app:8001",
+              "job": "aeris",
+              "setting": "Unknown"
+            },
+            "value": [
+              1794875255.012,
+              "0"
+            ]
+          }
+        ]
+      }
+    },
+    "(aeris_agree{cohort=\"genuine\"}/(aeris_agree{cohort=\"genuine\"}+aeris_disagree{cohort=\"genuine\"})) and ((aeris_agree{cohort=\"genuine\"}+aeris_disagree{cohort=\"genuine\"})>0)": {
+      "status": "success",
+      "data": {
+        "resultType": "vector",
+        "result": []
+      }
+    }
+  },
+  "browser_visual_verified": false
+}

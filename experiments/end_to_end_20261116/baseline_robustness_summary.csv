@@ -1,0 +1,13 @@
+bundle,case,windows,false_normal,accepted_false_normal
+v0,clean,100,7,0
+v0,dropout,100,0,0
+v0,noise_0.2C,100,2,0
+v0,offset_supply_1C,100,0,0
+v0,stuck_supply,100,2,0
+v0,unknown_setting,100,7,0
+v1_attention,clean,100,10,0
+v1_attention,dropout,100,0,0
+v1_attention,noise_0.2C,100,8,0
+v1_attention,offset_supply_1C,100,3,0
+v1_attention,stuck_supply,100,10,0
+v1_attention,unknown_setting,100,10,0

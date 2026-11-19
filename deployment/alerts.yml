@@ -1,0 +1,31 @@
+groups:
+  - name: aeris
+    rules:
+      - alert: AerisUnavailable
+        expr: up{job="aeris"} == 0 or aeris_model_ready == 0 or aeris_app_up == 0
+        for: 15s
+        labels: {severity: critical, owner: project_operator}
+        annotations:
+          summary: AERIS cannot serve a verified diagnosis
+          response: Check app logs, mounted bundle and hashes; restore last verified selection. No equipment action.
+      - alert: AerisSourceShift
+        expr: aeris_source_shift_fraction > 0.20 and aeris_shift_support >= 20
+        for: 30s
+        labels: {severity: warning, owner: model_reviewer}
+        annotations:
+          summary: Recent temperature inputs exceed fixed source-scale support
+          response: Inspect sensor units and context. Require review and revalidate before any model update.
+      - alert: AerisReviewBurden
+        expr: (increase(aeris_review_total[5m]) / (increase(aeris_requests_total[5m]) - increase(aeris_blocked_total[5m]) - increase(aeris_errors_total[5m])) > 0.8) and (increase(aeris_requests_total[5m]) - increase(aeris_blocked_total[5m]) - increase(aeris_errors_total[5m])) >= 20
+        for: 1m
+        labels: {severity: warning, owner: model_reviewer}
+        annotations:
+          summary: Review burden exceeds provisional workload threshold
+          response: Check setting mix and shift. Retain gates; investigate coverage.
+      - alert: AerisLearningWorkerUnavailable
+        expr: aeris_learning_worker_up == 0
+        for: 2m
+        labels: {severity: warning, owner: project_operator}
+        annotations:
+          summary: Background adaptation trainer is unavailable
+          response: Inspect learner logs. Inference continues with the last approved model; queued samples remain durable.

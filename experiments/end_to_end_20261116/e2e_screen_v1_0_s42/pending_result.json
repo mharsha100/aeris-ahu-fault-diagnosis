@@ -1,0 +1,155 @@
+{
+  "name": "e2e_screen_v1_0_s42",
+  "version": "v1",
+  "seed": 42,
+  "epochs": 10,
+  "best_epoch": 9,
+  "parameters": {
+    "trees": 100,
+    "depth": 12,
+    "leaf": 1,
+    "features": 0.7,
+    "rf_weight": null,
+    "width": 16,
+    "dropout": 0.05,
+    "lr": 0.0005,
+    "decay": 1e-05,
+    "batch": 128,
+    "weighted": false,
+    "dilations": [
+      1,
+      2,
+      4
+    ]
+  },
+  "seconds": 93.34760770000139,
+  "rf_seconds": 33.361215700000685,
+  "fusion": [
+    {
+      "weight": 0.25,
+      "macro_f1": 0.6083532347134083,
+      "log_loss": 0.4624548167140651,
+      "brier": 0.2708088784696111,
+      "fault_to_normal": 0,
+      "fault_windows": 6468,
+      "normal_false_alarm": 462,
+      "recall": [
+        0.0,
+        0.9650587507730365,
+        0.6859925788497218,
+        0.7588126159554731
+      ],
+      "windows": 6930
+    },
+    {
+      "weight": 0.5,
+      "macro_f1": 0.6167116945109987,
+      "log_loss": 0.4747484040600375,
+      "brier": 0.27776834907334347,
+      "fault_to_normal": 0,
+      "fault_windows": 6468,
+      "normal_false_alarm": 455,
+      "recall": [
+        0.015151515151515152,
+        0.9591836734693877,
+        0.6938775510204082,
+        0.7653061224489796
+      ],
+      "windows": 6930
+    },
+    {
+      "weight": 0.75,
+      "macro_f1": 0.6349089755488552,
+      "log_loss": 0.49060101332950307,
+      "brier": 0.28827886492328747,
+      "fault_to_normal": 14,
+      "fault_windows": 6468,
+      "normal_false_alarm": 438,
+      "recall": [
+        0.05194805194805195,
+        0.9424860853432282,
+        0.7166048237476809,
+        0.7736549165120594
+      ],
+      "windows": 6930
+    },
+    {
+      "weight": 0.9,
+      "macro_f1": 0.6392978883161567,
+      "log_loss": 0.502030835156075,
+      "brier": 0.29628967615143553,
+      "fault_to_normal": 79,
+      "fault_windows": 6468,
+      "normal_false_alarm": 428,
+      "recall": [
+        0.0735930735930736,
+        0.9183673469387755,
+        0.7309833024118738,
+        0.7792207792207793
+      ],
+      "windows": 6930
+    }
+  ],
+  "selected_weight": 0.9,
+  "hybrid": {
+    "macro_f1": 0.6392978883161567,
+    "log_loss": 0.5176554805828083,
+    "brier": 0.3037203189142639,
+    "fault_to_normal": 79,
+    "fault_windows": 6468,
+    "normal_false_alarm": 428,
+    "recall": [
+      0.0735930735930736,
+      0.9183673469387755,
+      0.7309833024118738,
+      0.7792207792207793
+    ],
+    "windows": 6930
+  },
+  "rf": {
+    "macro_f1": 0.6432599720575161,
+    "log_loss": 0.5383384898630617,
+    "brier": 0.2874713215766559,
+    "fault_to_normal": 91,
+    "fault_windows": 6468,
+    "normal_false_alarm": 420,
+    "recall": [
+      0.09090909090909091,
+      0.904143475572047,
+      0.737012987012987,
+      0.7922077922077922
+    ],
+    "windows": 6930
+  },
+  "temporal": {
+    "macro_f1": 0.6090625245638501,
+    "log_loss": 0.44569798892623247,
+    "brier": 0.26365848553057397,
+    "fault_to_normal": 0,
+    "fault_windows": 6468,
+    "normal_false_alarm": 462,
+    "recall": [
+      0.0,
+      0.9641311069882499,
+      0.6924860853432282,
+      0.7541743970315399
+    ],
+    "windows": 6930
+  },
+  "uncalibrated": {
+    "macro_f1": 0.6411063050048686,
+    "log_loss": 0.4845030734164839,
+    "brier": 0.281218040093972,
+    "fault_to_normal": 83,
+    "fault_windows": 6468,
+    "normal_false_alarm": 424,
+    "recall": [
+      0.08225108225108226,
+      0.9097093382807668,
+      0.7365491651205937,
+      0.7847866419294991
+    ],
+    "windows": 6930
+  },
+  "status": "complete"
+}

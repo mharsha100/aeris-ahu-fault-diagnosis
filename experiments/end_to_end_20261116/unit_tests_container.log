@@ -1,0 +1,20 @@
+test_config_hash_rejects_tampering (test_bundle_contract.BundleContractTests.test_config_hash_rejects_tampering) ... ok
+test_reject_single_branch_even_with_valid_manifest_hash (test_bundle_contract.BundleContractTests.test_reject_single_branch_even_with_valid_manifest_hash) ... ok
+test_empty_and_simulated_labels_rejected (test_feedback_review.FeedbackEligibility.test_empty_and_simulated_labels_rejected) ... ok
+test_duplicate_and_restart (test_operations.LedgerTests.test_duplicate_and_restart) ... ok
+test_feedback_denominators_and_provenance (test_operations.LedgerTests.test_feedback_denominators_and_provenance) ... ok
+test_malformed_input (test_operations.LedgerTests.test_malformed_input) ... ok
+test_metric_labels (test_operations.LedgerTests.test_metric_labels) ... ok
+test_confidence_and_agreement (test_review_policy.ReviewPolicy.test_confidence_and_agreement) ... ok
+test_feedback_always_review_and_no_actuation (test_review_policy.ReviewPolicy.test_feedback_always_review_and_no_actuation) ... ok
+test_scope_overrides_confidence (test_review_policy.ReviewPolicy.test_scope_overrides_confidence) ... ok
+test_sensor_and_time_controls (test_review_policy.ReviewPolicy.test_sensor_and_time_controls) ... ok
+test_recovery_reloads_cleared_model_without_restart (test_service.ServiceTests.test_recovery_reloads_cleared_model_without_restart) ... ok
+test_same_request_does_not_infer_again (test_service.ServiceTests.test_same_request_does_not_infer_again) ... ok
+test_unavailable_model_is_error_not_prediction (test_service.ServiceTests.test_unavailable_model_is_error_not_prediction) ... ok
+test_unverified_settings_and_missing_timestamps (test_service.ServiceTests.test_unverified_settings_and_missing_timestamps) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 6.944s
+
+OK

@@ -1,0 +1,1377 @@
+{
+  "environment": {
+    "python": "3.11.9",
+    "python_executable": "C:\\Users\\mhars\\miniconda3\\envs\\aeris-data\\python.exe",
+    "device": "cuda",
+    "cuda_available": true,
+    "torch_cuda_runtime": "12.8",
+    "device_test": "passed",
+    "packages": {
+      "numpy": "2.4.6",
+      "pandas": "2.2.3",
+      "scipy": "1.16.3",
+      "scikit-learn": "1.7.2",
+      "joblib": "1.5.2",
+      "torch": "2.9.1+cu128"
+    },
+    "gpu": "NVIDIA GeForce RTX 4070 Laptop GPU",
+    "gpu_memory_bytes": 8585216000,
+    "cudnn_version": 91002
+  },
+  "m4_bundles_missing": [
+    "m4_v0",
+    "m4_v1",
+    "m4_v2"
+  ],
+  "historical": {
+    "v0": {
+      "model_version": "v0",
+      "architecture_id": "rf_tcn_last_v0",
+      "learning_stage": "initial_source_training",
+      "initialization": "fresh",
+      "parent_weights_loaded": false,
+      "completed_temporal_epochs": 50,
+      "early_stopping_enabled": false,
+      "comparison_baseline_hybrid_sha256": null,
+      "run_name": "m4_v0",
+      "fixed_fusion_weight": 0.5,
+      "experiment_scope": {
+        "version": "m4-within-recording-v1",
+        "question": "Within the selected AHU recordings, how do final-step, attention, and combined temporal summaries change descriptive diagnostic errors, class recall and review workload?",
+        "data": "Selected 45 G36-1wk source runs; existing LBNL SZVAV/SZCAV files are exploratory target data",
+        "prediction_unit": "15-minute sensor window, stride 5 minutes",
+        "condition_unit": "Seasonal shared-weather week across baseline and fault severities",
+        "source_condition_groups": 3,
+        "within_condition_time_separation": "Earlier/later days in the same shared-weather week; not independent-condition train/validation separation",
+        "retained_claim": "Descriptive, conditional results on these recordings and implemented workflow controls",
+        "independent_generalization_claims_allowed": false,
+        "target_labels_previously_exposed": true,
+        "target_is_sealed_holdout": false,
+        "target_benchmark_label": "Retrospective exploratory benchmark",
+        "original_independent_case_floor": 5,
+        "original_floor_lowered": false,
+        "window_count_is_independent_case_count": false,
+        "significance_or_population_CI_from_windows_allowed": false,
+        "independent_case_comparison_status": "blocked_under_original_m3_rule",
+        "fixed_training": {
+          "epochs": 50,
+          "patience": 0,
+          "seed": 42,
+          "batch_size": 256,
+          "rf_trees": 200,
+          "rf_weight": 0.5,
+          "temporal_weight": 0.5
+        },
+        "architecture_experiments": [
+          {
+            "name": "E1_pooling",
+            "question": "Does attention pooling change errors relative to final-step pooling?",
+            "variants": [
+              "m4_v0",
+              "m4_v1"
+            ],
+            "change": "Temporal summary",
+            "fixed": "Data, RF/encoder/optimizer settings, training budget, seed, fusion and scoring"
+          },
+          {
+            "name": "E2_combination",
+            "question": "Does combining final-step and attention summaries improve the diagnostic tradeoff?",
+            "variants": [
+              "m4_v1",
+              "m4_v2"
+            ],
+            "change": "Combine both summaries with a learned head",
+            "fixed": "Same data, RF/encoder/optimizer settings, training budget, seed, fusion and scoring; parameter count changes are reported"
+          }
+        ],
+        "interpretation_limits": [
+          "Data share weather, occupancy and simulated system dynamics; time separation does not create new independent conditions.",
+          "Macro F1 and per-class metrics are development descriptions, not estimates of transfer to unseen buildings.",
+          "Published target schedules/labels were explored earlier; withholding y arrays later does not restore a sealed holdout.",
+          "Matching units and nominal signal roles do not prove matching multi-zone and single-zone dynamics.",
+          "Probability thresholds and rule tests demonstrate policy behavior, not verified diagnostic safety."
+        ],
+        "data_rebuild": {
+          "mode": "fresh_public_data_rebuild",
+          "raw_file_and_split_records_match_historical": true,
+          "scaler_semantically_identical": true,
+          "serialized_pack_hashes_match_historical": false,
+          "historical_weights_available": false,
+          "note": "New pack hashes and protocol are frozen for ALL three new runs. Historical numbers remain separate; no historical model is reconstructed from metadata."
+        },
+        "source_runs_current": 45,
+        "source_runs_in_original_m3": 33,
+        "source_pack_sha256": {
+          "source_train": "126104ec5350c11085f221dad6384f95c69fc1b18bbca97aca3f096c0adb4cc8",
+          "source_validation": "06a04691dc11c7aa69de884486be15b52a6d492edb2750b95185d40f1f25b304",
+          "source_calibration": "c0336055ec4b0c381a192f3b9906c15e0547bd1a11949466e4de512c9929e565"
+        },
+        "window_protocol_sha256": "5ea370343e85a137ed1d1b0b64dfefa3367028a9619de12f6a542371fcd357b7"
+      },
+      "code_provenance": {
+        "commit": "8f7e81dc4efbadfe5d8a0164636291aa01d2d38b",
+        "tracked_worktree_dirty": false
+      },
+      "source_code_sha256": {
+        "training.py": "ab5a23f37b08e6292ac78ef5c58c8d76de4cc8a11a78aa6ffa5dedce48451e04",
+        "modeling.py": "bf75ee1e410a5e95b7bf1f07514c104185492a7ad202a70a49c7f7f29b907f2e",
+        "features.py": "c082ae189f3af35d6f25db705ea4079dd5f25bb135e484c0f608b398136afcf8"
+      },
+      "training_windows": 27720,
+      "validation_windows": 6930,
+      "calibration_windows": 6930,
+      "best_temporal_epoch": 44,
+      "temporal_parameter_count": 17380,
+      "forest_fit_seconds": 9.068326940999896,
+      "seed": 42,
+      "forest_parameters": {
+        "bootstrap": true,
+        "ccp_alpha": 0.0,
+        "class_weight": "balanced_subsample",
+        "criterion": "gini",
+        "max_depth": 18,
+        "max_features": "sqrt",
+        "max_leaf_nodes": null,
+        "max_samples": null,
+        "min_impurity_decrease": 0.0,
+        "min_samples_leaf": 3,
+        "min_samples_split": 2,
+        "min_weight_fraction_leaf": 0.0,
+        "monotonic_cst": null,
+        "n_estimators": 200,
+        "n_jobs": -1,
+        "oob_score": false,
+        "random_state": 42,
+        "verbose": 0,
+        "warm_start": false
+      },
+      "temporal_training": {
+        "maximum_epochs": 50,
+        "batch_size": 256,
+        "patience": 0,
+        "optimizer": "AdamW",
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "class_weighted_loss": true
+      },
+      "window_protocol_sha256": "5ea370343e85a137ed1d1b0b64dfefa3367028a9619de12f6a542371fcd357b7",
+      "source_pack_sha256": {
+        "source_train": "126104ec5350c11085f221dad6384f95c69fc1b18bbca97aca3f096c0adb4cc8",
+        "source_validation": "06a04691dc11c7aa69de884486be15b52a6d492edb2750b95185d40f1f25b304",
+        "source_calibration": "c0336055ec4b0c381a192f3b9906c15e0547bd1a11949466e4de512c9929e565"
+      },
+      "source_only": true,
+      "final_tests_opened": false,
+      "saved_reload_max_abs_difference": 2.7755575615628914e-16,
+      "notes": [
+        "Validation results were used for model/fusion choices and are not final generalization estimates.",
+        "Calibration parameters use source calibration days only; target calibration is not guaranteed.",
+        "The review confidence threshold is provisional. Branch agreement does not establish label correctness.",
+        "Global forest importances are not local or causal explanations."
+      ]
+    },
+    "v1": {
+      "model_version": "v1",
+      "architecture_id": "rf_tcn_attention_v1",
+      "learning_stage": "initial_source_training",
+      "initialization": "fresh",
+      "parent_weights_loaded": false,
+      "completed_temporal_epochs": 50,
+      "early_stopping_enabled": false,
+      "comparison_baseline_hybrid_sha256": null,
+      "run_name": "m4_v1",
+      "fixed_fusion_weight": 0.5,
+      "experiment_scope": {
+        "version": "m4-within-recording-v1",
+        "question": "Within the selected AHU recordings, how do final-step, attention, and combined temporal summaries change descriptive diagnostic errors, class recall and review workload?",
+        "data": "Selected 45 G36-1wk source runs; existing LBNL SZVAV/SZCAV files are exploratory target data",
+        "prediction_unit": "15-minute sensor window, stride 5 minutes",
+        "condition_unit": "Seasonal shared-weather week across baseline and fault severities",
+        "source_condition_groups": 3,
+        "within_condition_time_separation": "Earlier/later days in the same shared-weather week; not independent-condition train/validation separation",
+        "retained_claim": "Descriptive, conditional results on these recordings and implemented workflow controls",
+        "independent_generalization_claims_allowed": false,
+        "target_labels_previously_exposed": true,
+        "target_is_sealed_holdout": false,
+        "target_benchmark_label": "Retrospective exploratory benchmark",
+        "original_independent_case_floor": 5,
+        "original_floor_lowered": false,
+        "window_count_is_independent_case_count": false,
+        "significance_or_population_CI_from_windows_allowed": false,
+        "independent_case_comparison_status": "blocked_under_original_m3_rule",
+        "fixed_training": {
+          "epochs": 50,
+          "patience": 0,
+          "seed": 42,
+          "batch_size": 256,
+          "rf_trees": 200,
+          "rf_weight": 0.5,
+          "temporal_weight": 0.5
+        },
+        "architecture_experiments": [
+          {
+            "name": "E1_pooling",
+            "question": "Does attention pooling change errors relative to final-step pooling?",
+            "variants": [
+              "m4_v0",
+              "m4_v1"
+            ],
+            "change": "Temporal summary",
+            "fixed": "Data, RF/encoder/optimizer settings, training budget, seed, fusion and scoring"
+          },
+          {
+            "name": "E2_combination",
+            "question": "Does combining final-step and attention summaries improve the diagnostic tradeoff?",
+            "variants": [
+              "m4_v1",
+              "m4_v2"
+            ],
+            "change": "Combine both summaries with a learned head",
+            "fixed": "Same data, RF/encoder/optimizer settings, training budget, seed, fusion and scoring; parameter count changes are reported"
+          }
+        ],
+        "interpretation_limits": [
+          "Data share weather, occupancy and simulated system dynamics; time separation does not create new independent conditions.",
+          "Macro F1 and per-class metrics are development descriptions, not estimates of transfer to unseen buildings.",
+          "Published target schedules/labels were explored earlier; withholding y arrays later does not restore a sealed holdout.",
+          "Matching units and nominal signal roles do not prove matching multi-zone and single-zone dynamics.",
+          "Probability thresholds and rule tests demonstrate policy behavior, not verified diagnostic safety."
+        ],
+        "data_rebuild": {
+          "mode": "fresh_public_data_rebuild",
+          "raw_file_and_split_records_match_historical": true,
+          "scaler_semantically_identical": true,
+          "serialized_pack_hashes_match_historical": false,
+          "historical_weights_available": false,
+          "note": "New pack hashes and protocol are frozen for ALL three new runs. Historical numbers remain separate; no historical model is reconstructed from metadata."
+        },
+        "source_runs_current": 45,
+        "source_runs_in_original_m3": 33,
+        "source_pack_sha256": {
+          "source_train": "126104ec5350c11085f221dad6384f95c69fc1b18bbca97aca3f096c0adb4cc8",
+          "source_validation": "06a04691dc11c7aa69de884486be15b52a6d492edb2750b95185d40f1f25b304",
+          "source_calibration": "c0336055ec4b0c381a192f3b9906c15e0547bd1a11949466e4de512c9929e565"
+        },
+        "window_protocol_sha256": "5ea370343e85a137ed1d1b0b64dfefa3367028a9619de12f6a542371fcd357b7"
+      },
+      "code_provenance": {
+        "commit": "6417deeea9c33b09f941270e089d2d372fd80ecd",
+        "tracked_worktree_dirty": false
+      },
+      "source_code_sha256": {
+        "training.py": "ab5a23f37b08e6292ac78ef5c58c8d76de4cc8a11a78aa6ffa5dedce48451e04",
+        "modeling.py": "bf75ee1e410a5e95b7bf1f07514c104185492a7ad202a70a49c7f7f29b907f2e",
+        "features.py": "c082ae189f3af35d6f25db705ea4079dd5f25bb135e484c0f608b398136afcf8"
+      },
+      "training_windows": 27720,
+      "validation_windows": 6930,
+      "calibration_windows": 6930,
+      "best_temporal_epoch": 31,
+      "temporal_parameter_count": 18468,
+      "forest_fit_seconds": 8.422351226000046,
+      "seed": 42,
+      "forest_parameters": {
+        "bootstrap": true,
+        "ccp_alpha": 0.0,
+        "class_weight": "balanced_subsample",
+        "criterion": "gini",
+        "max_depth": 18,
+        "max_features": "sqrt",
+        "max_leaf_nodes": null,
+        "max_samples": null,
+        "min_impurity_decrease": 0.0,
+        "min_samples_leaf": 3,
+        "min_samples_split": 2,
+        "min_weight_fraction_leaf": 0.0,
+        "monotonic_cst": null,
+        "n_estimators": 200,
+        "n_jobs": -1,
+        "oob_score": false,
+        "random_state": 42,
+        "verbose": 0,
+        "warm_start": false
+      },
+      "temporal_training": {
+        "maximum_epochs": 50,
+        "batch_size": 256,
+        "patience": 0,
+        "optimizer": "AdamW",
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "class_weighted_loss": true
+      },
+      "window_protocol_sha256": "5ea370343e85a137ed1d1b0b64dfefa3367028a9619de12f6a542371fcd357b7",
+      "source_pack_sha256": {
+        "source_train": "126104ec5350c11085f221dad6384f95c69fc1b18bbca97aca3f096c0adb4cc8",
+        "source_validation": "06a04691dc11c7aa69de884486be15b52a6d492edb2750b95185d40f1f25b304",
+        "source_calibration": "c0336055ec4b0c381a192f3b9906c15e0547bd1a11949466e4de512c9929e565"
+      },
+      "source_only": true,
+      "final_tests_opened": false,
+      "saved_reload_max_abs_difference": 2.220446049250313e-16,
+      "notes": [
+        "Validation results were used for model/fusion choices and are not final generalization estimates.",
+        "Calibration parameters use source calibration days only; target calibration is not guaranteed.",
+        "The review confidence threshold is provisional. Branch agreement does not establish label correctness.",
+        "Global forest importances are not local or causal explanations."
+      ]
+    },
+    "v2": {
+      "model_version": "v2",
+      "architecture_id": "rf_tcn_combined_v2",
+      "learning_stage": "initial_source_training",
+      "initialization": "fresh",
+      "parent_weights_loaded": false,
+      "completed_temporal_epochs": 50,
+      "early_stopping_enabled": false,
+      "comparison_baseline_hybrid_sha256": null,
+      "run_name": "m4_v2",
+      "fixed_fusion_weight": 0.5,
+      "experiment_scope": {
+        "version": "m4-within-recording-v1",
+        "question": "Within the selected AHU recordings, how do final-step, attention, and combined temporal summaries change descriptive diagnostic errors, class recall and review workload?",
+        "data": "Selected 45 G36-1wk source runs; existing LBNL SZVAV/SZCAV files are exploratory target data",
+        "prediction_unit": "15-minute sensor window, stride 5 minutes",
+        "condition_unit": "Seasonal shared-weather week across baseline and fault severities",
+        "source_condition_groups": 3,
+        "within_condition_time_separation": "Earlier/later days in the same shared-weather week; not independent-condition train/validation separation",
+        "retained_claim": "Descriptive, conditional results on these recordings and implemented workflow controls",
+        "independent_generalization_claims_allowed": false,
+        "target_labels_previously_exposed": true,
+        "target_is_sealed_holdout": false,
+        "target_benchmark_label": "Retrospective exploratory benchmark",
+        "original_independent_case_floor": 5,
+        "original_floor_lowered": false,
+        "window_count_is_independent_case_count": false,
+        "significance_or_population_CI_from_windows_allowed": false,
+        "independent_case_comparison_status": "blocked_under_original_m3_rule",
+        "fixed_training": {
+          "epochs": 50,
+          "patience": 0,
+          "seed": 42,
+          "batch_size": 256,
+          "rf_trees": 200,
+          "rf_weight": 0.5,
+          "temporal_weight": 0.5
+        },
+        "architecture_experiments": [
+          {
+            "name": "E1_pooling",
+            "question": "Does attention pooling change errors relative to final-step pooling?",
+            "variants": [
+              "m4_v0",
+              "m4_v1"
+            ],
+            "change": "Temporal summary",
+            "fixed": "Data, RF/encoder/optimizer settings, training budget, seed, fusion and scoring"
+          },
+          {
+            "name": "E2_combination",
+            "question": "Does combining final-step and attention summaries improve the diagnostic tradeoff?",
+            "variants": [
+              "m4_v1",
+              "m4_v2"
+            ],
+            "change": "Combine both summaries with a learned head",
+            "fixed": "Same data, RF/encoder/optimizer settings, training budget, seed, fusion and scoring; parameter count changes are reported"
+          }
+        ],
+        "interpretation_limits": [
+          "Data share weather, occupancy and simulated system dynamics; time separation does not create new independent conditions.",
+          "Macro F1 and per-class metrics are development descriptions, not estimates of transfer to unseen buildings.",
+          "Published target schedules/labels were explored earlier; withholding y arrays later does not restore a sealed holdout.",
+          "Matching units and nominal signal roles do not prove matching multi-zone and single-zone dynamics.",
+          "Probability thresholds and rule tests demonstrate policy behavior, not verified diagnostic safety."
+        ],
+        "data_rebuild": {
+          "mode": "fresh_public_data_rebuild",
+          "raw_file_and_split_records_match_historical": true,
+          "scaler_semantically_identical": true,
+          "serialized_pack_hashes_match_historical": false,
+          "historical_weights_available": false,
+          "note": "New pack hashes and protocol are frozen for ALL three new runs. Historical numbers remain separate; no historical model is reconstructed from metadata."
+        },
+        "source_runs_current": 45,
+        "source_runs_in_original_m3": 33,
+        "source_pack_sha256": {
+          "source_train": "126104ec5350c11085f221dad6384f95c69fc1b18bbca97aca3f096c0adb4cc8",
+          "source_validation": "06a04691dc11c7aa69de884486be15b52a6d492edb2750b95185d40f1f25b304",
+          "source_calibration": "c0336055ec4b0c381a192f3b9906c15e0547bd1a11949466e4de512c9929e565"
+        },
+        "window_protocol_sha256": "5ea370343e85a137ed1d1b0b64dfefa3367028a9619de12f6a542371fcd357b7"
+      },
+      "code_provenance": {
+        "commit": "8f7e81dc4efbadfe5d8a0164636291aa01d2d38b",
+        "tracked_worktree_dirty": true
+      },
+      "source_code_sha256": {
+        "training.py": "ab5a23f37b08e6292ac78ef5c58c8d76de4cc8a11a78aa6ffa5dedce48451e04",
+        "modeling.py": "bf75ee1e410a5e95b7bf1f07514c104185492a7ad202a70a49c7f7f29b907f2e",
+        "features.py": "c082ae189f3af35d6f25db705ea4079dd5f25bb135e484c0f608b398136afcf8"
+      },
+      "training_windows": 27720,
+      "validation_windows": 6930,
+      "calibration_windows": 6930,
+      "best_temporal_epoch": 34,
+      "temporal_parameter_count": 20548,
+      "forest_fit_seconds": 23.571221294999987,
+      "seed": 42,
+      "forest_parameters": {
+        "bootstrap": true,
+        "ccp_alpha": 0.0,
+        "class_weight": "balanced_subsample",
+        "criterion": "gini",
+        "max_depth": 18,
+        "max_features": "sqrt",
+        "max_leaf_nodes": null,
+        "max_samples": null,
+        "min_impurity_decrease": 0.0,
+        "min_samples_leaf": 3,
+        "min_samples_split": 2,
+        "min_weight_fraction_leaf": 0.0,
+        "monotonic_cst": null,
+        "n_estimators": 200,
+        "n_jobs": -1,
+        "oob_score": false,
+        "random_state": 42,
+        "verbose": 0,
+        "warm_start": false
+      },
+      "temporal_training": {
+        "maximum_epochs": 50,
+        "batch_size": 256,
+        "patience": 0,
+        "optimizer": "AdamW",
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "class_weighted_loss": true
+      },
+      "window_protocol_sha256": "5ea370343e85a137ed1d1b0b64dfefa3367028a9619de12f6a542371fcd357b7",
+      "source_pack_sha256": {
+        "source_train": "126104ec5350c11085f221dad6384f95c69fc1b18bbca97aca3f096c0adb4cc8",
+        "source_validation": "06a04691dc11c7aa69de884486be15b52a6d492edb2750b95185d40f1f25b304",
+        "source_calibration": "c0336055ec4b0c381a192f3b9906c15e0547bd1a11949466e4de512c9929e565"
+      },
+      "source_only": true,
+      "final_tests_opened": false,
+      "saved_reload_max_abs_difference": 1.1102230246251565e-16,
+      "notes": [
+        "Validation results were used for model/fusion choices and are not final generalization estimates.",
+        "Calibration parameters use source calibration days only; target calibration is not guaranteed.",
+        "The review confidence threshold is provisional. Branch agreement does not establish label correctness.",
+        "Global forest importances are not local or causal explanations."
+      ]
+    }
+  },
+  "reproduction": {
+    "v0": {
+      "current": {
+        "macro_f1": 0.6886649650893972,
+        "log_loss": 0.4730921719167978,
+        "brier": 0.28027871163792034,
+        "fault_to_normal": 623,
+        "fault_windows": 6468,
+        "normal_false_alarm": 248,
+        "recall": [
+          0.46320346320346323,
+          0.8249845392702535,
+          0.7050092764378478,
+          0.8089053803339518
+        ],
+        "windows": 6930
+      },
+      "historical": {
+        "classical": {
+          "windows": 6930,
+          "accuracy": 0.7624819624819624,
+          "balanced_accuracy": 0.6988249845392702,
+          "macro_f1": 0.6884339261612926,
+          "log_loss": 0.4947441061602729,
+          "multiclass_brier": 0.28969259262647634,
+          "ece_10_bins": 0.036365962631928386,
+          "confusion_matrix": [
+            [
+              206,
+              167,
+              35,
+              54
+            ],
+            [
+              325,
+              2657,
+              127,
+              125
+            ],
+            [
+              224,
+              384,
+              1548,
+              0
+            ],
+            [
+              32,
+              173,
+              0,
+              873
+            ]
+          ],
+          "per_class": {
+            "normal": {
+              "precision": 0.2617534942820839,
+              "recall": 0.4458874458874459,
+              "f1-score": 0.32986389111289033,
+              "support": 462.0
+            },
+            "damper_fault": {
+              "precision": 0.7858621709553386,
+              "recall": 0.8215831787260359,
+              "f1-score": 0.8033257747543462,
+              "support": 3234.0
+            },
+            "cooling_valve_fault": {
+              "precision": 0.9052631578947369,
+              "recall": 0.7179962894248608,
+              "f1-score": 0.8008277289187791,
+              "support": 2156.0
+            },
+            "heating_valve_fault": {
+              "precision": 0.8298479087452472,
+              "recall": 0.8098330241187384,
+              "f1-score": 0.819718309859155,
+              "support": 1078.0
+            },
+            "accuracy": 0.7624819624819624,
+            "macro avg": {
+              "precision": 0.6956816829693516,
+              "recall": 0.6988249845392702,
+              "f1-score": 0.6884339261612926,
+              "support": 6930.0
+            },
+            "weighted avg": {
+              "precision": 0.7949107921033646,
+              "recall": 0.7624819624819624,
+              "f1-score": 0.7735344292679319,
+              "support": 6930.0
+            }
+          }
+        },
+        "temporal": {
+          "windows": 6930,
+          "accuracy": 0.6842712842712843,
+          "balanced_accuracy": 0.7228277674706245,
+          "macro_f1": 0.6673660044824462,
+          "log_loss": 0.4932930423642373,
+          "multiclass_brier": 0.29238642520290664,
+          "ece_10_bins": 0.08205717890646191,
+          "confusion_matrix": [
+            [
+              390,
+              61,
+              8,
+              3
+            ],
+            [
+              1079,
+              2110,
+              39,
+              6
+            ],
+            [
+              538,
+              141,
+              1477,
+              0
+            ],
+            [
+              294,
+              19,
+              0,
+              765
+            ]
+          ],
+          "per_class": {
+            "normal": {
+              "precision": 0.1694915254237288,
+              "recall": 0.8441558441558441,
+              "f1-score": 0.28230184581976114,
+              "support": 462.0
+            },
+            "damper_fault": {
+              "precision": 0.9051909051909052,
+              "recall": 0.6524427952999382,
+              "f1-score": 0.7583108715184187,
+              "support": 3234.0
+            },
+            "cooling_valve_fault": {
+              "precision": 0.9691601049868767,
+              "recall": 0.685064935064935,
+              "f1-score": 0.8027173913043478,
+              "support": 2156.0
+            },
+            "heating_valve_fault": {
+              "precision": 0.9883720930232558,
+              "recall": 0.7096474953617811,
+              "f1-score": 0.826133909287257,
+              "support": 1078.0
+            },
+            "accuracy": 0.6842712842712843,
+            "macro avg": {
+              "precision": 0.7580536571561916,
+              "recall": 0.7228277674706245,
+              "f1-score": 0.6673660044824462,
+              "support": 6930.0
+            },
+            "weighted avg": {
+              "precision": 0.888985104583539,
+              "recall": 0.6842712842712843,
+              "f1-score": 0.7509425485026165,
+              "support": 6930.0
+            }
+          }
+        },
+        "hybrid_v0": {
+          "windows": 6930,
+          "accuracy": 0.7610389610389611,
+          "balanced_accuracy": 0.700525664811379,
+          "macro_f1": 0.6886649650893972,
+          "log_loss": 0.47309216666411175,
+          "multiclass_brier": 0.28027870806569294,
+          "ece_10_bins": 0.026416811178898644,
+          "confusion_matrix": [
+            [
+              214,
+              173,
+              20,
+              55
+            ],
+            [
+              350,
+              2668,
+              94,
+              122
+            ],
+            [
+              239,
+              397,
+              1520,
+              0
+            ],
+            [
+              34,
+              172,
+              0,
+              872
+            ]
+          ],
+          "per_class": {
+            "normal": {
+              "precision": 0.25567502986857826,
+              "recall": 0.46320346320346323,
+              "f1-score": 0.32948421862971516,
+              "support": 462.0
+            },
+            "damper_fault": {
+              "precision": 0.7824046920821114,
+              "recall": 0.8249845392702535,
+              "f1-score": 0.8031306441902468,
+              "support": 3234.0
+            },
+            "cooling_valve_fault": {
+              "precision": 0.9302325581395349,
+              "recall": 0.7050092764378478,
+              "f1-score": 0.8021108179419525,
+              "support": 2156.0
+            },
+            "heating_valve_fault": {
+              "precision": 0.8312678741658722,
+              "recall": 0.8089053803339518,
+              "f1-score": 0.8199341795956746,
+              "support": 1078.0
+            },
+            "accuracy": 0.7610389610389611,
+            "macro avg": {
+              "precision": 0.6998950385640241,
+              "recall": 0.700525664811379,
+              "f1-score": 0.6886649650893972,
+              "support": 6930.0
+            },
+            "weighted avg": {
+              "precision": 0.800881212365437,
+              "recall": 0.7610389610389611,
+              "f1-score": 0.7738508198275863,
+              "support": 6930.0
+            }
+          }
+        }
+      },
+      "bundle_sha256": "39d342ef357d1214068ed59ea33d91f43b979493f655f3724837f073065a3ebb"
+    },
+    "v1_attention": {
+      "current": {
+        "macro_f1": 0.6884134583738835,
+        "log_loss": 0.47449410969759315,
+        "brier": 0.2832443779300117,
+        "fault_to_normal": 916,
+        "fault_windows": 6468,
+        "normal_false_alarm": 188,
+        "recall": [
+          0.5930735930735931,
+          0.7646876932591218,
+          0.7226345083487941,
+          0.8061224489795918
+        ],
+        "windows": 6930
+      },
+      "historical": {
+        "classical": {
+          "windows": 6930,
+          "accuracy": 0.7624819624819624,
+          "balanced_accuracy": 0.6988249845392702,
+          "macro_f1": 0.6884339261612926,
+          "log_loss": 0.4947441061602729,
+          "multiclass_brier": 0.28969259262647634,
+          "ece_10_bins": 0.036365962631928386,
+          "confusion_matrix": [
+            [
+              206,
+              167,
+              35,
+              54
+            ],
+            [
+              325,
+              2657,
+              127,
+              125
+            ],
+            [
+              224,
+              384,
+              1548,
+              0
+            ],
+            [
+              32,
+              173,
+              0,
+              873
+            ]
+          ],
+          "per_class": {
+            "normal": {
+              "precision": 0.2617534942820839,
+              "recall": 0.4458874458874459,
+              "f1-score": 0.32986389111289033,
+              "support": 462.0
+            },
+            "damper_fault": {
+              "precision": 0.7858621709553386,
+              "recall": 0.8215831787260359,
+              "f1-score": 0.8033257747543462,
+              "support": 3234.0
+            },
+            "cooling_valve_fault": {
+              "precision": 0.9052631578947369,
+              "recall": 0.7179962894248608,
+              "f1-score": 0.8008277289187791,
+              "support": 2156.0
+            },
+            "heating_valve_fault": {
+              "precision": 0.8298479087452472,
+              "recall": 0.8098330241187384,
+              "f1-score": 0.819718309859155,
+              "support": 1078.0
+            },
+            "accuracy": 0.7624819624819624,
+            "macro avg": {
+              "precision": 0.6956816829693516,
+              "recall": 0.6988249845392702,
+              "f1-score": 0.6884339261612926,
+              "support": 6930.0
+            },
+            "weighted avg": {
+              "precision": 0.7949107921033646,
+              "recall": 0.7624819624819624,
+              "f1-score": 0.7735344292679319,
+              "support": 6930.0
+            }
+          }
+        },
+        "temporal": {
+          "windows": 6930,
+          "accuracy": 0.6822510822510822,
+          "balanced_accuracy": 0.7400664811379097,
+          "macro_f1": 0.6699759053947891,
+          "log_loss": 0.5028581856780285,
+          "multiclass_brier": 0.2965697195477622,
+          "ece_10_bins": 0.08635391113858926,
+          "confusion_matrix": [
+            [
+              422,
+              17,
+              14,
+              9
+            ],
+            [
+              1129,
+              2019,
+              65,
+              21
+            ],
+            [
+              594,
+              55,
+              1507,
+              0
+            ],
+            [
+              282,
+              16,
+              0,
+              780
+            ]
+          ],
+          "per_class": {
+            "normal": {
+              "precision": 0.1738772146683148,
+              "recall": 0.9134199134199135,
+              "f1-score": 0.29214260989961927,
+              "support": 462.0
+            },
+            "damper_fault": {
+              "precision": 0.958234456573327,
+              "recall": 0.62430426716141,
+              "f1-score": 0.7560381950945516,
+              "support": 3234.0
+            },
+            "cooling_valve_fault": {
+              "precision": 0.9501891551071879,
+              "recall": 0.6989795918367347,
+              "f1-score": 0.8054516301443079,
+              "support": 2156.0
+            },
+            "heating_valve_fault": {
+              "precision": 0.9629629629629629,
+              "recall": 0.7235621521335807,
+              "f1-score": 0.826271186440678,
+              "support": 1078.0
+            },
+            "accuracy": 0.6822510822510822,
+            "macro avg": {
+              "precision": 0.761315947327948,
+              "recall": 0.7400664811379097,
+              "f1-score": 0.6699759053947891,
+              "support": 6930.0
+            },
+            "weighted avg": {
+              "precision": 0.9041765365396929,
+              "recall": 0.6822510822510822,
+              "f1-score": 0.7514100234175445,
+              "support": 6930.0
+            }
+          }
+        },
+        "hybrid_v1": {
+          "windows": 6930,
+          "accuracy": 0.7466089466089466,
+          "balanced_accuracy": 0.7216295609152752,
+          "macro_f1": 0.6884134583738835,
+          "log_loss": 0.4744941081521524,
+          "multiclass_brier": 0.283244377076569,
+          "ece_10_bins": 0.03245405798008455,
+          "confusion_matrix": [
+            [
+              274,
+              117,
+              19,
+              52
+            ],
+            [
+              513,
+              2473,
+              131,
+              117
+            ],
+            [
+              353,
+              245,
+              1558,
+              0
+            ],
+            [
+              50,
+              159,
+              0,
+              869
+            ]
+          ],
+          "per_class": {
+            "normal": {
+              "precision": 0.23025210084033612,
+              "recall": 0.5930735930735931,
+              "f1-score": 0.33171912832929784,
+              "support": 462.0
+            },
+            "damper_fault": {
+              "precision": 0.8259853039412157,
+              "recall": 0.7646876932591218,
+              "f1-score": 0.794155427103404,
+              "support": 3234.0
+            },
+            "cooling_valve_fault": {
+              "precision": 0.9121779859484778,
+              "recall": 0.7226345083487941,
+              "f1-score": 0.8064182194616977,
+              "support": 2156.0
+            },
+            "heating_valve_fault": {
+              "precision": 0.8371868978805395,
+              "recall": 0.8061224489795918,
+              "f1-score": 0.8213610586011342,
+              "support": 1078.0
+            },
+            "accuracy": 0.7466089466089466,
+            "macro avg": {
+              "precision": 0.7014005721526423,
+              "recall": 0.7216295609152752,
+              "f1-score": 0.6884134583738835,
+              "support": 6930.0
+            },
+            "weighted avg": {
+              "precision": 0.8148277283050891,
+              "recall": 0.7466089466089466,
+              "f1-score": 0.7713734185962464,
+              "support": 6930.0
+            }
+          }
+        }
+      },
+      "bundle_sha256": "d245ccc13ffd9ddfcf202eaeb243eaf800312a8c18cda0e0fd7e61cbbc0bb6e9"
+    }
+  },
+  "packs": {
+    "source_train": {
+      "sha256": "a1ea90ee1714f45214b88e7c508ab175c95aa047ac9f79e618fc4193f645b3cb",
+      "shape": [
+        27720,
+        15,
+        10
+      ],
+      "finite": true,
+      "unique_ids": 27720,
+      "classes": [
+        1848,
+        12936,
+        8624,
+        4312
+      ]
+    },
+    "source_validation": {
+      "sha256": "6f6aa16c5034ac989a242af6efc29cb55fea0192959afbb57f8e75acfc4255c6",
+      "shape": [
+        6930,
+        15,
+        10
+      ],
+      "finite": true,
+      "unique_ids": 6930,
+      "classes": [
+        462,
+        3234,
+        2156,
+        1078
+      ]
+    },
+    "source_calibration": {
+      "sha256": "350a4eab47cf207f46436f536f191bdd081a8d49b2e848d3b6058bfdc305af3b",
+      "shape": [
+        6930,
+        15,
+        10
+      ],
+      "finite": true,
+      "unique_ids": 6930,
+      "classes": [
+        462,
+        3234,
+        2156,
+        1078
+      ]
+    },
+    "source_test": {
+      "sha256": "a88768281c815fccb4d63b2bb5843d2be014c3975d6e318f28d64588649ef443",
+      "shape": [
+        6929,
+        15,
+        10
+      ],
+      "finite": true,
+      "unique_ids": 6929,
+      "classes": [
+        462,
+        3233,
+        2156,
+        1078
+      ]
+    },
+    "target_adapt": {
+      "sha256": "d202cab592aa677b04edaad52d1f5d88c4c86b3a8996f6607a2afdd37d569a14",
+      "shape": [
+        1420,
+        15,
+        10
+      ],
+      "finite": true,
+      "unique_ids": 1420,
+      "classes": null
+    },
+    "target_feedback": {
+      "sha256": "ce3c85421f52e9d55a0a818bd199678087c9ff5f1c430b44267f083fd88c1b1f",
+      "shape": [
+        1136,
+        15,
+        10
+      ],
+      "finite": true,
+      "unique_ids": 1136,
+      "classes": null
+    },
+    "target_test": {
+      "sha256": "76ef6c311a98341944e06cc1fcf0bbdb15e9b558e80af6447af73ab9d9efa687",
+      "shape": [
+        1136,
+        15,
+        10
+      ],
+      "finite": true,
+      "unique_ids": 1136,
+      "classes": null
+    }
+  },
+  "raw": [
+    {
+      "path": "Public_ScientificData_AHUFaults/Public_ScientificData_AHUFaults/04_G36-1wk/CoolingSeason/BaselineSystem.csv",
+      "present": true,
+      "hash_matches": true
+    },
+    {
+      "path": "Public_ScientificData_AHUFaults/Public_ScientificData_AHUFaults/04_G36-1wk/CoolingSeason/OADamStuck_0.csv",
+      "present": true,
+      "hash_matches": true
+    },
+    {
+      "path": "Public_ScientificData_AHUFaults/Public_ScientificData_AHUFaults/04_G36-1wk/CoolingSeason/OADamStuck_5.csv",
+      "present": true,
+      "hash_matches": true
+    },
+    {
+      "path": "Public_ScientificData_AHUFaults/Public_ScientificData_AHUFaults/04_G36-1wk/CoolingSeason/OADamStuck_15.csv",
+      "present": true,
+      "hash_matches": true
+    },
+    {
+      "path": "Public_ScientificData_AHUFaults/Public_ScientificData_AHUFaults/04_G36-1wk/CoolingSeason/OADamStuck_65.csv",
+      "present": true,
+      "hash_matches": true
+    },
+    {
+      "path": "Public_ScientificData_AHUFaults/Public_ScientificData_AHUFaults/04_G36-1wk/CoolingSeason/OADamStuck_100.csv",
+      "present": true,
+      "hash_matches": true
+    },
+    {
+      "path": "Public_ScientificData_AHUFaults/Public_ScientificData_AHUFaults/04_G36-1wk/CoolingSeason/OADamLea_001.csv",
+      "present": true,
+      "hash_matches": true
+    },
+    {
+      "path": "Public_ScientificData_AHUFaults/Public_ScientificData_AHUFaults/04_G36-1wk/CoolingSeason/OADamLea_01.csv",
+      "present": true,
+      "hash_matches": true
+    },
+    {
+      "path": "Public_ScientificData_AHUFaults/Public_ScientificData_AHUFaults/04_G36-1wk/CoolingSeason/CooCoiValStuck_0.csv",
+      "present": true,
+      "hash_matches": true
+    },
+    {
+      "path": "Public_ScientificData_AHUFaults/Public_ScientificData_AHUFaults/04_G36-1wk/CoolingSeason/CooCoiValStuck_5.csv",
+      "present": true,
+      "hash_matches": true
+    },
+    {
+      "path": "Public_ScientificData_AHUFaults/Public_ScientificData_AHUFaults/04_G36-1wk/CoolingSeason/CooCoiValStuck_15.csv",
+      "present": true,
+      "hash_matches": true
+    },
+    {
+      "path": "Public_ScientificData_AHUFaults/Public_ScientificData_AHUFaults/04_G36-1wk/CoolingSeason/CooCoiValStuck_65.csv",
+      "present": true,
+      "hash_matches": true
+    },
+    {
+      "path": "Public_ScientificData_AHUFaults/Public_ScientificData_AHUFaults/04_G36-1wk/CoolingSeason/CooCoiValStuck_100.csv",
+      "present": true,
+      "hash_matches": true
+    },
+    {
+      "path": "Public_ScientificData_AHUFaults/Public_ScientificData_AHUFaults/04_G36-1wk/CoolingSeason/CooCoiValLea_001.csv",
+      "present": true,
+      "hash_matches": true
+    },
+    {
+      "path": "Public_ScientificData_AHUFaults/Public_ScientificData_AHUFaults/04_G36-1wk/CoolingSeason/CooCoiValLea_01.csv",
+      "present": true,
+      "hash_matches": true
+    },
+    {
+      "path": "Public_ScientificData_AHUFaults/Public_ScientificData_AHUFaults/04_G36-1wk/HeatingSeason/BaselineSystem.csv",
+      "present": true,
+      "hash_matches": true
+    },
+    {
+      "path": "Public_ScientificData_AHUFaults/Public_ScientificData_AHUFaults/04_G36-1wk/HeatingSeason/OADamStuck_0.csv",
+      "present": true,
+      "hash_matches": true
+    },
+    {
+      "path": "Public_ScientificData_AHUFaults/Public_ScientificData_AHUFaults/04_G36-1wk/HeatingSeason/OADamStuck_5.csv",
+      "present": true,
+      "hash_matches": true
+    },
+    {
+      "path": "Public_ScientificData_AHUFaults/Public_ScientificData_AHUFaults/04_G36-1wk/HeatingSeason/OADamStuck_15.csv",
+      "present": true,
+      "hash_matches": true
+    },
+    {
+      "path": "Public_ScientificData_AHUFaults/Public_ScientificData_AHUFaults/04_G36-1wk/HeatingSeason/OADamStuck_65.csv",
+      "present": true,
+      "hash_matches": true
+    },
+    {
+      "path": "Public_ScientificData_AHUFaults/Public_ScientificData_AHUFaults/04_G36-1wk/HeatingSeason/OADamStuck_100.csv",
+      "present": true,
+      "hash_matches": true
+    },
+    {
+      "path": "Public_ScientificData_AHUFaults/Public_ScientificData_AHUFaults/04_G36-1wk/HeatingSeason/OADamLea_001.csv",
+      "present": true,
+      "hash_matches": true
+    },
+    {
+      "path": "Public_ScientificData_AHUFaults/Public_ScientificData_AHUFaults/04_G36-1wk/HeatingSeason/OADamLea_01.csv",
+      "present": true,
+      "hash_matches": true
+    },
+    {
+      "path": "Public_ScientificData_AHUFaults/Public_ScientificData_AHUFaults/04_G36-1wk/HeatingSeason/HeaCoiValStuck_0.csv",
+      "present": true,
+      "hash_matches": true
+    },
+    {
+      "path": "Public_ScientificData_AHUFaults/Public_ScientificData_AHUFaults/04_G36-1wk/HeatingSeason/HeaCoiValStuck_5.csv",
+      "present": true,
+      "hash_matches": true
+    },
+    {
+      "path": "Public_ScientificData_AHUFaults/Public_ScientificData_AHUFaults/04_G36-1wk/HeatingSeason/HeaCoiValStuck_15.csv",
+      "present": true,
+      "hash_matches": true
+    },
+    {
+      "path": "Public_ScientificData_AHUFaults/Public_ScientificData_AHUFaults/04_G36-1wk/HeatingSeason/HeaCoiValStuck_65.csv",
+      "present": true,
+      "hash_matches": true
+    },
+    {
+      "path": "Public_ScientificData_AHUFaults/Public_ScientificData_AHUFaults/04_G36-1wk/HeatingSeason/HeaCoiValStuck_100.csv",
+      "present": true,
+      "hash_matches": true
+    },
+    {
+      "path": "Public_ScientificData_AHUFaults/Public_ScientificData_AHUFaults/04_G36-1wk/HeatingSeason/HeaCoiValLea_001.csv",
+      "present": true,
+      "hash_matches": true
+    },
+    {
+      "path": "Public_ScientificData_AHUFaults/Public_ScientificData_AHUFaults/04_G36-1wk/HeatingSeason/HeaCoiValLea_01.csv",
+      "present": true,
+      "hash_matches": true
+    },
+    {
+      "path": "Public_ScientificData_AHUFaults/Public_ScientificData_AHUFaults/04_G36-1wk/ShoulderSeason/BaselineSystem.csv",
+      "present": true,
+      "hash_matches": true
+    },
+    {
+      "path": "Public_ScientificData_AHUFaults/Public_ScientificData_AHUFaults/04_G36-1wk/ShoulderSeason/OADamStuck_0.csv",
+      "present": true,
+      "hash_matches": true
+    },
+    {
+      "path": "Public_ScientificData_AHUFaults/Public_ScientificData_AHUFaults/04_G36-1wk/ShoulderSeason/OADamStuck_5.csv",
+      "present": true,
+      "hash_matches": true
+    },
+    {
+      "path": "Public_ScientificData_AHUFaults/Public_ScientificData_AHUFaults/04_G36-1wk/ShoulderSeason/OADamStuck_15.csv",
+      "present": true,
+      "hash_matches": true
+    },
+    {
+      "path": "Public_ScientificData_AHUFaults/Public_ScientificData_AHUFaults/04_G36-1wk/ShoulderSeason/OADamStuck_65.csv",
+      "present": true,
+      "hash_matches": true
+    },
+    {
+      "path": "Public_ScientificData_AHUFaults/Public_ScientificData_AHUFaults/04_G36-1wk/ShoulderSeason/OADamStuck_100.csv",
+      "present": true,
+      "hash_matches": true
+    },
+    {
+      "path": "Public_ScientificData_AHUFaults/Public_ScientificData_AHUFaults/04_G36-1wk/ShoulderSeason/OADamLea_001.csv",
+      "present": true,
+      "hash_matches": true
+    },
+    {
+      "path": "Public_ScientificData_AHUFaults/Public_ScientificData_AHUFaults/04_G36-1wk/ShoulderSeason/OADamLea_01.csv",
+      "present": true,
+      "hash_matches": true
+    },
+    {
+      "path": "Public_ScientificData_AHUFaults/Public_ScientificData_AHUFaults/04_G36-1wk/ShoulderSeason/CooCoiValStuck_0.csv",
+      "present": true,
+      "hash_matches": true
+    },
+    {
+      "path": "Public_ScientificData_AHUFaults/Public_ScientificData_AHUFaults/04_G36-1wk/ShoulderSeason/CooCoiValStuck_5.csv",
+      "present": true,
+      "hash_matches": true
+    },
+    {
+      "path": "Public_ScientificData_AHUFaults/Public_ScientificData_AHUFaults/04_G36-1wk/ShoulderSeason/CooCoiValStuck_15.csv",
+      "present": true,
+      "hash_matches": true
+    },
+    {
+      "path": "Public_ScientificData_AHUFaults/Public_ScientificData_AHUFaults/04_G36-1wk/ShoulderSeason/CooCoiValStuck_65.csv",
+      "present": true,
+      "hash_matches": true
+    },
+    {
+      "path": "Public_ScientificData_AHUFaults/Public_ScientificData_AHUFaults/04_G36-1wk/ShoulderSeason/CooCoiValStuck_100.csv",
+      "present": true,
+      "hash_matches": true
+    },
+    {
+      "path": "Public_ScientificData_AHUFaults/Public_ScientificData_AHUFaults/04_G36-1wk/ShoulderSeason/CooCoiValLea_001.csv",
+      "present": true,
+      "hash_matches": true
+    },
+    {
+      "path": "Public_ScientificData_AHUFaults/Public_ScientificData_AHUFaults/04_G36-1wk/ShoulderSeason/CooCoiValLea_01.csv",
+      "present": true,
+      "hash_matches": true
+    },
+    {
+      "path": "lbnl_2019_afdd/SZVAV.csv",
+      "present": true,
+      "hash_matches": true
+    },
+    {
+      "path": "lbnl_2019_afdd/SZCAV.csv",
+      "present": true,
+      "hash_matches": true
+    }
+  ],
+  "interval_separation": [],
+  "source_observations": {
+    "rows": 453645,
+    "columns": [
+      "row_id",
+      "domain",
+      "dataset",
+      "season",
+      "run_id",
+      "condition_group",
+      "segment_id",
+      "sample_time_s",
+      "timestamp_local",
+      "core_valid",
+      "active_occupied",
+      "supply_temp_c",
+      "outdoor_temp_c",
+      "mixed_temp_c",
+      "return_temp_c",
+      "fan_status",
+      "fan_speed_cmd",
+      "oa_damper_cmd",
+      "cooling_valve_cmd",
+      "heating_valve_cmd",
+      "occupied",
+      "return_damper_cmd",
+      "exhaust_damper_cmd"
+    ],
+    "missing": {
+      "supply_temp_c": 0,
+      "outdoor_temp_c": 0,
+      "mixed_temp_c": 0,
+      "return_temp_c": 0,
+      "fan_status": 0,
+      "fan_speed_cmd": 0,
+      "oa_damper_cmd": 0,
+      "cooling_valve_cmd": 0,
+      "heating_valve_cmd": 0,
+      "occupied": 0
+    },
+    "duplicate_row_ids": 0
+  },
+  "target_observations": {
+    "rows": 37439,
+    "columns": [
+      "row_id",
+      "domain",
+      "dataset",
+      "season",
+      "run_id",
+      "condition_group",
+      "segment_id",
+      "sample_time_s",
+      "timestamp_local",
+      "core_valid",
+      "active_occupied",
+      "supply_temp_c",
+      "outdoor_temp_c",
+      "mixed_temp_c",
+      "return_temp_c",
+      "fan_status",
+      "fan_speed_cmd",
+      "oa_damper_cmd",
+      "cooling_valve_cmd",
+      "heating_valve_cmd",
+      "occupied",
+      "return_damper_cmd",
+      "exhaust_damper_cmd"
+    ],
+    "missing": {
+      "supply_temp_c": 0,
+      "outdoor_temp_c": 1,
+      "mixed_temp_c": 90,
+      "return_temp_c": 0,
+      "fan_status": 0,
+      "fan_speed_cmd": 0,
+      "oa_damper_cmd": 0,
+      "cooling_valve_cmd": 0,
+      "heating_valve_cmd": 0,
+      "occupied": 0
+    },
+    "duplicate_row_ids": 0
+  },
+  "dataset_mapping": {
+    "source": "G36-1wk simulated multi-zone AHU",
+    "target": "SZVAV and SZCAV single-zone systems",
+    "AHU1_AHU2": "No authoritative numeric alias in contract; do not infer mapping."
+  },
+  "independent_case_limit": "Three shared-weather source conditions; days and overlapping windows are not independent fault injections. Five-case reporting floor not met."
+}

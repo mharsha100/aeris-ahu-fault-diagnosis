@@ -1,0 +1,78 @@
+{
+  "windows": 6930,
+  "accuracy": 0.7792207792207793,
+  "balanced_accuracy": 0.6764455782312926,
+  "macro_f1": 0.6902429799461425,
+  "log_loss": 0.45786126520536236,
+  "multiclass_brier": 0.2729012606076183,
+  "ece_10_bins": 0.02916671415201595,
+  "confusion_matrix": [
+    [
+      144,
+      222,
+      47,
+      49
+    ],
+    [
+      151,
+      2836,
+      149,
+      98
+    ],
+    [
+      84,
+      503,
+      1569,
+      0
+    ],
+    [
+      34,
+      193,
+      0,
+      851
+    ]
+  ],
+  "per_class": {
+    "normal": {
+      "precision": 0.3486682808716707,
+      "recall": 0.3116883116883117,
+      "f1-score": 0.3291428571428571,
+      "support": 462.0
+    },
+    "damper_fault": {
+      "precision": 0.7554608417687799,
+      "recall": 0.8769325912183055,
+      "f1-score": 0.8116771608471666,
+      "support": 3234.0
+    },
+    "cooling_valve_fault": {
+      "precision": 0.8889518413597733,
+      "recall": 0.7277365491651205,
+      "f1-score": 0.8003060443764346,
+      "support": 2156.0
+    },
+    "heating_valve_fault": {
+      "precision": 0.8527054108216433,
+      "recall": 0.7894248608534323,
+      "f1-score": 0.8198458574181118,
+      "support": 1078.0
+    },
+    "accuracy": 0.7792207792207793,
+    "macro avg": {
+      "precision": 0.7114465937054668,
+      "recall": 0.6764455782312926,
+      "f1-score": 0.6902429799461425,
+      "support": 6930.0
+    },
+    "weighted avg": {
+      "precision": 0.7849988038788384,
+      "recall": 0.7792207792207793,
+      "f1-score": 0.7772412127203541,
+      "support": 6930.0
+    }
+  },
+  "name": "rf_physics_bal",
+  "seconds": 246.3534589999981,
+  "fault_to_normal": 269,
+  "parameters": "{'forest__bootstrap': True, 'forest__ccp_alpha': 0.0, 'forest__class_weight': 'balanced_subsample', 'forest__criterion': 'gini', 'forest__max_depth': None, 'forest__max_features': 0.8, 'forest__max_leaf_nodes': None, 'forest__max_samples': None, 'forest__min_impurity_decrease': 0.0, 'forest__min_samples_leaf': 2, 'forest__min_samples_split': 2, 'forest__min_weight_fraction_leaf': 0.0, 'forest__monotonic_cst': None, 'forest__n_estimators': 240, 'forest__n_jobs': 4, 'forest__oob_score': False, 'forest__random_state': 42, 'forest__verbose': 0, 'forest__warm_start': False, 'forest': RandomForestClassifier(class_weight='balanced_subsample', max_features=0.8,\n                       min_samples_leaf=2, n_estimators=240, n_jobs=4,\n                       random_state=42)}"
+}

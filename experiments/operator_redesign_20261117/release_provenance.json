@@ -1,0 +1,27 @@
+{
+  "branch": "aeris-operator-model-20261117",
+  "head": "961876af8df55a203f3305cfc58a453ff727fec7",
+  "image": "sha256:68e81d694013e19bb31e8288d1058f0fe20d72f480fab6376ab87e0f2d865d27",
+  "files": {
+    "src/aeris/modeling.py": "1b7d341d6e6261994d0da304bf607e5fa871e72d0915e76525c277caa7d39f98",
+    "src/aeris/boosted.py": "6e4f39dccd4ea29c6e8d5ebb321125d30eacd22d3c5ee29e06b381446ea8e90c",
+    "src/aeris/workflow.py": "d07bba4c892b00baa719271c4e9d05dc2affad9a469d541dab9a835f461cf4f8",
+    "src/aeris/operations.py": "8cd1dff9aeaf4f790b6eb16fe2797b50f5ea0e325d6dbcb76d76bc987860984f",
+    "src/aeris/service.py": "de2afd80e945bc593149d3df5c2b2a7bd4df3a47c946d393353317712d358610",
+    "frontend/app.js": "0ff28394f9a496f29846c90534b9b61eca9eedd0ee1a951eea9049865547363a",
+    "frontend/index.html": "1600b8625d874562e8d7d452288936e15656990f173a3ade9b685c646d63d433",
+    "deployment/alerts.yml": "d7b260ae08c59ef8b2f92e6bbb169c4f8df21827729da8003d8d2dede3d4c0ef",
+    "deployment/grafana/dashboards/aeris.json": "20f3186c5a7055aa079deb7c75ef3008d8e27fa4f664b0e52c5b726f3c881c49",
+    "deployment/grafana/dashboards/aeris-feedback.json": "ae2b273a9909a0eed6973835d3d19a4bb82a6c869ec7eeaf3a45565b1f0327a3"
+  },
+  "selection": {
+    "bundle": "boosted_v2_s42",
+    "per_architecture": {
+      "v0": "boosted_v0_s42",
+      "v1": "boosted_v1_s42",
+      "v2": "boosted_v2_s42"
+    },
+    "scope": "Source-only constrained refinement. Three booster seeds on fixed, distinct 50-epoch RF+TCN parents; not independent neural retraining. Existing target labels retrospective.",
+    "selection_frozen_before_postselection_evaluation": true
+  }
+}

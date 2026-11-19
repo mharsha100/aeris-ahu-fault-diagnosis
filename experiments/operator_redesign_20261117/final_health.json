@@ -1,0 +1,119 @@
+{
+  "ready": {
+    "model_ready": true,
+    "app_up": true,
+    "bundle": "boosted_v2_s42",
+    "error": null
+  },
+  "targets": {
+    "status": "success",
+    "data": {
+      "activeTargets": [
+        {
+          "discoveredLabels": {
+            "__address__": "app:8001",
+            "__metrics_path__": "/metrics",
+            "__scheme__": "http",
+            "__scrape_interval__": "5s",
+            "__scrape_timeout__": "5s",
+            "job": "aeris"
+          },
+          "labels": {
+            "instance": "app:8001",
+            "job": "aeris"
+          },
+          "scrapePool": "aeris",
+          "scrapeUrl": "http://app:8001/metrics",
+          "globalUrl": "http://app:8001/metrics",
+          "lastError": "",
+          "lastScrape": "2026-11-17T14:35:45.823631359Z",
+          "lastScrapeDuration": 0.072209597,
+          "health": "up",
+          "scrapeInterval": "5s",
+          "scrapeTimeout": "5s"
+        }
+      ],
+      "droppedTargets": [],
+      "droppedTargetCounts": {
+        "aeris": 0
+      }
+    }
+  },
+  "rules": {
+    "status": "success",
+    "data": {
+      "groups": [
+        {
+          "name": "aeris",
+          "file": "/etc/prometheus/alerts.yml",
+          "rules": [
+            {
+              "state": "inactive",
+              "name": "AerisUnavailable",
+              "query": "up{job=\"aeris\"} == 0 or aeris_model_ready == 0 or aeris_app_up == 0",
+              "duration": 15,
+              "keepFiringFor": 0,
+              "labels": {
+                "owner": "project_operator",
+                "severity": "critical"
+              },
+              "annotations": {
+                "response": "Check app logs, mounted bundle and hashes; restore last verified selection. No equipment action.",
+                "summary": "AERIS cannot serve a verified diagnosis"
+              },
+              "alerts": [],
+              "health": "ok",
+              "evaluationTime": 0.000852039,
+              "lastEvaluation": "2026-11-17T14:35:44.352102811Z",
+              "type": "alerting"
+            },
+            {
+              "state": "inactive",
+              "name": "AerisSourceShift",
+              "query": "aeris_source_shift_fraction > 0.2 and aeris_shift_support >= 20",
+              "duration": 30,
+              "keepFiringFor": 0,
+              "labels": {
+                "owner": "model_reviewer",
+                "severity": "warning"
+              },
+              "annotations": {
+                "response": "Inspect sensor units and context. Require review and revalidate before any model update.",
+                "summary": "Recent temperature inputs exceed fixed source-scale support"
+              },
+              "alerts": [],
+              "health": "ok",
+              "evaluationTime": 0.000262678,
+              "lastEvaluation": "2026-11-17T14:35:44.352979467Z",
+              "type": "alerting"
+            },
+            {
+              "state": "inactive",
+              "name": "AerisReviewBurden",
+              "query": "(increase(aeris_review_total[5m]) / (increase(aeris_requests_total[5m]) - increase(aeris_blocked_total[5m]) - increase(aeris_errors_total[5m])) > 0.8) and (increase(aeris_requests_total[5m]) - increase(aeris_blocked_total[5m]) - increase(aeris_errors_total[5m])) >= 20",
+              "duration": 60,
+              "keepFiringFor": 0,
+              "labels": {
+                "owner": "model_reviewer",
+                "severity": "warning"
+              },
+              "annotations": {
+                "response": "Check setting mix and shift. Retain gates; investigate coverage.",
+                "summary": "Review burden exceeds provisional workload threshold"
+              },
+              "alerts": [],
+              "health": "ok",
+              "evaluationTime": 0.001109589,
+              "lastEvaluation": "2026-11-17T14:35:44.353251782Z",
+              "type": "alerting"
+            }
+          ],
+          "interval": 5,
+          "limit": 0,
+          "evaluationTime": 0.002316083,
+          "lastEvaluation": "2026-11-17T14:35:44.352048266Z"
+        }
+      ]
+    }
+  }
+}

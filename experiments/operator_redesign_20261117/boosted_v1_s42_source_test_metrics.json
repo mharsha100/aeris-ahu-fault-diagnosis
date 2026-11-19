@@ -1,0 +1,81 @@
+{
+  "windows": 6929,
+  "accuracy": 0.757396449704142,
+  "balanced_accuracy": 0.6597332849569826,
+  "macro_f1": 0.6796117389241968,
+  "log_loss": 0.5290120610314761,
+  "multiclass_brier": 0.30578499976841594,
+  "ece_10_bins": 0.04418880198165865,
+  "confusion_matrix": [
+    [
+      157,
+      223,
+      52,
+      30
+    ],
+    [
+      123,
+      2618,
+      395,
+      97
+    ],
+    [
+      55,
+      366,
+      1735,
+      0
+    ],
+    [
+      20,
+      320,
+      0,
+      738
+    ]
+  ],
+  "per_class": {
+    "normal": {
+      "precision": 0.4422535211267606,
+      "recall": 0.3398268398268398,
+      "f1-score": 0.3843329253365973,
+      "support": 462.0
+    },
+    "damper_fault": {
+      "precision": 0.7422738871562234,
+      "recall": 0.8097742035261367,
+      "f1-score": 0.7745562130177515,
+      "support": 3233.0
+    },
+    "cooling_valve_fault": {
+      "precision": 0.7951420714940421,
+      "recall": 0.8047309833024119,
+      "f1-score": 0.7999077916090365,
+      "support": 2156.0
+    },
+    "heating_valve_fault": {
+      "precision": 0.8531791907514451,
+      "recall": 0.6846011131725418,
+      "f1-score": 0.7596500257334019,
+      "support": 1078.0
+    },
+    "accuracy": 0.757396449704142,
+    "macro avg": {
+      "precision": 0.7082121676321178,
+      "recall": 0.6597332849569826,
+      "f1-score": 0.6796117389241968,
+      "support": 6929.0
+    },
+    "weighted avg": {
+      "precision": 0.7559743220822408,
+      "recall": 0.757396449704142,
+      "f1-score": 0.7541067938579289,
+      "support": 6929.0
+    }
+  },
+  "bundle": "boosted_v1_s42",
+  "role": "source_test",
+  "fault_to_normal": 198,
+  "accepted_false_normal": 0,
+  "review_rate": 0.6244768364843412,
+  "accepted_windows": 2602,
+  "accepted_accuracy": 1.0
+}

@@ -171,7 +171,27 @@ class CombinedTemporalTCN(AttentionTemporalTCN):
         return self.classifier(torch.cat([encoded[:, -1, :], pooled], dim=1))
 
 
+class PhysicalTemporal(nn.Module):
+    """Retain each temporal pooling design and add a common physical context head."""
+    def __init__(self,kind,raw_mean,raw_scale,context_width=64,**architecture):
+        super().__init__();self.base=create_temporal(kind,architecture)
+        self.register_buffer('raw_mean',torch.tensor(raw_mean,dtype=torch.float32))
+        self.register_buffer('raw_scale',torch.tensor(raw_scale,dtype=torch.float32))
+        self.context=nn.Sequential(nn.Linear(54,context_width),nn.GELU(),nn.Dropout(architecture['dropout']),nn.Linear(context_width,4))
+    def forward(self,sequence):
+        raw=sequence*self.raw_scale+self.raw_mean
+        pieces=[sequence.mean(1),sequence[:,-1],sequence.std(1,unbiased=False)]
+        for x in [raw.mean(1),raw[:,-1]]:
+            s,o,m,r=x[:,0],x[:,1],x[:,2],x[:,3];d,c,h=x[:,6],x[:,7],x[:,8]
+            span=o-r;safe=torch.where(span.abs()>=2,span,torch.where(span<0,-2.,2.))
+            coil=(s-m)/10;ratio=((m-r)/safe).clamp(-2,3)
+            pieces.append(torch.stack([coil,(s-r)/10,(m-r)/10,span/30,(m-(d*o+(1-d)*r))/10,ratio,ratio-d,coil*c,coil*h,c*h,coil*(1-c),coil*(1-h)],dim=1))
+        return self.base(sequence)+self.context(torch.cat(pieces,dim=1))
+
+
 def create_temporal(kind: str, architecture: dict) -> TemporalTCN:
+    if kind.startswith('physical_'):
+        return PhysicalTemporal(kind[len('physical_'):],**architecture)
     if kind == "causal_tcn_last":
         return TemporalTCN(**architecture)
     if kind == "causal_tcn_attention":
@@ -221,15 +241,30 @@ class HybridPredictor:
         temporal_probs = softmax(neural_logits(self.temporal, X_seq, self.device), temperatures["temporal"])
         weight = self.configuration["forest_weight"]
         combined = weight * forest_probs + (1 - weight) * temporal_probs
+        factors=np.asarray(self.configuration.get('class_factors',[1.,1.,1.,1.]),dtype=float)
+        combined=combined*factors;combined=combined/combined.sum(axis=1,keepdims=True)
         probabilities = temperature_probabilities(combined, temperatures["hybrid"])
+        parent_probabilities=probabilities.copy()
+        boost_config=self.configuration.get('boosting')
+        boosted_probs=None
+        if boost_config:
+            boosted_probs=temperature_probabilities(self.forest.boosted_probabilities(X_seq,X_tab),boost_config['temperature'])
+            w=boost_config['weight'];refined=((1-w)*probabilities+w*boosted_probs)*np.asarray(boost_config['class_factors'])
+            refined=refined/refined.sum(axis=1,keepdims=True)
+            probabilities=temperature_probabilities(refined,boost_config['hybrid_temperature'])
         predictions = probabilities.argmax(axis=1)
         confidence = probabilities.max(axis=1)
         disagreement = forest_probs.argmax(axis=1) != temporal_probs.argmax(axis=1)
-        review = (confidence < self.configuration["review_confidence_threshold"]) | disagreement
+        if boosted_probs is not None:
+            disagreement=disagreement|(boosted_probs.argmax(axis=1)!=temporal_probs.argmax(axis=1))|(predictions!=temporal_probs.argmax(axis=1))
+        refinement_review = ((parent_probabilities.max(axis=1)<self.configuration['review_confidence_threshold']) | (parent_probabilities.argmax(axis=1)!=predictions)) if boost_config else np.zeros(len(predictions),dtype=bool)
+        review = (confidence < self.configuration["review_confidence_threshold"]) | disagreement | refinement_review
         escalation = (predictions != 0) & ~review
-        return {"forest_probabilities": forest_probs, "temporal_probabilities": temporal_probs,
+        result={"forest_probabilities": forest_probs, "temporal_probabilities": temporal_probs,
                 "probabilities": probabilities, "class_id": predictions, "confidence": confidence,
                 "branch_disagreement": disagreement, "needs_review": review, "confident_fault_escalation": escalation}
+        if boosted_probs is not None:result['boosted_probabilities']=boosted_probs;result['refinement_review']=refinement_review
+        return result
 
     def predict_raw(self, raw_windows: np.ndarray) -> dict[str, np.ndarray]:
         sequence, table = model_inputs(raw_windows, self.scaler, self.protocol)
@@ -244,8 +279,22 @@ def load_hybrid(folder: str | Path, device: str = "cpu") -> HybridPredictor:
     if sha256_file(folder / "hybrid.json") != ready["hybrid_sha256"]:
         raise ValueError("Model configuration changed after the bundle was saved")
     config = json.loads((folder / "hybrid.json").read_text(encoding="utf-8"))
+    boost=config.get('boosting')
+    if boost:
+        factors=np.asarray(boost.get('class_factors'),dtype=float)
+        if not 0<boost.get('weight',0)<1 or factors.shape!=(4,) or not np.isfinite(factors).all() or np.any(factors<=0):raise ValueError('Invalid boosted refinement factors or weight')
+        if any(not np.isfinite(boost.get(k,0)) or boost.get(k,0)<=0 for k in ['temperature','hybrid_temperature']):raise ValueError('Invalid boosted calibration temperatures')
     if config["artifact_version"] != "aeris-hybrid-v1":
         raise ValueError("Unsupported hybrid artifact version")
+    if config.get('classes') != CLASS_NAMES or not 0 < config.get('forest_weight', 0) < 1:
+        raise ValueError('AERIS requires the ordered four classes and both RF and temporal branches')
+    factors=np.asarray(config.get('class_factors',[1.,1.,1.,1.]),dtype=float)
+    if factors.shape!=(4,) or not np.isfinite(factors).all() or np.any(factors<=0):
+        raise ValueError('Class factors must be four finite positive values')
+    if set(config.get('temperatures', {})) != {'forest','temporal','hybrid'} or any(not np.isfinite(t) or t <= 0 for t in config['temperatures'].values()):
+        raise ValueError('All branch and hybrid calibration temperatures must be finite and positive')
+    if not 0 < config.get('review_confidence_threshold', 0) < 1:
+        raise ValueError('Invalid review confidence threshold')
     required = {"forest.joblib", "temporal_state.pt", "source_scaler.json", "window_protocol.json"}
     if set(config["artifact_sha256"]) != required:
         raise ValueError("The model bundle does not contain the expected artifacts")
@@ -253,6 +302,7 @@ def load_hybrid(folder: str | Path, device: str = "cpu") -> HybridPredictor:
         if sha256_file(folder / filename) != digest:
             raise ValueError(f"Model artifact changed: {filename}")
     forest = joblib.load(folder / "forest.joblib")
+    if boost and (not hasattr(forest,'boosted_probabilities') or not np.array_equal(forest.booster.classes_,np.arange(4))):raise ValueError('Boosted artifact does not match its declared contract')
     if not np.array_equal(forest.classes_, np.arange(4)):
         raise ValueError("Forest class order does not match AERIS class IDs")
     temporal = create_temporal(config.get("temporal_kind", "causal_tcn_last"), config["temporal_architecture"])

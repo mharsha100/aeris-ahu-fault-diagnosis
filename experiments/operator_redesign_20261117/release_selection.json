@@ -1,0 +1,10 @@
+{
+  "bundle": "boosted_v2_s42",
+  "per_architecture": {
+    "v0": "boosted_v0_s42",
+    "v1": "boosted_v1_s42",
+    "v2": "boosted_v2_s42"
+  },
+  "scope": "Source-only constrained refinement. Three booster seeds on fixed, distinct 50-epoch RF+TCN parents; not independent neural retraining. Existing target labels retrospective.",
+  "selection_frozen_before_postselection_evaluation": true
+}

@@ -1,0 +1,90 @@
+{
+  "windows": 6930,
+  "accuracy": 0.8111111111111111,
+  "balanced_accuracy": 0.7431972789115646,
+  "macro_f1": 0.7535703807853191,
+  "log_loss": 0.3780518246417906,
+  "multiclass_brier": 0.22880435569122792,
+  "ece_10_bins": 0.014416886666514984,
+  "confusion_matrix": [
+    [
+      211,
+      140,
+      41,
+      70
+    ],
+    [
+      68,
+      2674,
+      341,
+      151
+    ],
+    [
+      46,
+      280,
+      1830,
+      0
+    ],
+    [
+      8,
+      164,
+      0,
+      906
+    ]
+  ],
+  "per_class": {
+    "normal": {
+      "precision": 0.6336336336336337,
+      "recall": 0.45670995670995673,
+      "f1-score": 0.5308176100628931,
+      "support": 462.0
+    },
+    "damper_fault": {
+      "precision": 0.8207489257213014,
+      "recall": 0.8268398268398268,
+      "f1-score": 0.8237831176833025,
+      "support": 3234.0
+    },
+    "cooling_valve_fault": {
+      "precision": 0.8273056057866185,
+      "recall": 0.8487940630797773,
+      "f1-score": 0.8379120879120879,
+      "support": 2156.0
+    },
+    "heating_valve_fault": {
+      "precision": 0.8039041703637977,
+      "recall": 0.8404452690166976,
+      "f1-score": 0.8217687074829932,
+      "support": 1078.0
+    },
+    "accuracy": 0.8111111111111111,
+    "macro avg": {
+      "precision": 0.7713980838763379,
+      "recall": 0.7431972789115646,
+      "f1-score": 0.7535703807853191,
+      "support": 6930.0
+    },
+    "weighted avg": {
+      "precision": 0.8076941336579438,
+      "recall": 0.8111111111111111,
+      "f1-score": 0.8083344107708492,
+      "support": 6930.0
+    }
+  },
+  "seed": 42,
+  "seconds": 39.20513280000159,
+  "features": 304,
+  "additional_channels": [
+    "AHU Supply Air Temperature Setpoint (\u00b0K)",
+    "Supply Air Mass Flow Rate (kg/s)",
+    "Outdoor Air Mass Flow Rate (kg/s)",
+    "Return Air Mass Flow Rate in the Mixing Box (kg/s)",
+    "Measured AHU Supply Air Duct Static Pressure (Pa)",
+    "AHU Supply Air Duct Static Pressure Setpoint (Pa)",
+    "AHU Outdoor Air Wet Bulb Temperature (\u00b0K)"
+  ],
+  "selected_iteration": 1102,
+  "iterations_completed": 1200,
+  "fault_to_normal": 122,
+  "deployed": false
+}

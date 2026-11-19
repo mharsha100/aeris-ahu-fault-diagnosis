@@ -1,0 +1,68 @@
+name: aeris
+services:
+  app:
+    build: .
+    image: aeris-local:20261117c2
+    ports: ["127.0.0.1:8510:8001", "127.0.0.1:8011:8001", "127.0.0.1:8511:8501"]
+    volumes:
+      - ./data:/app/data:ro
+      - feedback:/state
+    restart: unless-stopped
+  learner:
+    image: aeris-local:20261117c2
+    command: ["python", "deployment/learner.py"]
+    volumes:
+      - ./data:/app/data:ro
+      - feedback:/state
+    cpus: 2.0
+    mem_limit: 6g
+    healthcheck:
+      test: ["CMD", "python", "deployment/check_learner.py"]
+      interval: 30s
+      timeout: 5s
+      start_period: 60s
+    restart: unless-stopped
+  prometheus:
+    image: prom/prometheus:v3.7.3
+    command: ["--config.file=/etc/prometheus/prometheus.yml", "--storage.tsdb.path=/prometheus"]
+    ports: ["127.0.0.1:9091:9090"]
+    volumes:
+      - ./deployment/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - ./deployment/alerts.yml:/etc/prometheus/alerts.yml:ro
+      - prometheus:/prometheus
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "-", "http://localhost:9090/-/healthy"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+    restart: unless-stopped
+  grafana:
+    image: grafana/grafana:12.2.1
+    ports: ["127.0.0.1:3001:3000"]
+    environment:
+      GF_AUTH_ANONYMOUS_ENABLED: "true"
+      GF_AUTH_ANONYMOUS_ORG_ROLE: Viewer
+      GF_USERS_ALLOW_SIGN_UP: "false"
+    volumes:
+      - ./deployment/grafana/provisioning:/etc/grafana/provisioning:ro
+      - ./deployment/grafana/dashboards:/var/lib/grafana/dashboards:ro
+      - grafana:/var/lib/grafana
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "-", "http://localhost:3000/api/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+    restart: unless-stopped
+  workflow:
+    profiles: [workflow]
+    image: aeris-local:20261117c2
+    user: "0:0"
+    entrypoint: ["python"]
+    command: ["scripts/10_evaluate.py"]
+    volumes:
+      - ./data:/app/data
+      - ./experiments:/app/experiments
+volumes:
+  feedback:
+  prometheus:
+  grafana:

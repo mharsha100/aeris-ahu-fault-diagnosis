@@ -1,0 +1,4 @@
+bundle,cpu_p50_seconds,cpu_p95_seconds,samples,scope,bytes
+e2e_anchor_v0_s42,0.07890280000083294,0.15587782499969763,100,warm hybrid inference only; same CPU process; excludes UI,12251752
+e2e_anchor_v1_s42,0.07368509999923845,0.13495894499983477,100,warm hybrid inference only; same CPU process; excludes UI,12256958
+e2e_anchor_v2_s42,0.09428839999964111,0.1422344050010906,100,warm hybrid inference only; same CPU process; excludes UI,12265844

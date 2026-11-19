@@ -1,0 +1,18 @@
+0:	learn: 0.6288891	test: 0.6475431	best: 0.6475431 (0)	total: 72.5ms	remaining: 1m 26s
+300:	learn: 0.7640215	test: 0.7480296	best: 0.7489110 (297)	total: 8.89s	remaining: 26.6s
+600:	learn: 0.7865298	test: 0.7475791	best: 0.7510275 (436)	total: 18.9s	remaining: 18.8s
+900:	learn: 0.8021375	test: 0.7489389	best: 0.7510275 (436)	total: 27.2s	remaining: 9.04s
+1199:	learn: 0.8142839	test: 0.7514989	best: 0.7535704 (1101)	total: 37.5s	remaining: 0us
+bestTest = 0.7535703808
+bestIteration = 1101
+Shrink model to first 1102 iterations.
+SENSOR CONTEXT 42 0.7535703807853191 122
+0:	learn: 0.5767780	test: 0.5849062	best: 0.5849062 (0)	total: 39.3ms	remaining: 47.2s
+300:	learn: 0.7627270	test: 0.7358141	best: 0.7380709 (293)	total: 9.52s	remaining: 28.4s
+600:	learn: 0.7877406	test: 0.7439902	best: 0.7453335 (551)	total: 19.2s	remaining: 19.1s
+900:	learn: 0.8034100	test: 0.7461562	best: 0.7467652 (885)	total: 28.7s	remaining: 9.51s
+1199:	learn: 0.8167385	test: 0.7474715	best: 0.7483443 (1110)	total: 39.4s	remaining: 0us
+bestTest = 0.7483442689
+bestIteration = 1110
+Shrink model to first 1111 iterations.
+SENSOR CONTEXT 43 0.7483442689297627 183

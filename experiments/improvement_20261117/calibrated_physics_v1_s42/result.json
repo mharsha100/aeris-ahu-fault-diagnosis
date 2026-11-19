@@ -1,0 +1,1478 @@
+{
+  "windows": 6930,
+  "accuracy": 0.7784992784992785,
+  "balanced_accuracy": 0.7082946815089672,
+  "macro_f1": 0.6924647363480891,
+  "log_loss": 0.4408826193224671,
+  "multiclass_brier": 0.26237287238777807,
+  "ece_10_bins": 0.009117759597941486,
+  "confusion_matrix": [
+    [
+      162,
+      135,
+      54,
+      111
+    ],
+    [
+      187,
+      2591,
+      215,
+      241
+    ],
+    [
+      168,
+      329,
+      1659,
+      0
+    ],
+    [
+      0,
+      95,
+      0,
+      983
+    ]
+  ],
+  "per_class": {
+    "normal": {
+      "precision": 0.31334622823984526,
+      "recall": 0.35064935064935066,
+      "f1-score": 0.33094994892747703,
+      "support": 462.0
+    },
+    "damper_fault": {
+      "precision": 0.8225396825396826,
+      "recall": 0.8011750154607298,
+      "f1-score": 0.8117167919799498,
+      "support": 3234.0
+    },
+    "cooling_valve_fault": {
+      "precision": 0.8604771784232366,
+      "recall": 0.7694805194805194,
+      "f1-score": 0.8124387855044074,
+      "support": 2156.0
+    },
+    "heating_valve_fault": {
+      "precision": 0.7363295880149813,
+      "recall": 0.911873840445269,
+      "f1-score": 0.8147534189805222,
+      "support": 1078.0
+    },
+    "accuracy": 0.7784992784992785,
+    "macro avg": {
+      "precision": 0.6831731693044364,
+      "recall": 0.7082946815089672,
+      "f1-score": 0.6924647363480891,
+      "support": 6930.0
+    },
+    "weighted avg": {
+      "precision": 0.7869857696018455,
+      "recall": 0.7784992784992785,
+      "f1-score": 0.7803626535174832,
+      "support": 6930.0
+    }
+  },
+  "name": "calibrated_physics_v1_s42",
+  "version": "v1",
+  "seed": 42,
+  "seconds": 3.9155545999965398,
+  "chosen": {
+    "weight": 0.5,
+    "factors": [
+      0.8,
+      1,
+      1,
+      1
+    ],
+    "calibration_f1": 0.704828523158282,
+    "calibration_false_normal": 29
+  },
+  "candidates": [
+    {
+      "weight": 0.25,
+      "factors": [
+        0.6,
+        1,
+        0.85,
+        1
+      ],
+      "calibration_f1": 0.687124903581518,
+      "calibration_false_normal": 19
+    },
+    {
+      "weight": 0.25,
+      "factors": [
+        0.6,
+        1,
+        1,
+        1
+      ],
+      "calibration_f1": 0.6565079504766873,
+      "calibration_false_normal": 0
+    },
+    {
+      "weight": 0.25,
+      "factors": [
+        0.6,
+        1,
+        1.15,
+        1
+      ],
+      "calibration_f1": 0.590939633575496,
+      "calibration_false_normal": 0
+    },
+    {
+      "weight": 0.25,
+      "factors": [
+        0.8,
+        1,
+        0.85,
+        1
+      ],
+      "calibration_f1": 0.6558228522417748,
+      "calibration_false_normal": 461
+    },
+    {
+      "weight": 0.25,
+      "factors": [
+        0.8,
+        1,
+        1,
+        1
+      ],
+      "calibration_f1": 0.6633638736859186,
+      "calibration_false_normal": 363
+    },
+    {
+      "weight": 0.25,
+      "factors": [
+        0.8,
+        1,
+        1.15,
+        1
+      ],
+      "calibration_f1": 0.6908454638441037,
+      "calibration_false_normal": 73
+    },
+    {
+      "weight": 0.25,
+      "factors": [
+        1,
+        1,
+        0.85,
+        1
+      ],
+      "calibration_f1": 0.6434919952442287,
+      "calibration_false_normal": 2004
+    },
+    {
+      "weight": 0.25,
+      "factors": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "calibration_f1": 0.6439674620385577,
+      "calibration_false_normal": 1993
+    },
+    {
+      "weight": 0.25,
+      "factors": [
+        1,
+        1,
+        1.15,
+        1
+      ],
+      "calibration_f1": 0.6439717174048628,
+      "calibration_false_normal": 1938
+    },
+    {
+      "weight": 0.25,
+      "factors": [
+        1.2,
+        1,
+        0.85,
+        1
+      ],
+      "calibration_f1": 0.6306351389108728,
+      "calibration_false_normal": 2457
+    },
+    {
+      "weight": 0.25,
+      "factors": [
+        1.2,
+        1,
+        1,
+        1
+      ],
+      "calibration_f1": 0.6310052528528329,
+      "calibration_false_normal": 2410
+    },
+    {
+      "weight": 0.25,
+      "factors": [
+        1.2,
+        1,
+        1.15,
+        1
+      ],
+      "calibration_f1": 0.6310933381363941,
+      "calibration_false_normal": 2399
+    },
+    {
+      "weight": 0.25,
+      "factors": [
+        1.4,
+        1,
+        0.85,
+        1
+      ],
+      "calibration_f1": 0.6243595687209151,
+      "calibration_false_normal": 2591
+    },
+    {
+      "weight": 0.25,
+      "factors": [
+        1.4,
+        1,
+        1,
+        1
+      ],
+      "calibration_f1": 0.6243892229097452,
+      "calibration_false_normal": 2582
+    },
+    {
+      "weight": 0.25,
+      "factors": [
+        1.4,
+        1,
+        1.15,
+        1
+      ],
+      "calibration_f1": 0.6249017078741976,
+      "calibration_false_normal": 2529
+    },
+    {
+      "weight": 0.25,
+      "factors": [
+        1.6,
+        1,
+        0.85,
+        1
+      ],
+      "calibration_f1": 0.6222034636390292,
+      "calibration_false_normal": 2638
+    },
+    {
+      "weight": 0.25,
+      "factors": [
+        1.6,
+        1,
+        1,
+        1
+      ],
+      "calibration_f1": 0.6223033183318416,
+      "calibration_false_normal": 2637
+    },
+    {
+      "weight": 0.25,
+      "factors": [
+        1.6,
+        1,
+        1.15,
+        1
+      ],
+      "calibration_f1": 0.6221390104904394,
+      "calibration_false_normal": 2628
+    },
+    {
+      "weight": 0.25,
+      "factors": [
+        2,
+        1,
+        0.85,
+        1
+      ],
+      "calibration_f1": 0.6199464971598468,
+      "calibration_false_normal": 2701
+    },
+    {
+      "weight": 0.25,
+      "factors": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "calibration_f1": 0.6201456117566312,
+      "calibration_false_normal": 2699
+    },
+    {
+      "weight": 0.25,
+      "factors": [
+        2,
+        1,
+        1.15,
+        1
+      ],
+      "calibration_f1": 0.6203305802718518,
+      "calibration_false_normal": 2697
+    },
+    {
+      "weight": 0.5,
+      "factors": [
+        0.6,
+        1,
+        0.85,
+        1
+      ],
+      "calibration_f1": 0.6798242479746638,
+      "calibration_false_normal": 0
+    },
+    {
+      "weight": 0.5,
+      "factors": [
+        0.6,
+        1,
+        1,
+        1
+      ],
+      "calibration_f1": 0.6726509484991824,
+      "calibration_false_normal": 0
+    },
+    {
+      "weight": 0.5,
+      "factors": [
+        0.6,
+        1,
+        1.15,
+        1
+      ],
+      "calibration_f1": 0.6227407616600079,
+      "calibration_false_normal": 0
+    },
+    {
+      "weight": 0.5,
+      "factors": [
+        0.8,
+        1,
+        0.85,
+        1
+      ],
+      "calibration_f1": 0.6961484981061913,
+      "calibration_false_normal": 62
+    },
+    {
+      "weight": 0.5,
+      "factors": [
+        0.8,
+        1,
+        1,
+        1
+      ],
+      "calibration_f1": 0.704828523158282,
+      "calibration_false_normal": 29
+    },
+    {
+      "weight": 0.5,
+      "factors": [
+        0.8,
+        1,
+        1.15,
+        1
+      ],
+      "calibration_f1": 0.6935341963973954,
+      "calibration_false_normal": 13
+    },
+    {
+      "weight": 0.5,
+      "factors": [
+        1,
+        1,
+        0.85,
+        1
+      ],
+      "calibration_f1": 0.6647239959431881,
+      "calibration_false_normal": 602
+    },
+    {
+      "weight": 0.5,
+      "factors": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "calibration_f1": 0.6707979943771951,
+      "calibration_false_normal": 531
+    },
+    {
+      "weight": 0.5,
+      "factors": [
+        1,
+        1,
+        1.15,
+        1
+      ],
+      "calibration_f1": 0.6852196554483615,
+      "calibration_false_normal": 327
+    },
+    {
+      "weight": 0.5,
+      "factors": [
+        1.2,
+        1,
+        0.85,
+        1
+      ],
+      "calibration_f1": 0.6418821450813034,
+      "calibration_false_normal": 1947
+    },
+    {
+      "weight": 0.5,
+      "factors": [
+        1.2,
+        1,
+        1,
+        1
+      ],
+      "calibration_f1": 0.6438226583678383,
+      "calibration_false_normal": 1911
+    },
+    {
+      "weight": 0.5,
+      "factors": [
+        1.2,
+        1,
+        1.15,
+        1
+      ],
+      "calibration_f1": 0.6484564885989641,
+      "calibration_false_normal": 1765
+    },
+    {
+      "weight": 0.5,
+      "factors": [
+        1.4,
+        1,
+        0.85,
+        1
+      ],
+      "calibration_f1": 0.6306968868641638,
+      "calibration_false_normal": 2428
+    },
+    {
+      "weight": 0.5,
+      "factors": [
+        1.4,
+        1,
+        1,
+        1
+      ],
+      "calibration_f1": 0.6313785229400857,
+      "calibration_false_normal": 2412
+    },
+    {
+      "weight": 0.5,
+      "factors": [
+        1.4,
+        1,
+        1.15,
+        1
+      ],
+      "calibration_f1": 0.632195726314764,
+      "calibration_false_normal": 2370
+    },
+    {
+      "weight": 0.5,
+      "factors": [
+        1.6,
+        1,
+        0.85,
+        1
+      ],
+      "calibration_f1": 0.624621626642988,
+      "calibration_false_normal": 2572
+    },
+    {
+      "weight": 0.5,
+      "factors": [
+        1.6,
+        1,
+        1,
+        1
+      ],
+      "calibration_f1": 0.6252572244473136,
+      "calibration_false_normal": 2558
+    },
+    {
+      "weight": 0.5,
+      "factors": [
+        1.6,
+        1,
+        1.15,
+        1
+      ],
+      "calibration_f1": 0.6263339117767743,
+      "calibration_false_normal": 2528
+    },
+    {
+      "weight": 0.5,
+      "factors": [
+        2,
+        1,
+        0.85,
+        1
+      ],
+      "calibration_f1": 0.6206750168195684,
+      "calibration_false_normal": 2680
+    },
+    {
+      "weight": 0.5,
+      "factors": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "calibration_f1": 0.6212654758237889,
+      "calibration_false_normal": 2675
+    },
+    {
+      "weight": 0.5,
+      "factors": [
+        2,
+        1,
+        1.15,
+        1
+      ],
+      "calibration_f1": 0.6216788080800906,
+      "calibration_false_normal": 2672
+    },
+    {
+      "weight": 0.65,
+      "factors": [
+        0.6,
+        1,
+        0.85,
+        1
+      ],
+      "calibration_f1": 0.6573636314705298,
+      "calibration_false_normal": 0
+    },
+    {
+      "weight": 0.65,
+      "factors": [
+        0.6,
+        1,
+        1,
+        1
+      ],
+      "calibration_f1": 0.6544016891517822,
+      "calibration_false_normal": 0
+    },
+    {
+      "weight": 0.65,
+      "factors": [
+        0.6,
+        1,
+        1.15,
+        1
+      ],
+      "calibration_f1": 0.609061612285754,
+      "calibration_false_normal": 0
+    },
+    {
+      "weight": 0.65,
+      "factors": [
+        0.8,
+        1,
+        0.85,
+        1
+      ],
+      "calibration_f1": 0.6830849035367658,
+      "calibration_false_normal": 20
+    },
+    {
+      "weight": 0.65,
+      "factors": [
+        0.8,
+        1,
+        1,
+        1
+      ],
+      "calibration_f1": 0.6831893003218684,
+      "calibration_false_normal": 20
+    },
+    {
+      "weight": 0.65,
+      "factors": [
+        0.8,
+        1,
+        1.15,
+        1
+      ],
+      "calibration_f1": 0.6707179962699179,
+      "calibration_false_normal": 13
+    },
+    {
+      "weight": 0.65,
+      "factors": [
+        1,
+        1,
+        0.85,
+        1
+      ],
+      "calibration_f1": 0.6669676522537618,
+      "calibration_false_normal": 212
+    },
+    {
+      "weight": 0.65,
+      "factors": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "calibration_f1": 0.6695454525129246,
+      "calibration_false_normal": 186
+    },
+    {
+      "weight": 0.65,
+      "factors": [
+        1,
+        1,
+        1.15,
+        1
+      ],
+      "calibration_f1": 0.6801063442015437,
+      "calibration_false_normal": 86
+    },
+    {
+      "weight": 0.65,
+      "factors": [
+        1.2,
+        1,
+        0.85,
+        1
+      ],
+      "calibration_f1": 0.6363059303752678,
+      "calibration_false_normal": 1348
+    },
+    {
+      "weight": 0.65,
+      "factors": [
+        1.2,
+        1,
+        1,
+        1
+      ],
+      "calibration_f1": 0.6384607624844341,
+      "calibration_false_normal": 1318
+    },
+    {
+      "weight": 0.65,
+      "factors": [
+        1.2,
+        1,
+        1.15,
+        1
+      ],
+      "calibration_f1": 0.6433683983287806,
+      "calibration_false_normal": 1200
+    },
+    {
+      "weight": 0.65,
+      "factors": [
+        1.4,
+        1,
+        0.85,
+        1
+      ],
+      "calibration_f1": 0.6177168094982226,
+      "calibration_false_normal": 1862
+    },
+    {
+      "weight": 0.65,
+      "factors": [
+        1.4,
+        1,
+        1,
+        1
+      ],
+      "calibration_f1": 0.6190386751045329,
+      "calibration_false_normal": 1821
+    },
+    {
+      "weight": 0.65,
+      "factors": [
+        1.4,
+        1,
+        1.15,
+        1
+      ],
+      "calibration_f1": 0.6223850505126165,
+      "calibration_false_normal": 1710
+    },
+    {
+      "weight": 0.65,
+      "factors": [
+        1.6,
+        1,
+        0.85,
+        1
+      ],
+      "calibration_f1": 0.6078022749054828,
+      "calibration_false_normal": 2427
+    },
+    {
+      "weight": 0.65,
+      "factors": [
+        1.6,
+        1,
+        1,
+        1
+      ],
+      "calibration_f1": 0.6075290125316638,
+      "calibration_false_normal": 2418
+    },
+    {
+      "weight": 0.65,
+      "factors": [
+        1.6,
+        1,
+        1.15,
+        1
+      ],
+      "calibration_f1": 0.6113883367302598,
+      "calibration_false_normal": 2339
+    },
+    {
+      "weight": 0.65,
+      "factors": [
+        2,
+        1,
+        0.85,
+        1
+      ],
+      "calibration_f1": 0.5999849604747717,
+      "calibration_false_normal": 2641
+    },
+    {
+      "weight": 0.65,
+      "factors": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "calibration_f1": 0.5997904838366378,
+      "calibration_false_normal": 2638
+    },
+    {
+      "weight": 0.65,
+      "factors": [
+        2,
+        1,
+        1.15,
+        1
+      ],
+      "calibration_f1": 0.6003494347125604,
+      "calibration_false_normal": 2634
+    },
+    {
+      "weight": 0.75,
+      "factors": [
+        0.6,
+        1,
+        0.85,
+        1
+      ],
+      "calibration_f1": 0.6474202292745805,
+      "calibration_false_normal": 0
+    },
+    {
+      "weight": 0.75,
+      "factors": [
+        0.6,
+        1,
+        1,
+        1
+      ],
+      "calibration_f1": 0.6462073231760757,
+      "calibration_false_normal": 0
+    },
+    {
+      "weight": 0.75,
+      "factors": [
+        0.6,
+        1,
+        1.15,
+        1
+      ],
+      "calibration_f1": 0.6136260887948398,
+      "calibration_false_normal": 0
+    },
+    {
+      "weight": 0.75,
+      "factors": [
+        0.8,
+        1,
+        0.85,
+        1
+      ],
+      "calibration_f1": 0.6749015078734454,
+      "calibration_false_normal": 13
+    },
+    {
+      "weight": 0.75,
+      "factors": [
+        0.8,
+        1,
+        1,
+        1
+      ],
+      "calibration_f1": 0.6750343258893614,
+      "calibration_false_normal": 13
+    },
+    {
+      "weight": 0.75,
+      "factors": [
+        0.8,
+        1,
+        1.15,
+        1
+      ],
+      "calibration_f1": 0.6654544054977094,
+      "calibration_false_normal": 7
+    },
+    {
+      "weight": 0.75,
+      "factors": [
+        1,
+        1,
+        0.85,
+        1
+      ],
+      "calibration_f1": 0.6714117222938119,
+      "calibration_false_normal": 112
+    },
+    {
+      "weight": 0.75,
+      "factors": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "calibration_f1": 0.6740109560357954,
+      "calibration_false_normal": 98
+    },
+    {
+      "weight": 0.75,
+      "factors": [
+        1,
+        1,
+        1.15,
+        1
+      ],
+      "calibration_f1": 0.6764986569758858,
+      "calibration_false_normal": 56
+    },
+    {
+      "weight": 0.75,
+      "factors": [
+        1.2,
+        1,
+        0.85,
+        1
+      ],
+      "calibration_f1": 0.6370993016035242,
+      "calibration_false_normal": 902
+    },
+    {
+      "weight": 0.75,
+      "factors": [
+        1.2,
+        1,
+        1,
+        1
+      ],
+      "calibration_f1": 0.6391528198006419,
+      "calibration_false_normal": 889
+    },
+    {
+      "weight": 0.75,
+      "factors": [
+        1.2,
+        1,
+        1.15,
+        1
+      ],
+      "calibration_f1": 0.6433140585429883,
+      "calibration_false_normal": 819
+    },
+    {
+      "weight": 0.75,
+      "factors": [
+        1.4,
+        1,
+        0.85,
+        1
+      ],
+      "calibration_f1": 0.6183101792940994,
+      "calibration_false_normal": 1638
+    },
+    {
+      "weight": 0.75,
+      "factors": [
+        1.4,
+        1,
+        1,
+        1
+      ],
+      "calibration_f1": 0.6201949890876214,
+      "calibration_false_normal": 1600
+    },
+    {
+      "weight": 0.75,
+      "factors": [
+        1.4,
+        1,
+        1.15,
+        1
+      ],
+      "calibration_f1": 0.6222967013880554,
+      "calibration_false_normal": 1522
+    },
+    {
+      "weight": 0.75,
+      "factors": [
+        1.6,
+        1,
+        0.85,
+        1
+      ],
+      "calibration_f1": 0.5980856992901671,
+      "calibration_false_normal": 1967
+    },
+    {
+      "weight": 0.75,
+      "factors": [
+        1.6,
+        1,
+        1,
+        1
+      ],
+      "calibration_f1": 0.5992534931325635,
+      "calibration_false_normal": 1943
+    },
+    {
+      "weight": 0.75,
+      "factors": [
+        1.6,
+        1,
+        1.15,
+        1
+      ],
+      "calibration_f1": 0.602515797151297,
+      "calibration_false_normal": 1839
+    },
+    {
+      "weight": 0.75,
+      "factors": [
+        2,
+        1,
+        0.85,
+        1
+      ],
+      "calibration_f1": 0.572194716973305,
+      "calibration_false_normal": 2723
+    },
+    {
+      "weight": 0.75,
+      "factors": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "calibration_f1": 0.5741412936547483,
+      "calibration_false_normal": 2704
+    },
+    {
+      "weight": 0.75,
+      "factors": [
+        2,
+        1,
+        1.15,
+        1
+      ],
+      "calibration_f1": 0.5756320846493641,
+      "calibration_false_normal": 2667
+    },
+    {
+      "weight": 0.85,
+      "factors": [
+        0.6,
+        1,
+        0.85,
+        1
+      ],
+      "calibration_f1": 0.6229280300988882,
+      "calibration_false_normal": 0
+    },
+    {
+      "weight": 0.85,
+      "factors": [
+        0.6,
+        1,
+        1,
+        1
+      ],
+      "calibration_f1": 0.6230526431703375,
+      "calibration_false_normal": 0
+    },
+    {
+      "weight": 0.85,
+      "factors": [
+        0.6,
+        1,
+        1.15,
+        1
+      ],
+      "calibration_f1": 0.5961589839710357,
+      "calibration_false_normal": 0
+    },
+    {
+      "weight": 0.85,
+      "factors": [
+        0.8,
+        1,
+        0.85,
+        1
+      ],
+      "calibration_f1": 0.6517015660937323,
+      "calibration_false_normal": 9
+    },
+    {
+      "weight": 0.85,
+      "factors": [
+        0.8,
+        1,
+        1,
+        1
+      ],
+      "calibration_f1": 0.6516331966863912,
+      "calibration_false_normal": 9
+    },
+    {
+      "weight": 0.85,
+      "factors": [
+        0.8,
+        1,
+        1.15,
+        1
+      ],
+      "calibration_f1": 0.6434816591760477,
+      "calibration_false_normal": 6
+    },
+    {
+      "weight": 0.85,
+      "factors": [
+        1,
+        1,
+        0.85,
+        1
+      ],
+      "calibration_f1": 0.6526401188227174,
+      "calibration_false_normal": 89
+    },
+    {
+      "weight": 0.85,
+      "factors": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "calibration_f1": 0.6555645950747485,
+      "calibration_false_normal": 77
+    },
+    {
+      "weight": 0.85,
+      "factors": [
+        1,
+        1,
+        1.15,
+        1
+      ],
+      "calibration_f1": 0.6546658914950498,
+      "calibration_false_normal": 48
+    },
+    {
+      "weight": 0.85,
+      "factors": [
+        1.2,
+        1,
+        0.85,
+        1
+      ],
+      "calibration_f1": 0.6313950830374975,
+      "calibration_false_normal": 508
+    },
+    {
+      "weight": 0.85,
+      "factors": [
+        1.2,
+        1,
+        1,
+        1
+      ],
+      "calibration_f1": 0.6336417722934327,
+      "calibration_false_normal": 503
+    },
+    {
+      "weight": 0.85,
+      "factors": [
+        1.2,
+        1,
+        1.15,
+        1
+      ],
+      "calibration_f1": 0.6379745476736284,
+      "calibration_false_normal": 431
+    },
+    {
+      "weight": 0.85,
+      "factors": [
+        1.4,
+        1,
+        0.85,
+        1
+      ],
+      "calibration_f1": 0.604458070320209,
+      "calibration_false_normal": 1439
+    },
+    {
+      "weight": 0.85,
+      "factors": [
+        1.4,
+        1,
+        1,
+        1
+      ],
+      "calibration_f1": 0.6066368840410292,
+      "calibration_false_normal": 1415
+    },
+    {
+      "weight": 0.85,
+      "factors": [
+        1.4,
+        1,
+        1.15,
+        1
+      ],
+      "calibration_f1": 0.6084522385445292,
+      "calibration_false_normal": 1353
+    },
+    {
+      "weight": 0.85,
+      "factors": [
+        1.6,
+        1,
+        0.85,
+        1
+      ],
+      "calibration_f1": 0.5934861665917608,
+      "calibration_false_normal": 1816
+    },
+    {
+      "weight": 0.85,
+      "factors": [
+        1.6,
+        1,
+        1,
+        1
+      ],
+      "calibration_f1": 0.5964135622247954,
+      "calibration_false_normal": 1777
+    },
+    {
+      "weight": 0.85,
+      "factors": [
+        1.6,
+        1,
+        1.15,
+        1
+      ],
+      "calibration_f1": 0.599035372566354,
+      "calibration_false_normal": 1698
+    },
+    {
+      "weight": 0.85,
+      "factors": [
+        2,
+        1,
+        0.85,
+        1
+      ],
+      "calibration_f1": 0.5770714014401827,
+      "calibration_false_normal": 2464
+    },
+    {
+      "weight": 0.85,
+      "factors": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "calibration_f1": 0.5781343535412172,
+      "calibration_false_normal": 2454
+    },
+    {
+      "weight": 0.85,
+      "factors": [
+        2,
+        1,
+        1.15,
+        1
+      ],
+      "calibration_f1": 0.5810762271569218,
+      "calibration_false_normal": 2389
+    },
+    {
+      "weight": 0.9,
+      "factors": [
+        0.6,
+        1,
+        0.85,
+        1
+      ],
+      "calibration_f1": 0.6217667032090268,
+      "calibration_false_normal": 0
+    },
+    {
+      "weight": 0.9,
+      "factors": [
+        0.6,
+        1,
+        1,
+        1
+      ],
+      "calibration_f1": 0.621776768629992,
+      "calibration_false_normal": 0
+    },
+    {
+      "weight": 0.9,
+      "factors": [
+        0.6,
+        1,
+        1.15,
+        1
+      ],
+      "calibration_f1": 0.5975774104700811,
+      "calibration_false_normal": 0
+    },
+    {
+      "weight": 0.9,
+      "factors": [
+        0.8,
+        1,
+        0.85,
+        1
+      ],
+      "calibration_f1": 0.6504511223113769,
+      "calibration_false_normal": 10
+    },
+    {
+      "weight": 0.9,
+      "factors": [
+        0.8,
+        1,
+        1,
+        1
+      ],
+      "calibration_f1": 0.6508811652827792,
+      "calibration_false_normal": 10
+    },
+    {
+      "weight": 0.9,
+      "factors": [
+        0.8,
+        1,
+        1.15,
+        1
+      ],
+      "calibration_f1": 0.6428031145966954,
+      "calibration_false_normal": 7
+    },
+    {
+      "weight": 0.9,
+      "factors": [
+        1,
+        1,
+        0.85,
+        1
+      ],
+      "calibration_f1": 0.6531348711889285,
+      "calibration_false_normal": 72
+    },
+    {
+      "weight": 0.9,
+      "factors": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "calibration_f1": 0.6551178628009692,
+      "calibration_false_normal": 64
+    },
+    {
+      "weight": 0.9,
+      "factors": [
+        1,
+        1,
+        1.15,
+        1
+      ],
+      "calibration_f1": 0.6534297730352229,
+      "calibration_false_normal": 44
+    },
+    {
+      "weight": 0.9,
+      "factors": [
+        1.2,
+        1,
+        0.85,
+        1
+      ],
+      "calibration_f1": 0.6381260765420649,
+      "calibration_false_normal": 382
+    },
+    {
+      "weight": 0.9,
+      "factors": [
+        1.2,
+        1,
+        1,
+        1
+      ],
+      "calibration_f1": 0.6403344295366459,
+      "calibration_false_normal": 378
+    },
+    {
+      "weight": 0.9,
+      "factors": [
+        1.2,
+        1,
+        1.15,
+        1
+      ],
+      "calibration_f1": 0.6425439622186766,
+      "calibration_false_normal": 328
+    },
+    {
+      "weight": 0.9,
+      "factors": [
+        1.4,
+        1,
+        0.85,
+        1
+      ],
+      "calibration_f1": 0.6047958995819803,
+      "calibration_false_normal": 1308
+    },
+    {
+      "weight": 0.9,
+      "factors": [
+        1.4,
+        1,
+        1,
+        1
+      ],
+      "calibration_f1": 0.6085175152985199,
+      "calibration_false_normal": 1272
+    },
+    {
+      "weight": 0.9,
+      "factors": [
+        1.4,
+        1,
+        1.15,
+        1
+      ],
+      "calibration_f1": 0.6088534580874729,
+      "calibration_false_normal": 1240
+    },
+    {
+      "weight": 0.9,
+      "factors": [
+        1.6,
+        1,
+        0.85,
+        1
+      ],
+      "calibration_f1": 0.593727628671994,
+      "calibration_false_normal": 1744
+    },
+    {
+      "weight": 0.9,
+      "factors": [
+        1.6,
+        1,
+        1,
+        1
+      ],
+      "calibration_f1": 0.5977077979451604,
+      "calibration_false_normal": 1705
+    },
+    {
+      "weight": 0.9,
+      "factors": [
+        1.6,
+        1,
+        1.15,
+        1
+      ],
+      "calibration_f1": 0.5999624797120766,
+      "calibration_false_normal": 1622
+    },
+    {
+      "weight": 0.9,
+      "factors": [
+        2,
+        1,
+        0.85,
+        1
+      ],
+      "calibration_f1": 0.5800091775781887,
+      "calibration_false_normal": 2205
+    },
+    {
+      "weight": 0.9,
+      "factors": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "calibration_f1": 0.5808631665485434,
+      "calibration_false_normal": 2197
+    },
+    {
+      "weight": 0.9,
+      "factors": [
+        2,
+        1,
+        1.15,
+        1
+      ],
+      "calibration_f1": 0.5815919731601773,
+      "calibration_false_normal": 2147
+    }
+  ],
+  "fault_to_normal": 355
+}

@@ -1,0 +1,672 @@
+{
+  "status": "All three versions now have a boosted refinement that passed three booster-seed source-development checks. Gains are modest, not a high-accuracy or field-validation claim. Prior and refined results are shown on the same partitions. The added CatBoost component contributes 90% before final calibration; the original RF+temporal parent contributes 10%. The parent must independently agree confidently for a prediction to avoid review.",
+  "comparison": [
+    {
+      "version": "V0 refined",
+      "partition": "source_validation",
+      "n": 6930,
+      "accuracy": 0.7802308802308803,
+      "macro_F1": 0.7062322619871787,
+      "macro_precision": 0.701225239337939,
+      "macro_recall": 0.7220933828076685,
+      "ECE": 0.02453702616011261,
+      "Brier": 0.2593759371369346,
+      "review_rate": 0.515007215007215
+    },
+    {
+      "version": "V0 refined",
+      "partition": "source_test",
+      "n": 6929,
+      "accuracy": 0.7572521287343051,
+      "macro_F1": 0.6790364569303314,
+      "macro_precision": 0.7079694617786688,
+      "macro_recall": 0.6589989481156464,
+      "ECE": 0.04413970995146598,
+      "Brier": 0.3057286824743138,
+      "review_rate": 0.6236109106653197
+    },
+    {
+      "version": "V0 refined",
+      "partition": "target_test",
+      "n": 1136,
+      "accuracy": 0.32130281690140844,
+      "macro_F1": 0.21359649122807017,
+      "macro_precision": 0.16506793478260867,
+      "macro_recall": 0.32130281690140844,
+      "ECE": 0.25993713741916696,
+      "Brier": 0.8924566981303451,
+      "review_rate": 1.0
+    },
+    {
+      "version": "V1 refined",
+      "partition": "source_validation",
+      "n": 6930,
+      "accuracy": 0.7803751803751804,
+      "macro_F1": 0.7065609091187774,
+      "macro_precision": 0.7015093114601274,
+      "macro_recall": 0.7226731601731602,
+      "ECE": 0.02477562621639723,
+      "Brier": 0.2594071621894769,
+      "review_rate": 0.5167388167388167
+    },
+    {
+      "version": "V1 refined",
+      "partition": "source_test",
+      "n": 6929,
+      "accuracy": 0.757396449704142,
+      "macro_F1": 0.6796117389241968,
+      "macro_precision": 0.7082121676321178,
+      "macro_recall": 0.6597332849569826,
+      "ECE": 0.04418880198165865,
+      "Brier": 0.30578499976841594,
+      "review_rate": 0.6244768364843412
+    },
+    {
+      "version": "V1 refined",
+      "partition": "target_test",
+      "n": 1136,
+      "accuracy": 0.32130281690140844,
+      "macro_F1": 0.21364450492799097,
+      "macro_precision": 0.16519164260719643,
+      "macro_recall": 0.32130281690140844,
+      "ECE": 0.25951181254280253,
+      "Brier": 0.8915713836583863,
+      "review_rate": 1.0
+    },
+    {
+      "version": "V2 refined",
+      "partition": "source_validation",
+      "n": 6930,
+      "accuracy": 0.7806637806637806,
+      "macro_F1": 0.7066930407938059,
+      "macro_precision": 0.7017376069872193,
+      "macro_recall": 0.7228664192949906,
+      "ECE": 0.02508385932753783,
+      "Brier": 0.25894774794309094,
+      "review_rate": 0.5018759018759019
+    },
+    {
+      "version": "V2 refined",
+      "partition": "source_test",
+      "n": 6929,
+      "accuracy": 0.7595612642516958,
+      "macro_F1": 0.6819563389583286,
+      "macro_precision": 0.7098050801404261,
+      "macro_recall": 0.6624389843950402,
+      "ECE": 0.04305267241228569,
+      "Brier": 0.30431792318418005,
+      "review_rate": 0.5963342473661423
+    },
+    {
+      "version": "V2 refined",
+      "partition": "target_test",
+      "n": 1136,
+      "accuracy": 0.31954225352112675,
+      "macro_F1": 0.21309535338114577,
+      "macro_precision": 0.16407556840231777,
+      "macro_recall": 0.31954225352112675,
+      "ECE": 0.2614203678593656,
+      "Brier": 0.894392810695249,
+      "review_rate": 1.0
+    },
+    {
+      "version": "V0",
+      "partition": "Source development",
+      "n": 6930,
+      "accuracy": 0.7630591630591631,
+      "macro_F1": 0.6889021342672248,
+      "macro_precision": 0.6992484317874152,
+      "macro_recall": 0.6986703772418057,
+      "ECE": 0.023793980036067523,
+      "Brier": 0.28411316256243313,
+      "review_rate": 0.5077922077922078
+    },
+    {
+      "version": "V0",
+      "partition": "Later source day",
+      "n": 6929,
+      "accuracy": 0.7175638620291528,
+      "macro_F1": 0.632365402859401,
+      "macro_precision": 0.67045509367735,
+      "macro_recall": 0.6167128240942921,
+      "ECE": 0.03954772657910254,
+      "Brier": 0.3483573305300587,
+      "review_rate": null
+    },
+    {
+      "version": "V0",
+      "partition": "Retrospective target",
+      "n": 1136,
+      "accuracy": 0.34419014084507044,
+      "macro_F1": 0.22736136521971262,
+      "macro_precision": 0.19935992192089752,
+      "macro_recall": 0.34419014084507044,
+      "ECE": 0.2582649812282084,
+      "Brier": 0.88626973892959,
+      "review_rate": 1.0
+    },
+    {
+      "version": "V1",
+      "partition": "Source development",
+      "n": 6930,
+      "accuracy": 0.7630591630591631,
+      "macro_F1": 0.6894553991714454,
+      "macro_precision": 0.6958685237760182,
+      "macro_recall": 0.7012600494743352,
+      "ECE": 0.025987981207604503,
+      "Brier": 0.2846406761101356,
+      "review_rate": 0.5095238095238095
+    },
+    {
+      "version": "V1",
+      "partition": "Later source day",
+      "n": 6929,
+      "accuracy": 0.7177081829989898,
+      "macro_F1": 0.633013693233312,
+      "macro_precision": 0.6678433006903173,
+      "macro_recall": 0.6189152368480502,
+      "ECE": 0.03748822249395775,
+      "Brier": 0.3488127259372563,
+      "review_rate": null
+    },
+    {
+      "version": "V1",
+      "partition": "Retrospective target",
+      "n": 1136,
+      "accuracy": 0.34683098591549294,
+      "macro_F1": 0.22921423345657735,
+      "macro_precision": 0.20244772583929938,
+      "macro_recall": 0.346830985915493,
+      "ECE": 0.2916358336993149,
+      "Brier": 0.8831845949987656,
+      "review_rate": 1.0
+    },
+    {
+      "version": "V2",
+      "partition": "Source development",
+      "n": 6930,
+      "accuracy": 0.7619047619047619,
+      "macro_F1": 0.6899747121888447,
+      "macro_precision": 0.6957908331562018,
+      "macro_recall": 0.7046614100185529,
+      "ECE": 0.03070842872174623,
+      "Brier": 0.27903339576482433,
+      "review_rate": 0.49292929292929294
+    },
+    {
+      "version": "V2",
+      "partition": "Later source day",
+      "n": 6929,
+      "accuracy": 0.7317073170731707,
+      "macro_F1": 0.654179851358797,
+      "macro_precision": 0.6723133991374789,
+      "macro_recall": 0.6469367813486501,
+      "ECE": 0.03447543715089902,
+      "Brier": 0.3319374064822849,
+      "review_rate": null
+    },
+    {
+      "version": "V2",
+      "partition": "Retrospective target",
+      "n": 1136,
+      "accuracy": 0.3397887323943662,
+      "macro_F1": 0.22431503733615132,
+      "macro_precision": 0.16944002570900618,
+      "macro_recall": 0.33978873239436624,
+      "ECE": 0.2154251838267834,
+      "Brier": 0.8974263216508491,
+      "review_rate": 1.0
+    }
+  ],
+  "class_metrics": [
+    {
+      "version": "V0 refined",
+      "condition": "normal",
+      "precision": 0.29523809523809524,
+      "recall": 0.4696969696969697,
+      "f1-score": 0.36257309941520466,
+      "support": 462.0
+    },
+    {
+      "version": "V0 refined",
+      "condition": "damper_fault",
+      "precision": 0.8288633461047255,
+      "recall": 0.8027210884353742,
+      "f1-score": 0.8155827835375432,
+      "support": 3234.0
+    },
+    {
+      "version": "V0 refined",
+      "condition": "cooling_valve_fault",
+      "precision": 0.8627848101265823,
+      "recall": 0.7903525046382189,
+      "f1-score": 0.8249818445896877,
+      "support": 2156.0
+    },
+    {
+      "version": "V0 refined",
+      "condition": "heating_valve_fault",
+      "precision": 0.8180147058823529,
+      "recall": 0.8256029684601113,
+      "f1-score": 0.8217913204062789,
+      "support": 1078.0
+    },
+    {
+      "version": "V1 refined",
+      "condition": "normal",
+      "precision": 0.2953929539295393,
+      "recall": 0.47186147186147187,
+      "f1-score": 0.36333333333333334,
+      "support": 462.0
+    },
+    {
+      "version": "V1 refined",
+      "condition": "damper_fault",
+      "precision": 0.8293384467881112,
+      "recall": 0.8024118738404453,
+      "f1-score": 0.8156529938708157,
+      "support": 3234.0
+    },
+    {
+      "version": "V1 refined",
+      "condition": "cooling_valve_fault",
+      "precision": 0.8632911392405064,
+      "recall": 0.7908163265306123,
+      "f1-score": 0.8254659888646817,
+      "support": 2156.0
+    },
+    {
+      "version": "V1 refined",
+      "condition": "heating_valve_fault",
+      "precision": 0.8180147058823529,
+      "recall": 0.8256029684601113,
+      "f1-score": 0.8217913204062789,
+      "support": 1078.0
+    },
+    {
+      "version": "V2 refined",
+      "condition": "normal",
+      "precision": 0.2941970310391363,
+      "recall": 0.47186147186147187,
+      "f1-score": 0.3624272651704073,
+      "support": 462.0
+    },
+    {
+      "version": "V2 refined",
+      "condition": "damper_fault",
+      "precision": 0.8301886792452831,
+      "recall": 0.8027210884353742,
+      "f1-score": 0.8162238641723,
+      "support": 3234.0
+    },
+    {
+      "version": "V2 refined",
+      "condition": "cooling_valve_fault",
+      "precision": 0.8637974683544304,
+      "recall": 0.7912801484230055,
+      "f1-score": 0.8259501331396756,
+      "support": 2156.0
+    },
+    {
+      "version": "V2 refined",
+      "condition": "heating_valve_fault",
+      "precision": 0.8187672493100276,
+      "recall": 0.8256029684601113,
+      "f1-score": 0.8221709006928406,
+      "support": 1078.0
+    },
+    {
+      "version": "V0",
+      "condition": "normal",
+      "precision": 0.2577833125778331,
+      "recall": 0.44805194805194803,
+      "f1-score": 0.32727272727272727,
+      "support": 462.0
+    },
+    {
+      "version": "V0",
+      "condition": "damper_fault",
+      "precision": 0.7825832846288721,
+      "recall": 0.8280766852195424,
+      "f1-score": 0.8046875,
+      "support": 3234.0
+    },
+    {
+      "version": "V0",
+      "condition": "cooling_valve_fault",
+      "precision": 0.9223359422034919,
+      "recall": 0.7105751391465677,
+      "f1-score": 0.8027246528687451,
+      "support": 2156.0
+    },
+    {
+      "version": "V0",
+      "condition": "heating_valve_fault",
+      "precision": 0.8342911877394636,
+      "recall": 0.8079777365491652,
+      "f1-score": 0.820923656927427,
+      "support": 1078.0
+    },
+    {
+      "version": "V1",
+      "condition": "normal",
+      "precision": 0.2580246913580247,
+      "recall": 0.4523809523809524,
+      "f1-score": 0.32861635220125784,
+      "support": 462.0
+    },
+    {
+      "version": "V1",
+      "condition": "damper_fault",
+      "precision": 0.7922038980509745,
+      "recall": 0.8169449598021027,
+      "f1-score": 0.8043842289541787,
+      "support": 3234.0
+    },
+    {
+      "version": "V1",
+      "condition": "cooling_valve_fault",
+      "precision": 0.9008645533141211,
+      "recall": 0.7249536178107606,
+      "f1-score": 0.8033924441017734,
+      "support": 2156.0
+    },
+    {
+      "version": "V1",
+      "condition": "heating_valve_fault",
+      "precision": 0.8323809523809523,
+      "recall": 0.8107606679035251,
+      "f1-score": 0.8214285714285714,
+      "support": 1078.0
+    },
+    {
+      "version": "V2",
+      "condition": "normal",
+      "precision": 0.2546948356807512,
+      "recall": 0.4696969696969697,
+      "f1-score": 0.3302891933028919,
+      "support": 462.0
+    },
+    {
+      "version": "V2",
+      "condition": "damper_fault",
+      "precision": 0.7984141506556877,
+      "recall": 0.8095238095238095,
+      "f1-score": 0.803930600337786,
+      "support": 3234.0
+    },
+    {
+      "version": "V2",
+      "condition": "cooling_valve_fault",
+      "precision": 0.8992558672009159,
+      "recall": 0.7286641929499073,
+      "f1-score": 0.8050217781193953,
+      "support": 2156.0
+    },
+    {
+      "version": "V2",
+      "condition": "heating_valve_fault",
+      "precision": 0.8307984790874525,
+      "recall": 0.8107606679035251,
+      "f1-score": 0.8206572769953052,
+      "support": 1078.0
+    }
+  ],
+  "search": [
+    {
+      "experiment": "Current common-channel boost search",
+      "runs": 8,
+      "budget": "1200 iterations each",
+      "result": "Best full-sequence/physical representation; constrained hybrid retained across three booster seeds"
+    },
+    {
+      "experiment": "Confirming booster seeds",
+      "runs": 2,
+      "budget": "1200 iterations each",
+      "result": "Seeds 43/44 confirm fixed refinement; existing temporal parents not retrained"
+    },
+    {
+      "experiment": "Seven extra physical sensor channels",
+      "runs": 2,
+      "budget": "1200 iterations each",
+      "result": "Source development macro F1 0.75357 / 0.74834; separate input contract, not deployed and not target-validated"
+    },
+    {
+      "family": "physics",
+      "version": "V0",
+      "mean_F1": 0.6949962902503085,
+      "seed_std": 0.0021138243019786884,
+      "worst_F1": 0.6933044573248068,
+      "promoted": false
+    },
+    {
+      "family": "calibrated_physics",
+      "version": "V0",
+      "mean_F1": 0.6859991090153982,
+      "seed_std": 0.003997110024526457,
+      "worst_F1": 0.6820025279148152,
+      "promoted": false
+    },
+    {
+      "family": "physics",
+      "version": "V1",
+      "mean_F1": 0.6973559734787785,
+      "seed_std": 0.0007816667610113004,
+      "worst_F1": 0.6963179388514589,
+      "promoted": false
+    },
+    {
+      "family": "calibrated_physics",
+      "version": "V1",
+      "mean_F1": 0.6862919481560444,
+      "seed_std": 0.0057672522769602,
+      "worst_F1": 0.67858881141057,
+      "promoted": false
+    },
+    {
+      "family": "physics",
+      "version": "V2",
+      "mean_F1": 0.6953627557392679,
+      "seed_std": 0.0005641752836435401,
+      "worst_F1": 0.6948390259265012,
+      "promoted": false
+    },
+    {
+      "family": "calibrated_physics",
+      "version": "V2",
+      "mean_F1": 0.6836219544038352,
+      "seed_std": 0.0014862300101494792,
+      "worst_F1": 0.6815292213709937,
+      "promoted": false
+    }
+  ],
+  "assurance": [
+    {
+      "control": "Bounded perturbations, current refined V2",
+      "measure": "40 balanced windows; 65 candidates each at three budgets",
+      "result": "Raw robust accuracy 60.0%, 57.5%, 50.0%",
+      "limit": "Source development only; raw robustness worsened at largest budget. Not certified defense."
+    },
+    {
+      "control": "Parent-retention review gate",
+      "measure": "Accepted wrong classes / false normal windows across 40 windows per budget",
+      "result": "0 / 0 at each tested budget",
+      "limit": "80\u201395% worst-candidate review. Policy refined after observing attacks; same-suite rerun is a regression check, not independent validation."
+    },
+    {
+      "control": "Exact grouped Shapley, complete refined hybrid",
+      "measure": "20 windows; four groups / 16 coalitions",
+      "result": "Additivity error 1.11e-16; repeatability 100%; top-group stability 90%",
+      "limit": "Numerical fidelity, not causal proof or measured human usefulness."
+    },
+    {
+      "control": "Source confidence calibration",
+      "measure": "V2 ECE / multiclass Brier on source validation",
+      "result": "0.02508 / 0.25895",
+      "limit": "Confidence does not override applicability or retained-parent review."
+    },
+    {
+      "control": "Operational controls",
+      "measure": "Contracts, hashes, origin checks, durable feedback, alerts and recovery",
+      "result": "See release verification evidence",
+      "limit": "Local demonstration deployment; independent field validation remains required."
+    }
+  ],
+  "history": [
+    {
+      "milestone": "M2",
+      "implementation": "Risk matrix, scope and severity",
+      "evidence": "Original records preserved; controls mapped to tests"
+    },
+    {
+      "milestone": "M3",
+      "implementation": "Units, leakage prevention, partition and support audit",
+      "evidence": "47 file hashes; 3 weather conditions, independent-case floor unmet"
+    },
+    {
+      "milestone": "M4",
+      "implementation": "Fresh RF + temporal V0/V1/V2, adaptation and review",
+      "evidence": "Historical M4 retained separately; no inherited architecture weights"
+    },
+    {
+      "milestone": "November 16",
+      "implementation": "19 temporal runs / 662 epochs, Docker, SQLite, monitoring, recovery",
+      "evidence": "experiments/end_to_end_20261116"
+    },
+    {
+      "milestone": "November 17",
+      "implementation": "7 classical diagnostics; 9 fresh hybrid runs / 450 epochs; 9 calibration fits; restored UI",
+      "evidence": "experiments/improvement_20261117; browser, adversarial and Shapley evidence"
+    }
+  ],
+  "dataset_support": [
+    {
+      "partition": "source_train",
+      "dataset": "G36-1wk",
+      "setting": "CoolingSeason",
+      "windows": 9240
+    },
+    {
+      "partition": "source_train",
+      "dataset": "G36-1wk",
+      "setting": "HeatingSeason",
+      "windows": 9240
+    },
+    {
+      "partition": "source_train",
+      "dataset": "G36-1wk",
+      "setting": "ShoulderSeason",
+      "windows": 9240
+    },
+    {
+      "partition": "source_validation",
+      "dataset": "G36-1wk",
+      "setting": "CoolingSeason",
+      "windows": 2310
+    },
+    {
+      "partition": "source_validation",
+      "dataset": "G36-1wk",
+      "setting": "HeatingSeason",
+      "windows": 2310
+    },
+    {
+      "partition": "source_validation",
+      "dataset": "G36-1wk",
+      "setting": "ShoulderSeason",
+      "windows": 2310
+    },
+    {
+      "partition": "source_calibration",
+      "dataset": "G36-1wk",
+      "setting": "CoolingSeason",
+      "windows": 2310
+    },
+    {
+      "partition": "source_calibration",
+      "dataset": "G36-1wk",
+      "setting": "HeatingSeason",
+      "windows": 2310
+    },
+    {
+      "partition": "source_calibration",
+      "dataset": "G36-1wk",
+      "setting": "ShoulderSeason",
+      "windows": 2310
+    }
+  ],
+  "class_support": [
+    {
+      "partition": "source_train",
+      "condition": "normal",
+      "windows": 1848,
+      "share": 0.06666666666666667
+    },
+    {
+      "partition": "source_train",
+      "condition": "damper_fault",
+      "windows": 12936,
+      "share": 0.4666666666666667
+    },
+    {
+      "partition": "source_train",
+      "condition": "cooling_valve_fault",
+      "windows": 8624,
+      "share": 0.3111111111111111
+    },
+    {
+      "partition": "source_train",
+      "condition": "heating_valve_fault",
+      "windows": 4312,
+      "share": 0.15555555555555556
+    },
+    {
+      "partition": "source_validation",
+      "condition": "normal",
+      "windows": 462,
+      "share": 0.06666666666666667
+    },
+    {
+      "partition": "source_validation",
+      "condition": "damper_fault",
+      "windows": 3234,
+      "share": 0.4666666666666667
+    },
+    {
+      "partition": "source_validation",
+      "condition": "cooling_valve_fault",
+      "windows": 2156,
+      "share": 0.3111111111111111
+    },
+    {
+      "partition": "source_validation",
+      "condition": "heating_valve_fault",
+      "windows": 1078,
+      "share": 0.15555555555555556
+    },
+    {
+      "partition": "source_calibration",
+      "condition": "normal",
+      "windows": 462,
+      "share": 0.06666666666666667
+    },
+    {
+      "partition": "source_calibration",
+      "condition": "damper_fault",
+      "windows": 3234,
+      "share": 0.4666666666666667
+    },
+    {
+      "partition": "source_calibration",
+      "condition": "cooling_valve_fault",
+      "windows": 2156,
+      "share": 0.3111111111111111
+    },
+    {
+      "partition": "source_calibration",
+      "condition": "heating_valve_fault",
+      "windows": 1078,
+      "share": 0.15555555555555556
+    }
+  ]
+}

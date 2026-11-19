@@ -1,0 +1,436 @@
+{
+  "uid": "aeris-learning",
+  "title": "AERIS \u00b7 Adaptation lifecycle",
+  "schemaVersion": 41,
+  "version": 3,
+  "refresh": "10s",
+  "time": {
+    "from": "now-30m",
+    "to": "now"
+  },
+  "timezone": "browser",
+  "tags": [
+    "AERIS",
+    "EGN6216"
+  ],
+  "description": "Read live service behavior by cohort. Demonstration requests are not independently inspected field outcomes. Panel tooltips define windows, units, support and actions.",
+  "templating": {
+    "list": [
+      {
+        "name": "cohort",
+        "label": "Record cohort",
+        "type": "custom",
+        "query": "test,genuine",
+        "current": {
+          "text": "test",
+          "value": "test"
+        },
+        "options": [
+          {
+            "text": "test",
+            "value": "test",
+            "selected": true
+          },
+          {
+            "text": "genuine",
+            "value": "genuine",
+            "selected": false
+          }
+        ],
+        "includeAll": false,
+        "multi": false,
+        "description": "test = controlled demonstrations; genuine = actual operator submissions. Neither is an inspected label by itself."
+      }
+    ]
+  },
+  "panels": [
+    {
+      "id": 41,
+      "title": "Which learning stage is active?",
+      "type": "state-timeline",
+      "gridPos": {
+        "x": 0,
+        "y": 0,
+        "w": 16,
+        "h": 6
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "aeris-prometheus"
+      },
+      "description": "0 = original source model; 1 = pseudo-label adaptation; 2 = reviewed-label adaptation. This is a stage, not a quality score. Test and genuine registries are isolated.",
+      "targets": [
+        {
+          "refId": "Active stage",
+          "expr": "aeris_learning_stage{cohort=\"$cohort\"}",
+          "legendFormat": "Active stage",
+          "instant": false,
+          "range": true,
+          "format": "time_series",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          }
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "color": {
+            "mode": "fixed",
+            "fixedColor": "blue"
+          },
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "V0 \u00b7 source",
+                  "color": "blue"
+                },
+                "1": {
+                  "text": "V1 \u00b7 confident labels",
+                  "color": "purple"
+                },
+                "2": {
+                  "text": "V2 \u00b7 reviewed labels",
+                  "color": "green"
+                }
+              }
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "blue",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "showValue": "always",
+        "mergeValues": true,
+        "rowHeight": 0.8,
+        "legend": {
+          "showLegend": false
+        },
+        "tooltip": {
+          "mode": "single"
+        }
+      }
+    },
+    {
+      "id": 42,
+      "title": "Is the background trainer available?",
+      "type": "state-timeline",
+      "gridPos": {
+        "x": 16,
+        "y": 0,
+        "w": 8,
+        "h": 6
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "aeris-prometheus"
+      },
+      "description": "Heartbeat is independent of the inference service. Training never blocks the HTTP request.",
+      "targets": [
+        {
+          "refId": "Trainer",
+          "expr": "aeris_learning_worker_up",
+          "legendFormat": "Trainer",
+          "instant": false,
+          "range": true,
+          "format": "time_series",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          }
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "color": {
+            "mode": "fixed",
+            "fixedColor": "green"
+          },
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "Unavailable",
+                  "color": "red"
+                },
+                "1": {
+                  "text": "Online",
+                  "color": "green"
+                }
+              }
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "blue",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "showValue": "always",
+        "mergeValues": true,
+        "legend": {
+          "showLegend": false
+        },
+        "tooltip": {
+          "mode": "single"
+        }
+      }
+    },
+    {
+      "id": 43,
+      "title": "What learning data has accumulated?",
+      "type": "barchart",
+      "gridPos": {
+        "x": 0,
+        "y": 6,
+        "w": 12,
+        "h": 9
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "aeris-prometheus"
+      },
+      "description": "Unique sensor windows, split by pseudo/reviewed label and state. Eight new or corrected windows start a batch after a short quiet period. Repeated/overlapping windows are not independent field cases.",
+      "targets": [
+        {
+          "refId": "Windows",
+          "expr": "label_join(aeris_learning_samples{cohort=\"$cohort\"},\"sample_status\",\" \u00b7 \",\"kind\",\"state\")",
+          "legendFormat": "Windows",
+          "instant": true,
+          "range": false,
+          "format": "table",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          }
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "color": {
+            "mode": "fixed",
+            "fixedColor": "blue"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "blue",
+                "value": null
+              }
+            ]
+          },
+          "min": 0,
+          "decimals": 0,
+          "custom": {
+            "fillOpacity": 85,
+            "lineWidth": 0,
+            "axisPlacement": "auto"
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "orientation": "horizontal",
+        "xField": "sample_status",
+        "showValue": "always",
+        "groupWidth": 0.7,
+        "barWidth": 0.85,
+        "stacking": "none",
+        "legend": {
+          "showLegend": false
+        },
+        "tooltip": {
+          "mode": "single"
+        },
+        "xTickLabelRotation": 0,
+        "barRadius": 0.12
+      },
+      "transformations": [
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {
+              "Time": true,
+              "__name__": true,
+              "cohort": true,
+              "kind": true,
+              "state": true,
+              "instance": true,
+              "job": true
+            },
+            "renameByName": {
+              "Value": "Requests"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "title": "Are trained candidates being accepted?",
+      "type": "timeseries",
+      "gridPos": {
+        "x": 12,
+        "y": 6,
+        "w": 12,
+        "h": 9
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "aeris-prometheus"
+      },
+      "description": "Persisted counts by outcome. Promoted requires source-retention checks versus both the parent and V0. A retained source score is not proof of target improvement. Review exact metrics and parent lineage in the AERIS workspace.",
+      "targets": [
+        {
+          "refId": "Training",
+          "expr": "aeris_learning_jobs{cohort=\"$cohort\",status=\"training\"}",
+          "legendFormat": "Training",
+          "instant": false,
+          "range": true,
+          "format": "time_series",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          }
+        },
+        {
+          "refId": "Promoted",
+          "expr": "aeris_learning_jobs{cohort=\"$cohort\",status=\"promoted\"}",
+          "legendFormat": "Promoted",
+          "instant": false,
+          "range": true,
+          "format": "time_series",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          }
+        },
+        {
+          "refId": "Rejected",
+          "expr": "aeris_learning_jobs{cohort=\"$cohort\",status=\"rejected\"}",
+          "legendFormat": "Rejected",
+          "instant": false,
+          "range": true,
+          "format": "time_series",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          }
+        },
+        {
+          "refId": "Failed",
+          "expr": "aeris_learning_jobs{cohort=\"$cohort\",status=\"failed\"}",
+          "legendFormat": "Failed",
+          "instant": false,
+          "range": true,
+          "format": "time_series",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          }
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "color": {
+            "mode": "palette-classic"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "blue",
+                "value": null
+              }
+            ]
+          },
+          "min": 0,
+          "custom": {
+            "drawStyle": "line",
+            "lineInterpolation": "linear",
+            "lineWidth": 2,
+            "fillOpacity": 5,
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "mode": "none",
+              "group": "A"
+            },
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "tooltip": {
+          "mode": "multi",
+          "sort": "desc"
+        },
+        "legend": {
+          "displayMode": "table",
+          "placement": "bottom",
+          "calcs": [
+            "lastNotNull",
+            "max"
+          ]
+        }
+      }
+    }
+  ],
+  "links": [
+    {
+      "title": "AERIS learning workspace",
+      "url": "http://127.0.0.1:8510/",
+      "type": "link",
+      "targetBlank": false,
+      "includeVars": true,
+      "keepTime": false
+    },
+    {
+      "title": "Operator overview",
+      "url": "/d/aeris-operations",
+      "type": "link",
+      "targetBlank": false,
+      "includeVars": true,
+      "keepTime": false
+    },
+    {
+      "title": "Prometheus targets",
+      "url": "http://127.0.0.1:9091/targets",
+      "type": "link",
+      "targetBlank": false,
+      "includeVars": true,
+      "keepTime": false
+    }
+  ]
+}

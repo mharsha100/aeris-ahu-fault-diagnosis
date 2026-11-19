@@ -1,0 +1,211 @@
+{
+  "bundle": "e2e_anchor_v2_s42",
+  "cases": [
+    {
+      "window_id": "3e8fe36890729c959b1393c0",
+      "truth": 0,
+      "additivity_error": 5.551115123125783e-17,
+      "repeat_identical": true,
+      "top_group_stable": true,
+      "spearman": 1.0,
+      "maximum_contribution_change": 0.01748138433893759,
+      "seconds_per_explanation": 0.05061643333222795
+    },
+    {
+      "window_id": "fc85067d9223ac1633aa7d4c",
+      "truth": 1,
+      "additivity_error": 0.0,
+      "repeat_identical": true,
+      "top_group_stable": true,
+      "spearman": 1.0,
+      "maximum_contribution_change": 0.00037002496895080506,
+      "seconds_per_explanation": 0.025014300001203083
+    },
+    {
+      "window_id": "164761a58306d73eaa74a921",
+      "truth": 2,
+      "additivity_error": 3.469446951953614e-17,
+      "repeat_identical": true,
+      "top_group_stable": true,
+      "spearman": 1.0,
+      "maximum_contribution_change": 0.004675081066508267,
+      "seconds_per_explanation": 0.026518866667174734
+    },
+    {
+      "window_id": "cac00240554d269afe8267f1",
+      "truth": 3,
+      "additivity_error": 0.0,
+      "repeat_identical": true,
+      "top_group_stable": true,
+      "spearman": 1.0,
+      "maximum_contribution_change": 0.000812269229958501,
+      "seconds_per_explanation": 0.03374156666783771
+    },
+    {
+      "window_id": "f82151907d59515c95fc5d81",
+      "truth": 0,
+      "additivity_error": 2.7755575615628914e-17,
+      "repeat_identical": true,
+      "top_group_stable": true,
+      "spearman": 1.0,
+      "maximum_contribution_change": 0.007602656553582332,
+      "seconds_per_explanation": 0.05251353333490746
+    },
+    {
+      "window_id": "a6653e71887355093cb34f93",
+      "truth": 1,
+      "additivity_error": 1.1102230246251565e-16,
+      "repeat_identical": true,
+      "top_group_stable": true,
+      "spearman": 1.0,
+      "maximum_contribution_change": 0.010123015754004205,
+      "seconds_per_explanation": 0.028384099998220336
+    },
+    {
+      "window_id": "5ddf7f98bb012dc4e8c8252f",
+      "truth": 2,
+      "additivity_error": 1.1102230246251565e-16,
+      "repeat_identical": true,
+      "top_group_stable": true,
+      "spearman": 1.0,
+      "maximum_contribution_change": 0.00011376698796816687,
+      "seconds_per_explanation": 0.03477273333313254
+    },
+    {
+      "window_id": "f2eb5606b68a4aaae0647d78",
+      "truth": 3,
+      "additivity_error": 0.0,
+      "repeat_identical": true,
+      "top_group_stable": true,
+      "spearman": 1.0,
+      "maximum_contribution_change": 0.01625823191021858,
+      "seconds_per_explanation": 0.061472633332111094
+    },
+    {
+      "window_id": "04e83e2de2e0133f1ae4a42d",
+      "truth": 0,
+      "additivity_error": 0.0,
+      "repeat_identical": true,
+      "top_group_stable": true,
+      "spearman": 1.0,
+      "maximum_contribution_change": 0.005975302268780472,
+      "seconds_per_explanation": 0.04342920000150722
+    },
+    {
+      "window_id": "e7b8b88e16d18f3bbf3ed302",
+      "truth": 1,
+      "additivity_error": 0.0,
+      "repeat_identical": true,
+      "top_group_stable": true,
+      "spearman": 1.0,
+      "maximum_contribution_change": 5.09633787754149e-06,
+      "seconds_per_explanation": 0.03418763333320385
+    },
+    {
+      "window_id": "6e83415af7de1f83a48c5b02",
+      "truth": 2,
+      "additivity_error": 2.7755575615628914e-17,
+      "repeat_identical": true,
+      "top_group_stable": true,
+      "spearman": 1.0,
+      "maximum_contribution_change": 0.04276791420919822,
+      "seconds_per_explanation": 0.04479913333246562
+    },
+    {
+      "window_id": "022bd9618235bfe2fee1d9dc",
+      "truth": 3,
+      "additivity_error": 0.0,
+      "repeat_identical": true,
+      "top_group_stable": true,
+      "spearman": 1.0,
+      "maximum_contribution_change": 0.015254745168650441,
+      "seconds_per_explanation": 0.032697933333110996
+    },
+    {
+      "window_id": "97679a1e0e210aaa3c2f2338",
+      "truth": 0,
+      "additivity_error": 0.0,
+      "repeat_identical": true,
+      "top_group_stable": true,
+      "spearman": 1.0,
+      "maximum_contribution_change": 0.05668760975879876,
+      "seconds_per_explanation": 0.03296489999775076
+    },
+    {
+      "window_id": "a266199bb54d6f09469d6874",
+      "truth": 1,
+      "additivity_error": 1.3877787807814457e-17,
+      "repeat_identical": true,
+      "top_group_stable": true,
+      "spearman": 1.0,
+      "maximum_contribution_change": 0.0037257994120850485,
+      "seconds_per_explanation": 0.028831900000416983
+    },
+    {
+      "window_id": "e1d94a3f2ece6660a96336fd",
+      "truth": 2,
+      "additivity_error": 1.1102230246251565e-16,
+      "repeat_identical": true,
+      "top_group_stable": true,
+      "spearman": 1.0,
+      "maximum_contribution_change": 4.444032871914194e-05,
+      "seconds_per_explanation": 0.03317393333418295
+    },
+    {
+      "window_id": "8062b8f9d0f18c93869dbfb1",
+      "truth": 3,
+      "additivity_error": 0.0,
+      "repeat_identical": true,
+      "top_group_stable": true,
+      "spearman": 1.0,
+      "maximum_contribution_change": 0.013366535102546151,
+      "seconds_per_explanation": 0.03527859999788537
+    },
+    {
+      "window_id": "320318decc378567342ac6f2",
+      "truth": 0,
+      "additivity_error": 0.0,
+      "repeat_identical": true,
+      "top_group_stable": true,
+      "spearman": 1.0,
+      "maximum_contribution_change": 0.007841863551525604,
+      "seconds_per_explanation": 0.024704499999643303
+    },
+    {
+      "window_id": "3f7e6fa5a4336033a9d78cd9",
+      "truth": 1,
+      "additivity_error": 1.1102230246251565e-16,
+      "repeat_identical": true,
+      "top_group_stable": true,
+      "spearman": 1.0,
+      "maximum_contribution_change": 0.002888679602756905,
+      "seconds_per_explanation": 0.028106466665728174
+    },
+    {
+      "window_id": "039aa74089634212f8dda8c7",
+      "truth": 2,
+      "additivity_error": 5.551115123125783e-17,
+      "repeat_identical": true,
+      "top_group_stable": false,
+      "spearman": 0.7999999999999999,
+      "maximum_contribution_change": 0.09934615014692384,
+      "seconds_per_explanation": 0.026015966664999723
+    },
+    {
+      "window_id": "e7dcdab48a38b92340f410eb",
+      "truth": 3,
+      "additivity_error": 0.0,
+      "repeat_identical": true,
+      "top_group_stable": true,
+      "spearman": 1.0,
+      "maximum_contribution_change": 0.0016129423520276909,
+      "seconds_per_explanation": 0.024362666665789828
+    }
+  ],
+  "max_additivity_error": 1.1102230246251565e-16,
+  "repeatability": 1.0,
+  "top_group_stability_under_005C": 0.95,
+  "mean_seconds": 0.03507934999967498,
+  "human_usefulness": "Not measured; requires independent technician assessment.",
+  "causality": "Not established by Shapley values."
+}

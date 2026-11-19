@@ -1,0 +1,1801 @@
+{
+  "before": {
+    "model_ready": true,
+    "app_up": true,
+    "bundle": "e2e_anchor_v2_s42",
+    "error": null
+  },
+  "feedback_before": {
+    "genuine": {
+      "cohort": "genuine",
+      "time_window": "all persisted records since deployment ledger creation",
+      "eligible_predictions": 0,
+      "predictions_with_feedback": 0,
+      "feedback_coverage": null,
+      "agree": 0,
+      "disagree": 0,
+      "unsure": 0,
+      "agreement": null,
+      "reviewed_predictions": 0,
+      "overrides": 0,
+      "override_rate": null,
+      "satisfaction_responses": 0,
+      "satisfaction_sum": 0,
+      "satisfaction_mean": null,
+      "verified_labels": 0,
+      "verified_label_coverage": null,
+      "verified_quality_status": "insufficient independent-case evidence; no operational accuracy claim",
+      "genuine_ground_truth": false,
+      "ground_truth_status": "Cohort selection alone does not establish ground truth; inspection records require independent alignment and case support"
+    },
+    "test": {
+      "cohort": "test",
+      "time_window": "all persisted records since deployment ledger creation",
+      "eligible_predictions": 523,
+      "predictions_with_feedback": 6,
+      "feedback_coverage": 0.011472275334608031,
+      "agree": 0,
+      "disagree": 0,
+      "unsure": 6,
+      "agreement": null,
+      "reviewed_predictions": 6,
+      "overrides": 0,
+      "override_rate": 0.0,
+      "satisfaction_responses": 6,
+      "satisfaction_sum": 24,
+      "satisfaction_mean": 4.0,
+      "verified_labels": 0,
+      "verified_label_coverage": 0.0,
+      "verified_quality_status": "insufficient independent-case evidence; no operational accuracy claim",
+      "genuine_ground_truth": false,
+      "ground_truth_status": "Cohort selection alone does not establish ground truth; inspection records require independent alignment and case support"
+    }
+  },
+  "samples": [
+    {
+      "phase": "failure",
+      "ready": {
+        "model_ready": false,
+        "app_up": true,
+        "bundle": "missing_controlled_failure_demo",
+        "error": "[Errno 2] No such file or directory: '/app/data/aeris_models/missing_controlled_failure_demo/READY.json'"
+      },
+      "alerts": {
+        "status": "success",
+        "data": {
+          "alerts": [
+            {
+              "labels": {
+                "alertname": "AerisReviewBurden",
+                "cohort": "test",
+                "instance": "app:8001",
+                "job": "aeris",
+                "owner": "model_reviewer",
+                "severity": "warning"
+              },
+              "annotations": {
+                "response": "Check setting mix and shift. Retain gates; investigate coverage.",
+                "summary": "Review burden exceeds provisional workload threshold"
+              },
+              "state": "firing",
+              "activeAt": "2026-11-17T06:39:05.219890224Z",
+              "value": "1e+00"
+            }
+          ]
+        }
+      },
+      "time": 1794897777.185062
+    },
+    {
+      "phase": "failure",
+      "ready": {
+        "model_ready": false,
+        "app_up": true,
+        "bundle": "missing_controlled_failure_demo",
+        "error": "[Errno 2] No such file or directory: '/app/data/aeris_models/missing_controlled_failure_demo/READY.json'"
+      },
+      "alerts": {
+        "status": "success",
+        "data": {
+          "alerts": [
+            {
+              "labels": {
+                "alertname": "AerisUnavailable",
+                "instance": "app:8001",
+                "job": "aeris",
+                "owner": "project_operator",
+                "severity": "critical"
+              },
+              "annotations": {
+                "response": "Check app logs, mounted bundle and hashes; restore last verified selection. No equipment action.",
+                "summary": "AERIS cannot serve a verified diagnosis"
+              },
+              "state": "pending",
+              "activeAt": "2026-11-17T06:43:00.219890224Z",
+              "value": "0e+00"
+            },
+            {
+              "labels": {
+                "alertname": "AerisReviewBurden",
+                "cohort": "test",
+                "instance": "app:8001",
+                "job": "aeris",
+                "owner": "model_reviewer",
+                "severity": "warning"
+              },
+              "annotations": {
+                "response": "Check setting mix and shift. Retain gates; investigate coverage.",
+                "summary": "Review burden exceeds provisional workload threshold"
+              },
+              "state": "firing",
+              "activeAt": "2026-11-17T06:39:05.219890224Z",
+              "value": "9.902912621359223e-01"
+            }
+          ]
+        }
+      },
+      "time": 1794897782.2037919
+    },
+    {
+      "phase": "failure",
+      "ready": {
+        "model_ready": false,
+        "app_up": true,
+        "bundle": "missing_controlled_failure_demo",
+        "error": "[Errno 2] No such file or directory: '/app/data/aeris_models/missing_controlled_failure_demo/READY.json'"
+      },
+      "alerts": {
+        "status": "success",
+        "data": {
+          "alerts": [
+            {
+              "labels": {
+                "alertname": "AerisUnavailable",
+                "instance": "app:8001",
+                "job": "aeris",
+                "owner": "project_operator",
+                "severity": "critical"
+              },
+              "annotations": {
+                "response": "Check app logs, mounted bundle and hashes; restore last verified selection. No equipment action.",
+                "summary": "AERIS cannot serve a verified diagnosis"
+              },
+              "state": "pending",
+              "activeAt": "2026-11-17T06:43:00.219890224Z",
+              "value": "0e+00"
+            },
+            {
+              "labels": {
+                "alertname": "AerisReviewBurden",
+                "cohort": "test",
+                "instance": "app:8001",
+                "job": "aeris",
+                "owner": "model_reviewer",
+                "severity": "warning"
+              },
+              "annotations": {
+                "response": "Check setting mix and shift. Retain gates; investigate coverage.",
+                "summary": "Review burden exceeds provisional workload threshold"
+              },
+              "state": "firing",
+              "activeAt": "2026-11-17T06:39:05.219890224Z",
+              "value": "9.902912621359224e-01"
+            }
+          ]
+        }
+      },
+      "time": 1794897787.2393854
+    },
+    {
+      "phase": "failure",
+      "ready": {
+        "model_ready": false,
+        "app_up": true,
+        "bundle": "missing_controlled_failure_demo",
+        "error": "[Errno 2] No such file or directory: '/app/data/aeris_models/missing_controlled_failure_demo/READY.json'"
+      },
+      "alerts": {
+        "status": "success",
+        "data": {
+          "alerts": [
+            {
+              "labels": {
+                "alertname": "AerisUnavailable",
+                "instance": "app:8001",
+                "job": "aeris",
+                "owner": "project_operator",
+                "severity": "critical"
+              },
+              "annotations": {
+                "response": "Check app logs, mounted bundle and hashes; restore last verified selection. No equipment action.",
+                "summary": "AERIS cannot serve a verified diagnosis"
+              },
+              "state": "pending",
+              "activeAt": "2026-11-17T06:43:00.219890224Z",
+              "value": "0e+00"
+            },
+            {
+              "labels": {
+                "alertname": "AerisReviewBurden",
+                "cohort": "test",
+                "instance": "app:8001",
+                "job": "aeris",
+                "owner": "model_reviewer",
+                "severity": "warning"
+              },
+              "annotations": {
+                "response": "Check setting mix and shift. Retain gates; investigate coverage.",
+                "summary": "Review burden exceeds provisional workload threshold"
+              },
+              "state": "firing",
+              "activeAt": "2026-11-17T06:39:05.219890224Z",
+              "value": "9.902912621359224e-01"
+            }
+          ]
+        }
+      },
+      "time": 1794897792.259244
+    },
+    {
+      "phase": "failure",
+      "ready": {
+        "model_ready": false,
+        "app_up": true,
+        "bundle": "missing_controlled_failure_demo",
+        "error": "[Errno 2] No such file or directory: '/app/data/aeris_models/missing_controlled_failure_demo/READY.json'"
+      },
+      "alerts": {
+        "status": "success",
+        "data": {
+          "alerts": [
+            {
+              "labels": {
+                "alertname": "AerisUnavailable",
+                "instance": "app:8001",
+                "job": "aeris",
+                "owner": "project_operator",
+                "severity": "critical"
+              },
+              "annotations": {
+                "response": "Check app logs, mounted bundle and hashes; restore last verified selection. No equipment action.",
+                "summary": "AERIS cannot serve a verified diagnosis"
+              },
+              "state": "firing",
+              "activeAt": "2026-11-17T06:43:00.219890224Z",
+              "value": "0e+00"
+            },
+            {
+              "labels": {
+                "alertname": "AerisReviewBurden",
+                "cohort": "test",
+                "instance": "app:8001",
+                "job": "aeris",
+                "owner": "model_reviewer",
+                "severity": "warning"
+              },
+              "annotations": {
+                "response": "Check setting mix and shift. Retain gates; investigate coverage.",
+                "summary": "Review burden exceeds provisional workload threshold"
+              },
+              "state": "firing",
+              "activeAt": "2026-11-17T06:39:05.219890224Z",
+              "value": "9.902912621359224e-01"
+            }
+          ]
+        }
+      },
+      "time": 1794897797.3029795
+    },
+    {
+      "phase": "recovery",
+      "ready": {
+        "model_ready": true,
+        "app_up": true,
+        "bundle": "e2e_anchor_v2_s42",
+        "error": null
+      },
+      "alerts": {
+        "status": "success",
+        "data": {
+          "alerts": [
+            {
+              "labels": {
+                "alertname": "AerisUnavailable",
+                "instance": "app:8001",
+                "job": "aeris",
+                "owner": "project_operator",
+                "severity": "critical"
+              },
+              "annotations": {
+                "response": "Check app logs, mounted bundle and hashes; restore last verified selection. No equipment action.",
+                "summary": "AERIS cannot serve a verified diagnosis"
+              },
+              "state": "firing",
+              "activeAt": "2026-11-17T06:43:00.219890224Z",
+              "value": "0e+00"
+            },
+            {
+              "labels": {
+                "alertname": "AerisReviewBurden",
+                "cohort": "test",
+                "instance": "app:8001",
+                "job": "aeris",
+                "owner": "model_reviewer",
+                "severity": "warning"
+              },
+              "annotations": {
+                "response": "Check setting mix and shift. Retain gates; investigate coverage.",
+                "summary": "Review burden exceeds provisional workload threshold"
+              },
+              "state": "firing",
+              "activeAt": "2026-11-17T06:39:05.219890224Z",
+              "value": "9.902912621359224e-01"
+            }
+          ]
+        }
+      },
+      "time": 1794897798.7597945
+    },
+    {
+      "phase": "recovery",
+      "ready": {
+        "model_ready": true,
+        "app_up": true,
+        "bundle": "e2e_anchor_v2_s42",
+        "error": null
+      },
+      "alerts": {
+        "status": "success",
+        "data": {
+          "alerts": [
+            {
+              "labels": {
+                "alertname": "AerisReviewBurden",
+                "cohort": "test",
+                "instance": "app:8001",
+                "job": "aeris",
+                "owner": "model_reviewer",
+                "severity": "warning"
+              },
+              "annotations": {
+                "response": "Check setting mix and shift. Retain gates; investigate coverage.",
+                "summary": "Review burden exceeds provisional workload threshold"
+              },
+              "state": "firing",
+              "activeAt": "2026-11-17T06:39:05.219890224Z",
+              "value": "9.902912621359223e-01"
+            }
+          ]
+        }
+      },
+      "time": 1794897803.8416378
+    }
+  ],
+  "failed_inference": {
+    "prediction_id": "87b13a295ba14d5c89f31df3c38b3de8",
+    "created": "2026-11-17T06:42:57.118112+00:00",
+    "bundle": "missing_controlled_failure_demo",
+    "model_version": "unavailable",
+    "stage": "unavailable",
+    "setting": "Unknown",
+    "cohort": "test",
+    "seconds": 0.043590490000497084,
+    "result": {
+      "status": "error",
+      "reasons": [
+        "Model unavailable or incompatible. Check bundle integrity and mounted files. Bundle integrity or availability failure: [Errno 2] No such file or directory: '/app/data/aeris_models/missing_controlled_failure_demo/READY.json'"
+      ]
+    }
+  },
+  "fired": true,
+  "recovered": true,
+  "recovered_inference": {
+    "prediction_id": "94ddd6a54ec24da1b7d2c7447b6fc4b0",
+    "created": "2026-11-17T06:43:24.268990+00:00",
+    "bundle": "e2e_anchor_v2_s42",
+    "model_version": "v2",
+    "stage": "initial_source_training",
+    "setting": "CoolingSeason",
+    "cohort": "test",
+    "seconds": 0.4259460779976507,
+    "result": {
+      "status": "review_required",
+      "class_id": 1,
+      "class_name": "damper_fault",
+      "confidence": 0.34208022462558485,
+      "probabilities": [
+        0.31521994698308126,
+        0.34208022462558485,
+        0.3419807877615819,
+        0.000719040629751884
+      ],
+      "forest_probabilities": [
+        0.3040783821284023,
+        0.35503092576099304,
+        0.3408906651779264,
+        2.6932678257532017e-08
+      ],
+      "temporal_probabilities": [
+        0.3599285517627289,
+        0.29443960144647247,
+        0.33653937814981544,
+        0.009092468640983151
+      ],
+      "reasons": [
+        "Confidence is below the provisional 0.90 review threshold.",
+        "Classical and temporal branches disagree."
+      ],
+      "source_support_warning_samples": 0,
+      "policy_version": "m4-research-review-v2",
+      "automatic_actuation_allowed": false,
+      "fault_review_priority": false,
+      "limitation": "Research decision support. Confidence is not verified target accuracy.",
+      "unsupported_setting": false,
+      "shift_fraction": 0.0
+    }
+  },
+  "feedback_before_restart": {
+    "genuine": {
+      "cohort": "genuine",
+      "time_window": "all persisted records since deployment ledger creation",
+      "eligible_predictions": 0,
+      "predictions_with_feedback": 0,
+      "feedback_coverage": null,
+      "agree": 0,
+      "disagree": 0,
+      "unsure": 0,
+      "agreement": null,
+      "reviewed_predictions": 0,
+      "overrides": 0,
+      "override_rate": null,
+      "satisfaction_responses": 0,
+      "satisfaction_sum": 0,
+      "satisfaction_mean": null,
+      "verified_labels": 0,
+      "verified_label_coverage": null,
+      "verified_quality_status": "insufficient independent-case evidence; no operational accuracy claim",
+      "genuine_ground_truth": false,
+      "ground_truth_status": "Cohort selection alone does not establish ground truth; inspection records require independent alignment and case support"
+    },
+    "test": {
+      "cohort": "test",
+      "time_window": "all persisted records since deployment ledger creation",
+      "eligible_predictions": 524,
+      "predictions_with_feedback": 6,
+      "feedback_coverage": 0.011450381679389313,
+      "agree": 0,
+      "disagree": 0,
+      "unsure": 6,
+      "agreement": null,
+      "reviewed_predictions": 6,
+      "overrides": 0,
+      "override_rate": 0.0,
+      "satisfaction_responses": 6,
+      "satisfaction_sum": 24,
+      "satisfaction_mean": 4.0,
+      "verified_labels": 0,
+      "verified_label_coverage": 0.0,
+      "verified_quality_status": "insufficient independent-case evidence; no operational accuracy claim",
+      "genuine_ground_truth": false,
+      "ground_truth_status": "Cohort selection alone does not establish ground truth; inspection records require independent alignment and case support"
+    }
+  },
+  "feedback_after_restart": {
+    "genuine": {
+      "cohort": "genuine",
+      "time_window": "all persisted records since deployment ledger creation",
+      "eligible_predictions": 0,
+      "predictions_with_feedback": 0,
+      "feedback_coverage": null,
+      "agree": 0,
+      "disagree": 0,
+      "unsure": 0,
+      "agreement": null,
+      "reviewed_predictions": 0,
+      "overrides": 0,
+      "override_rate": null,
+      "satisfaction_responses": 0,
+      "satisfaction_sum": 0,
+      "satisfaction_mean": null,
+      "verified_labels": 0,
+      "verified_label_coverage": null,
+      "verified_quality_status": "insufficient independent-case evidence; no operational accuracy claim",
+      "genuine_ground_truth": false,
+      "ground_truth_status": "Cohort selection alone does not establish ground truth; inspection records require independent alignment and case support"
+    },
+    "test": {
+      "cohort": "test",
+      "time_window": "all persisted records since deployment ledger creation",
+      "eligible_predictions": 524,
+      "predictions_with_feedback": 6,
+      "feedback_coverage": 0.011450381679389313,
+      "agree": 0,
+      "disagree": 0,
+      "unsure": 6,
+      "agreement": null,
+      "reviewed_predictions": 6,
+      "overrides": 0,
+      "override_rate": 0.0,
+      "satisfaction_responses": 6,
+      "satisfaction_sum": 24,
+      "satisfaction_mean": 4.0,
+      "verified_labels": 0,
+      "verified_label_coverage": 0.0,
+      "verified_quality_status": "insufficient independent-case evidence; no operational accuracy claim",
+      "genuine_ground_truth": false,
+      "ground_truth_status": "Cohort selection alone does not establish ground truth; inspection records require independent alignment and case support"
+    }
+  },
+  "persistent_feedback": true,
+  "targets": {
+    "status": "success",
+    "data": {
+      "activeTargets": [
+        {
+          "discoveredLabels": {
+            "__address__": "app:8001",
+            "__metrics_path__": "/metrics",
+            "__scheme__": "http",
+            "__scrape_interval__": "5s",
+            "__scrape_timeout__": "5s",
+            "job": "aeris"
+          },
+          "labels": {
+            "instance": "app:8001",
+            "job": "aeris"
+          },
+          "scrapePool": "aeris",
+          "scrapeUrl": "http://app:8001/metrics",
+          "globalUrl": "http://app:8001/metrics",
+          "lastError": "",
+          "lastScrape": "2026-11-17T06:43:32.301253557Z",
+          "lastScrapeDuration": 1.066614396,
+          "health": "up",
+          "scrapeInterval": "5s",
+          "scrapeTimeout": "5s"
+        }
+      ],
+      "droppedTargets": [],
+      "droppedTargetCounts": {
+        "aeris": 0
+      }
+    }
+  },
+  "grafana_dashboard": {
+    "meta": {
+      "type": "db",
+      "canSave": false,
+      "canEdit": false,
+      "canAdmin": false,
+      "canStar": false,
+      "canDelete": false,
+      "slug": "aeris-c2b7-operations-review-and-model-evidence",
+      "url": "/d/aeris-operations/aeris-c2b7-operations-review-and-model-evidence",
+      "expires": "0001-01-01T00:00:00Z",
+      "created": "2026-11-16T23:24:26Z",
+      "updated": "2026-11-17T06:01:47Z",
+      "updatedBy": "Anonymous",
+      "createdBy": "Anonymous",
+      "version": 3,
+      "hasAcl": false,
+      "isFolder": false,
+      "apiVersion": "v0alpha1",
+      "folderId": 0,
+      "folderUid": "",
+      "folderTitle": "General",
+      "folderUrl": "",
+      "provisioned": true,
+      "provisionedExternalId": "aeris.json",
+      "annotationsPermissions": {
+        "dashboard": {
+          "canAdd": false,
+          "canEdit": false,
+          "canDelete": false
+        },
+        "organization": {
+          "canAdd": false,
+          "canEdit": false,
+          "canDelete": false
+        }
+      }
+    },
+    "dashboard": {
+      "description": "Test and genuine cohorts separated. All feedback ratios show missing data for zero denominators. Verified labels do not establish independent operational accuracy. Inference timing excludes browser rendering.",
+      "id": 1,
+      "links": [
+        {
+          "targetBlank": true,
+          "title": "AERIS diagnostic workspace",
+          "type": "link",
+          "url": "http://127.0.0.1:8510/"
+        },
+        {
+          "targetBlank": true,
+          "title": "Prometheus scrape targets",
+          "type": "link",
+          "url": "http://127.0.0.1:9091/targets"
+        },
+        {
+          "targetBlank": true,
+          "title": "Prometheus active alerts",
+          "type": "link",
+          "url": "http://127.0.0.1:9091/alerts"
+        }
+      ],
+      "panels": [
+        {
+          "gridPos": {
+            "h": 4,
+            "w": 12,
+            "x": 0,
+            "y": 0
+          },
+          "id": 25,
+          "options": {
+            "content": "**Actual requests, durable feedback, explicit cohorts.**\n\nSelect **test** for the professor demonstration or **genuine** for real operator records. Diagnose a window in AERIS to generate measured traffic. No synthetic production outcomes are inserted.",
+            "mode": "markdown"
+          },
+          "title": "AERIS / operational command view",
+          "type": "text"
+        },
+        {
+          "gridPos": {
+            "h": 4,
+            "w": 12,
+            "x": 12,
+            "y": 0
+          },
+          "id": 26,
+          "options": {
+            "content": "**No recent requests** \u2192 latency has no five-minute sample.\n\n**No ratings / agreement responses** \u2192 the denominator is zero.\n\n**No inspected labels** \u2192 live accuracy is not measured. Counts below show the support; offline model scores are in AERIS \u2192 Model evidence.",
+            "mode": "markdown"
+          },
+          "title": "Read missing values correctly",
+          "type": "text"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "description": "Actual persisted service measurements for the selected cohort. Test and genuine operator records are separate.",
+          "fieldConfig": {
+            "defaults": {
+              "mappings": [
+                {
+                  "options": {
+                    "0": {
+                      "color": "red",
+                      "text": "UNAVAILABLE"
+                    },
+                    "1": {
+                      "color": "green",
+                      "text": "HEALTHY"
+                    }
+                  },
+                  "type": "value"
+                }
+              ],
+              "noValue": "No samples received",
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "red",
+                    "value": null
+                  },
+                  {
+                    "color": "green",
+                    "value": 1
+                  }
+                ]
+              },
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 0,
+            "y": 4
+          },
+          "id": 1,
+          "options": {
+            "colorMode": "value",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "auto"
+          },
+          "targets": [
+            {
+              "expr": "aeris_model_ready",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Model readiness",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "description": "Actual persisted service measurements for the selected cohort. Test and genuine operator records are separate.",
+          "fieldConfig": {
+            "defaults": {
+              "mappings": [
+                {
+                  "options": {
+                    "0": {
+                      "color": "red",
+                      "text": "UNAVAILABLE"
+                    },
+                    "1": {
+                      "color": "green",
+                      "text": "HEALTHY"
+                    }
+                  },
+                  "type": "value"
+                }
+              ],
+              "noValue": "No samples received",
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "red",
+                    "value": null
+                  },
+                  {
+                    "color": "green",
+                    "value": 1
+                  }
+                ]
+              },
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 6,
+            "y": 4
+          },
+          "id": 2,
+          "options": {
+            "colorMode": "value",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "auto"
+          },
+          "targets": [
+            {
+              "expr": "aeris_app_up",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "UI availability",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "description": "Actual persisted service measurements for the selected cohort. Test and genuine operator records are separate.",
+          "fieldConfig": {
+            "defaults": {
+              "mappings": [
+                {
+                  "options": {
+                    "0": {
+                      "color": "red",
+                      "text": "UNAVAILABLE"
+                    },
+                    "1": {
+                      "color": "green",
+                      "text": "HEALTHY"
+                    }
+                  },
+                  "type": "value"
+                }
+              ],
+              "noValue": "No samples received",
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "red",
+                    "value": null
+                  },
+                  {
+                    "color": "green",
+                    "value": 1
+                  }
+                ]
+              },
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 12,
+            "y": 4
+          },
+          "id": 3,
+          "options": {
+            "colorMode": "value",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "auto"
+          },
+          "targets": [
+            {
+              "expr": "up{job=\"aeris\"}",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Scrape availability",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "description": "Actual persisted service measurements for the selected cohort. Test and genuine operator records are separate.",
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No samples received",
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 18,
+            "y": 4
+          },
+          "id": 4,
+          "options": {
+            "colorMode": "value",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "auto"
+          },
+          "targets": [
+            {
+              "expr": "aeris_eligible_predictions{cohort=\"$cohort\"}",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Eligible predictions",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "description": "Inference service duration, seconds. Empty when there are no requests in the five-minute rate window. Browser latency is measured separately.",
+          "fieldConfig": {
+            "defaults": {
+              "decimals": 3,
+              "noValue": "No requests in the last 5 min",
+              "unit": "s"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 0,
+            "y": 8
+          },
+          "id": 5,
+          "options": {
+            "colorMode": "value",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "auto"
+          },
+          "targets": [
+            {
+              "expr": "histogram_quantile(0.5, sum by(le)(rate(aeris_inference_seconds_bucket{cohort=\"$cohort\"}[5m])))",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Inference p50 (service)",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "description": "95th percentile of actual service requests; not browser rendering. Generate traffic in Live diagnosis to populate it.",
+          "fieldConfig": {
+            "defaults": {
+              "decimals": 3,
+              "noValue": "No requests in the last 5 min",
+              "unit": "s"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 6,
+            "y": 8
+          },
+          "id": 6,
+          "options": {
+            "colorMode": "value",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "auto"
+          },
+          "targets": [
+            {
+              "expr": "histogram_quantile(0.95, sum by(le)(rate(aeris_inference_seconds_bucket{cohort=\"$cohort\"}[5m])))",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Inference p95 (service)",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "description": "Actual persisted service measurements for the selected cohort. Test and genuine operator records are separate.",
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No samples received",
+              "unit": "reqps"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 12,
+            "y": 8
+          },
+          "id": 7,
+          "options": {
+            "colorMode": "value",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "auto"
+          },
+          "targets": [
+            {
+              "expr": "rate(aeris_requests_total{cohort=\"$cohort\"}[5m])",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Requests / second",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "description": "Actual persisted service measurements for the selected cohort. Test and genuine operator records are separate.",
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No requests in the last 5 min",
+              "unit": "percentunit"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 18,
+            "y": 8
+          },
+          "id": 8,
+          "options": {
+            "colorMode": "value",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "auto"
+          },
+          "targets": [
+            {
+              "expr": "(rate(aeris_errors_total{cohort=\"$cohort\"}[5m]) / rate(aeris_requests_total{cohort=\"$cohort\"}[5m])) and (rate(aeris_requests_total{cohort=\"$cohort\"}[5m]) > 0)",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Error fraction",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "description": "Actual persisted service measurements for the selected cohort. Test and genuine operator records are separate.",
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No samples received",
+              "unit": "percentunit"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 0,
+            "y": 12
+          },
+          "id": 9,
+          "options": {
+            "colorMode": "value",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "auto"
+          },
+          "targets": [
+            {
+              "expr": "(aeris_review_total{cohort=\"$cohort\"} / aeris_eligible_predictions{cohort=\"$cohort\"}) and (aeris_eligible_predictions{cohort=\"$cohort\"} > 0)",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Review workload \u00b7 persisted eligible requests",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "description": "Actual persisted service measurements for the selected cohort. Test and genuine operator records are separate.",
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No samples received",
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 6,
+            "y": 12
+          },
+          "id": 10,
+          "options": {
+            "colorMode": "value",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "auto"
+          },
+          "targets": [
+            {
+              "expr": "aeris_blocked_total{cohort=\"$cohort\"}",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Blocked inputs",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "description": "Actual persisted service measurements for the selected cohort. Test and genuine operator records are separate.",
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No samples received",
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 12,
+            "y": 12
+          },
+          "id": 11,
+          "options": {
+            "colorMode": "value",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "auto"
+          },
+          "targets": [
+            {
+              "expr": "aeris_unsupported_total{cohort=\"$cohort\"}",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Unsupported inputs",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "description": "Fraction of temperature values beyond three fixed training-source standard deviations over the last 100 eligible requests. Unlabeled signal, not measured accuracy.",
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No eligible predictions",
+              "unit": "percentunit"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 18,
+            "y": 12
+          },
+          "id": 12,
+          "options": {
+            "colorMode": "value",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "auto"
+          },
+          "targets": [
+            {
+              "expr": "aeris_source_shift_fraction{cohort=\"$cohort\"}",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Fixed source shift fraction",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "description": "Actual persisted service measurements for the selected cohort. Test and genuine operator records are separate.",
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No eligible predictions",
+              "unit": "percentunit"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 0,
+            "y": 16
+          },
+          "id": 13,
+          "options": {
+            "colorMode": "value",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "auto"
+          },
+          "targets": [
+            {
+              "expr": "(aeris_predictions_with_feedback{cohort=\"$cohort\"} / aeris_eligible_predictions{cohort=\"$cohort\"}) and (aeris_eligible_predictions{cohort=\"$cohort\"} > 0)",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Feedback coverage",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "description": "Actual persisted service measurements for the selected cohort. Test and genuine operator records are separate.",
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No samples received",
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 6,
+            "y": 16
+          },
+          "id": 14,
+          "options": {
+            "colorMode": "value",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "auto"
+          },
+          "targets": [
+            {
+              "expr": "aeris_predictions_with_feedback{cohort=\"$cohort\"}",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Predictions with a review",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "description": "Agree / (agree + disagree). Unsure is excluded and shown separately. No responses means undefined, not 0% agreement.",
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No agree/disagree responses",
+              "unit": "percentunit"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 12,
+            "y": 16
+          },
+          "id": 15,
+          "options": {
+            "colorMode": "value",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "auto"
+          },
+          "targets": [
+            {
+              "expr": "(aeris_agree{cohort=\"$cohort\"} / (aeris_agree{cohort=\"$cohort\"} + aeris_disagree{cohort=\"$cohort\"})) and ((aeris_agree{cohort=\"$cohort\"} + aeris_disagree{cohort=\"$cohort\"}) > 0)",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Agreement fraction",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "description": "Actual persisted service measurements for the selected cohort. Test and genuine operator records are separate.",
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No samples received",
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 18,
+            "y": 16
+          },
+          "id": 16,
+          "options": {
+            "colorMode": "value",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "auto"
+          },
+          "targets": [
+            {
+              "expr": "aeris_agree{cohort=\"$cohort\"} + aeris_disagree{cohort=\"$cohort\"}",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Agree + disagree response count",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "description": "Actual persisted service measurements for the selected cohort. Test and genuine operator records are separate.",
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No samples received",
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 0,
+            "y": 20
+          },
+          "id": 17,
+          "options": {
+            "colorMode": "value",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "auto"
+          },
+          "targets": [
+            {
+              "expr": "aeris_unsure{cohort=\"$cohort\"}",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Unsure responses",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "description": "Actual persisted service measurements for the selected cohort. Test and genuine operator records are separate.",
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No reviewed predictions",
+              "unit": "percentunit"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 6,
+            "y": 20
+          },
+          "id": 18,
+          "options": {
+            "colorMode": "value",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "auto"
+          },
+          "targets": [
+            {
+              "expr": "(aeris_overrides{cohort=\"$cohort\"} / aeris_reviewed_predictions{cohort=\"$cohort\"}) and (aeris_reviewed_predictions{cohort=\"$cohort\"} > 0)",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Override fraction",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "description": "Sum of optional 1\u20135 ratings / rating responses. Missing ratings do not imply poor satisfaction.",
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No satisfaction ratings",
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 12,
+            "y": 20
+          },
+          "id": 19,
+          "options": {
+            "colorMode": "value",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "auto"
+          },
+          "targets": [
+            {
+              "expr": "(aeris_satisfaction_sum{cohort=\"$cohort\"} / aeris_satisfaction_responses{cohort=\"$cohort\"}) and (aeris_satisfaction_responses{cohort=\"$cohort\"} > 0)",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Satisfaction mean",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "description": "Actual persisted service measurements for the selected cohort. Test and genuine operator records are separate.",
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No samples received",
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 18,
+            "y": 20
+          },
+          "id": 20,
+          "options": {
+            "colorMode": "value",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "auto"
+          },
+          "targets": [
+            {
+              "expr": "aeris_satisfaction_responses{cohort=\"$cohort\"}",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Satisfaction support",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "description": "Independently inspected labels / eligible predictions. Test data do not establish real quality; case independence still requires review.",
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No eligible predictions",
+              "unit": "percentunit"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 0,
+            "y": 24
+          },
+          "id": 21,
+          "options": {
+            "colorMode": "value",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "auto"
+          },
+          "targets": [
+            {
+              "expr": "(aeris_verified_labels{cohort=\"$cohort\"} / aeris_eligible_predictions{cohort=\"$cohort\"}) and (aeris_eligible_predictions{cohort=\"$cohort\"} > 0)",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Verified-label coverage",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "description": "Recorded inspection labels, not independent case counts. Zero is expected until genuine inspection evidence exists.",
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No samples received",
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 6,
+            "y": 24
+          },
+          "id": 22,
+          "options": {
+            "colorMode": "value",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "auto"
+          },
+          "targets": [
+            {
+              "expr": "aeris_verified_labels{cohort=\"$cohort\"}",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Verified labels (not independent cases)",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "description": "Persisted request counts by supported operating setting. Counts measure coverage, not per-setting reliability.",
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No samples received",
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 12,
+            "y": 24
+          },
+          "id": 23,
+          "options": {
+            "colorMode": "value",
+            "orientation": "horizontal",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "auto"
+          },
+          "targets": [
+            {
+              "expr": "aeris_setting_requests_total{cohort=\"$cohort\"}",
+              "instant": true,
+              "legendFormat": "{{setting}}",
+              "refId": "A"
+            }
+          ],
+          "title": "Setting coverage",
+          "type": "bargauge"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "description": "Actual persisted service measurements for the selected cohort. Test and genuine operator records are separate.",
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No samples received",
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 18,
+            "y": 24
+          },
+          "id": 24,
+          "options": {
+            "colorMode": "value",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "auto"
+          },
+          "targets": [
+            {
+              "expr": "aeris_shift_support{cohort=\"$cohort\"}",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Shift signal sample count \u00b7 up to 100",
+          "type": "stat"
+        }
+      ],
+      "refresh": "10s",
+      "schemaVersion": 41,
+      "tags": [
+        "AERIS",
+        "EGN6216"
+      ],
+      "templating": {
+        "list": [
+          {
+            "current": {
+              "text": "test",
+              "value": "test"
+            },
+            "name": "cohort",
+            "options": [
+              {
+                "selected": true,
+                "text": "test",
+                "value": "test"
+              },
+              {
+                "selected": false,
+                "text": "genuine",
+                "value": "genuine"
+              }
+            ],
+            "query": "test,genuine",
+            "type": "custom"
+          }
+        ]
+      },
+      "time": {
+        "from": "now-24h",
+        "to": "now"
+      },
+      "title": "AERIS \u00b7 Operations, review & model evidence",
+      "uid": "aeris-operations",
+      "version": 3
+    }
+  },
+  "grafana_real_data": {
+    "status": "success",
+    "data": {
+      "resultType": "vector",
+      "result": [
+        {
+          "metric": {
+            "__name__": "aeris_eligible_predictions",
+            "cohort": "test",
+            "instance": "app:8001",
+            "job": "aeris"
+          },
+          "value": [
+            1794897813.61,
+            "524"
+          ]
+        },
+        {
+          "metric": {
+            "__name__": "aeris_eligible_predictions",
+            "cohort": "genuine",
+            "instance": "app:8001",
+            "job": "aeris"
+          },
+          "value": [
+            1794897813.61,
+            "0"
+          ]
+        }
+      ]
+    }
+  }
+}

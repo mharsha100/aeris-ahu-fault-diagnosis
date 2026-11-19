@@ -1,0 +1,7 @@
+bundle,role,windows,macro_f1,fault_to_normal,mandatory_review_fraction,scope
+e2e_anchor_v0_s42,source_test,6929,0.632365402859401,382,,later source day within same conditions; not independent generalization
+e2e_anchor_v0_s42,target_test,1136,0.22736136521971262,0,1.0,retrospective target; never used for selection
+e2e_anchor_v1_s42,source_test,6929,0.633013693233312,386,,later source day within same conditions; not independent generalization
+e2e_anchor_v1_s42,target_test,1136,0.22921423345657735,0,1.0,retrospective target; never used for selection
+e2e_anchor_v2_s42,source_test,6929,0.654179851358797,432,,later source day within same conditions; not independent generalization
+e2e_anchor_v2_s42,target_test,1136,0.22431503733615132,0,1.0,retrospective target; never used for selection

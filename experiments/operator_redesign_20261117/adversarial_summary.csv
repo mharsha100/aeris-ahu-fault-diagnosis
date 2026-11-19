@@ -1,0 +1,4 @@
+temperature_budget_C,command_budget,windows,fault_windows,clean_accuracy,attack_accuracy,clean_correct_windows,successful_attacks,attack_success_rate,windows_with_any_accepted_wrong_class,windows_with_any_accepted_false_normal,worst_case_review_rate
+0.2,0.01,40,30,0.75,0.6,30,6,0.2,0,0,0.825
+0.5,0.02,40,30,0.75,0.575,30,7,0.23333333333333334,0,0,0.8
+1.0,0.05,40,30,0.75,0.5,30,10,0.3333333333333333,0,0,0.95

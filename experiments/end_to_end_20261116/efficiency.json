@@ -1,0 +1,10 @@
+{
+  "bundle": "e2e_anchor_v2_s42",
+  "hardware": "Windows CPU warm inference; CUDA training separately logged",
+  "warm_diagnose_100_p50_seconds": 0.014285350001046027,
+  "warm_diagnose_100_p95_seconds": 0.021969219999846242,
+  "batch_1000_seconds": 0.05674480000016047,
+  "throughput_windows_per_second": 17622.760147135457,
+  "bundle_bytes": 12265844,
+  "ui_latency_included": false
+}

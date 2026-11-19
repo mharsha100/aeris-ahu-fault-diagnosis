@@ -1,0 +1,29 @@
+{
+  "bundle": "e2e_anchor_v2_s42",
+  "seed": 20261117,
+  "windows": 40,
+  "class_support": [
+    10,
+    10,
+    10,
+    10
+  ],
+  "candidates_per_window_and_budget": 65,
+  "budgets": [
+    {
+      "temperature_C": 0.2,
+      "commands": 0.01
+    },
+    {
+      "temperature_C": 0.5,
+      "commands": 0.02
+    },
+    {
+      "temperature_C": 1.0,
+      "commands": 0.05
+    }
+  ],
+  "attack": "64 bounded randomized constant offsets plus time noise; clean input included as candidate 0. Untargeted minimum true-class probability and separate targeted normal search.",
+  "constraints": "Temperatures bounded to +/- budget around original and [-60,100] C; commands within +/- budget and [0,1]. Fan/occupancy/timestamps unchanged. Both branches derived from the same modified raw input.",
+  "scope": "Offline defensive source-development experiment. Not a certified worst-case guarantee, field adversarial validation, or target transfer claim."
+}

@@ -1,0 +1,7 @@
+case,windows,false_normal,accepted_false_normal
+clean,100,7,0
+dropout,100,0,0
+noise_0.2C,100,1,0
+offset_supply_1C,100,1,0
+stuck_supply,100,2,0
+unknown_setting,100,7,0

@@ -1,0 +1,2 @@
+calibrated_physics_v0_s42 0.6845353427417623 209 {'weight': 0.5, 'factors': [0.8, 1, 1, 1], 'calibration_f1': 0.7038750410496856, 'calibration_false_normal': 21}
+calibrated_physics_v1_s42 0.6924647363480891 355 {'weight': 0.5, 'factors': [0.8, 1, 1, 1], 'calibration_f1': 0.704828523158282, 'calibration_false_normal': 29}

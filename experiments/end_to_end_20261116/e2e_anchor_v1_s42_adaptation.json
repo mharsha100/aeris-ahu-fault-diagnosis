@@ -1,0 +1,43 @@
+{
+  "candidate_gate": {
+    "adaptation_windows": 1420,
+    "base_gate_windows": 10,
+    "temporally_stable_windows": 6,
+    "selected_windows": 2,
+    "selected_days": 1,
+    "selected_predicted_classes": 1,
+    "selected_by_predicted_class": {
+      "cooling_valve_fault": 2
+    },
+    "selection_labels_are_unverified": true,
+    "enough_candidates": false
+  },
+  "gate_rejections": {
+    "failed_confidence_agreement_or_envelope": 1410,
+    "insufficient_temporal_stability": 4,
+    "overlaps_selected_window": 4,
+    "selected_unverified_pseudo_label": 2
+  },
+  "policy": {
+    "hybrid_min_confidence": 0.95,
+    "each_branch_min_confidence": 0.9,
+    "maximum_source_standard_deviations": 6.0,
+    "stable_consecutive_windows": 3,
+    "maximum_per_day": 8,
+    "maximum_per_predicted_class": 24,
+    "maximum_per_mode_and_predicted_class": 16,
+    "minimum_selected_windows": 12,
+    "minimum_selected_days": 2,
+    "minimum_predicted_classes": 2,
+    "forest_target_sample_weight": 5.0,
+    "temporal_target_loss_fraction": 0.1,
+    "temporal_learning_rate": 0.0001,
+    "maximum_source_macro_f1_drop": 0.02,
+    "maximum_source_per_class_recall_drop": 0.05
+  },
+  "status": "skipped_unsupported_setting",
+  "parent_retained": true,
+  "updated_weights": false,
+  "verified_feedback_stage": "skipped_no_independently_verified_aligned_labels",
+  "historical_reference_feedback": "Simulated; not independent evidence"
+}

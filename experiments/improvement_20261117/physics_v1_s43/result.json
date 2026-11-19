@@ -1,0 +1,188 @@
+{
+  "windows": 6930,
+  "accuracy": 0.7614718614718615,
+  "balanced_accuracy": 0.7249922696351268,
+  "macro_f1": 0.6975457986414556,
+  "log_loss": 0.4588431764212059,
+  "multiclass_brier": 0.27332026066416887,
+  "ece_10_bins": 0.016851793843644793,
+  "confusion_matrix": [
+    [
+      261,
+      122,
+      18,
+      61
+    ],
+    [
+      411,
+      2594,
+      99,
+      130
+    ],
+    [
+      287,
+      330,
+      1539,
+      0
+    ],
+    [
+      52,
+      143,
+      0,
+      883
+    ]
+  ],
+  "per_class": {
+    "normal": {
+      "precision": 0.258160237388724,
+      "recall": 0.564935064935065,
+      "f1-score": 0.3543788187372709,
+      "support": 462.0
+    },
+    "damper_fault": {
+      "precision": 0.8134211351520853,
+      "recall": 0.8021026592455164,
+      "f1-score": 0.8077222481706368,
+      "support": 3234.0
+    },
+    "cooling_valve_fault": {
+      "precision": 0.9293478260869565,
+      "recall": 0.713821892393321,
+      "f1-score": 0.8074501573976915,
+      "support": 2156.0
+    },
+    "heating_valve_fault": {
+      "precision": 0.8221601489757915,
+      "recall": 0.8191094619666048,
+      "f1-score": 0.820631970260223,
+      "support": 1078.0
+    },
+    "accuracy": 0.7614718614718615,
+    "macro avg": {
+      "precision": 0.7057723369008894,
+      "recall": 0.7249922696351268,
+      "f1-score": 0.6975457986414556,
+      "support": 6930.0
+    },
+    "weighted avg": {
+      "precision": 0.8138292257423977,
+      "recall": 0.7614718614718615,
+      "f1-score": 0.7794228814040984,
+      "support": 6930.0
+    }
+  },
+  "name": "physics_v1_s43",
+  "version": "v1",
+  "seed": 43,
+  "epochs": 50,
+  "best_epoch": 27,
+  "seconds": 191.75315599999885,
+  "fusion": [
+    {
+      "weight": 0.25,
+      "macro_f1": 0.6726100709197063,
+      "fault_to_normal": 1779
+    },
+    {
+      "weight": 0.5,
+      "macro_f1": 0.6845440800996808,
+      "fault_to_normal": 1351
+    },
+    {
+      "weight": 0.65,
+      "macro_f1": 0.6932817365909971,
+      "fault_to_normal": 1036
+    },
+    {
+      "weight": 0.75,
+      "macro_f1": 0.6975457986414556,
+      "fault_to_normal": 750
+    },
+    {
+      "weight": 0.85,
+      "macro_f1": 0.6959421051221757,
+      "fault_to_normal": 482
+    },
+    {
+      "weight": 0.9,
+      "macro_f1": 0.6957127354698478,
+      "fault_to_normal": 372
+    }
+  ],
+  "fault_to_normal": 750,
+  "cpu_metrics": {
+    "windows": 6930,
+    "accuracy": 0.7614718614718615,
+    "balanced_accuracy": 0.7249922696351268,
+    "macro_f1": 0.6975457986414556,
+    "log_loss": 0.4588431815823324,
+    "multiclass_brier": 0.27332026434166956,
+    "ece_10_bins": 0.016851787132407366,
+    "confusion_matrix": [
+      [
+        261,
+        122,
+        18,
+        61
+      ],
+      [
+        411,
+        2594,
+        99,
+        130
+      ],
+      [
+        287,
+        330,
+        1539,
+        0
+      ],
+      [
+        52,
+        143,
+        0,
+        883
+      ]
+    ],
+    "per_class": {
+      "normal": {
+        "precision": 0.258160237388724,
+        "recall": 0.564935064935065,
+        "f1-score": 0.3543788187372709,
+        "support": 462.0
+      },
+      "damper_fault": {
+        "precision": 0.8134211351520853,
+        "recall": 0.8021026592455164,
+        "f1-score": 0.8077222481706368,
+        "support": 3234.0
+      },
+      "cooling_valve_fault": {
+        "precision": 0.9293478260869565,
+        "recall": 0.713821892393321,
+        "f1-score": 0.8074501573976915,
+        "support": 2156.0
+      },
+      "heating_valve_fault": {
+        "precision": 0.8221601489757915,
+        "recall": 0.8191094619666048,
+        "f1-score": 0.820631970260223,
+        "support": 1078.0
+      },
+      "accuracy": 0.7614718614718615,
+      "macro avg": {
+        "precision": 0.7057723369008894,
+        "recall": 0.7249922696351268,
+        "f1-score": 0.6975457986414556,
+        "support": 6930.0
+      },
+      "weighted avg": {
+        "precision": 0.8138292257423977,
+        "recall": 0.7614718614718615,
+        "f1-score": 0.7794228814040984,
+        "support": 6930.0
+      }
+    }
+  },
+  "cpu_class_disagreements": 0
+}

@@ -1,0 +1,22 @@
+{
+  "library": "adversarial-robustness-toolbox",
+  "version": "1.20.1",
+  "attack": "HopSkipJump",
+  "norm": "inf",
+  "windows": 40,
+  "class_support": [
+    10,
+    10,
+    10,
+    10
+  ],
+  "seed": 20261117,
+  "max_iter": 5,
+  "max_eval": 64,
+  "init_eval": 20,
+  "init_size": 20,
+  "batch_size": 64,
+  "model": "boosted_v2_s42; source-only model now called lifecycle V0",
+  "constraints": "Perturb only 4 temperatures and 4 commands, with per-input bounded coordinates. Fan, occupancy and timestamps fixed. Entire RF + temporal + CatBoost predictor queried.",
+  "limitation": "Finite-budget offline source-development attack. Not a robustness certificate, target-site validation or a security scan of the application."
+}

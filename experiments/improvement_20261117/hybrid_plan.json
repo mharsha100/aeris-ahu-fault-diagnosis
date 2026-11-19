@@ -1,0 +1,14 @@
+{
+  "runs": 9,
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "epochs": 50,
+  "fresh_temporal": true,
+  "same_encoder": "32 channels, dropout .15, dilations 1/2/4, weighted loss, lr .001",
+  "change": "Common physical context residual head and deterministic physical RF features",
+  "target_used": false,
+  "selection": "Macro F1 >= matched anchor +.01; no class recall decrease >.03; no increased fault-normal or accepted false-normal counts, every seed. Otherwise retain parent."
+}

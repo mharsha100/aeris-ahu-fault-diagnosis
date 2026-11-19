@@ -1,0 +1,292 @@
+{
+  "chosen": {
+    "weight": 0.9,
+    "normal_factor": 1.2,
+    "macro_f1": 0.7065609091187774,
+    "fault_to_normal": 520,
+    "max_recall_drop": 0.014533085961657366,
+    "passed": true
+  },
+  "trials": [
+    {
+      "weight": 0.25,
+      "normal_factor": 0.8,
+      "macro_f1": 0.6930140747627265,
+      "fault_to_normal": 362,
+      "max_recall_drop": 0.09956709956709958,
+      "passed": false
+    },
+    {
+      "weight": 0.25,
+      "normal_factor": 1.0,
+      "macro_f1": 0.6957683474763512,
+      "fault_to_normal": 488,
+      "max_recall_drop": 0.025974025974025983,
+      "passed": false
+    },
+    {
+      "weight": 0.25,
+      "normal_factor": 1.2,
+      "macro_f1": 0.6948071639899935,
+      "fault_to_normal": 759,
+      "max_recall_drop": 0.02504638218923938,
+      "passed": false
+    },
+    {
+      "weight": 0.25,
+      "normal_factor": 1.4,
+      "macro_f1": 0.693080954449095,
+      "fault_to_normal": 1035,
+      "max_recall_drop": 0.06029684601113172,
+      "passed": false
+    },
+    {
+      "weight": 0.25,
+      "normal_factor": 1.6,
+      "macro_f1": 0.6913251359060351,
+      "fault_to_normal": 1276,
+      "max_recall_drop": 0.08998144712430434,
+      "passed": false
+    },
+    {
+      "weight": 0.25,
+      "normal_factor": 1.8,
+      "macro_f1": 0.6854143209014497,
+      "fault_to_normal": 1454,
+      "max_recall_drop": 0.0992578849721707,
+      "passed": false
+    },
+    {
+      "weight": 0.25,
+      "normal_factor": 2.0,
+      "macro_f1": 0.6799755021299742,
+      "fault_to_normal": 1594,
+      "max_recall_drop": 0.1184291898577613,
+      "passed": false
+    },
+    {
+      "weight": 0.5,
+      "normal_factor": 0.8,
+      "macro_f1": 0.6974993220323165,
+      "fault_to_normal": 326,
+      "max_recall_drop": 0.10389610389610388,
+      "passed": false
+    },
+    {
+      "weight": 0.5,
+      "normal_factor": 1.0,
+      "macro_f1": 0.6985472015150305,
+      "fault_to_normal": 442,
+      "max_recall_drop": 0.04329004329004327,
+      "passed": false
+    },
+    {
+      "weight": 0.5,
+      "normal_factor": 1.2,
+      "macro_f1": 0.699410210098846,
+      "fault_to_normal": 656,
+      "max_recall_drop": 0.013605442176870763,
+      "passed": false
+    },
+    {
+      "weight": 0.5,
+      "normal_factor": 1.4,
+      "macro_f1": 0.699412031619487,
+      "fault_to_normal": 907,
+      "max_recall_drop": 0.04916512059369205,
+      "passed": false
+    },
+    {
+      "weight": 0.5,
+      "normal_factor": 1.6,
+      "macro_f1": 0.6973236954562165,
+      "fault_to_normal": 1165,
+      "max_recall_drop": 0.08256029684601118,
+      "passed": false
+    },
+    {
+      "weight": 0.5,
+      "normal_factor": 1.8,
+      "macro_f1": 0.6932873856422909,
+      "fault_to_normal": 1356,
+      "max_recall_drop": 0.0992578849721707,
+      "passed": false
+    },
+    {
+      "weight": 0.5,
+      "normal_factor": 2.0,
+      "macro_f1": 0.6889156100860293,
+      "fault_to_normal": 1478,
+      "max_recall_drop": 0.10111317254174401,
+      "passed": false
+    },
+    {
+      "weight": 0.65,
+      "normal_factor": 0.8,
+      "macro_f1": 0.7006520433530476,
+      "fault_to_normal": 266,
+      "max_recall_drop": 0.11904761904761907,
+      "passed": false
+    },
+    {
+      "weight": 0.65,
+      "normal_factor": 1.0,
+      "macro_f1": 0.6996592457834039,
+      "fault_to_normal": 417,
+      "max_recall_drop": 0.051948051948051965,
+      "passed": false
+    },
+    {
+      "weight": 0.65,
+      "normal_factor": 1.2,
+      "macro_f1": 0.70323088499079,
+      "fault_to_normal": 592,
+      "max_recall_drop": 0.014223871366728535,
+      "passed": true
+    },
+    {
+      "weight": 0.65,
+      "normal_factor": 1.4,
+      "macro_f1": 0.702089719969915,
+      "fault_to_normal": 839,
+      "max_recall_drop": 0.042671614100185606,
+      "passed": false
+    },
+    {
+      "weight": 0.65,
+      "normal_factor": 1.6,
+      "macro_f1": 0.7002083560989605,
+      "fault_to_normal": 1106,
+      "max_recall_drop": 0.07792207792207795,
+      "passed": false
+    },
+    {
+      "weight": 0.65,
+      "normal_factor": 1.8,
+      "macro_f1": 0.6971902466778975,
+      "fault_to_normal": 1273,
+      "max_recall_drop": 0.09090909090909094,
+      "passed": false
+    },
+    {
+      "weight": 0.65,
+      "normal_factor": 2.0,
+      "macro_f1": 0.6940660090189139,
+      "fault_to_normal": 1409,
+      "max_recall_drop": 0.10018552875695741,
+      "passed": false
+    },
+    {
+      "weight": 0.8,
+      "normal_factor": 0.8,
+      "macro_f1": 0.7033600612618409,
+      "fault_to_normal": 224,
+      "max_recall_drop": 0.13636363636363635,
+      "passed": false
+    },
+    {
+      "weight": 0.8,
+      "normal_factor": 1.0,
+      "macro_f1": 0.7044242429844163,
+      "fault_to_normal": 373,
+      "max_recall_drop": 0.06060606060606061,
+      "passed": false
+    },
+    {
+      "weight": 0.8,
+      "normal_factor": 1.2,
+      "macro_f1": 0.7036966095061067,
+      "fault_to_normal": 553,
+      "max_recall_drop": 0.015151515151515138,
+      "passed": true
+    },
+    {
+      "weight": 0.8,
+      "normal_factor": 1.4,
+      "macro_f1": 0.7050498489557347,
+      "fault_to_normal": 785,
+      "max_recall_drop": 0.03153988868274582,
+      "passed": false
+    },
+    {
+      "weight": 0.8,
+      "normal_factor": 1.6,
+      "macro_f1": 0.7031354370786116,
+      "fault_to_normal": 1056,
+      "max_recall_drop": 0.07235621521335811,
+      "passed": false
+    },
+    {
+      "weight": 0.8,
+      "normal_factor": 1.8,
+      "macro_f1": 0.7009394436116062,
+      "fault_to_normal": 1215,
+      "max_recall_drop": 0.08905380333951762,
+      "passed": false
+    },
+    {
+      "weight": 0.8,
+      "normal_factor": 2.0,
+      "macro_f1": 0.6970033887276361,
+      "fault_to_normal": 1371,
+      "max_recall_drop": 0.10018552875695741,
+      "passed": false
+    },
+    {
+      "weight": 0.9,
+      "normal_factor": 0.8,
+      "macro_f1": 0.7044933379895919,
+      "fault_to_normal": 216,
+      "max_recall_drop": 0.13852813852813856,
+      "passed": false
+    },
+    {
+      "weight": 0.9,
+      "normal_factor": 1.0,
+      "macro_f1": 0.7069198062602874,
+      "fault_to_normal": 339,
+      "max_recall_drop": 0.06926406926406925,
+      "passed": false
+    },
+    {
+      "weight": 0.9,
+      "normal_factor": 1.2,
+      "macro_f1": 0.7065609091187774,
+      "fault_to_normal": 520,
+      "max_recall_drop": 0.014533085961657366,
+      "passed": true
+    },
+    {
+      "weight": 0.9,
+      "normal_factor": 1.4,
+      "macro_f1": 0.7061221065520353,
+      "fault_to_normal": 746,
+      "max_recall_drop": 0.029066171923314843,
+      "passed": false
+    },
+    {
+      "weight": 0.9,
+      "normal_factor": 1.6,
+      "macro_f1": 0.7042111479175386,
+      "fault_to_normal": 993,
+      "max_recall_drop": 0.06307977736549164,
+      "passed": false
+    },
+    {
+      "weight": 0.9,
+      "normal_factor": 1.8,
+      "macro_f1": 0.7029786000186264,
+      "fault_to_normal": 1200,
+      "max_recall_drop": 0.08719851576994442,
+      "passed": false
+    },
+    {
+      "weight": 0.9,
+      "normal_factor": 2.0,
+      "macro_f1": 0.699938268040631,
+      "fault_to_normal": 1303,
+      "max_recall_drop": 0.09461966604823746,
+      "passed": false
+    }
+  ]
+}

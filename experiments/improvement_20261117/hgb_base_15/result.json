@@ -1,0 +1,78 @@
+{
+  "windows": 6930,
+  "accuracy": 0.7405483405483405,
+  "balanced_accuracy": 0.7047000618429189,
+  "macro_f1": 0.6805333338245172,
+  "log_loss": 0.5147116532632988,
+  "multiclass_brier": 0.30855958782547854,
+  "ece_10_bins": 0.07858843121948873,
+  "confusion_matrix": [
+    [
+      250,
+      131,
+      42,
+      39
+    ],
+    [
+      520,
+      2434,
+      184,
+      96
+    ],
+    [
+      275,
+      273,
+      1608,
+      0
+    ],
+    [
+      62,
+      176,
+      0,
+      840
+    ]
+  ],
+  "per_class": {
+    "normal": {
+      "precision": 0.22583559168925021,
+      "recall": 0.5411255411255411,
+      "f1-score": 0.3186743148502231,
+      "support": 462.0
+    },
+    "damper_fault": {
+      "precision": 0.807564698075647,
+      "recall": 0.7526283240568955,
+      "f1-score": 0.7791293213828425,
+      "support": 3234.0
+    },
+    "cooling_valve_fault": {
+      "precision": 0.8767720828789531,
+      "recall": 0.7458256029684601,
+      "f1-score": 0.806015037593985,
+      "support": 2156.0
+    },
+    "heating_valve_fault": {
+      "precision": 0.8615384615384616,
+      "recall": 0.7792207792207793,
+      "f1-score": 0.8183146614710181,
+      "support": 1078.0
+    },
+    "accuracy": 0.7405483405483405,
+    "macro avg": {
+      "precision": 0.6929277085455781,
+      "recall": 0.7047000618429189,
+      "f1-score": 0.6805333338245172,
+      "support": 6930.0
+    },
+    "weighted avg": {
+      "precision": 0.7987098627940202,
+      "recall": 0.7405483405483405,
+      "f1-score": 0.7628922633378507,
+      "support": 6930.0
+    }
+  },
+  "name": "hgb_base_15",
+  "seconds": 13.807840399997076,
+  "fault_to_normal": 857,
+  "parameters": "{'categorical_features': 'from_dtype', 'class_weight': 'balanced', 'early_stopping': False, 'interaction_cst': None, 'l2_regularization': 2, 'learning_rate': 0.07, 'loss': 'log_loss', 'max_bins': 255, 'max_depth': None, 'max_features': 1.0, 'max_iter': 300, 'max_leaf_nodes': 15, 'min_samples_leaf': 30, 'monotonic_cst': None, 'n_iter_no_change': 10, 'random_state': 42, 'scoring': 'loss', 'tol': 1e-07, 'validation_fraction': 0.1, 'verbose': 0, 'warm_start': False}"
+}

@@ -1,4 +1,73 @@
+# Current AERIS learning lifecycle release
+
+Current image: `aeris-local:20261117c2`. V0 means source-trained, V1 means confident
+pseudo-label adaptation, and V2 means technician-label adaptation. One input uses
+the active stage automatically. Demonstration V2 was actually trained and promoted;
+genuine use retains its separate V0 registry. Historical architecture labels below
+are separate experiments and do not describe the current V0/V1/V2 workflow.
+
+Read the [corrected explanation and demo guide](docs/ADAPTIVE_WORKFLOW_20261117.md)
+and [executed lifecycle evidence](experiments/adaptive_lifecycle_20261117/).
+ART 1.20.1 HopSkipJump attacks the complete predictor; SHAP 0.51.0 ExactExplainer
+explains it. Docker runs the app, background learner, Prometheus and Grafana.
+Grafana has a 7-panel operations overview, a separate 4-panel feedback view and a
+4-panel adaptation view. All metric labels distinguish test and genuine cohorts.
+
+Target macro F1: V0 21.31%, V1 21.70%, V2 25.73%. These are retrospective results,
+with simulated technician labels for the demonstration. The workflow is functional;
+target diagnostic quality remains limited and is not production-validated.
+
+The dated release notes below are preserved historical records.
+
+## November 17 operator and boosted-model release
+
+Current local image: `aeris-local:20261117b`; default: `boosted_v2_s42`. Seven operator panels plus a separate four-panel feedback dashboard. [Measured results and rollback](docs/RESULTS_OPERATOR_20261117.md). Source gains are modest; transfer and independent field validation remain limited.
+
 # AERIS — AHU fault diagnosis
+
+## November 17 improvement release
+
+The active work is on `aeris-improvements-20261117`. Read the [new results](docs/RESULTS_20261117.md), [demonstration and recovery runbook](docs/RUNBOOK_20261117.md), and [executed evidence](experiments/improvement_20261117/).
+
+The restored main interface at http://127.0.0.1:8510 combines the earlier visual design with real Python hybrid inference, persistent feedback, exact grouped Shapley explanations, model evidence, assurance and monitoring views. The legacy Streamlit workspace is at http://127.0.0.1:8511. Grafana has 26 provisioned panels; the UI links to a populated Prometheus readiness graph, scrape targets and alerts.
+
+Nine additional fresh 50-epoch physical-feature hybrids, seven classical diagnostics and nine calibration fits were evaluated without target-score tuning. Candidates must pass every-seed F1, class-recall and missed-fault gates. The latest report separates software and operational improvements from diagnostic quality; no production accuracy or successful target-transfer claim is made. Real-browser form, visual, monitoring and latency evidence is in the new release directory. Historical reports below remain dated records.
+## November 16 local implementation and deployment
+
+The new work is on `aeris-end-to-end-20261116`. Start with the
+[Windows runbook](docs/DEPLOYMENT_RUNBOOK.md), [current evidence](experiments/end_to_end_20261116/),
+[executed results and limitations](docs/RESULTS_20261116.md),
+[trustworthiness/risk update](docs/TRUSTWORTHINESS.md), and
+[verified course reference](docs/COURSE_REFERENCE.md). Historical milestone claims
+below are preserved and are not claims about the current live deployment.
+
+Run `docker compose up -d --build` from this checkout. The CPU demo is at
+http://127.0.0.1:8510, Prometheus at http://127.0.0.1:9091 and Grafana at
+http://127.0.0.1:3001/d/aeris-operations. Local fitted bundles and prepared inputs
+must exist under `data/`; they are intentionally outside Git and the image.
+Normal startup never trains. Use `python deployment/serve.py` for the host
+service plus UI; `streamlit run app.py` alone now requires the inference service.
+
+Predictions and optional technician feedback are linked in SQLite. Requests are
+explicit and idempotent; widget reruns do not count as new inference. Test and
+genuine cohorts are separate. No opinion, unverified correction or simulated
+reference label automatically enters training. Genuine reviewed candidate
+training is explicit in scripts/14_feedback_candidate.py and never promotes itself.
+
+New trials are fresh source-trained RF+TCN hybrids, with V0/V1/V2 architecture
+identities preserved, matched frozen partitions, and saved configs/curves.
+Model selection uses source development data only. Later-source and target
+scores are descriptive; target labels were historically exposed. Independent
+case coverage remains insufficient for new-setting claims. The deployed system
+is an offline research demonstration and does not control equipment.
+
+All 19 trials completed. The three tuned families failed the multi-seed safety
+guards, so their anchors are retained. The selected V2 anchor has source
+development macro F1 0.689975 and retrospective target macro F1 0.224315;
+this is not successful target transfer. Source development review coverage,
+missed-fault counts and the weak independent-case support are reported together.
+Browser visual verification remains pending after the computer-use safeguard
+stopped automation; live API and Streamlit server-side tests are recorded separately.
 
 AERIS studies a hybrid Random Forest and temporal neural network for AHU diagnosis,
 confidence handling and human review. V0, V1 and V2 denote evolving architectures;

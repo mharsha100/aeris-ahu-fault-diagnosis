@@ -1,0 +1,1669 @@
+{
+  "before": {
+    "model_ready": true,
+    "app_up": true,
+    "bundle": "e2e_anchor_v2_s42",
+    "error": null
+  },
+  "feedback_before": {
+    "genuine": {
+      "cohort": "genuine",
+      "time_window": "all persisted records since deployment ledger creation",
+      "eligible_predictions": 0,
+      "predictions_with_feedback": 0,
+      "feedback_coverage": null,
+      "agree": 0,
+      "disagree": 0,
+      "unsure": 0,
+      "agreement": null,
+      "reviewed_predictions": 0,
+      "overrides": 0,
+      "override_rate": null,
+      "satisfaction_responses": 0,
+      "satisfaction_sum": 0,
+      "satisfaction_mean": null,
+      "verified_labels": 0,
+      "verified_label_coverage": null,
+      "verified_quality_status": "insufficient independent-case evidence; no operational accuracy claim",
+      "genuine_ground_truth": true
+    },
+    "test": {
+      "cohort": "test",
+      "time_window": "all persisted records since deployment ledger creation",
+      "eligible_predictions": 410,
+      "predictions_with_feedback": 5,
+      "feedback_coverage": 0.012195121951219513,
+      "agree": 0,
+      "disagree": 0,
+      "unsure": 5,
+      "agreement": null,
+      "reviewed_predictions": 5,
+      "overrides": 0,
+      "override_rate": 0.0,
+      "satisfaction_responses": 5,
+      "satisfaction_sum": 20,
+      "satisfaction_mean": 4.0,
+      "verified_labels": 0,
+      "verified_label_coverage": 0.0,
+      "verified_quality_status": "insufficient independent-case evidence; no operational accuracy claim",
+      "genuine_ground_truth": false
+    }
+  },
+  "samples": [
+    {
+      "phase": "failure",
+      "ready": {
+        "model_ready": false,
+        "app_up": true,
+        "bundle": "missing_controlled_failure_demo",
+        "error": "[Errno 2] No such file or directory: '/app/data/aeris_models/missing_controlled_failure_demo/READY.json'"
+      },
+      "alerts": {
+        "status": "success",
+        "data": {
+          "alerts": [
+            {
+              "labels": {
+                "alertname": "AerisReviewBurden",
+                "cohort": "test",
+                "instance": "app:8001",
+                "job": "aeris",
+                "owner": "model_reviewer",
+                "severity": "warning"
+              },
+              "annotations": {
+                "response": "Check setting mix and shift. Retain gates; investigate coverage.",
+                "summary": "Review burden exceeds provisional workload threshold"
+              },
+              "state": "pending",
+              "activeAt": "2026-11-17T00:23:55.219890224Z",
+              "value": "9.894736842105263e-01"
+            }
+          ]
+        }
+      },
+      "time": 1794875093.992109
+    },
+    {
+      "phase": "failure",
+      "ready": {
+        "model_ready": false,
+        "app_up": true,
+        "bundle": "missing_controlled_failure_demo",
+        "error": "[Errno 2] No such file or directory: '/app/data/aeris_models/missing_controlled_failure_demo/READY.json'"
+      },
+      "alerts": {
+        "status": "success",
+        "data": {
+          "alerts": [
+            {
+              "labels": {
+                "alertname": "AerisReviewBurden",
+                "cohort": "test",
+                "instance": "app:8001",
+                "job": "aeris",
+                "owner": "model_reviewer",
+                "severity": "warning"
+              },
+              "annotations": {
+                "response": "Check setting mix and shift. Retain gates; investigate coverage.",
+                "summary": "Review burden exceeds provisional workload threshold"
+              },
+              "state": "firing",
+              "activeAt": "2026-11-17T00:23:55.219890224Z",
+              "value": "9.901960784313725e-01"
+            }
+          ]
+        }
+      },
+      "time": 1794875099.0274467
+    },
+    {
+      "phase": "failure",
+      "ready": {
+        "model_ready": false,
+        "app_up": true,
+        "bundle": "missing_controlled_failure_demo",
+        "error": "[Errno 2] No such file or directory: '/app/data/aeris_models/missing_controlled_failure_demo/READY.json'"
+      },
+      "alerts": {
+        "status": "success",
+        "data": {
+          "alerts": [
+            {
+              "labels": {
+                "alertname": "AerisUnavailable",
+                "instance": "app:8001",
+                "job": "aeris",
+                "owner": "project_operator",
+                "severity": "critical"
+              },
+              "annotations": {
+                "response": "Check app logs, mounted bundle and hashes; restore last verified selection. No equipment action.",
+                "summary": "AERIS cannot serve a verified diagnosis"
+              },
+              "state": "pending",
+              "activeAt": "2026-11-17T00:25:00.219890224Z",
+              "value": "0e+00"
+            },
+            {
+              "labels": {
+                "alertname": "AerisReviewBurden",
+                "cohort": "test",
+                "instance": "app:8001",
+                "job": "aeris",
+                "owner": "model_reviewer",
+                "severity": "warning"
+              },
+              "annotations": {
+                "response": "Check setting mix and shift. Retain gates; investigate coverage.",
+                "summary": "Review burden exceeds provisional workload threshold"
+              },
+              "state": "firing",
+              "activeAt": "2026-11-17T00:23:55.219890224Z",
+              "value": "9.855072463768116e-01"
+            }
+          ]
+        }
+      },
+      "time": 1794875104.123702
+    },
+    {
+      "phase": "failure",
+      "ready": {
+        "model_ready": false,
+        "app_up": true,
+        "bundle": "missing_controlled_failure_demo",
+        "error": "[Errno 2] No such file or directory: '/app/data/aeris_models/missing_controlled_failure_demo/READY.json'"
+      },
+      "alerts": {
+        "status": "success",
+        "data": {
+          "alerts": [
+            {
+              "labels": {
+                "alertname": "AerisUnavailable",
+                "instance": "app:8001",
+                "job": "aeris",
+                "owner": "project_operator",
+                "severity": "critical"
+              },
+              "annotations": {
+                "response": "Check app logs, mounted bundle and hashes; restore last verified selection. No equipment action.",
+                "summary": "AERIS cannot serve a verified diagnosis"
+              },
+              "state": "pending",
+              "activeAt": "2026-11-17T00:25:00.219890224Z",
+              "value": "0e+00"
+            },
+            {
+              "labels": {
+                "alertname": "AerisReviewBurden",
+                "cohort": "test",
+                "instance": "app:8001",
+                "job": "aeris",
+                "owner": "model_reviewer",
+                "severity": "warning"
+              },
+              "annotations": {
+                "response": "Check setting mix and shift. Retain gates; investigate coverage.",
+                "summary": "Review burden exceeds provisional workload threshold"
+              },
+              "state": "firing",
+              "activeAt": "2026-11-17T00:23:55.219890224Z",
+              "value": "9.855072463768116e-01"
+            }
+          ]
+        }
+      },
+      "time": 1794875109.1646116
+    },
+    {
+      "phase": "failure",
+      "ready": {
+        "model_ready": false,
+        "app_up": true,
+        "bundle": "missing_controlled_failure_demo",
+        "error": "[Errno 2] No such file or directory: '/app/data/aeris_models/missing_controlled_failure_demo/READY.json'"
+      },
+      "alerts": {
+        "status": "success",
+        "data": {
+          "alerts": [
+            {
+              "labels": {
+                "alertname": "AerisUnavailable",
+                "instance": "app:8001",
+                "job": "aeris",
+                "owner": "project_operator",
+                "severity": "critical"
+              },
+              "annotations": {
+                "response": "Check app logs, mounted bundle and hashes; restore last verified selection. No equipment action.",
+                "summary": "AERIS cannot serve a verified diagnosis"
+              },
+              "state": "pending",
+              "activeAt": "2026-11-17T00:25:00.219890224Z",
+              "value": "0e+00"
+            },
+            {
+              "labels": {
+                "alertname": "AerisReviewBurden",
+                "cohort": "test",
+                "instance": "app:8001",
+                "job": "aeris",
+                "owner": "model_reviewer",
+                "severity": "warning"
+              },
+              "annotations": {
+                "response": "Check setting mix and shift. Retain gates; investigate coverage.",
+                "summary": "Review burden exceeds provisional workload threshold"
+              },
+              "state": "firing",
+              "activeAt": "2026-11-17T00:23:55.219890224Z",
+              "value": "9.855072463768115e-01"
+            }
+          ]
+        }
+      },
+      "time": 1794875114.2615
+    },
+    {
+      "phase": "failure",
+      "ready": {
+        "model_ready": false,
+        "app_up": true,
+        "bundle": "missing_controlled_failure_demo",
+        "error": "[Errno 2] No such file or directory: '/app/data/aeris_models/missing_controlled_failure_demo/READY.json'"
+      },
+      "alerts": {
+        "status": "success",
+        "data": {
+          "alerts": [
+            {
+              "labels": {
+                "alertname": "AerisUnavailable",
+                "instance": "app:8001",
+                "job": "aeris",
+                "owner": "project_operator",
+                "severity": "critical"
+              },
+              "annotations": {
+                "response": "Check app logs, mounted bundle and hashes; restore last verified selection. No equipment action.",
+                "summary": "AERIS cannot serve a verified diagnosis"
+              },
+              "state": "firing",
+              "activeAt": "2026-11-17T00:25:00.219890224Z",
+              "value": "0e+00"
+            },
+            {
+              "labels": {
+                "alertname": "AerisReviewBurden",
+                "cohort": "test",
+                "instance": "app:8001",
+                "job": "aeris",
+                "owner": "model_reviewer",
+                "severity": "warning"
+              },
+              "annotations": {
+                "response": "Check setting mix and shift. Retain gates; investigate coverage.",
+                "summary": "Review burden exceeds provisional workload threshold"
+              },
+              "state": "firing",
+              "activeAt": "2026-11-17T00:23:55.219890224Z",
+              "value": "9.855072463768116e-01"
+            }
+          ]
+        }
+      },
+      "time": 1794875119.3103678
+    },
+    {
+      "phase": "recovery",
+      "ready": {
+        "model_ready": true,
+        "app_up": true,
+        "bundle": "e2e_anchor_v2_s42",
+        "error": null
+      },
+      "alerts": {
+        "status": "success",
+        "data": {
+          "alerts": [
+            {
+              "labels": {
+                "alertname": "AerisUnavailable",
+                "instance": "app:8001",
+                "job": "aeris",
+                "owner": "project_operator",
+                "severity": "critical"
+              },
+              "annotations": {
+                "response": "Check app logs, mounted bundle and hashes; restore last verified selection. No equipment action.",
+                "summary": "AERIS cannot serve a verified diagnosis"
+              },
+              "state": "firing",
+              "activeAt": "2026-11-17T00:25:00.219890224Z",
+              "value": "0e+00"
+            },
+            {
+              "labels": {
+                "alertname": "AerisReviewBurden",
+                "cohort": "test",
+                "instance": "app:8001",
+                "job": "aeris",
+                "owner": "model_reviewer",
+                "severity": "warning"
+              },
+              "annotations": {
+                "response": "Check setting mix and shift. Retain gates; investigate coverage.",
+                "summary": "Review burden exceeds provisional workload threshold"
+              },
+              "state": "firing",
+              "activeAt": "2026-11-17T00:23:55.219890224Z",
+              "value": "9.855072463768116e-01"
+            }
+          ]
+        }
+      },
+      "time": 1794875120.7251866
+    },
+    {
+      "phase": "recovery",
+      "ready": {
+        "model_ready": true,
+        "app_up": true,
+        "bundle": "e2e_anchor_v2_s42",
+        "error": null
+      },
+      "alerts": {
+        "status": "success",
+        "data": {
+          "alerts": [
+            {
+              "labels": {
+                "alertname": "AerisUnavailable",
+                "instance": "app:8001",
+                "job": "aeris",
+                "owner": "project_operator",
+                "severity": "critical"
+              },
+              "annotations": {
+                "response": "Check app logs, mounted bundle and hashes; restore last verified selection. No equipment action.",
+                "summary": "AERIS cannot serve a verified diagnosis"
+              },
+              "state": "firing",
+              "activeAt": "2026-11-17T00:25:00.219890224Z",
+              "value": "0e+00"
+            },
+            {
+              "labels": {
+                "alertname": "AerisReviewBurden",
+                "cohort": "test",
+                "instance": "app:8001",
+                "job": "aeris",
+                "owner": "model_reviewer",
+                "severity": "warning"
+              },
+              "annotations": {
+                "response": "Check setting mix and shift. Retain gates; investigate coverage.",
+                "summary": "Review burden exceeds provisional workload threshold"
+              },
+              "state": "firing",
+              "activeAt": "2026-11-17T00:23:55.219890224Z",
+              "value": "9.855072463768116e-01"
+            }
+          ]
+        }
+      },
+      "time": 1794875125.92038
+    },
+    {
+      "phase": "recovery",
+      "ready": {
+        "model_ready": true,
+        "app_up": true,
+        "bundle": "e2e_anchor_v2_s42",
+        "error": null
+      },
+      "alerts": {
+        "status": "success",
+        "data": {
+          "alerts": [
+            {
+              "labels": {
+                "alertname": "AerisReviewBurden",
+                "cohort": "test",
+                "instance": "app:8001",
+                "job": "aeris",
+                "owner": "model_reviewer",
+                "severity": "warning"
+              },
+              "annotations": {
+                "response": "Check setting mix and shift. Retain gates; investigate coverage.",
+                "summary": "Review burden exceeds provisional workload threshold"
+              },
+              "state": "firing",
+              "activeAt": "2026-11-17T00:23:55.219890224Z",
+              "value": "9.855072463768116e-01"
+            }
+          ]
+        }
+      },
+      "time": 1794875131.0446126
+    }
+  ],
+  "failed_inference": {
+    "prediction_id": "fa6238c8e4714a479e4320ad053226e2",
+    "created": "2026-11-17T00:24:54.738815+00:00",
+    "bundle": "missing_controlled_failure_demo",
+    "model_version": "unavailable",
+    "stage": "unavailable",
+    "setting": "Unknown",
+    "cohort": "test",
+    "seconds": 0.022525207999933627,
+    "result": {
+      "status": "error",
+      "reasons": [
+        "Model unavailable or incompatible. Check bundle integrity and mounted files. Bundle integrity or availability failure: [Errno 2] No such file or directory: '/app/data/aeris_models/missing_controlled_failure_demo/READY.json'"
+      ]
+    }
+  },
+  "fired": true,
+  "recovered": true,
+  "recovered_inference": {
+    "prediction_id": "4f01dd270c0c44d29defb4e3cee069a5",
+    "created": "2026-11-17T00:25:31.690010+00:00",
+    "bundle": "e2e_anchor_v2_s42",
+    "model_version": "v2",
+    "stage": "initial_source_training",
+    "setting": "CoolingSeason",
+    "cohort": "test",
+    "seconds": 0.1577253909999854,
+    "result": {
+      "status": "review_required",
+      "class_id": 1,
+      "class_name": "damper_fault",
+      "confidence": 0.34208022462558485,
+      "probabilities": [
+        0.31521994698308126,
+        0.34208022462558485,
+        0.3419807877615819,
+        0.000719040629751884
+      ],
+      "forest_probabilities": [
+        0.3040783821284023,
+        0.35503092576099304,
+        0.3408906651779264,
+        2.6932678257532017e-08
+      ],
+      "temporal_probabilities": [
+        0.3599285517627289,
+        0.29443960144647247,
+        0.33653937814981544,
+        0.009092468640983151
+      ],
+      "reasons": [
+        "Confidence is below the provisional 0.90 review threshold.",
+        "Classical and temporal branches disagree."
+      ],
+      "source_support_warning_samples": 0,
+      "policy_version": "m4-research-review-v2",
+      "automatic_actuation_allowed": false,
+      "fault_review_priority": false,
+      "limitation": "Research decision support. Confidence is not verified target accuracy.",
+      "unsupported_setting": false,
+      "shift_fraction": 0.0
+    }
+  },
+  "feedback_before_restart": {
+    "genuine": {
+      "cohort": "genuine",
+      "time_window": "all persisted records since deployment ledger creation",
+      "eligible_predictions": 0,
+      "predictions_with_feedback": 0,
+      "feedback_coverage": null,
+      "agree": 0,
+      "disagree": 0,
+      "unsure": 0,
+      "agreement": null,
+      "reviewed_predictions": 0,
+      "overrides": 0,
+      "override_rate": null,
+      "satisfaction_responses": 0,
+      "satisfaction_sum": 0,
+      "satisfaction_mean": null,
+      "verified_labels": 0,
+      "verified_label_coverage": null,
+      "verified_quality_status": "insufficient independent-case evidence; no operational accuracy claim",
+      "genuine_ground_truth": true
+    },
+    "test": {
+      "cohort": "test",
+      "time_window": "all persisted records since deployment ledger creation",
+      "eligible_predictions": 411,
+      "predictions_with_feedback": 5,
+      "feedback_coverage": 0.012165450121654502,
+      "agree": 0,
+      "disagree": 0,
+      "unsure": 5,
+      "agreement": null,
+      "reviewed_predictions": 5,
+      "overrides": 0,
+      "override_rate": 0.0,
+      "satisfaction_responses": 5,
+      "satisfaction_sum": 20,
+      "satisfaction_mean": 4.0,
+      "verified_labels": 0,
+      "verified_label_coverage": 0.0,
+      "verified_quality_status": "insufficient independent-case evidence; no operational accuracy claim",
+      "genuine_ground_truth": false
+    }
+  },
+  "feedback_after_restart": {
+    "genuine": {
+      "cohort": "genuine",
+      "time_window": "all persisted records since deployment ledger creation",
+      "eligible_predictions": 0,
+      "predictions_with_feedback": 0,
+      "feedback_coverage": null,
+      "agree": 0,
+      "disagree": 0,
+      "unsure": 0,
+      "agreement": null,
+      "reviewed_predictions": 0,
+      "overrides": 0,
+      "override_rate": null,
+      "satisfaction_responses": 0,
+      "satisfaction_sum": 0,
+      "satisfaction_mean": null,
+      "verified_labels": 0,
+      "verified_label_coverage": null,
+      "verified_quality_status": "insufficient independent-case evidence; no operational accuracy claim",
+      "genuine_ground_truth": true
+    },
+    "test": {
+      "cohort": "test",
+      "time_window": "all persisted records since deployment ledger creation",
+      "eligible_predictions": 411,
+      "predictions_with_feedback": 5,
+      "feedback_coverage": 0.012165450121654502,
+      "agree": 0,
+      "disagree": 0,
+      "unsure": 5,
+      "agreement": null,
+      "reviewed_predictions": 5,
+      "overrides": 0,
+      "override_rate": 0.0,
+      "satisfaction_responses": 5,
+      "satisfaction_sum": 20,
+      "satisfaction_mean": 4.0,
+      "verified_labels": 0,
+      "verified_label_coverage": 0.0,
+      "verified_quality_status": "insufficient independent-case evidence; no operational accuracy claim",
+      "genuine_ground_truth": false
+    }
+  },
+  "persistent_feedback": true,
+  "targets": {
+    "status": "success",
+    "data": {
+      "activeTargets": [
+        {
+          "discoveredLabels": {
+            "__address__": "app:8001",
+            "__metrics_path__": "/metrics",
+            "__scheme__": "http",
+            "__scrape_interval__": "5s",
+            "__scrape_timeout__": "5s",
+            "job": "aeris"
+          },
+          "labels": {
+            "instance": "app:8001",
+            "job": "aeris"
+          },
+          "scrapePool": "aeris",
+          "scrapeUrl": "http://app:8001/metrics",
+          "globalUrl": "http://app:8001/metrics",
+          "lastError": "Get \"http://app:8001/metrics\": dial tcp 172.24.0.4:8001: connect: connection refused",
+          "lastScrape": "2026-11-17T00:25:34.74643357Z",
+          "lastScrapeDuration": 0.001558016,
+          "health": "down",
+          "scrapeInterval": "5s",
+          "scrapeTimeout": "5s"
+        }
+      ],
+      "droppedTargets": [],
+      "droppedTargetCounts": {
+        "aeris": 0
+      }
+    }
+  },
+  "grafana_dashboard": {
+    "meta": {
+      "type": "db",
+      "canSave": false,
+      "canEdit": false,
+      "canAdmin": false,
+      "canStar": false,
+      "canDelete": false,
+      "slug": "aeris-operations-and-feedback",
+      "url": "/d/aeris-operations/aeris-operations-and-feedback",
+      "expires": "0001-01-01T00:00:00Z",
+      "created": "2026-11-16T23:24:26Z",
+      "updated": "2026-11-16T23:37:08Z",
+      "updatedBy": "Anonymous",
+      "createdBy": "Anonymous",
+      "version": 2,
+      "hasAcl": false,
+      "isFolder": false,
+      "apiVersion": "v0alpha1",
+      "folderId": 0,
+      "folderUid": "",
+      "folderTitle": "General",
+      "folderUrl": "",
+      "provisioned": true,
+      "provisionedExternalId": "aeris.json",
+      "annotationsPermissions": {
+        "dashboard": {
+          "canAdd": false,
+          "canEdit": false,
+          "canDelete": false
+        },
+        "organization": {
+          "canAdd": false,
+          "canEdit": false,
+          "canDelete": false
+        }
+      }
+    },
+    "dashboard": {
+      "description": "Test and genuine cohorts separated. All feedback ratios show missing data for zero denominators. Verified labels do not establish independent operational accuracy. Inference timing excludes browser rendering.",
+      "id": 1,
+      "panels": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No data / insufficient support",
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 0,
+            "y": 0
+          },
+          "id": 1,
+          "options": {
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            }
+          },
+          "targets": [
+            {
+              "expr": "aeris_model_ready",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Model readiness",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No data / insufficient support",
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 6,
+            "y": 0
+          },
+          "id": 2,
+          "options": {
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            }
+          },
+          "targets": [
+            {
+              "expr": "aeris_app_up",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "UI availability",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No data / insufficient support",
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 12,
+            "y": 0
+          },
+          "id": 3,
+          "options": {
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            }
+          },
+          "targets": [
+            {
+              "expr": "up{job=\"aeris\"}",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Scrape availability",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No data / insufficient support",
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 18,
+            "y": 0
+          },
+          "id": 4,
+          "options": {
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            }
+          },
+          "targets": [
+            {
+              "expr": "aeris_eligible_predictions{cohort=\"$cohort\"}",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Eligible predictions",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No data / insufficient support",
+              "unit": "s"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 0,
+            "y": 4
+          },
+          "id": 5,
+          "options": {
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            }
+          },
+          "targets": [
+            {
+              "expr": "histogram_quantile(0.5, sum by(le)(rate(aeris_inference_seconds_bucket{cohort=\"$cohort\"}[5m])))",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Inference p50 seconds",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No data / insufficient support",
+              "unit": "s"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 6,
+            "y": 4
+          },
+          "id": 6,
+          "options": {
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            }
+          },
+          "targets": [
+            {
+              "expr": "histogram_quantile(0.95, sum by(le)(rate(aeris_inference_seconds_bucket{cohort=\"$cohort\"}[5m])))",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Inference p95 seconds",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No data / insufficient support",
+              "unit": "reqps"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 12,
+            "y": 4
+          },
+          "id": 7,
+          "options": {
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            }
+          },
+          "targets": [
+            {
+              "expr": "rate(aeris_requests_total{cohort=\"$cohort\"}[5m])",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Requests / second",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No data / insufficient support",
+              "unit": "percentunit"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 18,
+            "y": 4
+          },
+          "id": 8,
+          "options": {
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            }
+          },
+          "targets": [
+            {
+              "expr": "(rate(aeris_errors_total{cohort=\"$cohort\"}[5m]) / rate(aeris_requests_total{cohort=\"$cohort\"}[5m])) and (rate(aeris_requests_total{cohort=\"$cohort\"}[5m]) > 0)",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Error fraction",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No data / insufficient support",
+              "unit": "percentunit"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 0,
+            "y": 8
+          },
+          "id": 9,
+          "options": {
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            }
+          },
+          "targets": [
+            {
+              "expr": "(aeris_review_total{cohort=\"$cohort\"} / aeris_eligible_predictions{cohort=\"$cohort\"}) and (aeris_eligible_predictions{cohort=\"$cohort\"} > 0)",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Review fraction",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No data / insufficient support",
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 6,
+            "y": 8
+          },
+          "id": 10,
+          "options": {
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            }
+          },
+          "targets": [
+            {
+              "expr": "aeris_blocked_total{cohort=\"$cohort\"}",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Blocked inputs",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No data / insufficient support",
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 12,
+            "y": 8
+          },
+          "id": 11,
+          "options": {
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            }
+          },
+          "targets": [
+            {
+              "expr": "aeris_unsupported_total{cohort=\"$cohort\"}",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Unsupported inputs",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No data / insufficient support",
+              "unit": "percentunit"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 18,
+            "y": 8
+          },
+          "id": 12,
+          "options": {
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            }
+          },
+          "targets": [
+            {
+              "expr": "aeris_source_shift_fraction{cohort=\"$cohort\"}",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Fixed source shift fraction",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No data / insufficient support",
+              "unit": "percentunit"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 0,
+            "y": 12
+          },
+          "id": 13,
+          "options": {
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            }
+          },
+          "targets": [
+            {
+              "expr": "(aeris_predictions_with_feedback{cohort=\"$cohort\"} / aeris_eligible_predictions{cohort=\"$cohort\"}) and (aeris_eligible_predictions{cohort=\"$cohort\"} > 0)",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Feedback coverage",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No data / insufficient support",
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 6,
+            "y": 12
+          },
+          "id": 14,
+          "options": {
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            }
+          },
+          "targets": [
+            {
+              "expr": "aeris_predictions_with_feedback{cohort=\"$cohort\"}",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Feedback support",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No data / insufficient support",
+              "unit": "percentunit"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 12,
+            "y": 12
+          },
+          "id": 15,
+          "options": {
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            }
+          },
+          "targets": [
+            {
+              "expr": "(aeris_agree{cohort=\"$cohort\"} / (aeris_agree{cohort=\"$cohort\"} + aeris_disagree{cohort=\"$cohort\"})) and ((aeris_agree{cohort=\"$cohort\"} + aeris_disagree{cohort=\"$cohort\"}) > 0)",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Agreement fraction",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No data / insufficient support",
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 18,
+            "y": 12
+          },
+          "id": 16,
+          "options": {
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            }
+          },
+          "targets": [
+            {
+              "expr": "aeris_agree{cohort=\"$cohort\"} + aeris_disagree{cohort=\"$cohort\"}",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Agreement support",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No data / insufficient support",
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 0,
+            "y": 16
+          },
+          "id": 17,
+          "options": {
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            }
+          },
+          "targets": [
+            {
+              "expr": "aeris_unsure{cohort=\"$cohort\"}",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Unsure responses",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No data / insufficient support",
+              "unit": "percentunit"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 6,
+            "y": 16
+          },
+          "id": 18,
+          "options": {
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            }
+          },
+          "targets": [
+            {
+              "expr": "(aeris_overrides{cohort=\"$cohort\"} / aeris_reviewed_predictions{cohort=\"$cohort\"}) and (aeris_reviewed_predictions{cohort=\"$cohort\"} > 0)",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Override fraction",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No data / insufficient support",
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 12,
+            "y": 16
+          },
+          "id": 19,
+          "options": {
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            }
+          },
+          "targets": [
+            {
+              "expr": "(aeris_satisfaction_sum{cohort=\"$cohort\"} / aeris_satisfaction_responses{cohort=\"$cohort\"}) and (aeris_satisfaction_responses{cohort=\"$cohort\"} > 0)",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Satisfaction mean",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No data / insufficient support",
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 18,
+            "y": 16
+          },
+          "id": 20,
+          "options": {
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            }
+          },
+          "targets": [
+            {
+              "expr": "aeris_satisfaction_responses{cohort=\"$cohort\"}",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Satisfaction support",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No data / insufficient support",
+              "unit": "percentunit"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 0,
+            "y": 20
+          },
+          "id": 21,
+          "options": {
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            }
+          },
+          "targets": [
+            {
+              "expr": "(aeris_verified_labels{cohort=\"$cohort\"} / aeris_eligible_predictions{cohort=\"$cohort\"}) and (aeris_eligible_predictions{cohort=\"$cohort\"} > 0)",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Verified-label coverage",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No data / insufficient support",
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 6,
+            "y": 20
+          },
+          "id": 22,
+          "options": {
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            }
+          },
+          "targets": [
+            {
+              "expr": "aeris_verified_labels{cohort=\"$cohort\"}",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Verified labels (not independent cases)",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No data / insufficient support",
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 12,
+            "y": 20
+          },
+          "id": 23,
+          "options": {
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            }
+          },
+          "targets": [
+            {
+              "expr": "aeris_setting_requests_total{cohort=\"$cohort\"}",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Setting coverage",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "No data / insufficient support",
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 18,
+            "y": 20
+          },
+          "id": 24,
+          "options": {
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            }
+          },
+          "targets": [
+            {
+              "expr": "aeris_shift_support{cohort=\"$cohort\"}",
+              "instant": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Shift support (last 100)",
+          "type": "stat"
+        }
+      ],
+      "refresh": "5s",
+      "schemaVersion": 41,
+      "tags": [
+        "AERIS",
+        "EGN6216"
+      ],
+      "templating": {
+        "list": [
+          {
+            "current": {
+              "text": "test",
+              "value": "test"
+            },
+            "name": "cohort",
+            "options": [
+              {
+                "selected": true,
+                "text": "test",
+                "value": "test"
+              },
+              {
+                "selected": false,
+                "text": "genuine",
+                "value": "genuine"
+              }
+            ],
+            "query": "test,genuine",
+            "type": "custom"
+          }
+        ]
+      },
+      "time": {
+        "from": "now-30m",
+        "to": "now"
+      },
+      "title": "AERIS operations and feedback",
+      "uid": "aeris-operations",
+      "version": 2
+    }
+  },
+  "grafana_real_data": {
+    "status": "success",
+    "data": {
+      "resultType": "vector",
+      "result": [
+        {
+          "metric": {
+            "__name__": "aeris_eligible_predictions",
+            "cohort": "test",
+            "instance": "app:8001",
+            "job": "aeris"
+          },
+          "value": [
+            1794875150.423,
+            "411"
+          ]
+        },
+        {
+          "metric": {
+            "__name__": "aeris_eligible_predictions",
+            "cohort": "genuine",
+            "instance": "app:8001",
+            "job": "aeris"
+          },
+          "value": [
+            1794875150.423,
+            "0"
+          ]
+        }
+      ]
+    }
+  }
+}

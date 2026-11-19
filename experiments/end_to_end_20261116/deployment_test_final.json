@@ -1,0 +1,256 @@
+{
+  "ready": {
+    "model_ready": true,
+    "app_up": true,
+    "bundle": "e2e_anchor_v2_s42",
+    "error": null
+  },
+  "before": {
+    "genuine": {
+      "cohort": "genuine",
+      "time_window": "all persisted records since deployment ledger creation",
+      "eligible_predictions": 0,
+      "predictions_with_feedback": 0,
+      "feedback_coverage": null,
+      "agree": 0,
+      "disagree": 0,
+      "unsure": 0,
+      "agreement": null,
+      "reviewed_predictions": 0,
+      "overrides": 0,
+      "override_rate": null,
+      "satisfaction_responses": 0,
+      "satisfaction_sum": 0,
+      "satisfaction_mean": null,
+      "verified_labels": 0,
+      "verified_label_coverage": null,
+      "verified_quality_status": "insufficient independent-case evidence; no operational accuracy claim",
+      "genuine_ground_truth": true
+    },
+    "test": {
+      "cohort": "test",
+      "time_window": "all persisted records since deployment ledger creation",
+      "eligible_predictions": 206,
+      "predictions_with_feedback": 3,
+      "feedback_coverage": 0.014563106796116505,
+      "agree": 0,
+      "disagree": 0,
+      "unsure": 3,
+      "agreement": null,
+      "reviewed_predictions": 3,
+      "overrides": 0,
+      "override_rate": 0.0,
+      "satisfaction_responses": 3,
+      "satisfaction_sum": 12,
+      "satisfaction_mean": 4.0,
+      "verified_labels": 0,
+      "verified_label_coverage": 0.0,
+      "verified_quality_status": "insufficient independent-case evidence; no operational accuracy claim",
+      "genuine_ground_truth": false
+    }
+  },
+  "checks": {
+    "idempotent_prediction": true,
+    "feedback_deduplication": true
+  },
+  "valid_prediction": {
+    "prediction_id": "60b89fe61e7a4e59bedec8c6dec17d25",
+    "created": "2026-11-17T00:23:48.052422+00:00",
+    "bundle": "e2e_anchor_v2_s42",
+    "model_version": "v2",
+    "stage": "initial_source_training",
+    "setting": "CoolingSeason",
+    "cohort": "test",
+    "seconds": 0.7448725550002564,
+    "result": {
+      "status": "review_required",
+      "class_id": 1,
+      "class_name": "damper_fault",
+      "confidence": 0.34208022462558485,
+      "probabilities": [
+        0.31521994698308126,
+        0.34208022462558485,
+        0.3419807877615819,
+        0.000719040629751884
+      ],
+      "forest_probabilities": [
+        0.3040783821284023,
+        0.35503092576099304,
+        0.3408906651779264,
+        2.6932678257532017e-08
+      ],
+      "temporal_probabilities": [
+        0.3599285517627289,
+        0.29443960144647247,
+        0.33653937814981544,
+        0.009092468640983151
+      ],
+      "reasons": [
+        "Confidence is below the provisional 0.90 review threshold.",
+        "Classical and temporal branches disagree."
+      ],
+      "source_support_warning_samples": 0,
+      "policy_version": "m4-research-review-v2",
+      "automatic_actuation_allowed": false,
+      "fault_review_priority": false,
+      "limitation": "Research decision support. Confidence is not verified target accuracy.",
+      "unsupported_setting": false,
+      "shift_fraction": 0.0
+    }
+  },
+  "unsupported": {
+    "prediction_id": "16c9c1d4ea9a4601a2588459ee8d4855",
+    "created": "2026-11-17T00:23:48.177934+00:00",
+    "bundle": "e2e_anchor_v2_s42",
+    "model_version": "v2",
+    "stage": "initial_source_training",
+    "setting": "Unknown",
+    "cohort": "test",
+    "seconds": 0.06906856299974606,
+    "result": {
+      "status": "review_required",
+      "class_id": 1,
+      "class_name": "damper_fault",
+      "confidence": 0.5043329152914575,
+      "probabilities": [
+        0.08354686429021332,
+        0.5043329152914575,
+        0.3788687795555116,
+        0.03325144086281745
+      ],
+      "forest_probabilities": [
+        0.0876711751379797,
+        0.5380768547010667,
+        0.30956904108563466,
+        0.06468292907531899
+      ],
+      "temporal_probabilities": [
+        0.17202519008768768,
+        0.25957338015766773,
+        0.5566102352537736,
+        0.011791194500870903
+      ],
+      "reasons": [
+        "Exploratory or unknown AHU setting: transfer has not been validated.",
+        "Confidence is below the provisional 0.90 review threshold.",
+        "Classical and temporal branches disagree."
+      ],
+      "source_support_warning_samples": 0,
+      "policy_version": "m4-research-review-v2",
+      "automatic_actuation_allowed": false,
+      "fault_review_priority": false,
+      "limitation": "Research decision support. Confidence is not verified target accuracy.",
+      "unsupported_setting": true,
+      "shift_fraction": 0.0
+    }
+  },
+  "malformed": {
+    "prediction_id": "861c33104fde439c8ef51a1e5e6026eb",
+    "created": "2026-11-17T00:23:48.246927+00:00",
+    "bundle": "e2e_anchor_v2_s42",
+    "model_version": "v2",
+    "stage": "initial_source_training",
+    "setting": "Unknown",
+    "cohort": "test",
+    "seconds": 0.04139389400006621,
+    "result": {
+      "status": "blocked",
+      "reasons": [
+        "Require 15 complete rows of 10 finite sensor values."
+      ],
+      "policy_version": "m4-research-review-v2",
+      "unsupported_setting": true
+    }
+  },
+  "edge_command": {
+    "prediction_id": "ea2c94039cb24e28b38ddc4428743c92",
+    "created": "2026-11-17T00:23:48.323707+00:00",
+    "bundle": "e2e_anchor_v2_s42",
+    "model_version": "v2",
+    "stage": "initial_source_training",
+    "setting": "Unknown",
+    "cohort": "test",
+    "seconds": 0.055146454999885464,
+    "result": {
+      "status": "blocked",
+      "reasons": [
+        "Sensor values exceed physical input bounds."
+      ],
+      "policy_version": "m4-research-review-v2",
+      "unsupported_setting": true
+    }
+  },
+  "explanation": {
+    "method": "Full-hybrid grouped source-mean replacement",
+    "class_name": "damper_fault",
+    "values": [
+      {
+        "group": "temperatures",
+        "probability_change_from_reference": -0.06945559614692576
+      },
+      {
+        "group": "ventilation_commands",
+        "probability_change_from_reference": -0.11379249186523421
+      },
+      {
+        "group": "cooling_command",
+        "probability_change_from_reference": 0.011982237083782654
+      },
+      {
+        "group": "heating_command",
+        "probability_change_from_reference": -0.0021546275288297223
+      }
+    ],
+    "limitation": "Reference substitution may be off-manifold. Signed effects describe model sensitivity, not physical cause. Sensor correlations within temperature group retained only through joint replacement."
+  },
+  "api_100": {
+    "p50_seconds": 0.10640495000006922,
+    "p95_seconds": 0.2199071399990316,
+    "under_5_seconds": 100,
+    "scope": "Warm HTTP request through durable inference service; excludes browser render"
+  },
+  "after": {
+    "genuine": {
+      "cohort": "genuine",
+      "time_window": "all persisted records since deployment ledger creation",
+      "eligible_predictions": 0,
+      "predictions_with_feedback": 0,
+      "feedback_coverage": null,
+      "agree": 0,
+      "disagree": 0,
+      "unsure": 0,
+      "agreement": null,
+      "reviewed_predictions": 0,
+      "overrides": 0,
+      "override_rate": null,
+      "satisfaction_responses": 0,
+      "satisfaction_sum": 0,
+      "satisfaction_mean": null,
+      "verified_labels": 0,
+      "verified_label_coverage": null,
+      "verified_quality_status": "insufficient independent-case evidence; no operational accuracy claim",
+      "genuine_ground_truth": true
+    },
+    "test": {
+      "cohort": "test",
+      "time_window": "all persisted records since deployment ledger creation",
+      "eligible_predictions": 308,
+      "predictions_with_feedback": 4,
+      "feedback_coverage": 0.012987012987012988,
+      "agree": 0,
+      "disagree": 0,
+      "unsure": 4,
+      "agreement": null,
+      "reviewed_predictions": 4,
+      "overrides": 0,
+      "override_rate": 0.0,
+      "satisfaction_responses": 4,
+      "satisfaction_sum": 16,
+      "satisfaction_mean": 4.0,
+      "verified_labels": 0,
+      "verified_label_coverage": 0.0,
+      "verified_quality_status": "insufficient independent-case evidence; no operational accuracy claim",
+      "genuine_ground_truth": false
+    }
+  }
+}

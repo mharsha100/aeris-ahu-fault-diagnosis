@@ -1,0 +1,12 @@
+const assert=require('node:assert/strict');
+const fs=require('node:fs'),vm=require('node:vm'),path=require('node:path');
+const parseCanonicalCSV=vm.runInNewContext(fs.readFileSync(path.join(__dirname,'../frontend/contract.js'),'utf8')+';parseCanonicalCSV');
+const features=Array.from({length:10},(_,i)=>'f'+i);
+const header=['time_s',...features].join(',');
+const rows=Array.from({length:15},(_,i)=>[i*60,...Array(10).fill(20)].join(','));
+assert.equal(parseCanonicalCSV([header,...rows].join('\n'),features).raw.length,15);
+assert.throws(()=>parseCanonicalCSV([header,...rows].join('\n').replace('0,20','0,'),features),/Missing values/);
+assert.throws(()=>parseCanonicalCSV([header,...rows].join('\n').replace('0,20','0,Infinity'),features),/finite/);
+assert.throws(()=>parseCanonicalCSV([header,...rows.slice(1)].join('\n'),features),/15 data rows/);
+assert.throws(()=>parseCanonicalCSV(['time_s,wrong',...rows].join('\n'),features),/exact canonical header/);
+console.log('Five canonical CSV contract checks passed.');

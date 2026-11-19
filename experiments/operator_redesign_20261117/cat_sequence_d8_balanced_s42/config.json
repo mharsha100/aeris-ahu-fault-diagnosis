@@ -1,0 +1,21 @@
+{
+  "parameters": {
+    "iterations": 1200,
+    "depth": 8,
+    "learning_rate": 0.05,
+    "l2_leaf_reg": 5,
+    "loss_function": "MultiClass",
+    "eval_metric": "TotalF1:average=Macro;use_weights=false",
+    "auto_class_weights": "Balanced",
+    "random_seed": 42,
+    "task_type": "GPU",
+    "devices": "0",
+    "thread_count": 4,
+    "border_count": 128,
+    "allow_writing_files": false,
+    "verbose": 200
+  },
+  "view": "sequence",
+  "catboost_version": "1.2.10",
+  "source_train_sha256": "a1ea90ee1714f45214b88e7c508ab175c95aa047ac9f79e618fc4193f645b3cb"
+}

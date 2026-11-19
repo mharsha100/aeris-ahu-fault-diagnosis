@@ -27,3 +27,13 @@ env/
 /dist/manifest.json
 /dist/validation_report.json
 /dist/release_manifest.json
+
+# Local fitted checkpoints and full probability arrays from current experiments.
+experiments/end_to_end_20261116/*/best_state.pt
+experiments/end_to_end_20261116/*/predictions.npz
+experiments/improvement_20261117/**/*.joblib
+experiments/improvement_20261117/**/*.npz
+experiments/improvement_20261117/**/*.pt
+
+experiments/operator_redesign_20261117/**/*.cbm
+experiments/operator_redesign_20261117/**/*.npz

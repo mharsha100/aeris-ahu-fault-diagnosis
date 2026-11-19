@@ -1,0 +1,182 @@
+[
+  {
+    "window_id": "4172b9d198e964f0c2b2b034",
+    "truth": 0,
+    "seconds": 0.08523566666675227,
+    "repeat_identical": true,
+    "max_effect_change_under_005C": 0.01750663177090378,
+    "explanation": {
+      "method": "Full-hybrid grouped source-mean replacement",
+      "class_name": "heating_valve_fault",
+      "values": [
+        {
+          "group": "temperatures",
+          "probability_change_from_reference": 0.4240127015059955
+        },
+        {
+          "group": "ventilation_commands",
+          "probability_change_from_reference": 0.163289469948517
+        },
+        {
+          "group": "cooling_command",
+          "probability_change_from_reference": 0.009214704438217147
+        },
+        {
+          "group": "heating_command",
+          "probability_change_from_reference": -0.29634338916403846
+        }
+      ],
+      "limitation": "Reference substitution may be off-manifold. Signed effects describe model sensitivity, not physical cause. Sensor correlations within temperature group retained only through joint replacement."
+    }
+  },
+  {
+    "window_id": "351fbc1e6dd1b454a599e9fc",
+    "truth": 1,
+    "seconds": 0.1356004999997822,
+    "repeat_identical": true,
+    "max_effect_change_under_005C": 0.0116568630854062,
+    "explanation": {
+      "method": "Full-hybrid grouped source-mean replacement",
+      "class_name": "damper_fault",
+      "values": [
+        {
+          "group": "temperatures",
+          "probability_change_from_reference": 0.06688352491048305
+        },
+        {
+          "group": "ventilation_commands",
+          "probability_change_from_reference": -0.12703924991994248
+        },
+        {
+          "group": "cooling_command",
+          "probability_change_from_reference": 0.1597386033716649
+        },
+        {
+          "group": "heating_command",
+          "probability_change_from_reference": -0.2001654664414692
+        }
+      ],
+      "limitation": "Reference substitution may be off-manifold. Signed effects describe model sensitivity, not physical cause. Sensor correlations within temperature group retained only through joint replacement."
+    }
+  },
+  {
+    "window_id": "15a4ef7f51123759c86e90be",
+    "truth": 2,
+    "seconds": 0.16582743333310646,
+    "repeat_identical": true,
+    "max_effect_change_under_005C": 0.02266583302086811,
+    "explanation": {
+      "method": "Full-hybrid grouped source-mean replacement",
+      "class_name": "normal",
+      "values": [
+        {
+          "group": "temperatures",
+          "probability_change_from_reference": 0.30447125472988057
+        },
+        {
+          "group": "ventilation_commands",
+          "probability_change_from_reference": 0.09832842407184972
+        },
+        {
+          "group": "cooling_command",
+          "probability_change_from_reference": 0.23364306654807449
+        },
+        {
+          "group": "heating_command",
+          "probability_change_from_reference": 0.14075352225311677
+        }
+      ],
+      "limitation": "Reference substitution may be off-manifold. Signed effects describe model sensitivity, not physical cause. Sensor correlations within temperature group retained only through joint replacement."
+    }
+  },
+  {
+    "window_id": "76dba5b1ffa0a74848b59003",
+    "truth": 3,
+    "seconds": 0.08489493333278612,
+    "repeat_identical": true,
+    "max_effect_change_under_005C": 0.03940202941841031,
+    "explanation": {
+      "method": "Full-hybrid grouped source-mean replacement",
+      "class_name": "heating_valve_fault",
+      "values": [
+        {
+          "group": "temperatures",
+          "probability_change_from_reference": 0.9928640633448153
+        },
+        {
+          "group": "ventilation_commands",
+          "probability_change_from_reference": 0.08753894087367398
+        },
+        {
+          "group": "cooling_command",
+          "probability_change_from_reference": 0.03363623895995915
+        },
+        {
+          "group": "heating_command",
+          "probability_change_from_reference": 0.20312737450670537
+        }
+      ],
+      "limitation": "Reference substitution may be off-manifold. Signed effects describe model sensitivity, not physical cause. Sensor correlations within temperature group retained only through joint replacement."
+    }
+  },
+  {
+    "window_id": "ad0f4b1a151ecabf62d2f12f",
+    "truth": 0,
+    "seconds": 0.1267484333335839,
+    "repeat_identical": true,
+    "max_effect_change_under_005C": 0.0157298583000805,
+    "explanation": {
+      "method": "Full-hybrid grouped source-mean replacement",
+      "class_name": "heating_valve_fault",
+      "values": [
+        {
+          "group": "temperatures",
+          "probability_change_from_reference": 0.4164619825726191
+        },
+        {
+          "group": "ventilation_commands",
+          "probability_change_from_reference": 0.0076057927265503755
+        },
+        {
+          "group": "cooling_command",
+          "probability_change_from_reference": 0.00843011366194446
+        },
+        {
+          "group": "heating_command",
+          "probability_change_from_reference": -0.31729517767532306
+        }
+      ],
+      "limitation": "Reference substitution may be off-manifold. Signed effects describe model sensitivity, not physical cause. Sensor correlations within temperature group retained only through joint replacement."
+    }
+  },
+  {
+    "window_id": "f03175072b410b021ad49205",
+    "truth": 1,
+    "seconds": 0.12434656666664523,
+    "repeat_identical": true,
+    "max_effect_change_under_005C": 0.012187119189384199,
+    "explanation": {
+      "method": "Full-hybrid grouped source-mean replacement",
+      "class_name": "damper_fault",
+      "values": [
+        {
+          "group": "temperatures",
+          "probability_change_from_reference": 0.49662071537065716
+        },
+        {
+          "group": "ventilation_commands",
+          "probability_change_from_reference": 0.1377189919922781
+        },
+        {
+          "group": "cooling_command",
+          "probability_change_from_reference": 0.4654800049892163
+        },
+        {
+          "group": "heating_command",
+          "probability_change_from_reference": 0.06401115687598602
+        }
+      ],
+      "limitation": "Reference substitution may be off-manifold. Signed effects describe model sensitivity, not physical cause. Sensor correlations within temperature group retained only through joint replacement."
+    }
+  }
+]

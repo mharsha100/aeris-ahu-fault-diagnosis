@@ -1,3 +1,11 @@
+# Current user correction — November 17, 2026
+
+The latest explicit user instruction supersedes the historical version mapping below.
+V0 = source-trained model; V1 = confident pseudo-label adaptation; V2 = technician-label adaptation.
+One submitted input routes automatically through confidence/review handling; users do not select
+three architectures. Architecture identifiers remain separate, and historical metrics keep their
+original dated labels. Preserve all existing artifacts, frozen splits and monitoring records.
+
 # AERIS project requirements
 
 Read this file before changing training, adaptation, evaluation, or UI code.

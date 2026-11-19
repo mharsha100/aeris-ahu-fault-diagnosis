@@ -1,0 +1,77 @@
+#1 [internal] load local bake definitions
+#1 reading from stdin 587B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 812B 0.0s done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/python:3.11.14-slim
+#3 DONE 0.6s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 162B 0.0s done
+#4 DONE 0.1s
+
+#5 [internal] load build context
+#5 DONE 0.0s
+
+#6 [ 1/12] FROM docker.io/library/python:3.11.14-slim@sha256:c8271b1f627d0068857dce5b53e14a9558603b527e46f1f901722f935b786a39
+#6 resolve docker.io/library/python:3.11.14-slim@sha256:c8271b1f627d0068857dce5b53e14a9558603b527e46f1f901722f935b786a39
+#6 resolve docker.io/library/python:3.11.14-slim@sha256:c8271b1f627d0068857dce5b53e14a9558603b527e46f1f901722f935b786a39 0.1s done
+#6 DONE 0.1s
+
+#5 [internal] load build context
+#5 transferring context: 391.19kB 0.4s done
+#5 DONE 0.4s
+
+#7 [ 2/12] WORKDIR /app
+#7 CACHED
+
+#8 [ 3/12] COPY requirements.txt /app/requirements.txt
+#8 CACHED
+
+#9 [ 4/12] RUN pip install --no-cache-dir -r requirements.txt
+#9 CACHED
+
+#10 [ 5/12] COPY app.py /app/
+#10 CACHED
+
+#11 [ 6/12] COPY src /app/src
+#11 CACHED
+
+#12 [ 7/12] COPY scripts /app/scripts
+#12 DONE 0.1s
+
+#13 [ 8/12] COPY tests /app/tests
+#13 DONE 0.2s
+
+#14 [ 9/12] COPY milestone4 /app/milestone4
+#14 DONE 0.2s
+
+#15 [10/12] COPY experiments/end_to_end_20261116 /app/experiments/end_to_end_20261116
+#15 DONE 0.2s
+
+#16 [11/12] COPY deployment /app/deployment
+#16 DONE 0.1s
+
+#17 [12/12] RUN mkdir -p /state && useradd --uid 10001 --create-home aeris && chown aeris:aeris /state
+#17 DONE 0.5s
+
+#18 exporting to image
+#18 exporting layers
+#18 exporting layers 1.1s done
+#18 exporting manifest sha256:6d8dca98620a1631a5708f5a09a4bf69b0ffc608bfdeba679ff9152df80235f6 0.0s done
+#18 exporting config sha256:4c5e58880e273b32b9823ea5a035dd5ff52bbad5e85f9c871240b65175bc503f 0.0s done
+#18 exporting attestation manifest sha256:63ad68b7df879299a58e06de2681037a8434c9d8b810488c662db93e00efa9ac
+#18 exporting attestation manifest sha256:63ad68b7df879299a58e06de2681037a8434c9d8b810488c662db93e00efa9ac 0.1s done
+#18 exporting manifest list sha256:5f64df94e557ab53834f2d5723432d8dd8a8c6b83d9d8d10034bda7fa5482c64 0.0s done
+#18 naming to docker.io/library/aeris-local:20261116
+#18 naming to docker.io/library/aeris-local:20261116 done
+#18 unpacking to docker.io/library/aeris-local:20261116
+#18 unpacking to docker.io/library/aeris-local:20261116 0.3s done
+#18 DONE 1.7s
+
+#19 resolving provenance for metadata file
+#19 DONE 0.0s
+ aeris-local:20261116  Built

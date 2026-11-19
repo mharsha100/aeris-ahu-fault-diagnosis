@@ -1,0 +1,16 @@
+ Container aeris-app-1  Restarting
+ Container aeris-app-1  Started
+{
+  "cross_origin": 403,
+  "text_form": 400,
+  "untrusted_host": 421,
+  "path_traversal": 404,
+  "negative_index": 400,
+  "all_catalog_versions_and_idempotency": true,
+  "backup_restore": true,
+  "restart_preserves_all_feedback_totals": true,
+  "grafana_7_panels": true,
+  "all_panel_queries_both_cohorts": true,
+  "grafana_live_totals_match_sqlite": true,
+  "test_data_not_presented_as_genuine": true
+}

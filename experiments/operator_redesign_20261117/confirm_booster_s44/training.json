@@ -1,0 +1,22 @@
+{
+  "seed": 44,
+  "iterations_completed": 1200,
+  "selected_iteration": 714,
+  "parameters": {
+    "iterations": 1200,
+    "depth": 8,
+    "learning_rate": 0.05,
+    "l2_leaf_reg": 5,
+    "loss_function": "MultiClass",
+    "eval_metric": "TotalF1:average=Macro;use_weights=false",
+    "auto_class_weights": "SqrtBalanced",
+    "random_seed": 44,
+    "task_type": "GPU",
+    "devices": "0",
+    "thread_count": 4,
+    "border_count": 128,
+    "allow_writing_files": false,
+    "verbose": 200
+  },
+  "representation": "sequence"
+}

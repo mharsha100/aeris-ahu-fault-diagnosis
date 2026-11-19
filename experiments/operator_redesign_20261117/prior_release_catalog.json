@@ -1,0 +1,19 @@
+{
+  "models": [
+    {
+      "version": "v0",
+      "bundle": "e2e_anchor_v0_s42",
+      "stage": "Retained after guarded comparison"
+    },
+    {
+      "version": "v1",
+      "bundle": "e2e_anchor_v1_s42",
+      "stage": "Retained after guarded comparison"
+    },
+    {
+      "version": "v2",
+      "bundle": "e2e_anchor_v2_s42",
+      "stage": "Retained after guarded comparison"
+    }
+  ]
+}

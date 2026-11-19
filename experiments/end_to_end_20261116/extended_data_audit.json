@@ -1,0 +1,121 @@
+{
+  "source": {
+    "rows": 453645,
+    "missing_values": {
+      "supply_temp_c": 0,
+      "outdoor_temp_c": 0,
+      "mixed_temp_c": 0,
+      "return_temp_c": 0,
+      "fan_status": 0,
+      "fan_speed_cmd": 0,
+      "oa_damper_cmd": 0,
+      "cooling_valve_cmd": 0,
+      "heating_valve_cmd": 0,
+      "occupied": 0
+    },
+    "duplicate_row_ids": 0,
+    "duplicate_run_timestamps": 0,
+    "nonincreasing_steps": 0,
+    "non_60s_steps": 0,
+    "raw_range_min": {
+      "supply_temp_c": -0.25736085,
+      "outdoor_temp_c": -22.815252,
+      "mixed_temp_c": -21.303122,
+      "return_temp_c": -22.063498,
+      "fan_status": 0.0,
+      "fan_speed_cmd": 0.0,
+      "oa_damper_cmd": 0.0,
+      "cooling_valve_cmd": 0.0,
+      "heating_valve_cmd": 0.0,
+      "occupied": 0.0
+    },
+    "raw_range_max": {
+      "supply_temp_c": 31.948206,
+      "outdoor_temp_c": 32.20156,
+      "mixed_temp_c": 32.17092,
+      "return_temp_c": 32.413475,
+      "fan_status": 1.0,
+      "fan_speed_cmd": 1.0,
+      "oa_damper_cmd": 1.0,
+      "cooling_valve_cmd": 1.0,
+      "heating_valve_cmd": 1.0,
+      "occupied": 1.0
+    }
+  },
+  "target": {
+    "rows": 37439,
+    "missing_values": {
+      "supply_temp_c": 0,
+      "outdoor_temp_c": 1,
+      "mixed_temp_c": 90,
+      "return_temp_c": 0,
+      "fan_status": 0,
+      "fan_speed_cmd": 0,
+      "oa_damper_cmd": 0,
+      "cooling_valve_cmd": 0,
+      "heating_valve_cmd": 0,
+      "occupied": 0
+    },
+    "duplicate_row_ids": 0,
+    "duplicate_run_timestamps": 0,
+    "nonincreasing_steps": 0,
+    "non_60s_steps": 0,
+    "raw_range_min": {
+      "supply_temp_c": 9.561111,
+      "outdoor_temp_c": 7.0,
+      "mixed_temp_c": 7.9333334,
+      "return_temp_c": 14.694445,
+      "fan_status": 0.0,
+      "fan_speed_cmd": 0.0,
+      "oa_damper_cmd": 0.0,
+      "cooling_valve_cmd": 0.0,
+      "heating_valve_cmd": 0.0,
+      "occupied": 0.0
+    },
+    "raw_range_max": {
+      "supply_temp_c": 40.355556,
+      "outdoor_temp_c": 30.844444,
+      "mixed_temp_c": 31.722221,
+      "return_temp_c": 32.377777,
+      "fan_status": 1.0,
+      "fan_speed_cmd": 0.5,
+      "oa_damper_cmd": 1.0,
+      "cooling_valve_cmd": 1.0,
+      "heating_valve_cmd": 1.0,
+      "occupied": 1.0
+    }
+  },
+  "preprocessing": {
+    "fit_rows": 140402,
+    "declared_fit_rows": 140402,
+    "mean_max_abs_diff": 0.0,
+    "scale_max_abs_diff": 0.0,
+    "fit_partition": "source_train only",
+    "features_in_order": [
+      "supply_temp_c",
+      "outdoor_temp_c",
+      "mixed_temp_c",
+      "return_temp_c",
+      "fan_status",
+      "fan_speed_cmd",
+      "oa_damper_cmd",
+      "cooling_valve_cmd",
+      "heating_valve_cmd",
+      "occupied"
+    ],
+    "no_learned_imputation": "Incomplete core windows excluded; runtime rejects missing values"
+  },
+  "conversion_checks": 470,
+  "raw_files_hash_verified": 47,
+  "all_channels_available_at_endpoint": true,
+  "sequence_protocol": {
+    "minutes": 15,
+    "stride_minutes": 5,
+    "features": 10,
+    "tabular": 66,
+    "receptive_field": 29,
+    "receptive_field_calculation": "1 + 2 convolutions * (kernel 3 - 1) * (1 + 2 + 4) = 29",
+    "representation_decision": "Existing RF includes mean/std/min/max/last/trend. Causal TCN receptive field already covers full 15-minute window; no justified expansion. Missingness indicators deferred because incomplete-window inference is blocked."
+  },
+  "unresolved_alias": "AHU1/AHU2 not verified as aliases of G36/SZVAV/SZCAV; retain actual identifiers."
+}

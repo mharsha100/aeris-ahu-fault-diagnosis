@@ -1,0 +1,26 @@
+{
+  "parent_booster": "cat_sequence_d8_sqrtbalanced_s42",
+  "screening_seed": 42,
+  "confirmation_seeds": [
+    43,
+    44
+  ],
+  "booster_weights": [
+    0.25,
+    0.5,
+    0.65,
+    0.8,
+    0.9
+  ],
+  "normal_factors": [
+    0.8,
+    1.0,
+    1.2,
+    1.4,
+    1.6,
+    1.8,
+    2.0
+  ],
+  "selection": "Constrained source-development hyperparameter selection; fixed factors/weight for seed43/44. Scalar confidence temperatures fitted on calibration only. No target selection.",
+  "guard": "Each seed: gain >=.01 macro F1, no recall drop >.03, no increased fault-normal or accepted false-normal. Existing distinct 50-epoch RF+TCN parents fixed; seed replication concerns the new booster, not independent neural retraining."
+}

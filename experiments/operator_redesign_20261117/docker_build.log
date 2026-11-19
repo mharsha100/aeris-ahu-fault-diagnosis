@@ -1,0 +1,310 @@
+#1 [internal] load local bake definitions
+#1 reading from stdin 588B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.00kB 0.0s done
+#2 DONE 0.1s
+
+#3 [internal] load metadata for docker.io/library/python:3.11.14-slim
+#3 DONE 1.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 174B 0.0s done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 ...
+
+#6 [ 1/15] FROM docker.io/library/python:3.11.14-slim@sha256:c8271b1f627d0068857dce5b53e14a9558603b527e46f1f901722f935b786a39
+#6 resolve docker.io/library/python:3.11.14-slim@sha256:c8271b1f627d0068857dce5b53e14a9558603b527e46f1f901722f935b786a39 0.1s done
+#6 DONE 0.1s
+
+#5 [internal] load build context
+#5 transferring context: 2.34MB 0.9s done
+#5 DONE 0.9s
+
+#7 [ 2/15] WORKDIR /app
+#7 CACHED
+
+#8 [ 3/15] COPY requirements.txt /app/requirements.txt
+#8 DONE 0.1s
+
+#9 [ 4/15] RUN pip install --no-cache-dir -r requirements.txt
+#9 2.144 Looking in indexes: https://pypi.org/simple, https://download.pytorch.org/whl/cpu
+#9 3.464 Collecting numpy==2.4.6 (from -r requirements.txt (line 4))
+#9 3.613   Downloading numpy-2.4.6-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+#9 4.092 Collecting pandas==2.2.3 (from -r requirements.txt (line 5))
+#9 4.119   Downloading pandas-2.2.3-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (89 kB)
+#9 4.149      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 89.9/89.9 kB 3.4 MB/s eta 0:00:00
+#9 4.381 Collecting scipy==1.16.3 (from -r requirements.txt (line 6))
+#9 4.406   Downloading scipy-1.16.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (62 kB)
+#9 4.414      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.0/62.0 kB 14.2 MB/s eta 0:00:00
+#9 4.739 Collecting scikit-learn==1.7.2 (from -r requirements.txt (line 7))
+#9 4.766   Downloading scikit_learn-1.7.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (11 kB)
+#9 4.927 Collecting joblib==1.5.2 (from -r requirements.txt (line 8))
+#9 4.954   Downloading joblib-1.5.2-py3-none-any.whl.metadata (5.6 kB)
+#9 5.170 Collecting torch==2.9.1+cpu (from -r requirements.txt (line 9))
+#9 5.347   Downloading https://download-r2.pytorch.org/whl/cpu/torch-2.9.1%2Bcpu-cp311-cp311-manylinux_2_28_x86_64.whl.metadata (29 kB)
+#9 5.494 Collecting streamlit==1.50.0 (from -r requirements.txt (line 10))
+#9 5.522   Downloading streamlit-1.50.0-py3-none-any.whl.metadata (9.5 kB)
+#9 5.625 Collecting requests==2.34.2 (from -r requirements.txt (line 11))
+#9 5.650   Downloading requests-2.34.2-py3-none-any.whl.metadata (4.8 kB)
+#9 5.808 Collecting catboost==1.2.10 (from -r requirements.txt (line 12))
+#9 5.834   Downloading catboost-1.2.10-cp311-cp311-manylinux2014_x86_64.whl.metadata (1.2 kB)
+#9 5.997 Collecting python-dateutil>=2.8.2 (from pandas==2.2.3->-r requirements.txt (line 5))
+#9 6.022   Downloading python_dateutil-4.0.0-py3-none-any.whl.metadata (7.3 kB)
+#9 6.175 Collecting pytz>=2020.1 (from pandas==2.2.3->-r requirements.txt (line 5))
+#9 6.203   Downloading pytz-2026.6-py2.py3-none-any.whl.metadata (22 kB)
+#9 6.336 Collecting tzdata>=2022.7 (from pandas==2.2.3->-r requirements.txt (line 5))
+#9 6.364   Downloading tzdata-2026.6-py2.py3-none-any.whl.metadata (1.4 kB)
+#9 6.651 Collecting threadpoolctl>=3.1.0 (from scikit-learn==1.7.2->-r requirements.txt (line 7))
+#9 6.679   Downloading threadpoolctl-3.8.0-py3-none-any.whl.metadata (29 kB)
+#9 6.823 Collecting filelock (from torch==2.9.1+cpu->-r requirements.txt (line 9))
+#9 6.849   Downloading filelock-4.2.11-py3-none-any.whl.metadata (2.3 kB)
+#9 6.950 Collecting typing-extensions>=4.10.0 (from torch==2.9.1+cpu->-r requirements.txt (line 9))
+#9 6.976   Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+#9 7.070 Collecting sympy>=1.13.3 (from torch==2.9.1+cpu->-r requirements.txt (line 9))
+#9 7.093   Downloading sympy-1.14.0-py3-none-any.whl.metadata (12 kB)
+#9 7.209 Collecting networkx>=2.5.1 (from torch==2.9.1+cpu->-r requirements.txt (line 9))
+#9 7.233   Downloading networkx-3.6.1-py3-none-any.whl.metadata (6.8 kB)
+#9 7.303 Collecting jinja2 (from torch==2.9.1+cpu->-r requirements.txt (line 9))
+#9 7.331   Downloading https://download.pytorch.org/whl/jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+#9 7.465 Collecting fsspec>=0.8.5 (from torch==2.9.1+cpu->-r requirements.txt (line 9))
+#9 7.489   Downloading fsspec-2026.9.0-py3-none-any.whl.metadata (10 kB)
+#9 7.624 Collecting altair!=5.4.0,!=5.4.1,<6,>=4.0 (from streamlit==1.50.0->-r requirements.txt (line 10))
+#9 7.653   Downloading altair-5.5.0-py3-none-any.whl.metadata (11 kB)
+#9 7.787 Collecting blinker<2,>=1.5.0 (from streamlit==1.50.0->-r requirements.txt (line 10))
+#9 7.812   Downloading blinker-1.9.0-py3-none-any.whl.metadata (1.6 kB)
+#9 7.922 Collecting cachetools<7,>=4.0 (from streamlit==1.50.0->-r requirements.txt (line 10))
+#9 7.950   Downloading cachetools-6.2.6-py3-none-any.whl.metadata (5.6 kB)
+#9 8.066 Collecting click<9,>=7.0 (from streamlit==1.50.0->-r requirements.txt (line 10))
+#9 8.093   Downloading click-8.5.1-py3-none-any.whl.metadata (2.6 kB)
+#9 8.196 Collecting packaging<26,>=20 (from streamlit==1.50.0->-r requirements.txt (line 10))
+#9 8.223   Downloading packaging-25.0-py3-none-any.whl.metadata (3.3 kB)
+#9 9.167 Collecting pillow<12,>=7.1.0 (from streamlit==1.50.0->-r requirements.txt (line 10))
+#9 9.198   Downloading pillow-11.3.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.0 kB)
+#9 9.646 Collecting protobuf<7,>=3.20 (from streamlit==1.50.0->-r requirements.txt (line 10))
+#9 9.672   Downloading protobuf-6.33.6-cp39-abi3-manylinux2014_x86_64.whl.metadata (593 bytes)
+#9 9.896 Collecting pyarrow>=7.0 (from streamlit==1.50.0->-r requirements.txt (line 10))
+#9 9.932   Downloading pyarrow-26.0.1-cp311-cp311-manylinux_2_28_x86_64.whl.metadata (3.0 kB)
+#9 10.29 Collecting tenacity<10,>=8.1.0 (from streamlit==1.50.0->-r requirements.txt (line 10))
+#9 10.32   Downloading tenacity-9.2.1-py3-none-any.whl.metadata (1.4 kB)
+#9 10.41 Collecting toml<2,>=0.10.1 (from streamlit==1.50.0->-r requirements.txt (line 10))
+#9 10.44   Downloading toml-0.10.2-py2.py3-none-any.whl.metadata (7.1 kB)
+#9 10.63 Collecting watchdog<7,>=2.1.5 (from streamlit==1.50.0->-r requirements.txt (line 10))
+#9 10.66   Downloading watchdog-6.0.0-py3-none-manylinux2014_x86_64.whl.metadata (44 kB)
+#9 10.66      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 44.3/44.3 kB 15.2 MB/s eta 0:00:00
+#9 10.81 Collecting gitpython!=3.1.19,<4,>=3.0.7 (from streamlit==1.50.0->-r requirements.txt (line 10))
+#9 10.83   Downloading gitpython-3.2.1-py3-none-any.whl.metadata (13 kB)
+#9 10.93 Collecting pydeck<1,>=0.8.0b4 (from streamlit==1.50.0->-r requirements.txt (line 10))
+#9 10.95   Downloading pydeck-0.9.3-py2.py3-none-any.whl.metadata (4.2 kB)
+#9 11.15 Collecting tornado!=6.5.0,<7,>=6.0.3 (from streamlit==1.50.0->-r requirements.txt (line 10))
+#9 11.17   Downloading tornado-6.6.1-cp311-abi3-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (2.6 kB)
+#9 11.52 Collecting charset_normalizer<4,>=2 (from requests==2.34.2->-r requirements.txt (line 11))
+#9 11.55   Downloading charset_normalizer-3.5.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (46 kB)
+#9 11.56      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 46.4/46.4 kB 45.9 MB/s eta 0:00:00
+#9 11.66 Collecting idna<4,>=2.5 (from requests==2.34.2->-r requirements.txt (line 11))
+#9 11.69   Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+#9 11.72 Collecting urllib3<3,>=1.26 (from requests==2.34.2->-r requirements.txt (line 11))
+#9 11.75   Downloading urllib3-2.8.0-py3-none-any.whl.metadata (7.4 kB)
+#9 11.84 Collecting certifi>=2023.5.7 (from requests==2.34.2->-r requirements.txt (line 11))
+#9 11.87   Downloading certifi-2026.10.23-py3-none-any.whl.metadata (2.5 kB)
+#9 12.00 Collecting graphviz (from catboost==1.2.10->-r requirements.txt (line 12))
+#9 12.02   Downloading graphviz-0.21-py3-none-any.whl.metadata (12 kB)
+#9 12.39 Collecting matplotlib (from catboost==1.2.10->-r requirements.txt (line 12))
+#9 12.42   Downloading matplotlib-3.11.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (80 kB)
+#9 12.44      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 80.3/80.3 kB 7.4 MB/s eta 0:00:00
+#9 12.72 Collecting plotly (from catboost==1.2.10->-r requirements.txt (line 12))
+#9 12.75   Downloading plotly-7.1.0-py3-none-any.whl.metadata (8.8 kB)
+#9 12.88 Collecting six (from catboost==1.2.10->-r requirements.txt (line 12))
+#9 12.90   Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+#9 13.06 Collecting jsonschema>=3.0 (from altair!=5.4.0,!=5.4.1,<6,>=4.0->streamlit==1.50.0->-r requirements.txt (line 10))
+#9 13.08   Downloading jsonschema-4.26.0-py3-none-any.whl.metadata (7.6 kB)
+#9 13.23 Collecting narwhals>=1.14.2 (from altair!=5.4.0,!=5.4.1,<6,>=4.0->streamlit==1.50.0->-r requirements.txt (line 10))
+#9 13.25   Downloading narwhals-2.28.0-py3-none-any.whl.metadata (15 kB)
+#9 13.72 Collecting gitdb<5,>=4.0.1 (from gitpython!=3.1.19,<4,>=3.0.7->streamlit==1.50.0->-r requirements.txt (line 10))
+#9 13.74   Downloading gitdb-4.0.12-py3-none-any.whl.metadata (1.2 kB)
+#9 14.16 Collecting MarkupSafe>=2.0 (from jinja2->torch==2.9.1+cpu->-r requirements.txt (line 9))
+#9 14.18   Downloading markupsafe-3.0.4-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+#9 14.28 Collecting mpmath<1.4,>=1.1.0 (from sympy>=1.13.3->torch==2.9.1+cpu->-r requirements.txt (line 9))
+#9 14.31   Downloading mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
+#9 14.63 Collecting contourpy>=1.0.1 (from matplotlib->catboost==1.2.10->-r requirements.txt (line 12))
+#9 14.66   Downloading contourpy-1.3.3-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (5.5 kB)
+#9 14.77 Collecting cycler>=0.10 (from matplotlib->catboost==1.2.10->-r requirements.txt (line 12))
+#9 14.80   Downloading cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)
+#9 15.07 Collecting fonttools>=4.28.2 (from matplotlib->catboost==1.2.10->-r requirements.txt (line 12))
+#9 15.09   Downloading fonttools-4.68.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (139 kB)
+#9 15.11      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 139.9/139.9 kB 7.6 MB/s eta 0:00:00
+#9 15.27 Collecting kiwisolver>=1.3.1 (from matplotlib->catboost==1.2.10->-r requirements.txt (line 12))
+#9 15.29   Downloading kiwisolver-1.5.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (5.2 kB)
+#9 15.42 Collecting pyparsing>=3 (from matplotlib->catboost==1.2.10->-r requirements.txt (line 12))
+#9 15.45   Downloading pyparsing-3.3.3-py3-none-any.whl.metadata (5.9 kB)
+#9 15.64 Collecting smmap<6,>=3.0.1 (from gitdb<5,>=4.0.1->gitpython!=3.1.19,<4,>=3.0.7->streamlit==1.50.0->-r requirements.txt (line 10))
+#9 15.66   Downloading smmap-5.0.3-py3-none-any.whl.metadata (4.6 kB)
+#9 15.78 Collecting attrs>=22.2.0 (from jsonschema>=3.0->altair!=5.4.0,!=5.4.1,<6,>=4.0->streamlit==1.50.0->-r requirements.txt (line 10))
+#9 15.81   Downloading attrs-26.1.0-py3-none-any.whl.metadata (8.8 kB)
+#9 15.90 Collecting jsonschema-specifications>=2023.03.6 (from jsonschema>=3.0->altair!=5.4.0,!=5.4.1,<6,>=4.0->streamlit==1.50.0->-r requirements.txt (line 10))
+#9 15.92   Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl.metadata (2.9 kB)
+#9 16.04 Collecting referencing>=0.28.4 (from jsonschema>=3.0->altair!=5.4.0,!=5.4.1,<6,>=4.0->streamlit==1.50.0->-r requirements.txt (line 10))
+#9 16.07   Downloading referencing-0.37.0-py3-none-any.whl.metadata (2.8 kB)
+#9 16.64 Collecting rpds-py>=0.25.0 (from jsonschema>=3.0->altair!=5.4.0,!=5.4.1,<6,>=4.0->streamlit==1.50.0->-r requirements.txt (line 10))
+#9 16.66   Downloading rpds_py-2026.9.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.1 kB)
+#9 16.80 Downloading numpy-2.4.6-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.9 MB)
+#9 18.62    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.9/16.9 MB 10.0 MB/s eta 0:00:00
+#9 18.64 Downloading pandas-2.2.3-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (13.1 MB)
+#9 19.58    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.1/13.1 MB 16.2 MB/s eta 0:00:00
+#9 19.61 Downloading scipy-1.16.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (35.9 MB)
+#9 22.59    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.9/35.9 MB 10.4 MB/s eta 0:00:00
+#9 22.62 Downloading scikit_learn-1.7.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (9.7 MB)
+#9 23.57    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.7/9.7 MB 10.4 MB/s eta 0:00:00
+#9 23.60 Downloading joblib-1.5.2-py3-none-any.whl (308 kB)
+#9 23.63    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 308.4/308.4 kB 11.2 MB/s eta 0:00:00
+#9 23.68 Downloading https://download-r2.pytorch.org/whl/cpu/torch-2.9.1%2Bcpu-cp311-cp311-manylinux_2_28_x86_64.whl (184.5 MB)
+#9 36.45    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 184.5/184.5 MB 13.2 MB/s eta 0:00:00
+#9 36.47 Downloading streamlit-1.50.0-py3-none-any.whl (10.1 MB)
+#9 37.07    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.1/10.1 MB 16.9 MB/s eta 0:00:00
+#9 37.10 Downloading requests-2.34.2-py3-none-any.whl (73 kB)
+#9 37.11    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 73.1/73.1 kB 16.1 MB/s eta 0:00:00
+#9 37.14 Downloading catboost-1.2.10-cp311-cp311-manylinux2014_x86_64.whl (97.2 MB)
+#9 45.05    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 97.2/97.2 MB 13.3 MB/s eta 0:00:00
+#9 45.08 Downloading altair-5.5.0-py3-none-any.whl (731 kB)
+#9 45.11    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 731.2/731.2 kB 27.6 MB/s eta 0:00:00
+#9 45.14 Downloading blinker-1.9.0-py3-none-any.whl (8.5 kB)
+#9 45.16 Downloading cachetools-6.2.6-py3-none-any.whl (11 kB)
+#9 45.19 Downloading certifi-2026.10.23-py3-none-any.whl (135 kB)
+#9 45.20    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 135.1/135.1 kB 17.4 MB/s eta 0:00:00
+#9 45.22 Downloading charset_normalizer-3.5.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (269 kB)
+#9 45.24    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 270.0/270.0 kB 18.4 MB/s eta 0:00:00
+#9 45.27 Downloading click-8.5.1-py3-none-any.whl (126 kB)
+#9 45.28    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 126.2/126.2 kB 14.3 MB/s eta 0:00:00
+#9 45.31 Downloading fsspec-2026.9.0-py3-none-any.whl (221 kB)
+#9 45.32    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 221.7/221.7 kB 21.0 MB/s eta 0:00:00
+#9 45.35 Downloading gitpython-3.2.1-py3-none-any.whl (231 kB)
+#9 45.36    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 231.5/231.5 kB 33.9 MB/s eta 0:00:00
+#9 45.38 Downloading idna-3.20-py3-none-any.whl (69 kB)
+#9 45.39    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 69.6/69.6 kB 20.8 MB/s eta 0:00:00
+#9 45.41 Downloading networkx-3.6.1-py3-none-any.whl (2.1 MB)
+#9 45.50    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 25.3 MB/s eta 0:00:00
+#9 45.52 Downloading packaging-25.0-py3-none-any.whl (66 kB)
+#9 45.53    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 66.5/66.5 kB 20.0 MB/s eta 0:00:00
+#9 45.55 Downloading pillow-11.3.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (6.6 MB)
+#9 45.98    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.6/6.6 MB 15.7 MB/s eta 0:00:00
+#9 46.01 Downloading protobuf-6.33.6-cp39-abi3-manylinux2014_x86_64.whl (323 kB)
+#9 46.06    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 323.4/323.4 kB 6.5 MB/s eta 0:00:00
+#9 46.09 Downloading pyarrow-26.0.1-cp311-cp311-manylinux_2_28_x86_64.whl (55.0 MB)
+#9 49.51    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 55.0/55.0 MB 21.2 MB/s eta 0:00:00
+#9 49.53 Downloading pydeck-0.9.3-py2.py3-none-any.whl (11.4 MB)
+#9 50.10    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.4/11.4 MB 20.0 MB/s eta 0:00:00
+#9 50.15 Downloading https://download.pytorch.org/whl/jinja2-3.1.6-py3-none-any.whl (134 kB)
+#9 50.16    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 134.9/134.9 kB 28.9 MB/s eta 0:00:00
+#9 50.18 Downloading python_dateutil-4.0.0-py3-none-any.whl (92 kB)
+#9 50.19    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 92.9/92.9 kB 28.8 MB/s eta 0:00:00
+#9 50.21 Downloading pytz-2026.6-py2.py3-none-any.whl (506 kB)
+#9 50.23    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 506.3/506.3 kB 31.5 MB/s eta 0:00:00
+#9 50.26 Downloading sympy-1.14.0-py3-none-any.whl (6.3 MB)
+#9 50.68    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.3/6.3 MB 15.1 MB/s eta 0:00:00
+#9 50.71 Downloading tenacity-9.2.1-py3-none-any.whl (32 kB)
+#9 50.73 Downloading threadpoolctl-3.8.0-py3-none-any.whl (32 kB)
+#9 50.76 Downloading toml-0.10.2-py2.py3-none-any.whl (16 kB)
+#9 50.79 Downloading tornado-6.6.1-cp311-abi3-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (534 kB)
+#9 50.81    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 534.5/534.5 kB 26.4 MB/s eta 0:00:00
+#9 50.83 Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+#9 50.84    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 45.6/45.6 kB 36.9 MB/s eta 0:00:00
+#9 50.86 Downloading tzdata-2026.6-py2.py3-none-any.whl (348 kB)
+#9 50.88    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 348.2/348.2 kB 18.5 MB/s eta 0:00:00
+#9 50.91 Downloading urllib3-2.8.0-py3-none-any.whl (135 kB)
+#9 50.92    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 135.7/135.7 kB 19.5 MB/s eta 0:00:00
+#9 50.94 Downloading watchdog-6.0.0-py3-none-manylinux2014_x86_64.whl (79 kB)
+#9 50.95    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 79.1/79.1 kB 28.1 MB/s eta 0:00:00
+#9 50.98 Downloading filelock-4.2.11-py3-none-any.whl (222 kB)
+#9 50.99    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 222.0/222.0 kB 26.2 MB/s eta 0:00:00
+#9 51.02 Downloading graphviz-0.21-py3-none-any.whl (47 kB)
+#9 51.04    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 47.3/47.3 kB 3.5 MB/s eta 0:00:00
+#9 51.06 Downloading matplotlib-3.11.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (9.9 MB)
+#9 51.71    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.9/9.9 MB 15.2 MB/s eta 0:00:00
+#9 51.74 Downloading plotly-7.1.0-py3-none-any.whl (9.7 MB)
+#9 52.32    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.7/9.7 MB 16.9 MB/s eta 0:00:00
+#9 52.35 Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+#9 52.38 Downloading contourpy-1.3.3-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (355 kB)
+#9 52.41    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 355.2/355.2 kB 12.4 MB/s eta 0:00:00
+#9 52.44 Downloading cycler-0.12.1-py3-none-any.whl (8.3 kB)
+#9 52.47 Downloading fonttools-4.68.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (5.5 MB)
+#9 52.84    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.5/5.5 MB 15.2 MB/s eta 0:00:00
+#9 52.87 Downloading gitdb-4.0.12-py3-none-any.whl (62 kB)
+#9 52.88    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.8/62.8 kB 7.6 MB/s eta 0:00:00
+#9 52.91 Downloading jsonschema-4.26.0-py3-none-any.whl (90 kB)
+#9 52.92    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 90.6/90.6 kB 8.0 MB/s eta 0:00:00
+#9 52.97 Downloading kiwisolver-1.5.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (1.4 MB)
+#9 53.13    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 9.0 MB/s eta 0:00:00
+#9 53.17 Downloading markupsafe-3.0.4-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
+#9 53.20 Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)
+#9 53.28    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 6.8 MB/s eta 0:00:00
+#9 53.32 Downloading narwhals-2.28.0-py3-none-any.whl (490 kB)
+#9 53.38    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 490.6/490.6 kB 8.5 MB/s eta 0:00:00
+#9 53.41 Downloading pyparsing-3.3.3-py3-none-any.whl (126 kB)
+#9 53.43    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 126.4/126.4 kB 11.2 MB/s eta 0:00:00
+#9 53.45 Downloading attrs-26.1.0-py3-none-any.whl (67 kB)
+#9 53.47    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 67.5/67.5 kB 7.1 MB/s eta 0:00:00
+#9 53.50 Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl (18 kB)
+#9 53.53 Downloading referencing-0.37.0-py3-none-any.whl (26 kB)
+#9 53.56 Downloading rpds_py-2026.9.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (375 kB)
+#9 53.61    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 375.4/375.4 kB 9.7 MB/s eta 0:00:00
+#9 53.64 Downloading smmap-5.0.3-py3-none-any.whl (24 kB)
+#9 56.18 Installing collected packages: pytz, mpmath, watchdog, urllib3, tzdata, typing-extensions, tornado, toml, threadpoolctl, tenacity, sympy, smmap, six, rpds-py, pyparsing, pyarrow, protobuf, pillow, packaging, numpy, networkx, narwhals, MarkupSafe, kiwisolver, joblib, idna, graphviz, fsspec, fonttools, filelock, cycler, click, charset_normalizer, certifi, cachetools, blinker, attrs, scipy, requests, referencing, python-dateutil, plotly, jinja2, gitdb, contourpy, torch, scikit-learn, pydeck, pandas, matplotlib, jsonschema-specifications, gitpython, jsonschema, catboost, altair, streamlit
+#9 118.2 Successfully installed MarkupSafe-3.0.4 altair-5.5.0 attrs-26.1.0 blinker-1.9.0 cachetools-6.2.6 catboost-1.2.10 certifi-2026.10.23 charset_normalizer-3.5.2 click-8.5.1 contourpy-1.3.3 cycler-0.12.1 filelock-4.2.11 fonttools-4.68.0 fsspec-2026.9.0 gitdb-4.0.12 gitpython-3.2.1 graphviz-0.21 idna-3.20 jinja2-3.1.6 joblib-1.5.2 jsonschema-4.26.0 jsonschema-specifications-2025.9.1 kiwisolver-1.5.1 matplotlib-3.11.2 mpmath-1.3.0 narwhals-2.28.0 networkx-3.6.1 numpy-2.4.6 packaging-25.0 pandas-2.2.3 pillow-11.3.0 plotly-7.1.0 protobuf-6.33.6 pyarrow-26.0.1 pydeck-0.9.3 pyparsing-3.3.3 python-dateutil-4.0.0 pytz-2026.6 referencing-0.37.0 requests-2.34.2 rpds-py-2026.9.1 scikit-learn-1.7.2 scipy-1.16.3 six-1.17.0 smmap-5.0.3 streamlit-1.50.0 sympy-1.14.0 tenacity-9.2.1 threadpoolctl-3.8.0 toml-0.10.2 torch-2.9.1+cpu tornado-6.6.1 typing-extensions-4.16.0 tzdata-2026.6 urllib3-2.8.0 watchdog-6.0.0
+#9 118.2 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+#9 118.4 
+#9 118.4 [notice] A new release of pip is available: 24.0 -> 26.3
+#9 118.4 [notice] To update, run: pip install --upgrade pip
+#9 DONE 121.7s
+
+#10 [ 5/15] COPY app.py /app/
+#10 DONE 0.5s
+
+#11 [ 6/15] COPY frontend /app/frontend
+#11 DONE 0.2s
+
+#12 [ 7/15] COPY src /app/src
+#12 DONE 0.2s
+
+#13 [ 8/15] COPY scripts /app/scripts
+#13 DONE 0.2s
+
+#14 [ 9/15] COPY tests /app/tests
+#14 DONE 0.2s
+
+#15 [10/15] COPY milestone4 /app/milestone4
+#15 DONE 0.2s
+
+#16 [11/15] COPY experiments/end_to_end_20261116 /app/experiments/end_to_end_20261116
+#16 DONE 0.2s
+
+#17 [12/15] COPY experiments/improvement_20261117 /app/experiments/improvement_20261117
+#17 DONE 0.2s
+
+#18 [13/15] COPY deployment /app/deployment
+#18 DONE 0.2s
+
+#19 [14/15] RUN mkdir -p /state && useradd --uid 10001 --create-home aeris && chown aeris:aeris /state
+#19 DONE 0.9s
+
+#20 [15/15] COPY experiments/operator_redesign_20261117/ experiments/operator_redesign_20261117/
+#20 DONE 0.3s
+
+#21 exporting to image
+#21 exporting layers
+#21 exporting layers 93.4s done
+#21 exporting manifest sha256:d90061d9369a68c5bb70ef174cc9077feaf2aba1cbb59dd1ed09fcbcfb6f153d 0.0s done
+#21 exporting config sha256:e8839b09aad2340b1d0dc491110a3b9bc3f62476f747d19373535329613d6dcf 0.1s done
+#21 exporting attestation manifest sha256:80137996975197e37a80baf209bd866895101a5fa735889e631d32f6ea714517 0.1s done
+#21 exporting manifest list sha256:b9ea24c21e1ff9b5ef7cb0e968783e807160da97cf750ef651a7a65e6651517f
+#21 exporting manifest list sha256:b9ea24c21e1ff9b5ef7cb0e968783e807160da97cf750ef651a7a65e6651517f 0.0s done
+#21 naming to docker.io/library/aeris-local:20261117b done
+#21 unpacking to docker.io/library/aeris-local:20261117b
+#21 unpacking to docker.io/library/aeris-local:20261117b 28.3s done
+#21 DONE 122.1s
+
+#22 resolving provenance for metadata file
+#22 DONE 0.1s
+ aeris-local:20261117b  Built

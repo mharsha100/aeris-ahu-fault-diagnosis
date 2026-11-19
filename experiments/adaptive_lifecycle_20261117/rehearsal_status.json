@@ -1,0 +1,2853 @@
+{
+  "active": {
+    "test": {
+      "cohort": "test",
+      "stage": "v2",
+      "bundle": "adaptive_test_v2_87a6cefdf52d",
+      "job_id": "87a6cefdf52d4a39a67c03fadcf99b9f",
+      "updated": 1794935680.7328193
+    },
+    "genuine": {
+      "cohort": "genuine",
+      "stage": "v0",
+      "bundle": "boosted_v2_s42",
+      "job_id": null
+    }
+  },
+  "samples": [
+    {
+      "cohort": "test",
+      "kind": "pseudo",
+      "state": "used",
+      "count": 8
+    },
+    {
+      "cohort": "test",
+      "kind": "review",
+      "state": "used",
+      "count": 20
+    }
+  ],
+  "jobs": [
+    {
+      "id": "87a6cefdf52d4a39a67c03fadcf99b9f",
+      "cohort": "test",
+      "stage": "v2",
+      "parent": "adaptive_test_v1_41511bc50554",
+      "status": "promoted",
+      "created": 1794935345.6742604,
+      "finished": 1794935680.7322874,
+      "bundle": "adaptive_test_v2_87a6cefdf52d",
+      "report": {
+        "guard": {
+          "passed": true,
+          "parent": {
+            "passed": true,
+            "source_macro_f1_drop": 0.00023440077843750462,
+            "source_per_class_recall_drop": {
+              "normal": -0.0043290043290042934,
+              "damper_fault": 0.0009276437847867136,
+              "cooling_valve_fault": 0.0018552875695732052,
+              "heating_valve_fault": 0.0018552875695733162
+            },
+            "interpretation": "A source-retention check; it does not establish a target-domain benefit."
+          },
+          "v0": {
+            "passed": true,
+            "source_macro_f1_drop": -0.0008436046552126042,
+            "source_per_class_recall_drop": {
+              "normal": -0.0043290043290042934,
+              "damper_fault": 0.0018552875695733162,
+              "cooling_valve_fault": -0.0009276437847867136,
+              "heating_valve_fault": 0.0
+            },
+            "interpretation": "A source-retention check; it does not establish a target-domain benefit."
+          }
+        },
+        "source_before": {
+          "windows": 6930,
+          "accuracy": 0.7813852813852814,
+          "balanced_accuracy": 0.7237940630797773,
+          "macro_f1": 0.707771046227456,
+          "log_loss": 0.4432666569995314,
+          "multiclass_brier": 0.25841056264468987,
+          "ece_10_bins": 0.02461441544848946,
+          "confusion_matrix": [
+            [
+              218,
+              134,
+              47,
+              63
+            ],
+            [
+              273,
+              2593,
+              230,
+              138
+            ],
+            [
+              215,
+              229,
+              1712,
+              0
+            ],
+            [
+              18,
+              168,
+              0,
+              892
+            ]
+          ],
+          "per_class": {
+            "normal": {
+              "precision": 0.3011049723756906,
+              "recall": 0.47186147186147187,
+              "f1-score": 0.3676222596964587,
+              "support": 462.0
+            },
+            "damper_fault": {
+              "precision": 0.8300256081946222,
+              "recall": 0.8017934446505876,
+              "f1-score": 0.8156653035545769,
+              "support": 3234.0
+            },
+            "cooling_valve_fault": {
+              "precision": 0.8607340372046255,
+              "recall": 0.7940630797773655,
+              "f1-score": 0.8260554885404101,
+              "support": 2156.0
+            },
+            "heating_valve_fault": {
+              "precision": 0.8161024702653248,
+              "recall": 0.8274582560296846,
+              "f1-score": 0.8217411331183786,
+              "support": 1078.0
+            },
+            "accuracy": 0.7813852813852814,
+            "macro avg": {
+              "precision": 0.7019917720100658,
+              "recall": 0.7237940630797773,
+              "f1-score": 0.707771046227456,
+              "support": 6930.0
+            },
+            "weighted avg": {
+              "precision": 0.8021521444874704,
+              "recall": 0.7813852813852814,
+              "f1-score": 0.7899733983362196,
+              "support": 6930.0
+            }
+          }
+        },
+        "source_candidate": {
+          "windows": 6930,
+          "accuracy": 0.7803751803751804,
+          "balanced_accuracy": 0.7237167594310451,
+          "macro_f1": 0.7075366454490185,
+          "log_loss": 0.4421489826453023,
+          "multiclass_brier": 0.25817734711039036,
+          "ece_10_bins": 0.022857949923075254,
+          "confusion_matrix": [
+            [
+              220,
+              132,
+              48,
+              62
+            ],
+            [
+              276,
+              2590,
+              232,
+              136
+            ],
+            [
+              215,
+              233,
+              1708,
+              0
+            ],
+            [
+              18,
+              170,
+              0,
+              890
+            ]
+          ],
+          "per_class": {
+            "normal": {
+              "precision": 0.3017832647462277,
+              "recall": 0.47619047619047616,
+              "f1-score": 0.3694374475230898,
+              "support": 462.0
+            },
+            "damper_fault": {
+              "precision": 0.8288,
+              "recall": 0.8008658008658008,
+              "f1-score": 0.8145934895423809,
+              "support": 3234.0
+            },
+            "cooling_valve_fault": {
+              "precision": 0.8591549295774648,
+              "recall": 0.7922077922077922,
+              "f1-score": 0.8243243243243243,
+              "support": 2156.0
+            },
+            "heating_valve_fault": {
+              "precision": 0.8180147058823529,
+              "recall": 0.8256029684601113,
+              "f1-score": 0.8217913204062789,
+              "support": 1078.0
+            },
+            "accuracy": 0.7803751803751804,
+            "macro avg": {
+              "precision": 0.7019382250515114,
+              "recall": 0.7237167594310451,
+              "f1-score": 0.7075366454490185,
+              "support": 6930.0
+            },
+            "weighted avg": {
+              "precision": 0.8014315944333258,
+              "recall": 0.7803751803751804,
+              "f1-score": 0.7890634534743058,
+              "support": 6930.0
+            }
+          }
+        },
+        "source_v0": {
+          "windows": 6930,
+          "accuracy": 0.7806637806637806,
+          "balanced_accuracy": 0.7228664192949906,
+          "macro_f1": 0.7066930407938059,
+          "log_loss": 0.4449176900167185,
+          "multiclass_brier": 0.2589477479404771,
+          "ece_10_bins": 0.025083859324878062,
+          "confusion_matrix": [
+            [
+              218,
+              135,
+              47,
+              62
+            ],
+            [
+              281,
+              2596,
+              222,
+              135
+            ],
+            [
+              222,
+              228,
+              1706,
+              0
+            ],
+            [
+              20,
+              168,
+              0,
+              890
+            ]
+          ],
+          "per_class": {
+            "normal": {
+              "precision": 0.2941970310391363,
+              "recall": 0.47186147186147187,
+              "f1-score": 0.3624272651704073,
+              "support": 462.0
+            },
+            "damper_fault": {
+              "precision": 0.8301886792452831,
+              "recall": 0.8027210884353742,
+              "f1-score": 0.8162238641723,
+              "support": 3234.0
+            },
+            "cooling_valve_fault": {
+              "precision": 0.8637974683544304,
+              "recall": 0.7912801484230055,
+              "f1-score": 0.8259501331396756,
+              "support": 2156.0
+            },
+            "heating_valve_fault": {
+              "precision": 0.8187672493100276,
+              "recall": 0.8256029684601113,
+              "f1-score": 0.8221709006928406,
+              "support": 1078.0
+            },
+            "accuracy": 0.7806637806637806,
+            "macro avg": {
+              "precision": 0.7017376069872193,
+              "recall": 0.7228664192949906,
+              "f1-score": 0.7066930407938059,
+              "support": 6930.0
+            },
+            "weighted avg": {
+              "precision": 0.8031353035422348,
+              "recall": 0.7806637806637806,
+              "f1-score": 0.7899218024874414,
+              "support": 6930.0
+            }
+          }
+        },
+        "samples": 28,
+        "pseudo_labels": 8,
+        "reviewed_labels": 20,
+        "completed_temporal_epochs": 50,
+        "maximum_temporal_epochs": 50,
+        "retained_temporal_epoch": 50,
+        "additional_boosting_iterations": 120,
+        "labels_are_simulated": true,
+        "training_history": [
+          {
+            "epoch": 1,
+            "combined_training_loss": 0.6242453595367047,
+            "source_validation_temporal_macro_f1": 0.6683557035460389,
+            "retained": true,
+            "seconds": 4.826339235005435
+          },
+          {
+            "epoch": 2,
+            "combined_training_loss": 0.5442046446537753,
+            "source_validation_temporal_macro_f1": 0.6667248784983121,
+            "retained": true,
+            "seconds": 3.920551195005828
+          },
+          {
+            "epoch": 3,
+            "combined_training_loss": 0.5393142834169056,
+            "source_validation_temporal_macro_f1": 0.667447092535977,
+            "retained": true,
+            "seconds": 4.072260507004103
+          },
+          {
+            "epoch": 4,
+            "combined_training_loss": 0.5379400879418085,
+            "source_validation_temporal_macro_f1": 0.6705756695585186,
+            "retained": true,
+            "seconds": 4.046556610999687
+          },
+          {
+            "epoch": 5,
+            "combined_training_loss": 0.5353886671022537,
+            "source_validation_temporal_macro_f1": 0.6650878453298432,
+            "retained": true,
+            "seconds": 3.921447234999505
+          },
+          {
+            "epoch": 6,
+            "combined_training_loss": 0.5347847380769362,
+            "source_validation_temporal_macro_f1": 0.6681359371219718,
+            "retained": true,
+            "seconds": 3.7371488029966713
+          },
+          {
+            "epoch": 7,
+            "combined_training_loss": 0.5344814138674955,
+            "source_validation_temporal_macro_f1": 0.6689342763866325,
+            "retained": true,
+            "seconds": 3.996453608997399
+          },
+          {
+            "epoch": 8,
+            "combined_training_loss": 0.5292965777970235,
+            "source_validation_temporal_macro_f1": 0.6685536682020359,
+            "retained": true,
+            "seconds": 3.9333987290010555
+          },
+          {
+            "epoch": 9,
+            "combined_training_loss": 0.5280593119630026,
+            "source_validation_temporal_macro_f1": 0.6734045259657189,
+            "retained": true,
+            "seconds": 4.0390748040008475
+          },
+          {
+            "epoch": 10,
+            "combined_training_loss": 0.5311228135310182,
+            "source_validation_temporal_macro_f1": 0.6713925867207113,
+            "retained": true,
+            "seconds": 5.624883568001678
+          },
+          {
+            "epoch": 11,
+            "combined_training_loss": 0.5291409328443195,
+            "source_validation_temporal_macro_f1": 0.6680895046458226,
+            "retained": true,
+            "seconds": 5.283363303002261
+          },
+          {
+            "epoch": 12,
+            "combined_training_loss": 0.5320869419006032,
+            "source_validation_temporal_macro_f1": 0.6714707967445527,
+            "retained": true,
+            "seconds": 4.668151480000233
+          },
+          {
+            "epoch": 13,
+            "combined_training_loss": 0.5284107163411762,
+            "source_validation_temporal_macro_f1": 0.6679727226217845,
+            "retained": true,
+            "seconds": 4.217780314997071
+          },
+          {
+            "epoch": 14,
+            "combined_training_loss": 0.5264707254160435,
+            "source_validation_temporal_macro_f1": 0.6711007987533808,
+            "retained": true,
+            "seconds": 4.182261836001999
+          },
+          {
+            "epoch": 15,
+            "combined_training_loss": 0.5250698139361285,
+            "source_validation_temporal_macro_f1": 0.669035973145341,
+            "retained": true,
+            "seconds": 4.407058435004728
+          },
+          {
+            "epoch": 16,
+            "combined_training_loss": 0.5252482776248127,
+            "source_validation_temporal_macro_f1": 0.6715175935463384,
+            "retained": true,
+            "seconds": 4.017222629998287
+          },
+          {
+            "epoch": 17,
+            "combined_training_loss": 0.5244486173358532,
+            "source_validation_temporal_macro_f1": 0.6693746864259207,
+            "retained": true,
+            "seconds": 4.07810676900408
+          },
+          {
+            "epoch": 18,
+            "combined_training_loss": 0.5249254725394993,
+            "source_validation_temporal_macro_f1": 0.6681240746458607,
+            "retained": true,
+            "seconds": 4.073819808996632
+          },
+          {
+            "epoch": 19,
+            "combined_training_loss": 0.5266444756897217,
+            "source_validation_temporal_macro_f1": 0.6699901487217098,
+            "retained": true,
+            "seconds": 4.024255795004137
+          },
+          {
+            "epoch": 20,
+            "combined_training_loss": 0.5238959280722731,
+            "source_validation_temporal_macro_f1": 0.6723711721306905,
+            "retained": true,
+            "seconds": 4.216627645000699
+          },
+          {
+            "epoch": 21,
+            "combined_training_loss": 0.5255351643496697,
+            "source_validation_temporal_macro_f1": 0.6722836119437211,
+            "retained": true,
+            "seconds": 4.772326113001327
+          },
+          {
+            "epoch": 22,
+            "combined_training_loss": 0.5236612796236616,
+            "source_validation_temporal_macro_f1": 0.6705544788341413,
+            "retained": true,
+            "seconds": 4.657148277001397
+          },
+          {
+            "epoch": 23,
+            "combined_training_loss": 0.5215136824397866,
+            "source_validation_temporal_macro_f1": 0.6717811922958303,
+            "retained": true,
+            "seconds": 4.2142436819995055
+          },
+          {
+            "epoch": 24,
+            "combined_training_loss": 0.5244420370377532,
+            "source_validation_temporal_macro_f1": 0.6690792518391842,
+            "retained": true,
+            "seconds": 4.940959302002739
+          },
+          {
+            "epoch": 25,
+            "combined_training_loss": 0.5216299620790219,
+            "source_validation_temporal_macro_f1": 0.6721093127669059,
+            "retained": true,
+            "seconds": 3.999721795997175
+          },
+          {
+            "epoch": 26,
+            "combined_training_loss": 0.5210037961465503,
+            "source_validation_temporal_macro_f1": 0.6698614497384623,
+            "retained": true,
+            "seconds": 3.8951491820043884
+          },
+          {
+            "epoch": 27,
+            "combined_training_loss": 0.5237212282255155,
+            "source_validation_temporal_macro_f1": 0.669749914704285,
+            "retained": true,
+            "seconds": 4.305873627999972
+          },
+          {
+            "epoch": 28,
+            "combined_training_loss": 0.5222336286251698,
+            "source_validation_temporal_macro_f1": 0.6672518234936875,
+            "retained": true,
+            "seconds": 3.9735323890054133
+          },
+          {
+            "epoch": 29,
+            "combined_training_loss": 0.52132026864848,
+            "source_validation_temporal_macro_f1": 0.6704124088956674,
+            "retained": true,
+            "seconds": 4.69319097600237
+          },
+          {
+            "epoch": 30,
+            "combined_training_loss": 0.5202571848116884,
+            "source_validation_temporal_macro_f1": 0.6689124986263753,
+            "retained": true,
+            "seconds": 3.8761099459952675
+          },
+          {
+            "epoch": 31,
+            "combined_training_loss": 0.5203381590886947,
+            "source_validation_temporal_macro_f1": 0.6682080086227176,
+            "retained": true,
+            "seconds": 4.176497616004781
+          },
+          {
+            "epoch": 32,
+            "combined_training_loss": 0.5217837229234363,
+            "source_validation_temporal_macro_f1": 0.6685659785212361,
+            "retained": true,
+            "seconds": 6.644948718996602
+          },
+          {
+            "epoch": 33,
+            "combined_training_loss": 0.5207176183888672,
+            "source_validation_temporal_macro_f1": 0.6689586936769509,
+            "retained": true,
+            "seconds": 9.317604073999973
+          },
+          {
+            "epoch": 34,
+            "combined_training_loss": 0.521394453464298,
+            "source_validation_temporal_macro_f1": 0.668720238249339,
+            "retained": true,
+            "seconds": 8.239959707003436
+          },
+          {
+            "epoch": 35,
+            "combined_training_loss": 0.5213314789697665,
+            "source_validation_temporal_macro_f1": 0.6675996128511557,
+            "retained": true,
+            "seconds": 7.812950571002148
+          },
+          {
+            "epoch": 36,
+            "combined_training_loss": 0.5222263492028648,
+            "source_validation_temporal_macro_f1": 0.6690104432779744,
+            "retained": true,
+            "seconds": 5.956649792999087
+          },
+          {
+            "epoch": 37,
+            "combined_training_loss": 0.5210910308251687,
+            "source_validation_temporal_macro_f1": 0.6701219296934791,
+            "retained": true,
+            "seconds": 6.278297181001108
+          },
+          {
+            "epoch": 38,
+            "combined_training_loss": 0.5230351615389552,
+            "source_validation_temporal_macro_f1": 0.6710456352646702,
+            "retained": true,
+            "seconds": 7.736952322993602
+          },
+          {
+            "epoch": 39,
+            "combined_training_loss": 0.5208844493288513,
+            "source_validation_temporal_macro_f1": 0.6708755314673446,
+            "retained": true,
+            "seconds": 5.868425162996573
+          },
+          {
+            "epoch": 40,
+            "combined_training_loss": 0.5209448162568818,
+            "source_validation_temporal_macro_f1": 0.6706020334863577,
+            "retained": true,
+            "seconds": 6.557753647000936
+          },
+          {
+            "epoch": 41,
+            "combined_training_loss": 0.5205563979411344,
+            "source_validation_temporal_macro_f1": 0.6680371371438578,
+            "retained": true,
+            "seconds": 6.4441869009970105
+          },
+          {
+            "epoch": 42,
+            "combined_training_loss": 0.519360459999207,
+            "source_validation_temporal_macro_f1": 0.6684813273488436,
+            "retained": true,
+            "seconds": 6.564365916994575
+          },
+          {
+            "epoch": 43,
+            "combined_training_loss": 0.5217010061675256,
+            "source_validation_temporal_macro_f1": 0.6718544900070365,
+            "retained": true,
+            "seconds": 8.094142693000322
+          },
+          {
+            "epoch": 44,
+            "combined_training_loss": 0.5213234050011416,
+            "source_validation_temporal_macro_f1": 0.6652872091380186,
+            "retained": true,
+            "seconds": 8.772040483003366
+          },
+          {
+            "epoch": 45,
+            "combined_training_loss": 0.522798975126459,
+            "source_validation_temporal_macro_f1": 0.6679604458948436,
+            "retained": true,
+            "seconds": 5.83647578900127
+          },
+          {
+            "epoch": 46,
+            "combined_training_loss": 0.5213878299665013,
+            "source_validation_temporal_macro_f1": 0.669204914333982,
+            "retained": true,
+            "seconds": 6.433068810001714
+          },
+          {
+            "epoch": 47,
+            "combined_training_loss": 0.5213583300419904,
+            "source_validation_temporal_macro_f1": 0.6700322442691259,
+            "retained": true,
+            "seconds": 7.662828933003766
+          },
+          {
+            "epoch": 48,
+            "combined_training_loss": 0.5192929008685121,
+            "source_validation_temporal_macro_f1": 0.6699965838813392,
+            "retained": true,
+            "seconds": 7.829060095995374
+          },
+          {
+            "epoch": 49,
+            "combined_training_loss": 0.5198577158494827,
+            "source_validation_temporal_macro_f1": 0.6709502330639581,
+            "retained": true,
+            "seconds": 6.741115944001649
+          },
+          {
+            "epoch": 50,
+            "combined_training_loss": 0.5195172571260994,
+            "source_validation_temporal_macro_f1": 0.6695696573429827,
+            "retained": true,
+            "seconds": 6.9718926669957
+          }
+        ],
+        "limitation": "Source retention is a promotion guard, not proof of target improvement. Demo labels and overlapping windows do not establish independent field accuracy.",
+        "reused_partial_fit": null,
+        "new_temporal_epochs_this_attempt": 50,
+        "boosting_parameters": {
+          "iterations": 120,
+          "learning_rate": 0.025,
+          "depth": 8,
+          "l2_leaf_reg": 5,
+          "loss_function": "MultiClass",
+          "border_count": 128,
+          "thread_count": 2,
+          "random_seed": 57,
+          "use_best_model": false,
+          "verbose": false,
+          "auto_class_weights": "SqrtBalanced",
+          "eval_metric": "TotalF1:average=Macro;use_weights=false",
+          "allow_writing_files": false,
+          "task_type": "CPU"
+        },
+        "evaluation": {
+          "source_test": {
+            "parent": {
+              "windows": 6929,
+              "accuracy": 0.760860152980228,
+              "balanced_accuracy": 0.6624006195003942,
+              "macro_f1": 0.6828584972642577,
+              "log_loss": 0.5223865734842317,
+              "multiclass_brier": 0.30311985857573437,
+              "ece_10_bins": 0.04519909144142967,
+              "confusion_matrix": [
+                [
+                  154,
+                  226,
+                  52,
+                  30
+                ],
+                [
+                  116,
+                  2633,
+                  392,
+                  92
+                ],
+                [
+                  57,
+                  367,
+                  1732,
+                  0
+                ],
+                [
+                  16,
+                  309,
+                  0,
+                  753
+                ]
+              ],
+              "per_class": {
+                "normal": {
+                  "precision": 0.4489795918367347,
+                  "recall": 0.3333333333333333,
+                  "f1-score": 0.3826086956521739,
+                  "support": 462.0
+                },
+                "damper_fault": {
+                  "precision": 0.7448373408769449,
+                  "recall": 0.81441385709867,
+                  "f1-score": 0.7780732860520094,
+                  "support": 3233.0
+                },
+                "cooling_valve_fault": {
+                  "precision": 0.7959558823529411,
+                  "recall": 0.8033395176252319,
+                  "f1-score": 0.7996306555863343,
+                  "support": 2156.0
+                },
+                "heating_valve_fault": {
+                  "precision": 0.8605714285714285,
+                  "recall": 0.6985157699443414,
+                  "f1-score": 0.7711213517665131,
+                  "support": 1078.0
+                },
+                "accuracy": 0.760860152980228,
+                "macro avg": {
+                  "precision": 0.7125860609095123,
+                  "recall": 0.6624006195003942,
+                  "f1-score": 0.6828584972642577,
+                  "support": 6929.0
+                },
+                "weighted avg": {
+                  "precision": 0.7590221643580134,
+                  "recall": 0.760860152980228,
+                  "f1-score": 0.7573313121440162,
+                  "support": 6929.0
+                }
+              }
+            },
+            "candidate": {
+              "windows": 6929,
+              "accuracy": 0.7617260787992496,
+              "balanced_accuracy": 0.6656858571958435,
+              "macro_f1": 0.6849895032829456,
+              "log_loss": 0.5196562420934339,
+              "multiclass_brier": 0.3017368083177391,
+              "ece_10_bins": 0.04402212549850909,
+              "confusion_matrix": [
+                [
+                  157,
+                  224,
+                  52,
+                  29
+                ],
+                [
+                  122,
+                  2626,
+                  394,
+                  91
+                ],
+                [
+                  56,
+                  367,
+                  1733,
+                  0
+                ],
+                [
+                  20,
+                  296,
+                  0,
+                  762
+                ]
+              ],
+              "per_class": {
+                "normal": {
+                  "precision": 0.4422535211267606,
+                  "recall": 0.3398268398268398,
+                  "f1-score": 0.3843329253365973,
+                  "support": 462.0
+                },
+                "damper_fault": {
+                  "precision": 0.7475092513521207,
+                  "recall": 0.8122486854314878,
+                  "f1-score": 0.7785354284020161,
+                  "support": 3233.0
+                },
+                "cooling_valve_fault": {
+                  "precision": 0.7953189536484626,
+                  "recall": 0.8038033395176253,
+                  "f1-score": 0.7995386389850058,
+                  "support": 2156.0
+                },
+                "heating_valve_fault": {
+                  "precision": 0.8639455782312925,
+                  "recall": 0.7068645640074211,
+                  "f1-score": 0.7775510204081633,
+                  "support": 1078.0
+                },
+                "accuracy": 0.7617260787992496,
+                "macro avg": {
+                  "precision": 0.7122568260896591,
+                  "recall": 0.6656858571958435,
+                  "f1-score": 0.6849895032829456,
+                  "support": 6929.0
+                },
+                "weighted avg": {
+                  "precision": 0.7601471401041114,
+                  "recall": 0.7617260787992496,
+                  "f1-score": 0.7586335917420837,
+                  "support": 6929.0
+                }
+              }
+            }
+          },
+          "target_test": {
+            "parent": {
+              "windows": 1136,
+              "accuracy": 0.3257042253521127,
+              "balanced_accuracy": 0.32570422535211263,
+              "macro_f1": 0.21702827340809538,
+              "log_loss": 1.8564531946948768,
+              "multiclass_brier": 0.8959162755757838,
+              "ece_10_bins": 0.26144096079014056,
+              "confusion_matrix": [
+                [
+                  0,
+                  233,
+                  51,
+                  0
+                ],
+                [
+                  0,
+                  220,
+                  64,
+                  0
+                ],
+                [
+                  0,
+                  134,
+                  150,
+                  0
+                ],
+                [
+                  0,
+                  140,
+                  144,
+                  0
+                ]
+              ],
+              "per_class": {
+                "normal": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 284.0
+                },
+                "damper_fault": {
+                  "precision": 0.30261348005502064,
+                  "recall": 0.7746478873239436,
+                  "f1-score": 0.4352126607319486,
+                  "support": 284.0
+                },
+                "cooling_valve_fault": {
+                  "precision": 0.36674816625916873,
+                  "recall": 0.528169014084507,
+                  "f1-score": 0.4329004329004329,
+                  "support": 284.0
+                },
+                "heating_valve_fault": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 284.0
+                },
+                "accuracy": 0.3257042253521127,
+                "macro avg": {
+                  "precision": 0.16734041157854734,
+                  "recall": 0.32570422535211263,
+                  "f1-score": 0.21702827340809538,
+                  "support": 1136.0
+                },
+                "weighted avg": {
+                  "precision": 0.16734041157854732,
+                  "recall": 0.3257042253521127,
+                  "f1-score": 0.21702827340809538,
+                  "support": 1136.0
+                }
+              }
+            },
+            "candidate": {
+              "windows": 1136,
+              "accuracy": 0.37235915492957744,
+              "balanced_accuracy": 0.3723591549295775,
+              "macro_f1": 0.25725692376414533,
+              "log_loss": 1.7413308410550974,
+              "multiclass_brier": 0.862674664414084,
+              "ece_10_bins": 0.218439664408081,
+              "confusion_matrix": [
+                [
+                  4,
+                  238,
+                  42,
+                  0
+                ],
+                [
+                  3,
+                  216,
+                  65,
+                  0
+                ],
+                [
+                  1,
+                  80,
+                  203,
+                  0
+                ],
+                [
+                  0,
+                  142,
+                  142,
+                  0
+                ]
+              ],
+              "per_class": {
+                "normal": {
+                  "precision": 0.5,
+                  "recall": 0.014084507042253521,
+                  "f1-score": 0.0273972602739726,
+                  "support": 284.0
+                },
+                "damper_fault": {
+                  "precision": 0.31952662721893493,
+                  "recall": 0.7605633802816901,
+                  "f1-score": 0.45,
+                  "support": 284.0
+                },
+                "cooling_valve_fault": {
+                  "precision": 0.4491150442477876,
+                  "recall": 0.7147887323943662,
+                  "f1-score": 0.5516304347826086,
+                  "support": 284.0
+                },
+                "heating_valve_fault": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 284.0
+                },
+                "accuracy": 0.37235915492957744,
+                "macro avg": {
+                  "precision": 0.31716041786668064,
+                  "recall": 0.3723591549295775,
+                  "f1-score": 0.25725692376414533,
+                  "support": 1136.0
+                },
+                "weighted avg": {
+                  "precision": 0.31716041786668064,
+                  "recall": 0.37235915492957744,
+                  "f1-score": 0.2572569237641453,
+                  "support": 1136.0
+                }
+              }
+            }
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "id": "41511bc50554478ea16257cc8a910ac9",
+      "cohort": "test",
+      "stage": "v1",
+      "parent": "boosted_v2_s42",
+      "status": "promoted",
+      "created": 1794935159.48095,
+      "finished": 1794935207.7009254,
+      "bundle": "adaptive_test_v1_41511bc50554",
+      "report": {
+        "guard": {
+          "passed": true,
+          "parent": {
+            "passed": true,
+            "source_macro_f1_drop": -0.0010780054336501088,
+            "source_per_class_recall_drop": {
+              "normal": 0.0,
+              "damper_fault": 0.0009276437847866026,
+              "cooling_valve_fault": -0.002782931354359919,
+              "heating_valve_fault": -0.0018552875695733162
+            },
+            "interpretation": "A source-retention check; it does not establish a target-domain benefit."
+          },
+          "v0": {
+            "passed": true,
+            "source_macro_f1_drop": -0.0010780054336501088,
+            "source_per_class_recall_drop": {
+              "normal": 0.0,
+              "damper_fault": 0.0009276437847866026,
+              "cooling_valve_fault": -0.002782931354359919,
+              "heating_valve_fault": -0.0018552875695733162
+            },
+            "interpretation": "A source-retention check; it does not establish a target-domain benefit."
+          }
+        },
+        "source_before": {
+          "windows": 6930,
+          "accuracy": 0.7806637806637806,
+          "balanced_accuracy": 0.7228664192949906,
+          "macro_f1": 0.7066930407938059,
+          "log_loss": 0.4449176900167185,
+          "multiclass_brier": 0.2589477479404771,
+          "ece_10_bins": 0.025083859324878062,
+          "confusion_matrix": [
+            [
+              218,
+              135,
+              47,
+              62
+            ],
+            [
+              281,
+              2596,
+              222,
+              135
+            ],
+            [
+              222,
+              228,
+              1706,
+              0
+            ],
+            [
+              20,
+              168,
+              0,
+              890
+            ]
+          ],
+          "per_class": {
+            "normal": {
+              "precision": 0.2941970310391363,
+              "recall": 0.47186147186147187,
+              "f1-score": 0.3624272651704073,
+              "support": 462.0
+            },
+            "damper_fault": {
+              "precision": 0.8301886792452831,
+              "recall": 0.8027210884353742,
+              "f1-score": 0.8162238641723,
+              "support": 3234.0
+            },
+            "cooling_valve_fault": {
+              "precision": 0.8637974683544304,
+              "recall": 0.7912801484230055,
+              "f1-score": 0.8259501331396756,
+              "support": 2156.0
+            },
+            "heating_valve_fault": {
+              "precision": 0.8187672493100276,
+              "recall": 0.8256029684601113,
+              "f1-score": 0.8221709006928406,
+              "support": 1078.0
+            },
+            "accuracy": 0.7806637806637806,
+            "macro avg": {
+              "precision": 0.7017376069872193,
+              "recall": 0.7228664192949906,
+              "f1-score": 0.7066930407938059,
+              "support": 6930.0
+            },
+            "weighted avg": {
+              "precision": 0.8031353035422348,
+              "recall": 0.7806637806637806,
+              "f1-score": 0.7899218024874414,
+              "support": 6930.0
+            }
+          }
+        },
+        "source_candidate": {
+          "windows": 6930,
+          "accuracy": 0.7813852813852814,
+          "balanced_accuracy": 0.7237940630797773,
+          "macro_f1": 0.707771046227456,
+          "log_loss": 0.4432666569995314,
+          "multiclass_brier": 0.25841056264468987,
+          "ece_10_bins": 0.02461441544848946,
+          "confusion_matrix": [
+            [
+              218,
+              134,
+              47,
+              63
+            ],
+            [
+              273,
+              2593,
+              230,
+              138
+            ],
+            [
+              215,
+              229,
+              1712,
+              0
+            ],
+            [
+              18,
+              168,
+              0,
+              892
+            ]
+          ],
+          "per_class": {
+            "normal": {
+              "precision": 0.3011049723756906,
+              "recall": 0.47186147186147187,
+              "f1-score": 0.3676222596964587,
+              "support": 462.0
+            },
+            "damper_fault": {
+              "precision": 0.8300256081946222,
+              "recall": 0.8017934446505876,
+              "f1-score": 0.8156653035545769,
+              "support": 3234.0
+            },
+            "cooling_valve_fault": {
+              "precision": 0.8607340372046255,
+              "recall": 0.7940630797773655,
+              "f1-score": 0.8260554885404101,
+              "support": 2156.0
+            },
+            "heating_valve_fault": {
+              "precision": 0.8161024702653248,
+              "recall": 0.8274582560296846,
+              "f1-score": 0.8217411331183786,
+              "support": 1078.0
+            },
+            "accuracy": 0.7813852813852814,
+            "macro avg": {
+              "precision": 0.7019917720100658,
+              "recall": 0.7237940630797773,
+              "f1-score": 0.707771046227456,
+              "support": 6930.0
+            },
+            "weighted avg": {
+              "precision": 0.8021521444874704,
+              "recall": 0.7813852813852814,
+              "f1-score": 0.7899733983362196,
+              "support": 6930.0
+            }
+          }
+        },
+        "source_v0": {
+          "windows": 6930,
+          "accuracy": 0.7806637806637806,
+          "balanced_accuracy": 0.7228664192949906,
+          "macro_f1": 0.7066930407938059,
+          "log_loss": 0.4449176900167185,
+          "multiclass_brier": 0.2589477479404771,
+          "ece_10_bins": 0.025083859324878062,
+          "confusion_matrix": [
+            [
+              218,
+              135,
+              47,
+              62
+            ],
+            [
+              281,
+              2596,
+              222,
+              135
+            ],
+            [
+              222,
+              228,
+              1706,
+              0
+            ],
+            [
+              20,
+              168,
+              0,
+              890
+            ]
+          ],
+          "per_class": {
+            "normal": {
+              "precision": 0.2941970310391363,
+              "recall": 0.47186147186147187,
+              "f1-score": 0.3624272651704073,
+              "support": 462.0
+            },
+            "damper_fault": {
+              "precision": 0.8301886792452831,
+              "recall": 0.8027210884353742,
+              "f1-score": 0.8162238641723,
+              "support": 3234.0
+            },
+            "cooling_valve_fault": {
+              "precision": 0.8637974683544304,
+              "recall": 0.7912801484230055,
+              "f1-score": 0.8259501331396756,
+              "support": 2156.0
+            },
+            "heating_valve_fault": {
+              "precision": 0.8187672493100276,
+              "recall": 0.8256029684601113,
+              "f1-score": 0.8221709006928406,
+              "support": 1078.0
+            },
+            "accuracy": 0.7806637806637806,
+            "macro avg": {
+              "precision": 0.7017376069872193,
+              "recall": 0.7228664192949906,
+              "f1-score": 0.7066930407938059,
+              "support": 6930.0
+            },
+            "weighted avg": {
+              "precision": 0.8031353035422348,
+              "recall": 0.7806637806637806,
+              "f1-score": 0.7899218024874414,
+              "support": 6930.0
+            }
+          }
+        },
+        "samples": 8,
+        "pseudo_labels": 8,
+        "reviewed_labels": 0,
+        "completed_temporal_epochs": 50,
+        "maximum_temporal_epochs": 50,
+        "retained_temporal_epoch": 50,
+        "additional_boosting_iterations": 120,
+        "labels_are_simulated": true,
+        "training_history": [
+          {
+            "epoch": 1,
+            "combined_training_loss": 0.5267404058110823,
+            "source_validation_temporal_macro_f1": 0.6652635103334228,
+            "retained": true,
+            "seconds": 7.825802890998602
+          },
+          {
+            "epoch": 2,
+            "combined_training_loss": 0.5248276479200485,
+            "source_validation_temporal_macro_f1": 0.6657449955828147,
+            "retained": true,
+            "seconds": 7.011696486006258
+          },
+          {
+            "epoch": 3,
+            "combined_training_loss": 0.5238800986644325,
+            "source_validation_temporal_macro_f1": 0.6658112070527538,
+            "retained": true,
+            "seconds": 6.895424579000974
+          },
+          {
+            "epoch": 4,
+            "combined_training_loss": 0.5237652293039025,
+            "source_validation_temporal_macro_f1": 0.6680775001990072,
+            "retained": true,
+            "seconds": 7.5178395499970065
+          },
+          {
+            "epoch": 5,
+            "combined_training_loss": 0.5234165407648874,
+            "source_validation_temporal_macro_f1": 0.6666472525639243,
+            "retained": true,
+            "seconds": 6.6519440970005235
+          },
+          {
+            "epoch": 6,
+            "combined_training_loss": 0.5229931153835506,
+            "source_validation_temporal_macro_f1": 0.6669878917171259,
+            "retained": true,
+            "seconds": 7.905990159000794
+          },
+          {
+            "epoch": 7,
+            "combined_training_loss": 0.5238758322842624,
+            "source_validation_temporal_macro_f1": 0.6658689719483106,
+            "retained": true,
+            "seconds": 8.066558856000484
+          },
+          {
+            "epoch": 8,
+            "combined_training_loss": 0.5238728230699486,
+            "source_validation_temporal_macro_f1": 0.6661823187606617,
+            "retained": true,
+            "seconds": 7.345495043002302
+          },
+          {
+            "epoch": 9,
+            "combined_training_loss": 0.5220641305140399,
+            "source_validation_temporal_macro_f1": 0.6662562008833225,
+            "retained": true,
+            "seconds": 8.130275830000755
+          },
+          {
+            "epoch": 10,
+            "combined_training_loss": 0.5244576630242374,
+            "source_validation_temporal_macro_f1": 0.6654212912078481,
+            "retained": true,
+            "seconds": 5.4319300440038205
+          },
+          {
+            "epoch": 11,
+            "combined_training_loss": 0.5250667306261325,
+            "source_validation_temporal_macro_f1": 0.667297255932052,
+            "retained": true,
+            "seconds": 6.870139359998575
+          },
+          {
+            "epoch": 12,
+            "combined_training_loss": 0.5220152309181494,
+            "source_validation_temporal_macro_f1": 0.6697233630341537,
+            "retained": true,
+            "seconds": 7.104894004005473
+          },
+          {
+            "epoch": 13,
+            "combined_training_loss": 0.5235575784783845,
+            "source_validation_temporal_macro_f1": 0.6685505868448149,
+            "retained": true,
+            "seconds": 5.70396054500452
+          },
+          {
+            "epoch": 14,
+            "combined_training_loss": 0.5224068695252094,
+            "source_validation_temporal_macro_f1": 0.6690685455435657,
+            "retained": true,
+            "seconds": 6.241432699003781
+          },
+          {
+            "epoch": 15,
+            "combined_training_loss": 0.5243149219302956,
+            "source_validation_temporal_macro_f1": 0.6685112373989719,
+            "retained": true,
+            "seconds": 6.949944405001588
+          },
+          {
+            "epoch": 16,
+            "combined_training_loss": 0.5230281694766579,
+            "source_validation_temporal_macro_f1": 0.6681102846251402,
+            "retained": true,
+            "seconds": 5.485803670999303
+          },
+          {
+            "epoch": 17,
+            "combined_training_loss": 0.5243107345672923,
+            "source_validation_temporal_macro_f1": 0.6668909204107824,
+            "retained": true,
+            "seconds": 8.05823552700167
+          },
+          {
+            "epoch": 18,
+            "combined_training_loss": 0.5210319095795307,
+            "source_validation_temporal_macro_f1": 0.6672314534112929,
+            "retained": true,
+            "seconds": 8.386810892006906
+          },
+          {
+            "epoch": 19,
+            "combined_training_loss": 0.5254508366278552,
+            "source_validation_temporal_macro_f1": 0.6678505109276672,
+            "retained": true,
+            "seconds": 5.151132225000765
+          },
+          {
+            "epoch": 20,
+            "combined_training_loss": 0.522115339106376,
+            "source_validation_temporal_macro_f1": 0.6691773286404493,
+            "retained": true,
+            "seconds": 6.085286007997638
+          },
+          {
+            "epoch": 21,
+            "combined_training_loss": 0.5270360721907484,
+            "source_validation_temporal_macro_f1": 0.6682261387005501,
+            "retained": true,
+            "seconds": 5.491885627998272
+          },
+          {
+            "epoch": 22,
+            "combined_training_loss": 0.523705737853269,
+            "source_validation_temporal_macro_f1": 0.669973149738299,
+            "retained": true,
+            "seconds": 5.739318389998516
+          },
+          {
+            "epoch": 23,
+            "combined_training_loss": 0.5245589996696612,
+            "source_validation_temporal_macro_f1": 0.6674570055359593,
+            "retained": true,
+            "seconds": 6.905293547002657
+          },
+          {
+            "epoch": 24,
+            "combined_training_loss": 0.521076384487502,
+            "source_validation_temporal_macro_f1": 0.6684144509050524,
+            "retained": true,
+            "seconds": 6.603540932999749
+          },
+          {
+            "epoch": 25,
+            "combined_training_loss": 0.5227236247390782,
+            "source_validation_temporal_macro_f1": 0.6664125113696715,
+            "retained": true,
+            "seconds": 6.780841289997625
+          },
+          {
+            "epoch": 26,
+            "combined_training_loss": 0.5221626162528992,
+            "source_validation_temporal_macro_f1": 0.6666185608261255,
+            "retained": true,
+            "seconds": 6.476306244003354
+          },
+          {
+            "epoch": 27,
+            "combined_training_loss": 0.5232084962206149,
+            "source_validation_temporal_macro_f1": 0.6677185377747504,
+            "retained": true,
+            "seconds": 6.148847773001762
+          },
+          {
+            "epoch": 28,
+            "combined_training_loss": 0.524705174319241,
+            "source_validation_temporal_macro_f1": 0.6674494503335935,
+            "retained": true,
+            "seconds": 6.695560180996836
+          },
+          {
+            "epoch": 29,
+            "combined_training_loss": 0.5235233175645181,
+            "source_validation_temporal_macro_f1": 0.6671383278108094,
+            "retained": true,
+            "seconds": 6.1106144540026435
+          },
+          {
+            "epoch": 30,
+            "combined_training_loss": 0.5228428384032818,
+            "source_validation_temporal_macro_f1": 0.667523902184489,
+            "retained": true,
+            "seconds": 5.328997156000696
+          },
+          {
+            "epoch": 31,
+            "combined_training_loss": 0.5210856303162531,
+            "source_validation_temporal_macro_f1": 0.6693163580712611,
+            "retained": true,
+            "seconds": 6.403578375997313
+          },
+          {
+            "epoch": 32,
+            "combined_training_loss": 0.521086535049141,
+            "source_validation_temporal_macro_f1": 0.6692888974062119,
+            "retained": true,
+            "seconds": 5.34780483799841
+          },
+          {
+            "epoch": 33,
+            "combined_training_loss": 0.5229327881008113,
+            "source_validation_temporal_macro_f1": 0.6685616022439643,
+            "retained": true,
+            "seconds": 5.860637401005079
+          },
+          {
+            "epoch": 34,
+            "combined_training_loss": 0.523621719638142,
+            "source_validation_temporal_macro_f1": 0.6687977068231443,
+            "retained": true,
+            "seconds": 5.917780199997651
+          },
+          {
+            "epoch": 35,
+            "combined_training_loss": 0.5202139826542741,
+            "source_validation_temporal_macro_f1": 0.6688516278268246,
+            "retained": true,
+            "seconds": 5.430225128002348
+          },
+          {
+            "epoch": 36,
+            "combined_training_loss": 0.5233449684370548,
+            "source_validation_temporal_macro_f1": 0.6681547696668373,
+            "retained": true,
+            "seconds": 7.045818688995496
+          },
+          {
+            "epoch": 37,
+            "combined_training_loss": 0.5215510715038405,
+            "source_validation_temporal_macro_f1": 0.6679977134608104,
+            "retained": true,
+            "seconds": 7.892097381001804
+          },
+          {
+            "epoch": 38,
+            "combined_training_loss": 0.5214273300739604,
+            "source_validation_temporal_macro_f1": 0.6689053005309229,
+            "retained": true,
+            "seconds": 8.001698684005532
+          },
+          {
+            "epoch": 39,
+            "combined_training_loss": 0.5218495928913082,
+            "source_validation_temporal_macro_f1": 0.6702852305413094,
+            "retained": true,
+            "seconds": 8.152688480004144
+          },
+          {
+            "epoch": 40,
+            "combined_training_loss": 0.5189686682792979,
+            "source_validation_temporal_macro_f1": 0.6687678380637562,
+            "retained": true,
+            "seconds": 8.506161586003145
+          },
+          {
+            "epoch": 41,
+            "combined_training_loss": 0.5222765458833187,
+            "source_validation_temporal_macro_f1": 0.6683133445170467,
+            "retained": true,
+            "seconds": 5.86499925100361
+          },
+          {
+            "epoch": 42,
+            "combined_training_loss": 0.5217994435117879,
+            "source_validation_temporal_macro_f1": 0.6684806530629865,
+            "retained": true,
+            "seconds": 5.70510839799681
+          },
+          {
+            "epoch": 43,
+            "combined_training_loss": 0.5217331989642677,
+            "source_validation_temporal_macro_f1": 0.6678984293081593,
+            "retained": true,
+            "seconds": 6.59780645200226
+          },
+          {
+            "epoch": 44,
+            "combined_training_loss": 0.5202177410278845,
+            "source_validation_temporal_macro_f1": 0.6681289912232988,
+            "retained": true,
+            "seconds": 6.474909297998238
+          },
+          {
+            "epoch": 45,
+            "combined_training_loss": 0.5221142057978779,
+            "source_validation_temporal_macro_f1": 0.6676121850802021,
+            "retained": true,
+            "seconds": 6.6557725530001335
+          },
+          {
+            "epoch": 46,
+            "combined_training_loss": 0.521460870810605,
+            "source_validation_temporal_macro_f1": 0.667492585096332,
+            "retained": true,
+            "seconds": 8.549478324996016
+          },
+          {
+            "epoch": 47,
+            "combined_training_loss": 0.5223337480234443,
+            "source_validation_temporal_macro_f1": 0.6678347071419481,
+            "retained": true,
+            "seconds": 8.908170089998748
+          },
+          {
+            "epoch": 48,
+            "combined_training_loss": 0.520702949357689,
+            "source_validation_temporal_macro_f1": 0.6680538769958515,
+            "retained": true,
+            "seconds": 8.868527499005722
+          },
+          {
+            "epoch": 49,
+            "combined_training_loss": 0.5213330265032042,
+            "source_validation_temporal_macro_f1": 0.6692708778005245,
+            "retained": true,
+            "seconds": 6.0052097929947195
+          },
+          {
+            "epoch": 50,
+            "combined_training_loss": 0.5202736493644364,
+            "source_validation_temporal_macro_f1": 0.6701807224241225,
+            "retained": true,
+            "seconds": 5.820741456998803
+          }
+        ],
+        "limitation": "Source retention is a promotion guard, not proof of target improvement. Demo labels and overlapping windows do not establish independent field accuracy.",
+        "reused_partial_fit": "adaptive_test_v1_52ef6dd8567c",
+        "new_temporal_epochs_this_attempt": 0,
+        "boosting_parameters": {
+          "use_best_model": false,
+          "allow_writing_files": false,
+          "border_count": 128,
+          "eval_metric": "TotalF1:average=Macro;use_weights=false",
+          "verbose": false,
+          "iterations": 120,
+          "thread_count": 2,
+          "auto_class_weights": "SqrtBalanced",
+          "loss_function": "MultiClass",
+          "l2_leaf_reg": 5,
+          "task_type": "CPU",
+          "depth": 8,
+          "learning_rate": 0.025,
+          "random_seed": 57
+        },
+        "evaluation": {
+          "source_test": {
+            "parent": {
+              "windows": 6929,
+              "accuracy": 0.7595612642516958,
+              "balanced_accuracy": 0.6624389843950402,
+              "macro_f1": 0.6819563389583286,
+              "log_loss": 0.5255429374874757,
+              "multiclass_brier": 0.3043179232107929,
+              "ece_10_bins": 0.04305267243843766,
+              "confusion_matrix": [
+                [
+                  156,
+                  224,
+                  52,
+                  30
+                ],
+                [
+                  122,
+                  2621,
+                  393,
+                  97
+                ],
+                [
+                  54,
+                  367,
+                  1735,
+                  0
+                ],
+                [
+                  20,
+                  307,
+                  0,
+                  751
+                ]
+              ],
+              "per_class": {
+                "normal": {
+                  "precision": 0.4431818181818182,
+                  "recall": 0.33766233766233766,
+                  "f1-score": 0.3832923832923833,
+                  "support": 462.0
+                },
+                "damper_fault": {
+                  "precision": 0.7448138675760159,
+                  "recall": 0.8107021342406434,
+                  "f1-score": 0.7763625592417062,
+                  "support": 3233.0
+                },
+                "cooling_valve_fault": {
+                  "precision": 0.7958715596330275,
+                  "recall": 0.8047309833024119,
+                  "f1-score": 0.8002767527675276,
+                  "support": 2156.0
+                },
+                "heating_valve_fault": {
+                  "precision": 0.8553530751708428,
+                  "recall": 0.6966604823747681,
+                  "f1-score": 0.7678936605316974,
+                  "support": 1078.0
+                },
+                "accuracy": 0.7595612642516958,
+                "macro avg": {
+                  "precision": 0.7098050801404261,
+                  "recall": 0.6624389843950402,
+                  "f1-score": 0.6819563389583286,
+                  "support": 6929.0
+                },
+                "weighted avg": {
+                  "precision": 0.757786539396195,
+                  "recall": 0.7595612642516958,
+                  "f1-score": 0.7562775696535542,
+                  "support": 6929.0
+                }
+              }
+            },
+            "candidate": {
+              "windows": 6929,
+              "accuracy": 0.760860152980228,
+              "balanced_accuracy": 0.6624006195003942,
+              "macro_f1": 0.6828584972642577,
+              "log_loss": 0.5223865734842317,
+              "multiclass_brier": 0.30311985857573437,
+              "ece_10_bins": 0.04519909144142967,
+              "confusion_matrix": [
+                [
+                  154,
+                  226,
+                  52,
+                  30
+                ],
+                [
+                  116,
+                  2633,
+                  392,
+                  92
+                ],
+                [
+                  57,
+                  367,
+                  1732,
+                  0
+                ],
+                [
+                  16,
+                  309,
+                  0,
+                  753
+                ]
+              ],
+              "per_class": {
+                "normal": {
+                  "precision": 0.4489795918367347,
+                  "recall": 0.3333333333333333,
+                  "f1-score": 0.3826086956521739,
+                  "support": 462.0
+                },
+                "damper_fault": {
+                  "precision": 0.7448373408769449,
+                  "recall": 0.81441385709867,
+                  "f1-score": 0.7780732860520094,
+                  "support": 3233.0
+                },
+                "cooling_valve_fault": {
+                  "precision": 0.7959558823529411,
+                  "recall": 0.8033395176252319,
+                  "f1-score": 0.7996306555863343,
+                  "support": 2156.0
+                },
+                "heating_valve_fault": {
+                  "precision": 0.8605714285714285,
+                  "recall": 0.6985157699443414,
+                  "f1-score": 0.7711213517665131,
+                  "support": 1078.0
+                },
+                "accuracy": 0.760860152980228,
+                "macro avg": {
+                  "precision": 0.7125860609095123,
+                  "recall": 0.6624006195003942,
+                  "f1-score": 0.6828584972642577,
+                  "support": 6929.0
+                },
+                "weighted avg": {
+                  "precision": 0.7590221643580134,
+                  "recall": 0.760860152980228,
+                  "f1-score": 0.7573313121440162,
+                  "support": 6929.0
+                }
+              }
+            }
+          },
+          "target_test": {
+            "parent": {
+              "windows": 1136,
+              "accuracy": 0.31954225352112675,
+              "balanced_accuracy": 0.31954225352112675,
+              "macro_f1": 0.21309535338114577,
+              "log_loss": 1.8449193505974202,
+              "multiclass_brier": 0.8943928106663448,
+              "ece_10_bins": 0.2614203678022576,
+              "confusion_matrix": [
+                [
+                  0,
+                  233,
+                  51,
+                  0
+                ],
+                [
+                  0,
+                  214,
+                  70,
+                  0
+                ],
+                [
+                  0,
+                  135,
+                  149,
+                  0
+                ],
+                [
+                  0,
+                  140,
+                  144,
+                  0
+                ]
+              ],
+              "per_class": {
+                "normal": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 284.0
+                },
+                "damper_fault": {
+                  "precision": 0.296398891966759,
+                  "recall": 0.7535211267605634,
+                  "f1-score": 0.4254473161033797,
+                  "support": 284.0
+                },
+                "cooling_valve_fault": {
+                  "precision": 0.35990338164251207,
+                  "recall": 0.5246478873239436,
+                  "f1-score": 0.4269340974212034,
+                  "support": 284.0
+                },
+                "heating_valve_fault": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 284.0
+                },
+                "accuracy": 0.31954225352112675,
+                "macro avg": {
+                  "precision": 0.16407556840231777,
+                  "recall": 0.31954225352112675,
+                  "f1-score": 0.21309535338114577,
+                  "support": 1136.0
+                },
+                "weighted avg": {
+                  "precision": 0.16407556840231777,
+                  "recall": 0.31954225352112675,
+                  "f1-score": 0.21309535338114577,
+                  "support": 1136.0
+                }
+              }
+            },
+            "candidate": {
+              "windows": 1136,
+              "accuracy": 0.3257042253521127,
+              "balanced_accuracy": 0.32570422535211263,
+              "macro_f1": 0.21702827340809538,
+              "log_loss": 1.8564531946948768,
+              "multiclass_brier": 0.8959162755757838,
+              "ece_10_bins": 0.26144096079014056,
+              "confusion_matrix": [
+                [
+                  0,
+                  233,
+                  51,
+                  0
+                ],
+                [
+                  0,
+                  220,
+                  64,
+                  0
+                ],
+                [
+                  0,
+                  134,
+                  150,
+                  0
+                ],
+                [
+                  0,
+                  140,
+                  144,
+                  0
+                ]
+              ],
+              "per_class": {
+                "normal": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 284.0
+                },
+                "damper_fault": {
+                  "precision": 0.30261348005502064,
+                  "recall": 0.7746478873239436,
+                  "f1-score": 0.4352126607319486,
+                  "support": 284.0
+                },
+                "cooling_valve_fault": {
+                  "precision": 0.36674816625916873,
+                  "recall": 0.528169014084507,
+                  "f1-score": 0.4329004329004329,
+                  "support": 284.0
+                },
+                "heating_valve_fault": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 284.0
+                },
+                "accuracy": 0.3257042253521127,
+                "macro avg": {
+                  "precision": 0.16734041157854734,
+                  "recall": 0.32570422535211263,
+                  "f1-score": 0.21702827340809538,
+                  "support": 1136.0
+                },
+                "weighted avg": {
+                  "precision": 0.16734041157854732,
+                  "recall": 0.3257042253521127,
+                  "f1-score": 0.21702827340809538,
+                  "support": 1136.0
+                }
+              }
+            }
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "id": "106312f0820b47a098ff770c4e805b05",
+      "cohort": "test",
+      "stage": "v2",
+      "parent": "boosted_v2_s42",
+      "status": "failed",
+      "created": 1794934952.8966014,
+      "finished": 1794935345.6545587,
+      "bundle": "adaptive_test_v2_106312f0820b",
+      "report": null,
+      "error": "Worker restarted during training; parent retained"
+    },
+    {
+      "id": "52ef6dd8567c4abd826f8b7db729b22e",
+      "cohort": "test",
+      "stage": "v1",
+      "parent": "boosted_v2_s42",
+      "status": "rejected",
+      "created": 1794934535.9088755,
+      "finished": 1794934927.9840686,
+      "bundle": "adaptive_test_v1_52ef6dd8567c",
+      "report": {
+        "guard": {
+          "passed": false,
+          "parent": {
+            "passed": false,
+            "source_macro_f1_drop": -0.000434804355479379,
+            "source_per_class_recall_drop": {
+              "normal": 0.14285714285714285,
+              "damper_fault": -0.07421150278293132,
+              "cooling_valve_fault": 0.037569573283859015,
+              "heating_valve_fault": -0.002782931354359919
+            },
+            "interpretation": "A source-retention check; it does not establish a target-domain benefit."
+          },
+          "v0": {
+            "passed": false,
+            "source_macro_f1_drop": -0.000434804355479379,
+            "source_per_class_recall_drop": {
+              "normal": 0.14285714285714285,
+              "damper_fault": -0.07421150278293132,
+              "cooling_valve_fault": 0.037569573283859015,
+              "heating_valve_fault": -0.002782931354359919
+            },
+            "interpretation": "A source-retention check; it does not establish a target-domain benefit."
+          }
+        },
+        "source_before": {
+          "windows": 6930,
+          "accuracy": 0.7806637806637806,
+          "balanced_accuracy": 0.7228664192949906,
+          "macro_f1": 0.7066930407938059,
+          "log_loss": 0.4449176900167185,
+          "multiclass_brier": 0.2589477479404771,
+          "ece_10_bins": 0.025083859324878062,
+          "confusion_matrix": [
+            [
+              218,
+              135,
+              47,
+              62
+            ],
+            [
+              281,
+              2596,
+              222,
+              135
+            ],
+            [
+              222,
+              228,
+              1706,
+              0
+            ],
+            [
+              20,
+              168,
+              0,
+              890
+            ]
+          ],
+          "per_class": {
+            "normal": {
+              "precision": 0.2941970310391363,
+              "recall": 0.47186147186147187,
+              "f1-score": 0.3624272651704073,
+              "support": 462.0
+            },
+            "damper_fault": {
+              "precision": 0.8301886792452831,
+              "recall": 0.8027210884353742,
+              "f1-score": 0.8162238641723,
+              "support": 3234.0
+            },
+            "cooling_valve_fault": {
+              "precision": 0.8637974683544304,
+              "recall": 0.7912801484230055,
+              "f1-score": 0.8259501331396756,
+              "support": 2156.0
+            },
+            "heating_valve_fault": {
+              "precision": 0.8187672493100276,
+              "recall": 0.8256029684601113,
+              "f1-score": 0.8221709006928406,
+              "support": 1078.0
+            },
+            "accuracy": 0.7806637806637806,
+            "macro avg": {
+              "precision": 0.7017376069872193,
+              "recall": 0.7228664192949906,
+              "f1-score": 0.7066930407938059,
+              "support": 6930.0
+            },
+            "weighted avg": {
+              "precision": 0.8031353035422348,
+              "recall": 0.7806637806637806,
+              "f1-score": 0.7899218024874414,
+              "support": 6930.0
+            }
+          }
+        },
+        "source_candidate": {
+          "windows": 6930,
+          "accuracy": 0.7945165945165945,
+          "balanced_accuracy": 0.697008348794063,
+          "macro_f1": 0.7071278451492853,
+          "log_loss": 0.42872310014576276,
+          "multiclass_brier": 0.24904895225808535,
+          "ece_10_bins": 0.032691524575562805,
+          "confusion_matrix": [
+            [
+              152,
+              212,
+              34,
+              64
+            ],
+            [
+              115,
+              2836,
+              151,
+              132
+            ],
+            [
+              113,
+              418,
+              1625,
+              0
+            ],
+            [
+              0,
+              185,
+              0,
+              893
+            ]
+          ],
+          "per_class": {
+            "normal": {
+              "precision": 0.4,
+              "recall": 0.329004329004329,
+              "f1-score": 0.36104513064133015,
+              "support": 462.0
+            },
+            "damper_fault": {
+              "precision": 0.7767734867159682,
+              "recall": 0.8769325912183055,
+              "f1-score": 0.8238198983297023,
+              "support": 3234.0
+            },
+            "cooling_valve_fault": {
+              "precision": 0.8977900552486188,
+              "recall": 0.7537105751391465,
+              "f1-score": 0.8194654563792234,
+              "support": 2156.0
+            },
+            "heating_valve_fault": {
+              "precision": 0.820018365472911,
+              "recall": 0.8283858998144712,
+              "f1-score": 0.8241808952468851,
+              "support": 1078.0
+            },
+            "accuracy": 0.7945165945165945,
+            "macro avg": {
+              "precision": 0.7236454768593745,
+              "recall": 0.697008348794063,
+              "f1-score": 0.7071278451492853,
+              "support": 6930.0
+            },
+            "weighted avg": {
+              "precision": 0.7960318345072527,
+              "recall": 0.7945165945165945,
+              "f1-score": 0.7916696869530013,
+              "support": 6930.0
+            }
+          }
+        },
+        "source_v0": {
+          "windows": 6930,
+          "accuracy": 0.7806637806637806,
+          "balanced_accuracy": 0.7228664192949906,
+          "macro_f1": 0.7066930407938059,
+          "log_loss": 0.4449176900167185,
+          "multiclass_brier": 0.2589477479404771,
+          "ece_10_bins": 0.025083859324878062,
+          "confusion_matrix": [
+            [
+              218,
+              135,
+              47,
+              62
+            ],
+            [
+              281,
+              2596,
+              222,
+              135
+            ],
+            [
+              222,
+              228,
+              1706,
+              0
+            ],
+            [
+              20,
+              168,
+              0,
+              890
+            ]
+          ],
+          "per_class": {
+            "normal": {
+              "precision": 0.2941970310391363,
+              "recall": 0.47186147186147187,
+              "f1-score": 0.3624272651704073,
+              "support": 462.0
+            },
+            "damper_fault": {
+              "precision": 0.8301886792452831,
+              "recall": 0.8027210884353742,
+              "f1-score": 0.8162238641723,
+              "support": 3234.0
+            },
+            "cooling_valve_fault": {
+              "precision": 0.8637974683544304,
+              "recall": 0.7912801484230055,
+              "f1-score": 0.8259501331396756,
+              "support": 2156.0
+            },
+            "heating_valve_fault": {
+              "precision": 0.8187672493100276,
+              "recall": 0.8256029684601113,
+              "f1-score": 0.8221709006928406,
+              "support": 1078.0
+            },
+            "accuracy": 0.7806637806637806,
+            "macro avg": {
+              "precision": 0.7017376069872193,
+              "recall": 0.7228664192949906,
+              "f1-score": 0.7066930407938059,
+              "support": 6930.0
+            },
+            "weighted avg": {
+              "precision": 0.8031353035422348,
+              "recall": 0.7806637806637806,
+              "f1-score": 0.7899218024874414,
+              "support": 6930.0
+            }
+          }
+        },
+        "samples": 8,
+        "pseudo_labels": 8,
+        "reviewed_labels": 0,
+        "completed_temporal_epochs": 50,
+        "maximum_temporal_epochs": 50,
+        "retained_temporal_epoch": 50,
+        "additional_boosting_iterations": 120,
+        "labels_are_simulated": true,
+        "training_history": [
+          {
+            "epoch": 1,
+            "combined_training_loss": 0.5267404058110823,
+            "source_validation_temporal_macro_f1": 0.6652635103334228,
+            "retained": true,
+            "seconds": 7.825802890998602
+          },
+          {
+            "epoch": 2,
+            "combined_training_loss": 0.5248276479200485,
+            "source_validation_temporal_macro_f1": 0.6657449955828147,
+            "retained": true,
+            "seconds": 7.011696486006258
+          },
+          {
+            "epoch": 3,
+            "combined_training_loss": 0.5238800986644325,
+            "source_validation_temporal_macro_f1": 0.6658112070527538,
+            "retained": true,
+            "seconds": 6.895424579000974
+          },
+          {
+            "epoch": 4,
+            "combined_training_loss": 0.5237652293039025,
+            "source_validation_temporal_macro_f1": 0.6680775001990072,
+            "retained": true,
+            "seconds": 7.5178395499970065
+          },
+          {
+            "epoch": 5,
+            "combined_training_loss": 0.5234165407648874,
+            "source_validation_temporal_macro_f1": 0.6666472525639243,
+            "retained": true,
+            "seconds": 6.6519440970005235
+          },
+          {
+            "epoch": 6,
+            "combined_training_loss": 0.5229931153835506,
+            "source_validation_temporal_macro_f1": 0.6669878917171259,
+            "retained": true,
+            "seconds": 7.905990159000794
+          },
+          {
+            "epoch": 7,
+            "combined_training_loss": 0.5238758322842624,
+            "source_validation_temporal_macro_f1": 0.6658689719483106,
+            "retained": true,
+            "seconds": 8.066558856000484
+          },
+          {
+            "epoch": 8,
+            "combined_training_loss": 0.5238728230699486,
+            "source_validation_temporal_macro_f1": 0.6661823187606617,
+            "retained": true,
+            "seconds": 7.345495043002302
+          },
+          {
+            "epoch": 9,
+            "combined_training_loss": 0.5220641305140399,
+            "source_validation_temporal_macro_f1": 0.6662562008833225,
+            "retained": true,
+            "seconds": 8.130275830000755
+          },
+          {
+            "epoch": 10,
+            "combined_training_loss": 0.5244576630242374,
+            "source_validation_temporal_macro_f1": 0.6654212912078481,
+            "retained": true,
+            "seconds": 5.4319300440038205
+          },
+          {
+            "epoch": 11,
+            "combined_training_loss": 0.5250667306261325,
+            "source_validation_temporal_macro_f1": 0.667297255932052,
+            "retained": true,
+            "seconds": 6.870139359998575
+          },
+          {
+            "epoch": 12,
+            "combined_training_loss": 0.5220152309181494,
+            "source_validation_temporal_macro_f1": 0.6697233630341537,
+            "retained": true,
+            "seconds": 7.104894004005473
+          },
+          {
+            "epoch": 13,
+            "combined_training_loss": 0.5235575784783845,
+            "source_validation_temporal_macro_f1": 0.6685505868448149,
+            "retained": true,
+            "seconds": 5.70396054500452
+          },
+          {
+            "epoch": 14,
+            "combined_training_loss": 0.5224068695252094,
+            "source_validation_temporal_macro_f1": 0.6690685455435657,
+            "retained": true,
+            "seconds": 6.241432699003781
+          },
+          {
+            "epoch": 15,
+            "combined_training_loss": 0.5243149219302956,
+            "source_validation_temporal_macro_f1": 0.6685112373989719,
+            "retained": true,
+            "seconds": 6.949944405001588
+          },
+          {
+            "epoch": 16,
+            "combined_training_loss": 0.5230281694766579,
+            "source_validation_temporal_macro_f1": 0.6681102846251402,
+            "retained": true,
+            "seconds": 5.485803670999303
+          },
+          {
+            "epoch": 17,
+            "combined_training_loss": 0.5243107345672923,
+            "source_validation_temporal_macro_f1": 0.6668909204107824,
+            "retained": true,
+            "seconds": 8.05823552700167
+          },
+          {
+            "epoch": 18,
+            "combined_training_loss": 0.5210319095795307,
+            "source_validation_temporal_macro_f1": 0.6672314534112929,
+            "retained": true,
+            "seconds": 8.386810892006906
+          },
+          {
+            "epoch": 19,
+            "combined_training_loss": 0.5254508366278552,
+            "source_validation_temporal_macro_f1": 0.6678505109276672,
+            "retained": true,
+            "seconds": 5.151132225000765
+          },
+          {
+            "epoch": 20,
+            "combined_training_loss": 0.522115339106376,
+            "source_validation_temporal_macro_f1": 0.6691773286404493,
+            "retained": true,
+            "seconds": 6.085286007997638
+          },
+          {
+            "epoch": 21,
+            "combined_training_loss": 0.5270360721907484,
+            "source_validation_temporal_macro_f1": 0.6682261387005501,
+            "retained": true,
+            "seconds": 5.491885627998272
+          },
+          {
+            "epoch": 22,
+            "combined_training_loss": 0.523705737853269,
+            "source_validation_temporal_macro_f1": 0.669973149738299,
+            "retained": true,
+            "seconds": 5.739318389998516
+          },
+          {
+            "epoch": 23,
+            "combined_training_loss": 0.5245589996696612,
+            "source_validation_temporal_macro_f1": 0.6674570055359593,
+            "retained": true,
+            "seconds": 6.905293547002657
+          },
+          {
+            "epoch": 24,
+            "combined_training_loss": 0.521076384487502,
+            "source_validation_temporal_macro_f1": 0.6684144509050524,
+            "retained": true,
+            "seconds": 6.603540932999749
+          },
+          {
+            "epoch": 25,
+            "combined_training_loss": 0.5227236247390782,
+            "source_validation_temporal_macro_f1": 0.6664125113696715,
+            "retained": true,
+            "seconds": 6.780841289997625
+          },
+          {
+            "epoch": 26,
+            "combined_training_loss": 0.5221626162528992,
+            "source_validation_temporal_macro_f1": 0.6666185608261255,
+            "retained": true,
+            "seconds": 6.476306244003354
+          },
+          {
+            "epoch": 27,
+            "combined_training_loss": 0.5232084962206149,
+            "source_validation_temporal_macro_f1": 0.6677185377747504,
+            "retained": true,
+            "seconds": 6.148847773001762
+          },
+          {
+            "epoch": 28,
+            "combined_training_loss": 0.524705174319241,
+            "source_validation_temporal_macro_f1": 0.6674494503335935,
+            "retained": true,
+            "seconds": 6.695560180996836
+          },
+          {
+            "epoch": 29,
+            "combined_training_loss": 0.5235233175645181,
+            "source_validation_temporal_macro_f1": 0.6671383278108094,
+            "retained": true,
+            "seconds": 6.1106144540026435
+          },
+          {
+            "epoch": 30,
+            "combined_training_loss": 0.5228428384032818,
+            "source_validation_temporal_macro_f1": 0.667523902184489,
+            "retained": true,
+            "seconds": 5.328997156000696
+          },
+          {
+            "epoch": 31,
+            "combined_training_loss": 0.5210856303162531,
+            "source_validation_temporal_macro_f1": 0.6693163580712611,
+            "retained": true,
+            "seconds": 6.403578375997313
+          },
+          {
+            "epoch": 32,
+            "combined_training_loss": 0.521086535049141,
+            "source_validation_temporal_macro_f1": 0.6692888974062119,
+            "retained": true,
+            "seconds": 5.34780483799841
+          },
+          {
+            "epoch": 33,
+            "combined_training_loss": 0.5229327881008113,
+            "source_validation_temporal_macro_f1": 0.6685616022439643,
+            "retained": true,
+            "seconds": 5.860637401005079
+          },
+          {
+            "epoch": 34,
+            "combined_training_loss": 0.523621719638142,
+            "source_validation_temporal_macro_f1": 0.6687977068231443,
+            "retained": true,
+            "seconds": 5.917780199997651
+          },
+          {
+            "epoch": 35,
+            "combined_training_loss": 0.5202139826542741,
+            "source_validation_temporal_macro_f1": 0.6688516278268246,
+            "retained": true,
+            "seconds": 5.430225128002348
+          },
+          {
+            "epoch": 36,
+            "combined_training_loss": 0.5233449684370548,
+            "source_validation_temporal_macro_f1": 0.6681547696668373,
+            "retained": true,
+            "seconds": 7.045818688995496
+          },
+          {
+            "epoch": 37,
+            "combined_training_loss": 0.5215510715038405,
+            "source_validation_temporal_macro_f1": 0.6679977134608104,
+            "retained": true,
+            "seconds": 7.892097381001804
+          },
+          {
+            "epoch": 38,
+            "combined_training_loss": 0.5214273300739604,
+            "source_validation_temporal_macro_f1": 0.6689053005309229,
+            "retained": true,
+            "seconds": 8.001698684005532
+          },
+          {
+            "epoch": 39,
+            "combined_training_loss": 0.5218495928913082,
+            "source_validation_temporal_macro_f1": 0.6702852305413094,
+            "retained": true,
+            "seconds": 8.152688480004144
+          },
+          {
+            "epoch": 40,
+            "combined_training_loss": 0.5189686682792979,
+            "source_validation_temporal_macro_f1": 0.6687678380637562,
+            "retained": true,
+            "seconds": 8.506161586003145
+          },
+          {
+            "epoch": 41,
+            "combined_training_loss": 0.5222765458833187,
+            "source_validation_temporal_macro_f1": 0.6683133445170467,
+            "retained": true,
+            "seconds": 5.86499925100361
+          },
+          {
+            "epoch": 42,
+            "combined_training_loss": 0.5217994435117879,
+            "source_validation_temporal_macro_f1": 0.6684806530629865,
+            "retained": true,
+            "seconds": 5.70510839799681
+          },
+          {
+            "epoch": 43,
+            "combined_training_loss": 0.5217331989642677,
+            "source_validation_temporal_macro_f1": 0.6678984293081593,
+            "retained": true,
+            "seconds": 6.59780645200226
+          },
+          {
+            "epoch": 44,
+            "combined_training_loss": 0.5202177410278845,
+            "source_validation_temporal_macro_f1": 0.6681289912232988,
+            "retained": true,
+            "seconds": 6.474909297998238
+          },
+          {
+            "epoch": 45,
+            "combined_training_loss": 0.5221142057978779,
+            "source_validation_temporal_macro_f1": 0.6676121850802021,
+            "retained": true,
+            "seconds": 6.6557725530001335
+          },
+          {
+            "epoch": 46,
+            "combined_training_loss": 0.521460870810605,
+            "source_validation_temporal_macro_f1": 0.667492585096332,
+            "retained": true,
+            "seconds": 8.549478324996016
+          },
+          {
+            "epoch": 47,
+            "combined_training_loss": 0.5223337480234443,
+            "source_validation_temporal_macro_f1": 0.6678347071419481,
+            "retained": true,
+            "seconds": 8.908170089998748
+          },
+          {
+            "epoch": 48,
+            "combined_training_loss": 0.520702949357689,
+            "source_validation_temporal_macro_f1": 0.6680538769958515,
+            "retained": true,
+            "seconds": 8.868527499005722
+          },
+          {
+            "epoch": 49,
+            "combined_training_loss": 0.5213330265032042,
+            "source_validation_temporal_macro_f1": 0.6692708778005245,
+            "retained": true,
+            "seconds": 6.0052097929947195
+          },
+          {
+            "epoch": 50,
+            "combined_training_loss": 0.5202736493644364,
+            "source_validation_temporal_macro_f1": 0.6701807224241225,
+            "retained": true,
+            "seconds": 5.820741456998803
+          }
+        ],
+        "limitation": "Source retention is a promotion guard, not proof of target improvement. Demo labels and overlapping windows do not establish independent field accuracy.",
+        "evaluation": {
+          "source_test": {
+            "parent": {
+              "windows": 6929,
+              "accuracy": 0.7595612642516958,
+              "balanced_accuracy": 0.6624389843950402,
+              "macro_f1": 0.6819563389583286,
+              "log_loss": 0.5255429374874757,
+              "multiclass_brier": 0.3043179232107929,
+              "ece_10_bins": 0.04305267243843766,
+              "confusion_matrix": [
+                [
+                  156,
+                  224,
+                  52,
+                  30
+                ],
+                [
+                  122,
+                  2621,
+                  393,
+                  97
+                ],
+                [
+                  54,
+                  367,
+                  1735,
+                  0
+                ],
+                [
+                  20,
+                  307,
+                  0,
+                  751
+                ]
+              ],
+              "per_class": {
+                "normal": {
+                  "precision": 0.4431818181818182,
+                  "recall": 0.33766233766233766,
+                  "f1-score": 0.3832923832923833,
+                  "support": 462.0
+                },
+                "damper_fault": {
+                  "precision": 0.7448138675760159,
+                  "recall": 0.8107021342406434,
+                  "f1-score": 0.7763625592417062,
+                  "support": 3233.0
+                },
+                "cooling_valve_fault": {
+                  "precision": 0.7958715596330275,
+                  "recall": 0.8047309833024119,
+                  "f1-score": 0.8002767527675276,
+                  "support": 2156.0
+                },
+                "heating_valve_fault": {
+                  "precision": 0.8553530751708428,
+                  "recall": 0.6966604823747681,
+                  "f1-score": 0.7678936605316974,
+                  "support": 1078.0
+                },
+                "accuracy": 0.7595612642516958,
+                "macro avg": {
+                  "precision": 0.7098050801404261,
+                  "recall": 0.6624389843950402,
+                  "f1-score": 0.6819563389583286,
+                  "support": 6929.0
+                },
+                "weighted avg": {
+                  "precision": 0.757786539396195,
+                  "recall": 0.7595612642516958,
+                  "f1-score": 0.7562775696535542,
+                  "support": 6929.0
+                }
+              }
+            },
+            "candidate": {
+              "windows": 6929,
+              "accuracy": 0.7686534853514215,
+              "balanced_accuracy": 0.6345007929781028,
+              "macro_f1": 0.6829619950673369,
+              "log_loss": 0.5154544024453914,
+              "multiclass_brier": 0.2997158639363663,
+              "ece_10_bins": 0.05242024748751673,
+              "confusion_matrix": [
+                [
+                  124,
+                  291,
+                  40,
+                  7
+                ],
+                [
+                  25,
+                  2917,
+                  265,
+                  26
+                ],
+                [
+                  10,
+                  524,
+                  1622,
+                  0
+                ],
+                [
+                  0,
+                  415,
+                  0,
+                  663
+                ]
+              ],
+              "per_class": {
+                "normal": {
+                  "precision": 0.779874213836478,
+                  "recall": 0.2683982683982684,
+                  "f1-score": 0.3993558776167472,
+                  "support": 462.0
+                },
+                "damper_fault": {
+                  "precision": 0.7034000482276345,
+                  "recall": 0.9022579647386328,
+                  "f1-score": 0.7905149051490515,
+                  "support": 3233.0
+                },
+                "cooling_valve_fault": {
+                  "precision": 0.8417228853139596,
+                  "recall": 0.7523191094619666,
+                  "f1-score": 0.7945138378643155,
+                  "support": 2156.0
+                },
+                "heating_valve_fault": {
+                  "precision": 0.9525862068965517,
+                  "recall": 0.6150278293135436,
+                  "f1-score": 0.7474633596392334,
+                  "support": 1078.0
+                },
+                "accuracy": 0.7686534853514215,
+                "macro avg": {
+                  "precision": 0.8193958385686559,
+                  "recall": 0.6345007929781028,
+                  "f1-score": 0.6829619950673369,
+                  "support": 6929.0
+                },
+                "weighted avg": {
+                  "precision": 0.7903069294968645,
+                  "recall": 0.7686534853514215,
+                  "f1-score": 0.7589802915185999,
+                  "support": 6929.0
+                }
+              }
+            }
+          },
+          "target_test": {
+            "parent": {
+              "windows": 1136,
+              "accuracy": 0.31954225352112675,
+              "balanced_accuracy": 0.31954225352112675,
+              "macro_f1": 0.21309535338114577,
+              "log_loss": 1.8449193505974202,
+              "multiclass_brier": 0.8943928106663448,
+              "ece_10_bins": 0.2614203678022576,
+              "confusion_matrix": [
+                [
+                  0,
+                  233,
+                  51,
+                  0
+                ],
+                [
+                  0,
+                  214,
+                  70,
+                  0
+                ],
+                [
+                  0,
+                  135,
+                  149,
+                  0
+                ],
+                [
+                  0,
+                  140,
+                  144,
+                  0
+                ]
+              ],
+              "per_class": {
+                "normal": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 284.0
+                },
+                "damper_fault": {
+                  "precision": 0.296398891966759,
+                  "recall": 0.7535211267605634,
+                  "f1-score": 0.4254473161033797,
+                  "support": 284.0
+                },
+                "cooling_valve_fault": {
+                  "precision": 0.35990338164251207,
+                  "recall": 0.5246478873239436,
+                  "f1-score": 0.4269340974212034,
+                  "support": 284.0
+                },
+                "heating_valve_fault": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 284.0
+                },
+                "accuracy": 0.31954225352112675,
+                "macro avg": {
+                  "precision": 0.16407556840231777,
+                  "recall": 0.31954225352112675,
+                  "f1-score": 0.21309535338114577,
+                  "support": 1136.0
+                },
+                "weighted avg": {
+                  "precision": 0.16407556840231777,
+                  "recall": 0.31954225352112675,
+                  "f1-score": 0.21309535338114577,
+                  "support": 1136.0
+                }
+              }
+            },
+            "candidate": {
+              "windows": 1136,
+              "accuracy": 0.3257042253521127,
+              "balanced_accuracy": 0.3257042253521127,
+              "macro_f1": 0.21663898117386488,
+              "log_loss": 1.8869694796007437,
+              "multiclass_brier": 0.9040561551868562,
+              "ece_10_bins": 0.26470116331084087,
+              "confusion_matrix": [
+                [
+                  0,
+                  242,
+                  42,
+                  0
+                ],
+                [
+                  0,
+                  226,
+                  58,
+                  0
+                ],
+                [
+                  0,
+                  140,
+                  144,
+                  0
+                ],
+                [
+                  0,
+                  140,
+                  144,
+                  0
+                ]
+              ],
+              "per_class": {
+                "normal": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 284.0
+                },
+                "damper_fault": {
+                  "precision": 0.30213903743315507,
+                  "recall": 0.795774647887324,
+                  "f1-score": 0.437984496124031,
+                  "support": 284.0
+                },
+                "cooling_valve_fault": {
+                  "precision": 0.3711340206185567,
+                  "recall": 0.5070422535211268,
+                  "f1-score": 0.42857142857142855,
+                  "support": 284.0
+                },
+                "heating_valve_fault": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 284.0
+                },
+                "accuracy": 0.3257042253521127,
+                "macro avg": {
+                  "precision": 0.16831826451292795,
+                  "recall": 0.3257042253521127,
+                  "f1-score": 0.21663898117386488,
+                  "support": 1136.0
+                },
+                "weighted avg": {
+                  "precision": 0.16831826451292795,
+                  "recall": 0.3257042253521127,
+                  "f1-score": 0.21663898117386488,
+                  "support": 1136.0
+                }
+              }
+            }
+          }
+        }
+      },
+      "error": null
+    }
+  ],
+  "minimum_batch": 8,
+  "worker_alive": true,
+  "explanation": "V0 learns from source data. V1 adds confident, unreviewed labels. V2 adds reviewed labels. Training runs in batches; promotion is conditional, not a promise of improved target accuracy."
+}

@@ -1,0 +1,13 @@
+test_empty_and_simulated_labels_rejected (test_feedback_review.FeedbackEligibility.test_empty_and_simulated_labels_rejected) ... ok
+test_duplicate_and_restart (test_operations.LedgerTests.test_duplicate_and_restart) ... ok
+test_feedback_denominators_and_provenance (test_operations.LedgerTests.test_feedback_denominators_and_provenance) ... ok
+test_malformed_input (test_operations.LedgerTests.test_malformed_input) ... ok
+test_metric_labels (test_operations.LedgerTests.test_metric_labels) ... ok
+test_same_request_does_not_infer_again (test_service.ServiceTests.test_same_request_does_not_infer_again) ... ok
+test_unavailable_model_is_error_not_prediction (test_service.ServiceTests.test_unavailable_model_is_error_not_prediction) ... ok
+test_unverified_settings_and_missing_timestamps (test_service.ServiceTests.test_unverified_settings_and_missing_timestamps) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 3.026s
+
+OK

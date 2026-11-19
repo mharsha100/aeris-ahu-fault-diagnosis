@@ -1,0 +1,211 @@
+{
+  "bundle": "boosted_v2_s42",
+  "cases": [
+    {
+      "window_id": "3e8fe36890729c959b1393c0",
+      "truth": 0,
+      "additivity_error": 0.0,
+      "repeat_identical": true,
+      "top_group_stable": true,
+      "spearman": 1.0,
+      "maximum_contribution_change": 0.008080128615842463,
+      "seconds_per_explanation": 0.024486233334755525
+    },
+    {
+      "window_id": "fc85067d9223ac1633aa7d4c",
+      "truth": 1,
+      "additivity_error": 0.0,
+      "repeat_identical": true,
+      "top_group_stable": true,
+      "spearman": 1.0,
+      "maximum_contribution_change": 0.00015401200668230253,
+      "seconds_per_explanation": 0.02105696666694712
+    },
+    {
+      "window_id": "164761a58306d73eaa74a921",
+      "truth": 2,
+      "additivity_error": 2.7755575615628914e-17,
+      "repeat_identical": true,
+      "top_group_stable": true,
+      "spearman": 1.0,
+      "maximum_contribution_change": 0.0011328552420544757,
+      "seconds_per_explanation": 0.022081433334581863
+    },
+    {
+      "window_id": "cac00240554d269afe8267f1",
+      "truth": 3,
+      "additivity_error": 1.1102230246251565e-16,
+      "repeat_identical": true,
+      "top_group_stable": true,
+      "spearman": 1.0,
+      "maximum_contribution_change": 9.528488425858406e-05,
+      "seconds_per_explanation": 0.02735720000055153
+    },
+    {
+      "window_id": "f82151907d59515c95fc5d81",
+      "truth": 0,
+      "additivity_error": 0.0,
+      "repeat_identical": true,
+      "top_group_stable": true,
+      "spearman": 1.0,
+      "maximum_contribution_change": 0.007167334585325633,
+      "seconds_per_explanation": 0.017606766666479718
+    },
+    {
+      "window_id": "a6653e71887355093cb34f93",
+      "truth": 1,
+      "additivity_error": 5.551115123125783e-17,
+      "repeat_identical": true,
+      "top_group_stable": true,
+      "spearman": 1.0,
+      "maximum_contribution_change": 0.002099819697089278,
+      "seconds_per_explanation": 0.01695816666566922
+    },
+    {
+      "window_id": "5ddf7f98bb012dc4e8c8252f",
+      "truth": 2,
+      "additivity_error": 0.0,
+      "repeat_identical": true,
+      "top_group_stable": true,
+      "spearman": 1.0,
+      "maximum_contribution_change": 6.664988718829701e-05,
+      "seconds_per_explanation": 0.018735599999975722
+    },
+    {
+      "window_id": "f2eb5606b68a4aaae0647d78",
+      "truth": 3,
+      "additivity_error": 1.1102230246251565e-16,
+      "repeat_identical": true,
+      "top_group_stable": true,
+      "spearman": 1.0,
+      "maximum_contribution_change": 0.01699056846193958,
+      "seconds_per_explanation": 0.023706066669547
+    },
+    {
+      "window_id": "04e83e2de2e0133f1ae4a42d",
+      "truth": 0,
+      "additivity_error": 2.7755575615628914e-17,
+      "repeat_identical": true,
+      "top_group_stable": true,
+      "spearman": 1.0,
+      "maximum_contribution_change": 0.00911258552999969,
+      "seconds_per_explanation": 0.051862166665766075
+    },
+    {
+      "window_id": "e7b8b88e16d18f3bbf3ed302",
+      "truth": 1,
+      "additivity_error": 0.0,
+      "repeat_identical": true,
+      "top_group_stable": true,
+      "spearman": 1.0,
+      "maximum_contribution_change": 0.0013946607074482587,
+      "seconds_per_explanation": 0.028632666668272577
+    },
+    {
+      "window_id": "6e83415af7de1f83a48c5b02",
+      "truth": 2,
+      "additivity_error": 0.0,
+      "repeat_identical": true,
+      "top_group_stable": true,
+      "spearman": 1.0,
+      "maximum_contribution_change": 0.049050541077469464,
+      "seconds_per_explanation": 0.04453276666754391
+    },
+    {
+      "window_id": "022bd9618235bfe2fee1d9dc",
+      "truth": 3,
+      "additivity_error": 1.1102230246251565e-16,
+      "repeat_identical": true,
+      "top_group_stable": true,
+      "spearman": 1.0,
+      "maximum_contribution_change": 0.006636761756764198,
+      "seconds_per_explanation": 0.03851763333659619
+    },
+    {
+      "window_id": "97679a1e0e210aaa3c2f2338",
+      "truth": 0,
+      "additivity_error": 0.0,
+      "repeat_identical": true,
+      "top_group_stable": false,
+      "spearman": 0.7999999999999999,
+      "maximum_contribution_change": 0.21694759288316945,
+      "seconds_per_explanation": 0.034012399997057706
+    },
+    {
+      "window_id": "a266199bb54d6f09469d6874",
+      "truth": 1,
+      "additivity_error": 0.0,
+      "repeat_identical": true,
+      "top_group_stable": true,
+      "spearman": 1.0,
+      "maximum_contribution_change": 0.006034058872576173,
+      "seconds_per_explanation": 0.024831533334994067
+    },
+    {
+      "window_id": "e1d94a3f2ece6660a96336fd",
+      "truth": 2,
+      "additivity_error": 1.1102230246251565e-16,
+      "repeat_identical": true,
+      "top_group_stable": true,
+      "spearman": 1.0,
+      "maximum_contribution_change": 4.533852430987917e-06,
+      "seconds_per_explanation": 0.022804600002321724
+    },
+    {
+      "window_id": "8062b8f9d0f18c93869dbfb1",
+      "truth": 3,
+      "additivity_error": 1.1102230246251565e-16,
+      "repeat_identical": true,
+      "top_group_stable": true,
+      "spearman": 1.0,
+      "maximum_contribution_change": 0.00670194883773001,
+      "seconds_per_explanation": 0.026260300001013093
+    },
+    {
+      "window_id": "320318decc378567342ac6f2",
+      "truth": 0,
+      "additivity_error": 1.3877787807814457e-17,
+      "repeat_identical": true,
+      "top_group_stable": true,
+      "spearman": 1.0,
+      "maximum_contribution_change": 0.06423776909523557,
+      "seconds_per_explanation": 0.03446549999838074
+    },
+    {
+      "window_id": "3f7e6fa5a4336033a9d78cd9",
+      "truth": 1,
+      "additivity_error": 5.551115123125783e-17,
+      "repeat_identical": true,
+      "top_group_stable": true,
+      "spearman": 1.0,
+      "maximum_contribution_change": 0.019627564100853596,
+      "seconds_per_explanation": 0.032635133335134014
+    },
+    {
+      "window_id": "039aa74089634212f8dda8c7",
+      "truth": 2,
+      "additivity_error": 5.551115123125783e-17,
+      "repeat_identical": true,
+      "top_group_stable": false,
+      "spearman": 0.6000000000000001,
+      "maximum_contribution_change": 0.19832140623515102,
+      "seconds_per_explanation": 0.02295403333361416
+    },
+    {
+      "window_id": "e7dcdab48a38b92340f410eb",
+      "truth": 3,
+      "additivity_error": 0.0,
+      "repeat_identical": true,
+      "top_group_stable": true,
+      "spearman": 1.0,
+      "maximum_contribution_change": 0.00030635367167297645,
+      "seconds_per_explanation": 0.02267113333315744
+    }
+  ],
+  "max_additivity_error": 1.1102230246251565e-16,
+  "repeatability": 1.0,
+  "top_group_stability_under_005C": 0.9,
+  "mean_seconds": 0.027808415000617964,
+  "human_usefulness": "Not measured; requires independent technician assessment.",
+  "causality": "Not established by Shapley values."
+}

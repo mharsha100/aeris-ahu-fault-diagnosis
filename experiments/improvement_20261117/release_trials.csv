@@ -1,0 +1,19 @@
+name,version,family,seed,macro_f1,accuracy,fault_to_normal,accepted_false_normal,maximum_recall_drop,passed,reasons
+physics_v0_s42,v0,physics,42,0.6979766049382261,0.7652236652236653,656,0,0.013914656771799705,False,macro F1 gain below 0.01; more faults predicted normal
+physics_v0_s43,v0,physics,43,0.6937078084878927,0.76002886002886,726,0,0.023809523809523836,False,macro F1 gain below 0.01; more faults predicted normal
+physics_v0_s44,v0,physics,44,0.6933044573248068,0.7594516594516595,716,0,0.02813852813852813,False,macro F1 gain below 0.01; more faults predicted normal
+calibrated_physics_v0_s42,v0,calibrated_physics,42,0.6845353427417623,0.7841269841269841,209,0,0.19480519480519481,False,macro F1 gain below 0.01; class recall drops more than 0.03
+calibrated_physics_v0_s43,v0,calibrated_physics,43,0.691459456389617,0.7835497835497836,252,0,0.14935064935064934,False,macro F1 gain below 0.01; class recall drops more than 0.03
+calibrated_physics_v0_s44,v0,calibrated_physics,44,0.6820025279148152,0.7670995670995671,336,0,0.10606060606060602,False,macro F1 gain below 0.01; class recall drops more than 0.03
+physics_v1_s42,v1,physics,42,0.6982041829434213,0.7632034632034632,707,0,0.008039579468150926,False,macro F1 gain below 0.01; more faults predicted normal
+physics_v1_s43,v1,physics,43,0.6975457986414556,0.7614718614718615,750,0,0.014842300556586308,False,macro F1 gain below 0.01; more faults predicted normal
+physics_v1_s44,v1,physics,44,0.6963179388514589,0.7393939393939394,1216,0,0.07884972170686455,False,macro F1 gain below 0.01; more faults predicted normal; class recall drops more than 0.03
+calibrated_physics_v1_s42,v1,calibrated_physics,42,0.6924647363480891,0.7784992784992785,355,0,0.10173160173160173,False,macro F1 gain below 0.01; class recall drops more than 0.03
+calibrated_physics_v1_s43,v1,calibrated_physics,43,0.6878222967094738,0.7880230880230881,126,0,0.21861471861471862,False,macro F1 gain below 0.01; class recall drops more than 0.03
+calibrated_physics_v1_s44,v1,calibrated_physics,44,0.67858881141057,0.7880230880230881,90,0,0.2619047619047619,False,macro F1 gain below 0.01; class recall drops more than 0.03
+physics_v2_s42,v2,physics,42,0.6961458892313399,0.7581529581529581,788,0,0.016388373531230682,False,macro F1 gain below 0.01; more faults predicted normal
+physics_v2_s43,v2,physics,43,0.6948390259265012,0.7640692640692641,644,0,0.020408163265306145,False,macro F1 gain below 0.01; more faults predicted normal
+physics_v2_s44,v2,physics,44,0.6951033520599624,0.7646464646464647,641,0,0.006957328385899797,False,macro F1 gain below 0.01; more faults predicted normal
+calibrated_physics_v2_s42,v2,calibrated_physics,42,0.6844989963663843,0.7841269841269841,152,0,0.23160173160173164,False,macro F1 gain below 0.01; class recall drops more than 0.03
+calibrated_physics_v2_s43,v2,calibrated_physics,43,0.6815292213709937,0.787012987012987,106,0,0.25757575757575757,False,macro F1 gain below 0.01; class recall drops more than 0.03
+calibrated_physics_v2_s44,v2,calibrated_physics,44,0.6848376454741276,0.7848484848484848,159,0,0.22510822510822515,False,macro F1 gain below 0.01; class recall drops more than 0.03

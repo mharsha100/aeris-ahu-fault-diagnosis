@@ -1,0 +1,9 @@
+{
+  "source_packs": {
+    "source_train": "a1ea90ee1714f45214b88e7c508ab175c95aa047ac9f79e618fc4193f645b3cb",
+    "source_validation": "6f6aa16c5034ac989a242af6efc29cb55fea0192959afbb57f8e75acfc4255c6",
+    "source_calibration": "350a4eab47cf207f46436f536f191bdd081a8d49b2e848d3b6058bfdc305af3b"
+  },
+  "split_manifest": "d3ece2ada0f7ffcc51be31da82c9c908dcea55abf65086770d30e12f7af62a13",
+  "protocol": "3ac5c1e923f94312ff2b8feaa7fc10c7d11e5ed91997312772cf1f4e88181959"
+}

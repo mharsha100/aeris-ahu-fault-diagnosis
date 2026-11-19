@@ -1,0 +1,89 @@
+0:	learn: 0.5875873	test: 0.6158896	best: 0.6158896 (0)	total: 72.9ms	remaining: 1m 27s
+200:	learn: 0.6770400	test: 0.6666789	best: 0.6676647 (194)	total: 2.47s	remaining: 12.3s
+400:	learn: 0.6936447	test: 0.6840083	best: 0.6840083 (400)	total: 4.85s	remaining: 9.66s
+600:	learn: 0.7055348	test: 0.6893266	best: 0.6899673 (586)	total: 7.45s	remaining: 7.42s
+800:	learn: 0.7144626	test: 0.6913873	best: 0.6915123 (798)	total: 10.4s	remaining: 5.19s
+1000:	learn: 0.7229931	test: 0.6928601	best: 0.6935464 (995)	total: 12.9s	remaining: 2.57s
+1199:	learn: 0.7306299	test: 0.6924104	best: 0.6940397 (1158)	total: 15.9s	remaining: 0us
+bestTest = 0.6940396711
+bestIteration = 1158
+Shrink model to first 1159 iterations.
+COMPLETE cat_base_d6_balanced_s42 0.694039671111908 820 17.18364279999514
+0:	learn: 0.5990983	test: 0.6173492	best: 0.6173492 (0)	total: 26.1ms	remaining: 31.3s
+200:	learn: 0.6899057	test: 0.6797393	best: 0.6807195 (191)	total: 3.69s	remaining: 18.3s
+400:	learn: 0.7110553	test: 0.6920363	best: 0.6924161 (391)	total: 7.72s	remaining: 15.4s
+600:	learn: 0.7265416	test: 0.6936385	best: 0.6952572 (567)	total: 11.9s	remaining: 11.9s
+800:	learn: 0.7384873	test: 0.6939192	best: 0.6952572 (567)	total: 15.9s	remaining: 7.9s
+1000:	learn: 0.7481661	test: 0.6930822	best: 0.6957355 (890)	total: 20.6s	remaining: 4.09s
+1199:	learn: 0.7558817	test: 0.6926786	best: 0.6957355 (890)	total: 24.2s	remaining: 0us
+bestTest = 0.6957354681
+bestIteration = 890
+Shrink model to first 891 iterations.
+COMPLETE cat_base_d8_balanced_s42 0.6957354681496755 683 25.122500499994203
+0:	learn: 0.5917761	test: 0.6003238	best: 0.6003238 (0)	total: 24.6ms	remaining: 29.5s
+200:	learn: 0.6845643	test: 0.6679633	best: 0.6707578 (172)	total: 2.91s	remaining: 14.4s
+400:	learn: 0.7008864	test: 0.6871710	best: 0.6877810 (394)	total: 5.64s	remaining: 11.2s
+600:	learn: 0.7116113	test: 0.6893104	best: 0.6897920 (524)	total: 8.11s	remaining: 8.08s
+800:	learn: 0.7199402	test: 0.6920700	best: 0.6924199 (741)	total: 10.5s	remaining: 5.24s
+1000:	learn: 0.7264103	test: 0.6941223	best: 0.6941223 (1000)	total: 13.7s	remaining: 2.72s
+1199:	learn: 0.7315049	test: 0.6974881	best: 0.6983316 (1174)	total: 16.3s	remaining: 0us
+bestTest = 0.698331613
+bestIteration = 1174
+Shrink model to first 1175 iterations.
+COMPLETE cat_physics_d6_balanced_s42 0.6983316129723675 1121 16.974867099997937
+0:	learn: 0.6258571	test: 0.6501842	best: 0.6501842 (0)	total: 21.5ms	remaining: 25.8s
+200:	learn: 0.6965224	test: 0.6743294	best: 0.6745674 (199)	total: 4.05s	remaining: 20.1s
+400:	learn: 0.7164448	test: 0.6915957	best: 0.6915957 (400)	total: 10.7s	remaining: 21.3s
+600:	learn: 0.7300135	test: 0.6942940	best: 0.6948593 (594)	total: 18.2s	remaining: 18.2s
+800:	learn: 0.7397782	test: 0.6963197	best: 0.6967419 (796)	total: 23.3s	remaining: 11.6s
+1000:	learn: 0.7488401	test: 0.6968396	best: 0.6980197 (959)	total: 28.5s	remaining: 5.67s
+1199:	learn: 0.7557081	test: 0.6950198	best: 0.6980197 (959)	total: 33.5s	remaining: 0us
+bestTest = 0.6980197391
+bestIteration = 959
+Shrink model to first 960 iterations.
+COMPLETE cat_physics_d8_balanced_s42 0.6980197391155882 819 34.195386600003985
+0:	learn: 0.5917761	test: 0.6003238	best: 0.6003238 (0)	total: 13.2ms	remaining: 15.8s
+200:	learn: 0.6837710	test: 0.6731990	best: 0.6737396 (175)	total: 4.51s	remaining: 22.4s
+400:	learn: 0.7033865	test: 0.6916368	best: 0.6916368 (400)	total: 8.54s	remaining: 17s
+600:	learn: 0.7154025	test: 0.6986485	best: 0.6987143 (599)	total: 12.1s	remaining: 12s
+800:	learn: 0.7230121	test: 0.6998416	best: 0.7000866 (793)	total: 15.3s	remaining: 7.61s
+1000:	learn: 0.7290540	test: 0.6998447	best: 0.7002943 (988)	total: 18.5s	remaining: 3.68s
+1199:	learn: 0.7356959	test: 0.7023710	best: 0.7023710 (1194)	total: 22.1s	remaining: 0us
+bestTest = 0.7023710426
+bestIteration = 1194
+Shrink model to first 1195 iterations.
+COMPLETE cat_sequence_d6_balanced_s42 0.7023710425781737 988 23.19922759999463
+0:	learn: 0.6258571	test: 0.6501842	best: 0.6501842 (0)	total: 28ms	remaining: 33.6s
+200:	learn: 0.6967711	test: 0.6794320	best: 0.6805115 (196)	total: 5.85s	remaining: 29.1s
+400:	learn: 0.7178562	test: 0.6890329	best: 0.6890491 (399)	total: 12s	remaining: 23.9s
+600:	learn: 0.7339915	test: 0.6920940	best: 0.6921877 (587)	total: 18.1s	remaining: 18s
+800:	learn: 0.7443803	test: 0.6926936	best: 0.6934777 (791)	total: 23.8s	remaining: 11.8s
+1000:	learn: 0.7535186	test: 0.6948895	best: 0.6965286 (968)	total: 29.8s	remaining: 5.93s
+1199:	learn: 0.7616014	test: 0.6972956	best: 0.6992749 (1119)	total: 35.2s	remaining: 0us
+bestTest = 0.6992748656
+bestIteration = 1119
+Shrink model to first 1120 iterations.
+COMPLETE cat_sequence_d8_balanced_s42 0.6992748655942502 851 36.22368799999822
+0:	learn: 0.5758681	test: 0.5716246	best: 0.5716246 (0)	total: 55.9ms	remaining: 1m 6s
+200:	learn: 0.7150116	test: 0.6862651	best: 0.6880989 (100)	total: 5.19s	remaining: 25.8s
+400:	learn: 0.7364245	test: 0.6962374	best: 0.6962374 (400)	total: 9.88s	remaining: 19.7s
+600:	learn: 0.7535961	test: 0.6979657	best: 0.6986349 (584)	total: 15.5s	remaining: 15.4s
+800:	learn: 0.7660820	test: 0.6952567	best: 0.6987317 (759)	total: 20.3s	remaining: 10.1s
+1000:	learn: 0.7773160	test: 0.6988769	best: 0.6998877 (841)	total: 25s	remaining: 4.97s
+1199:	learn: 0.7859667	test: 0.6991616	best: 0.6998877 (841)	total: 29.9s	remaining: 0us
+bestTest = 0.6998876878
+bestIteration = 841
+Shrink model to first 842 iterations.
+COMPLETE cat_physics_d8_sqrtbalanced_s42 0.6998876877670946 380 30.937258400001156
+0:	learn: 0.5758681	test: 0.5716246	best: 0.5716246 (0)	total: 43.5ms	remaining: 52.1s
+200:	learn: 0.7223805	test: 0.6995891	best: 0.7009023 (187)	total: 6.13s	remaining: 30.5s
+400:	learn: 0.7433701	test: 0.7019417	best: 0.7025349 (249)	total: 12.4s	remaining: 24.6s
+600:	learn: 0.7578159	test: 0.7067310	best: 0.7072412 (598)	total: 17.7s	remaining: 17.6s
+800:	learn: 0.7699912	test: 0.7078635	best: 0.7085953 (783)	total: 24.1s	remaining: 12s
+1000:	learn: 0.7814736	test: 0.7080635	best: 0.7091363 (860)	total: 31.1s	remaining: 6.18s
+1199:	learn: 0.7894995	test: 0.7085103	best: 0.7091363 (860)	total: 37.8s	remaining: 0us
+bestTest = 0.7091363001
+bestIteration = 860
+Shrink model to first 861 iterations.
+COMPLETE cat_sequence_d8_sqrtbalanced_s42 0.709136300075049 298 39.00945260000299
+BOOSTED SCREEN COMPLETE

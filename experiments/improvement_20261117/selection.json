@@ -1,0 +1,90 @@
+{
+  "bundle": "e2e_anchor_v2_s42",
+  "per_architecture": {
+    "v0": "e2e_anchor_v0_s42",
+    "v1": "e2e_anchor_v1_s42",
+    "v2": "e2e_anchor_v2_s42"
+  },
+  "decisions": [
+    {
+      "version": "v0",
+      "family": "physics",
+      "passed_all_seeds": false,
+      "mean_f1": 0.6949962902503085,
+      "std_f1": 0.0021138243019786884,
+      "worst_f1": 0.6933044573248068,
+      "reasons": [
+        "physics_v0_s42: macro F1 gain below 0.01; more faults predicted normal",
+        "physics_v0_s43: macro F1 gain below 0.01; more faults predicted normal",
+        "physics_v0_s44: macro F1 gain below 0.01; more faults predicted normal"
+      ]
+    },
+    {
+      "version": "v0",
+      "family": "calibrated_physics",
+      "passed_all_seeds": false,
+      "mean_f1": 0.6859991090153982,
+      "std_f1": 0.003997110024526457,
+      "worst_f1": 0.6820025279148152,
+      "reasons": [
+        "calibrated_physics_v0_s42: macro F1 gain below 0.01; class recall drops more than 0.03",
+        "calibrated_physics_v0_s43: macro F1 gain below 0.01; class recall drops more than 0.03",
+        "calibrated_physics_v0_s44: macro F1 gain below 0.01; class recall drops more than 0.03"
+      ]
+    },
+    {
+      "version": "v1",
+      "family": "physics",
+      "passed_all_seeds": false,
+      "mean_f1": 0.6973559734787785,
+      "std_f1": 0.0007816667610113004,
+      "worst_f1": 0.6963179388514589,
+      "reasons": [
+        "physics_v1_s42: macro F1 gain below 0.01; more faults predicted normal",
+        "physics_v1_s43: macro F1 gain below 0.01; more faults predicted normal",
+        "physics_v1_s44: macro F1 gain below 0.01; more faults predicted normal; class recall drops more than 0.03"
+      ]
+    },
+    {
+      "version": "v1",
+      "family": "calibrated_physics",
+      "passed_all_seeds": false,
+      "mean_f1": 0.6862919481560444,
+      "std_f1": 0.0057672522769602,
+      "worst_f1": 0.67858881141057,
+      "reasons": [
+        "calibrated_physics_v1_s42: macro F1 gain below 0.01; class recall drops more than 0.03",
+        "calibrated_physics_v1_s43: macro F1 gain below 0.01; class recall drops more than 0.03",
+        "calibrated_physics_v1_s44: macro F1 gain below 0.01; class recall drops more than 0.03"
+      ]
+    },
+    {
+      "version": "v2",
+      "family": "physics",
+      "passed_all_seeds": false,
+      "mean_f1": 0.6953627557392679,
+      "std_f1": 0.0005641752836435401,
+      "worst_f1": 0.6948390259265012,
+      "reasons": [
+        "physics_v2_s42: macro F1 gain below 0.01; more faults predicted normal",
+        "physics_v2_s43: macro F1 gain below 0.01; more faults predicted normal",
+        "physics_v2_s44: macro F1 gain below 0.01; more faults predicted normal"
+      ]
+    },
+    {
+      "version": "v2",
+      "family": "calibrated_physics",
+      "passed_all_seeds": false,
+      "mean_f1": 0.6836219544038352,
+      "std_f1": 0.0014862300101494792,
+      "worst_f1": 0.6815292213709937,
+      "reasons": [
+        "calibrated_physics_v2_s42: macro F1 gain below 0.01; class recall drops more than 0.03",
+        "calibrated_physics_v2_s43: macro F1 gain below 0.01; class recall drops more than 0.03",
+        "calibrated_physics_v2_s44: macro F1 gain below 0.01; class recall drops more than 0.03"
+      ]
+    }
+  ],
+  "criteria": "hybrid_plan.json and class_decision_plan.json; every seed must pass; fixed seed42 representative",
+  "scope": "Source development only. Target labels were previously exposed; no independent field generalization claim."
+}

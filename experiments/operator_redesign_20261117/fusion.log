@@ -1,0 +1,29 @@
+FUSION v0 42 0.7062322619871787 518 True
+FUSION v1 42 0.7065609091187774 520 True
+FUSION v2 42 0.7066930407938059 523 True
+0:	learn: 0.5767780	test: 0.5849062	best: 0.5849062 (0)	total: 63.8ms	remaining: 1m 16s
+200:	learn: 0.7204748	test: 0.6993264	best: 0.6999966 (195)	total: 4.83s	remaining: 24s
+400:	learn: 0.7421736	test: 0.7021828	best: 0.7033133 (270)	total: 10.8s	remaining: 21.4s
+600:	learn: 0.7582728	test: 0.7073171	best: 0.7078484 (585)	total: 16.3s	remaining: 16.2s
+800:	learn: 0.7707380	test: 0.7077253	best: 0.7083503 (737)	total: 24.4s	remaining: 12.1s
+1000:	learn: 0.7819707	test: 0.7063759	best: 0.7092022 (853)	total: 31.2s	remaining: 6.2s
+1199:	learn: 0.7886397	test: 0.7086192	best: 0.7099182 (1177)	total: 36.9s	remaining: 0us
+bestTest = 0.7099181987
+bestIteration = 1177
+Shrink model to first 1178 iterations.
+FUSION v0 43 0.7071130255791758 480 True
+FUSION v1 43 0.7068625221305644 481 True
+FUSION v2 43 0.7067084330328144 482 True
+0:	learn: 0.5777552	test: 0.5706554	best: 0.5706554 (0)	total: 47.1ms	remaining: 56.4s
+200:	learn: 0.7211878	test: 0.6951516	best: 0.6967988 (197)	total: 5.08s	remaining: 25.2s
+400:	learn: 0.7426096	test: 0.7043451	best: 0.7043451 (399)	total: 11.6s	remaining: 23s
+600:	learn: 0.7558754	test: 0.7066381	best: 0.7078281 (534)	total: 17.6s	remaining: 17.5s
+800:	learn: 0.7689324	test: 0.7089391	best: 0.7114930 (713)	total: 23.2s	remaining: 11.6s
+1000:	learn: 0.7793541	test: 0.7073533	best: 0.7114930 (713)	total: 28.9s	remaining: 5.74s
+1199:	learn: 0.7891793	test: 0.7064232	best: 0.7114930 (713)	total: 34.5s	remaining: 0us
+bestTest = 0.7114929597
+bestIteration = 713
+Shrink model to first 714 iterations.
+FUSION v0 44 0.7084349369808447 485 True
+FUSION v1 44 0.7093199835021886 480 True
+FUSION v2 44 0.7087339785819731 490 True

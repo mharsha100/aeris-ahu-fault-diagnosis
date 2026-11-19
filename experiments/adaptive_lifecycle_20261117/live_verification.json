@@ -1,0 +1,165 @@
+{
+  "before": {
+    "genuine": {
+      "cohort": "genuine",
+      "time_window": "all persisted records since deployment ledger creation",
+      "eligible_predictions": 0,
+      "predictions_with_feedback": 0,
+      "feedback_coverage": null,
+      "agree": 0,
+      "disagree": 0,
+      "unsure": 0,
+      "agreement": null,
+      "reviewed_predictions": 0,
+      "overrides": 0,
+      "override_rate": null,
+      "satisfaction_responses": 0,
+      "satisfaction_sum": 0,
+      "satisfaction_mean": null,
+      "verified_labels": 0,
+      "verified_label_coverage": null,
+      "verified_quality_status": "insufficient independent-case evidence; no operational accuracy claim",
+      "genuine_ground_truth": false,
+      "ground_truth_status": "Cohort selection alone does not establish ground truth; inspection records require independent alignment and case support"
+    },
+    "test": {
+      "cohort": "test",
+      "time_window": "all persisted records since deployment ledger creation",
+      "eligible_predictions": 669,
+      "predictions_with_feedback": 28,
+      "feedback_coverage": 0.04185351270553064,
+      "agree": 0,
+      "disagree": 0,
+      "unsure": 8,
+      "agreement": null,
+      "reviewed_predictions": 28,
+      "overrides": 20,
+      "override_rate": 0.7142857142857143,
+      "satisfaction_responses": 8,
+      "satisfaction_sum": 32,
+      "satisfaction_mean": 4.0,
+      "verified_labels": 0,
+      "verified_label_coverage": 0.0,
+      "verified_quality_status": "insufficient independent-case evidence; no operational accuracy claim",
+      "genuine_ground_truth": false,
+      "ground_truth_status": "Cohort selection alone does not establish ground truth; inspection records require independent alignment and case support"
+    }
+  },
+  "after": {
+    "genuine": {
+      "cohort": "genuine",
+      "time_window": "all persisted records since deployment ledger creation",
+      "eligible_predictions": 0,
+      "predictions_with_feedback": 0,
+      "feedback_coverage": null,
+      "agree": 0,
+      "disagree": 0,
+      "unsure": 0,
+      "agreement": null,
+      "reviewed_predictions": 0,
+      "overrides": 0,
+      "override_rate": null,
+      "satisfaction_responses": 0,
+      "satisfaction_sum": 0,
+      "satisfaction_mean": null,
+      "verified_labels": 0,
+      "verified_label_coverage": null,
+      "verified_quality_status": "insufficient independent-case evidence; no operational accuracy claim",
+      "genuine_ground_truth": false,
+      "ground_truth_status": "Cohort selection alone does not establish ground truth; inspection records require independent alignment and case support"
+    },
+    "test": {
+      "cohort": "test",
+      "time_window": "all persisted records since deployment ledger creation",
+      "eligible_predictions": 689,
+      "predictions_with_feedback": 28,
+      "feedback_coverage": 0.040638606676342524,
+      "agree": 0,
+      "disagree": 0,
+      "unsure": 8,
+      "agreement": null,
+      "reviewed_predictions": 28,
+      "overrides": 20,
+      "override_rate": 0.7142857142857143,
+      "satisfaction_responses": 8,
+      "satisfaction_sum": 32,
+      "satisfaction_mean": 4.0,
+      "verified_labels": 0,
+      "verified_label_coverage": 0.0,
+      "verified_quality_status": "insufficient independent-case evidence; no operational accuracy claim",
+      "genuine_ground_truth": false,
+      "ground_truth_status": "Cohort selection alone does not establish ground truth; inspection records require independent alignment and case support"
+    }
+  },
+  "requests": 20,
+  "unique_prediction_ids": 20,
+  "p50_seconds": 0.05228115000500111,
+  "p95_seconds": 1.5407492849903068,
+  "interpretation": "HTTP validation + inference + durable recording, while the background learner is running. Excludes browser rendering.",
+  "up": [
+    {
+      "metric": {
+        "__name__": "up",
+        "instance": "app:8001",
+        "job": "aeris"
+      },
+      "value": [
+        1794935463.063,
+        "1"
+      ]
+    }
+  ],
+  "learning_worker": [
+    {
+      "metric": {
+        "__name__": "aeris_learning_worker_up",
+        "instance": "app:8001",
+        "job": "aeris"
+      },
+      "value": [
+        1794935463.074,
+        "1"
+      ]
+    }
+  ],
+  "stage": [
+    {
+      "metric": {
+        "__name__": "aeris_learning_stage",
+        "cohort": "test",
+        "instance": "app:8001",
+        "job": "aeris"
+      },
+      "value": [
+        1794935463.084,
+        "1"
+      ]
+    },
+    {
+      "metric": {
+        "__name__": "aeris_learning_stage",
+        "cohort": "genuine",
+        "instance": "app:8001",
+        "job": "aeris"
+      },
+      "value": [
+        1794935463.084,
+        "0"
+      ]
+    }
+  ],
+  "requests_in_prometheus": [
+    {
+      "metric": {
+        "__name__": "aeris_requests_total",
+        "cohort": "test",
+        "instance": "app:8001",
+        "job": "aeris"
+      },
+      "value": [
+        1794935463.105,
+        "699"
+      ]
+    }
+  ]
+}

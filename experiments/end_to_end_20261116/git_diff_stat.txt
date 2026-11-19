@@ -1,0 +1,7 @@
+ .gitignore            |   4 ++
+ README.md             |  37 ++++++++++
+ app.py                | 190 ++++++++++++++++++++++++++------------------------
+ requirements.txt      |   1 +
+ src/aeris/modeling.py |   6 ++
+ src/aeris/training.py |  13 +++-
+ 6 files changed, 158 insertions(+), 93 deletions(-)

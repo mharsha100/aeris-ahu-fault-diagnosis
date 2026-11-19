@@ -1,0 +1,413 @@
+{
+  "uid": "aeris-feedback",
+  "title": "AERIS \u00b7 Review evidence",
+  "schemaVersion": 41,
+  "version": 3,
+  "refresh": "10s",
+  "time": {
+    "from": "now-24h",
+    "to": "now"
+  },
+  "timezone": "browser",
+  "tags": [
+    "AERIS",
+    "EGN6216"
+  ],
+  "description": "Read live service behavior by cohort. Demonstration requests are not independently inspected field outcomes. Panel tooltips define windows, units, support and actions.",
+  "templating": {
+    "list": [
+      {
+        "name": "cohort",
+        "label": "Record cohort",
+        "type": "custom",
+        "query": "test,genuine",
+        "current": {
+          "text": "test",
+          "value": "test"
+        },
+        "options": [
+          {
+            "text": "test",
+            "value": "test",
+            "selected": true
+          },
+          {
+            "text": "genuine",
+            "value": "genuine",
+            "selected": false
+          }
+        ],
+        "includeAll": false,
+        "multi": false,
+        "description": "test = controlled demonstrations; genuine = actual operator submissions. Neither is an inspected label by itself."
+      }
+    ]
+  },
+  "panels": [
+    {
+      "id": 21,
+      "title": "What review evidence exists? \u00b7 all persisted records",
+      "type": "barchart",
+      "gridPos": {
+        "x": 0,
+        "y": 0,
+        "w": 14,
+        "h": 8
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "aeris-prometheus"
+      },
+      "description": "Counts of available evidence in the selected cohort. Categories overlap and are not mutually exclusive. Test reviews and recorded inspection claims do not establish independent case quality. No timeframe filter is applied to these all-time counts.",
+      "targets": [
+        {
+          "refId": "Support",
+          "expr": "sum by(stage)(label_replace(aeris_eligible_predictions{cohort=\"$cohort\"},\"stage\",\"1 Analyzed\",\"\",\"\") or label_replace(aeris_predictions_with_feedback{cohort=\"$cohort\"},\"stage\",\"2 Reviewed\",\"\",\"\") or label_replace(aeris_satisfaction_responses{cohort=\"$cohort\"},\"stage\",\"3 Rated\",\"\",\"\") or label_replace(aeris_verified_labels{cohort=\"$cohort\"},\"stage\",\"4 Inspection records\",\"\",\"\"))",
+          "legendFormat": "Support",
+          "instant": true,
+          "range": false,
+          "format": "table",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          }
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "color": {
+            "mode": "fixed",
+            "fixedColor": "blue"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "blue",
+                "value": null
+              }
+            ]
+          },
+          "min": 0,
+          "decimals": 0,
+          "custom": {
+            "fillOpacity": 85,
+            "lineWidth": 0,
+            "axisPlacement": "auto"
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "orientation": "horizontal",
+        "xField": "stage",
+        "showValue": "always",
+        "groupWidth": 0.7,
+        "barWidth": 0.85,
+        "stacking": "none",
+        "legend": {
+          "showLegend": false
+        },
+        "tooltip": {
+          "mode": "single"
+        },
+        "xTickLabelRotation": 0,
+        "barRadius": 0.12
+      },
+      "transformations": [
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {
+              "Time": true,
+              "__name__": true,
+              "cohort": true
+            },
+            "renameByName": {
+              "Value": "Requests"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "title": "Review coverage \u00b7 all persisted predictions",
+      "type": "gauge",
+      "gridPos": {
+        "x": 14,
+        "y": 0,
+        "w": 10,
+        "h": 8
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "aeris-prometheus"
+      },
+      "description": "Unique eligible predictions with a saved review / all eligible predictions. Scale 0\u2013100%; neutral blue because no field coverage objective has been established. Duplicate saves do not increase coverage. This is participation, not diagnostic accuracy.",
+      "targets": [
+        {
+          "refId": "Reviewed",
+          "expr": "100 * ((aeris_predictions_with_feedback{cohort=\"$cohort\"} / aeris_eligible_predictions{cohort=\"$cohort\"}) and (aeris_eligible_predictions{cohort=\"$cohort\"} > 0))",
+          "legendFormat": "Reviewed",
+          "instant": true,
+          "range": false,
+          "format": "time_series",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          }
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "percent",
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "type": "special",
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "No predictions",
+                  "color": "#8e8e8e"
+                }
+              }
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "blue",
+                "value": null
+              }
+            ]
+          },
+          "min": 0,
+          "max": 100,
+          "decimals": 1,
+          "noValue": "No predictions"
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "values": false,
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": ""
+        },
+        "showThresholdLabels": true,
+        "showThresholdMarkers": true,
+        "orientation": "auto"
+      }
+    },
+    {
+      "id": 23,
+      "title": "How did reviewers respond? \u00b7 response counts",
+      "type": "barchart",
+      "gridPos": {
+        "x": 0,
+        "y": 8,
+        "w": 14,
+        "h": 8
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "aeris-prometheus"
+      },
+      "description": "Actual agree/disagree/unsure review counts. Unsure is explicit. These are subjective responses, not independently verified labels or accuracy. Zero bars mean no responses of that kind. Counts are all-time for the selected cohort.",
+      "targets": [
+        {
+          "refId": "Responses",
+          "expr": "sum by(response)(label_replace(aeris_agree{cohort=\"$cohort\"},\"response\",\"agree\",\"\",\"\") or label_replace(aeris_disagree{cohort=\"$cohort\"},\"response\",\"disagree\",\"\",\"\") or label_replace(aeris_unsure{cohort=\"$cohort\"},\"response\",\"unsure\",\"\",\"\"))",
+          "legendFormat": "Responses",
+          "instant": true,
+          "range": false,
+          "format": "table",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          }
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "color": {
+            "mode": "fixed",
+            "fixedColor": "blue"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "blue",
+                "value": null
+              }
+            ]
+          },
+          "min": 0,
+          "decimals": 0,
+          "custom": {
+            "fillOpacity": 85,
+            "lineWidth": 0,
+            "axisPlacement": "auto"
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "orientation": "horizontal",
+        "xField": "response",
+        "showValue": "always",
+        "groupWidth": 0.7,
+        "barWidth": 0.85,
+        "stacking": "none",
+        "legend": {
+          "showLegend": false
+        },
+        "tooltip": {
+          "mode": "single"
+        },
+        "xTickLabelRotation": 0,
+        "barRadius": 0.12
+      },
+      "transformations": [
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {
+              "Time": true,
+              "__name__": true,
+              "cohort": true
+            },
+            "renameByName": {
+              "Value": "Requests"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "title": "Satisfaction \u00b7 mean on a 1\u20135 scale",
+      "type": "gauge",
+      "gridPos": {
+        "x": 14,
+        "y": 8,
+        "w": 10,
+        "h": 8
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "aeris-prometheus"
+      },
+      "description": "Average of actual 1\u20135 ratings; support is the Rated bar. No ratings = no value. Neutral color avoids implying a quality guarantee from a tiny or demonstration-only sample.",
+      "targets": [
+        {
+          "refId": "Mean rating",
+          "expr": "(aeris_satisfaction_sum{cohort=\"$cohort\"}/aeris_satisfaction_responses{cohort=\"$cohort\"}) and (aeris_satisfaction_responses{cohort=\"$cohort\"}>0)",
+          "legendFormat": "Mean rating",
+          "instant": true,
+          "range": false,
+          "format": "time_series",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aeris-prometheus"
+          }
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "none",
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "type": "special",
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "No ratings",
+                  "color": "#8e8e8e"
+                }
+              }
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "blue",
+                "value": null
+              }
+            ]
+          },
+          "min": 1,
+          "max": 5,
+          "decimals": 1,
+          "noValue": "No ratings"
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "values": false,
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": ""
+        },
+        "showThresholdLabels": true,
+        "showThresholdMarkers": true,
+        "orientation": "auto"
+      }
+    }
+  ],
+  "links": [
+    {
+      "title": "Operator overview",
+      "url": "/d/aeris-operations",
+      "type": "link",
+      "targetBlank": false,
+      "includeVars": true,
+      "keepTime": false
+    },
+    {
+      "title": "Submit a review",
+      "url": "http://127.0.0.1:8510/",
+      "type": "link",
+      "targetBlank": false,
+      "includeVars": true,
+      "keepTime": false
+    },
+    {
+      "title": "Metric definitions",
+      "url": "http://127.0.0.1:8510/?view=monitoring",
+      "type": "link",
+      "targetBlank": false,
+      "includeVars": true,
+      "keepTime": false
+    },
+    {
+      "title": "Adaptation lifecycle",
+      "url": "/d/aeris-learning",
+      "type": "link",
+      "targetBlank": false,
+      "includeVars": true,
+      "keepTime": false
+    }
+  ],
+  "timepicker": {
+    "hidden": true
+  }
+}

@@ -1,0 +1,159 @@
+{
+  "name": "e2e_final_v1_s42",
+  "version": "v1",
+  "seed": 42,
+  "epochs": 50,
+  "best_epoch": 34,
+  "parameters": {
+    "trees": 300,
+    "depth": 24,
+    "leaf": 6,
+    "features": 0.5,
+    "rf_weight": "balanced_subsample",
+    "width": 48,
+    "dropout": 0.3,
+    "lr": 0.002,
+    "decay": 0.001,
+    "batch": 512,
+    "weighted": true,
+    "dilations": [
+      1,
+      2,
+      4
+    ]
+  },
+  "seconds": 235.1536087000004,
+  "rf_seconds": 126.87420720000046,
+  "fusion": [
+    {
+      "weight": 0.25,
+      "macro_f1": 0.6790366510212662,
+      "log_loss": 0.4876138173297816,
+      "brier": 0.28663817128367,
+      "fault_to_normal": 1763,
+      "fault_windows": 6468,
+      "normal_false_alarm": 46,
+      "recall": [
+        0.9004329004329005,
+        0.6552257266542981,
+        0.7031539888682746,
+        0.75139146567718
+      ],
+      "windows": 6930
+    },
+    {
+      "weight": 0.5,
+      "macro_f1": 0.6933551535704836,
+      "log_loss": 0.48531373607769607,
+      "brier": 0.2823031248957713,
+      "fault_to_normal": 932,
+      "fault_windows": 6468,
+      "normal_false_alarm": 168,
+      "recall": [
+        0.6363636363636364,
+        0.7504638218923934,
+        0.737012987012987,
+        0.8153988868274582
+      ],
+      "windows": 6930
+    },
+    {
+      "weight": 0.75,
+      "macro_f1": 0.6984729707409861,
+      "log_loss": 0.48824496610481033,
+      "brier": 0.28395836701015525,
+      "fault_to_normal": 559,
+      "fault_windows": 6468,
+      "normal_false_alarm": 238,
+      "recall": [
+        0.48484848484848486,
+        0.7971552257266543,
+        0.7611317254174397,
+        0.8172541743970315
+      ],
+      "windows": 6930
+    },
+    {
+      "weight": 0.9,
+      "macro_f1": 0.6917278788200323,
+      "log_loss": 0.49267610947506935,
+      "brier": 0.28782685075988135,
+      "fault_to_normal": 433,
+      "fault_windows": 6468,
+      "normal_false_alarm": 283,
+      "recall": [
+        0.3874458874458874,
+        0.821273964131107,
+        0.7606679035250464,
+        0.8116883116883117
+      ],
+      "windows": 6930
+    }
+  ],
+  "selected_weight": 0.75,
+  "hybrid": {
+    "macro_f1": 0.6984729707409861,
+    "log_loss": 0.46514377856387196,
+    "brier": 0.27430971603861054,
+    "fault_to_normal": 559,
+    "fault_windows": 6468,
+    "normal_false_alarm": 238,
+    "recall": [
+      0.48484848484848486,
+      0.7971552257266543,
+      0.7611317254174397,
+      0.8172541743970315
+    ],
+    "windows": 6930
+  },
+  "rf": {
+    "macro_f1": 0.6883049644256253,
+    "log_loss": 0.47697863769918175,
+    "brier": 0.2855482726621983,
+    "fault_to_normal": 405,
+    "fault_windows": 6468,
+    "normal_false_alarm": 293,
+    "recall": [
+      0.3658008658008658,
+      0.8302411873840445,
+      0.7546382189239332,
+      0.8051948051948052
+    ],
+    "windows": 6930
+  },
+  "temporal": {
+    "macro_f1": 0.6659709021869398,
+    "log_loss": 0.5329069378208563,
+    "brier": 0.3225976767483156,
+    "fault_to_normal": 2139,
+    "fault_windows": 6468,
+    "normal_false_alarm": 22,
+    "recall": [
+      0.9523809523809523,
+      0.5970933828076685,
+      0.7017625231910947,
+      0.7105751391465677
+    ],
+    "windows": 6930
+  },
+  "uncalibrated": {
+    "macro_f1": 0.6951681049094252,
+    "log_loss": 0.46709391120569893,
+    "brier": 0.2779938077058133,
+    "fault_to_normal": 531,
+    "fault_windows": 6468,
+    "normal_false_alarm": 252,
+    "recall": [
+      0.45454545454545453,
+      0.8042671614100185,
+      0.7592764378478665,
+      0.8116883116883117
+    ],
+    "windows": 6930
+  },
+  "status": "complete",
+  "reload_cpu_max_abs_difference": 1.1102230246251565e-16,
+  "cpu_cuda_max_abs_difference_32": 8.014702127745466e-06,
+  "cpu_cuda_class_disagreements_32": 0,
+  "bundle_sha256": "08d7640d0dbaf0bd27dac1ecb50862f844be47c958a8be2d6f80d41dc269daa4"
+}

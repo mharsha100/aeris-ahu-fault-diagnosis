@@ -1,0 +1,28 @@
+{
+  "name": "e2e_screen_v0_1_s42",
+  "version": "v0",
+  "parameters": {
+    "trees": 300,
+    "depth": 24,
+    "leaf": 6,
+    "features": 0.5,
+    "rf_weight": "balanced_subsample",
+    "width": 48,
+    "dropout": 0.3,
+    "lr": 0.002,
+    "decay": 0.001,
+    "batch": 512,
+    "weighted": true,
+    "dilations": [
+      1,
+      2,
+      4
+    ]
+  },
+  "epochs": 10,
+  "seed": 42,
+  "device": "cuda",
+  "checkpoint": "Best development macro F1; loss tie-break; no early stop",
+  "split": "aeris-windows-v1 frozen source train/validation/calibration",
+  "code_sha256": "0d0a8cfc7da3a90b428ad96f42135a8a6c85653a842bcb884542c9eb0a7b62da"
+}

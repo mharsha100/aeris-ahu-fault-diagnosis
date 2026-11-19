@@ -1,0 +1,18 @@
+{
+  "date": "2026-11-17T06:52:28.971851+00:00",
+  "branch": "aeris-improvements-20261117",
+  "head": "961876af8df55a203f3305cfc58a453ff727fec7",
+  "overall_Nov16_start": "clean; recorded in preceding release git_provenance.json",
+  "Nov17_start": "carried forward uncommitted November 16 implementation/evidence",
+  "final_status": "uncommitted changes and new files; no commit or push",
+  "tracked_changes": [
+    ".gitignore",
+    "README.md",
+    "app.py",
+    "requirements.txt",
+    "src/aeris/modeling.py",
+    "src/aeris/training.py"
+  ],
+  "changed_or_untracked_files": 367,
+  "raw_data_and_historical_milestones_modified": false
+}

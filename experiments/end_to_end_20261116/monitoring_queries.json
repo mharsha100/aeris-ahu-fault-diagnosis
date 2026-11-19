@@ -1,0 +1,148 @@
+[
+  {
+    "query": "aeris_eligible_predictions",
+    "response": {
+      "status": "success",
+      "data": {
+        "resultType": "vector",
+        "result": [
+          {
+            "metric": {
+              "__name__": "aeris_eligible_predictions",
+              "cohort": "test",
+              "instance": "app:8001",
+              "job": "aeris"
+            },
+            "value": [
+              1794872313.458,
+              "103"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "aeris_eligible_predictions",
+              "cohort": "genuine",
+              "instance": "app:8001",
+              "job": "aeris"
+            },
+            "value": [
+              1794872313.458,
+              "0"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "query": "aeris_predictions_with_feedback",
+    "response": {
+      "status": "success",
+      "data": {
+        "resultType": "vector",
+        "result": [
+          {
+            "metric": {
+              "__name__": "aeris_predictions_with_feedback",
+              "cohort": "test",
+              "instance": "app:8001",
+              "job": "aeris"
+            },
+            "value": [
+              1794872313.586,
+              "2"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "aeris_predictions_with_feedback",
+              "cohort": "genuine",
+              "instance": "app:8001",
+              "job": "aeris"
+            },
+            "value": [
+              1794872313.586,
+              "0"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "query": "aeris_model_ready",
+    "response": {
+      "status": "success",
+      "data": {
+        "resultType": "vector",
+        "result": [
+          {
+            "metric": {
+              "__name__": "aeris_model_ready",
+              "instance": "app:8001",
+              "job": "aeris"
+            },
+            "value": [
+              1794872313.607,
+              "1"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "query": "aeris_app_up",
+    "response": {
+      "status": "success",
+      "data": {
+        "resultType": "vector",
+        "result": [
+          {
+            "metric": {
+              "__name__": "aeris_app_up",
+              "instance": "app:8001",
+              "job": "aeris"
+            },
+            "value": [
+              1794872313.615,
+              "0"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "query": "up{job=\"aeris\"}",
+    "response": {
+      "status": "success",
+      "data": {
+        "resultType": "vector",
+        "result": [
+          {
+            "metric": {
+              "__name__": "up",
+              "instance": "app:8001",
+              "job": "aeris"
+            },
+            "value": [
+              1794872313.626,
+              "1"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "query": "(aeris_agree{cohort=\"genuine\"} / (aeris_agree{cohort=\"genuine\"} + aeris_disagree{cohort=\"genuine\"})) and ((aeris_agree{cohort=\"genuine\"} + aeris_disagree{cohort=\"genuine\"}) > 0)",
+    "response": {
+      "status": "success",
+      "data": {
+        "resultType": "vector",
+        "result": []
+      }
+    }
+  }
+]

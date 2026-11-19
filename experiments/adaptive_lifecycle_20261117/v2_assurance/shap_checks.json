@@ -1,0 +1,132 @@
+{
+  "library": "shap",
+  "version": "0.51.0",
+  "explainer": "ExactExplainer",
+  "scope": "Four sensor-group contributions to the full predictor probability; 16 coalitions.",
+  "cases": [
+    {
+      "window_id": "3e8fe36890729c959b1393c0",
+      "additivity_error": 3.9367270554535594e-10,
+      "repeat_identical": true,
+      "top_group_stable": true
+    },
+    {
+      "window_id": "fc85067d9223ac1633aa7d4c",
+      "additivity_error": 7.931211243317193e-12,
+      "repeat_identical": true,
+      "top_group_stable": true
+    },
+    {
+      "window_id": "164761a58306d73eaa74a921",
+      "additivity_error": 3.219317867841909e-10,
+      "repeat_identical": true,
+      "top_group_stable": true
+    },
+    {
+      "window_id": "cac00240554d269afe8267f1",
+      "additivity_error": 1.978417429882029e-12,
+      "repeat_identical": true,
+      "top_group_stable": true
+    },
+    {
+      "window_id": "f82151907d59515c95fc5d81",
+      "additivity_error": 1.5932188901501831e-10,
+      "repeat_identical": true,
+      "top_group_stable": true
+    },
+    {
+      "window_id": "a6653e71887355093cb34f93",
+      "additivity_error": 7.546607783126547e-11,
+      "repeat_identical": true,
+      "top_group_stable": true
+    },
+    {
+      "window_id": "5ddf7f98bb012dc4e8c8252f",
+      "additivity_error": 9.299339076562774e-12,
+      "repeat_identical": true,
+      "top_group_stable": true
+    },
+    {
+      "window_id": "f2eb5606b68a4aaae0647d78",
+      "additivity_error": 5.155165183623467e-11,
+      "repeat_identical": true,
+      "top_group_stable": true
+    },
+    {
+      "window_id": "04e83e2de2e0133f1ae4a42d",
+      "additivity_error": 7.667718820991709e-10,
+      "repeat_identical": true,
+      "top_group_stable": true
+    },
+    {
+      "window_id": "e7b8b88e16d18f3bbf3ed302",
+      "additivity_error": 1.4549472737712676e-12,
+      "repeat_identical": true,
+      "top_group_stable": true
+    },
+    {
+      "window_id": "6e83415af7de1f83a48c5b02",
+      "additivity_error": 2.146521849155647e-10,
+      "repeat_identical": true,
+      "top_group_stable": true
+    },
+    {
+      "window_id": "022bd9618235bfe2fee1d9dc",
+      "additivity_error": 1.4240830736866883e-12,
+      "repeat_identical": true,
+      "top_group_stable": true
+    },
+    {
+      "window_id": "97679a1e0e210aaa3c2f2338",
+      "additivity_error": 7.548450753347424e-11,
+      "repeat_identical": true,
+      "top_group_stable": true
+    },
+    {
+      "window_id": "a266199bb54d6f09469d6874",
+      "additivity_error": 8.385195315874228e-11,
+      "repeat_identical": true,
+      "top_group_stable": true
+    },
+    {
+      "window_id": "e1d94a3f2ece6660a96336fd",
+      "additivity_error": 4.916067553040193e-12,
+      "repeat_identical": true,
+      "top_group_stable": true
+    },
+    {
+      "window_id": "8062b8f9d0f18c93869dbfb1",
+      "additivity_error": 4.4644288266226795e-12,
+      "repeat_identical": true,
+      "top_group_stable": true
+    },
+    {
+      "window_id": "320318decc378567342ac6f2",
+      "additivity_error": 8.629705283702549e-11,
+      "repeat_identical": true,
+      "top_group_stable": true
+    },
+    {
+      "window_id": "3f7e6fa5a4336033a9d78cd9",
+      "additivity_error": 6.428191312579656e-14,
+      "repeat_identical": true,
+      "top_group_stable": true
+    },
+    {
+      "window_id": "039aa74089634212f8dda8c7",
+      "additivity_error": 3.415456806266093e-11,
+      "repeat_identical": true,
+      "top_group_stable": false
+    },
+    {
+      "window_id": "e7dcdab48a38b92340f410eb",
+      "additivity_error": 1.3830048217755575e-12,
+      "repeat_identical": true,
+      "top_group_stable": true
+    }
+  ],
+  "max_additivity_error": 7.667718820991709e-10,
+  "repeatability": 1.0,
+  "top_group_stability": 0.95,
+  "limitation": "Additivity is mathematical completeness; repeatability and small-perturbation stability are not measures of clinical or technician usefulness."
+}

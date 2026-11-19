@@ -1,0 +1,302 @@
+#1 [internal] load local bake definitions
+#1 reading from stdin 587B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 790B 0.0s done
+#2 DONE 0.1s
+
+#3 [internal] load metadata for docker.io/library/python:3.11.14-slim
+#3 DONE 1.4s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 162B 0.0s done
+#4 DONE 0.1s
+
+#5 [internal] load build context
+#5 DONE 0.0s
+
+#6 [ 1/11] FROM docker.io/library/python:3.11.14-slim@sha256:c8271b1f627d0068857dce5b53e14a9558603b527e46f1f901722f935b786a39
+#6 resolve docker.io/library/python:3.11.14-slim@sha256:c8271b1f627d0068857dce5b53e14a9558603b527e46f1f901722f935b786a39 0.1s done
+#6 DONE 0.1s
+
+#6 [ 1/11] FROM docker.io/library/python:3.11.14-slim@sha256:c8271b1f627d0068857dce5b53e14a9558603b527e46f1f901722f935b786a39
+#6 DONE 0.4s
+
+#5 [internal] load build context
+#5 transferring context: 2.00MB 2.8s done
+#5 DONE 3.0s
+
+#6 [ 1/11] FROM docker.io/library/python:3.11.14-slim@sha256:c8271b1f627d0068857dce5b53e14a9558603b527e46f1f901722f935b786a39
+#6 sha256:28c7e2bc4784ae35d32ed16d30b72e35df3c3f6a0214492f5be2b11e4b5ae2b0 250B / 250B 0.1s done
+#6 sha256:269d3f7471e27a9c2542916a49849e76630f22709b7e6063730b617d34d44d6f 7.34MB / 14.36MB 2.6s
+#6 sha256:13159fd0b0512a3ecefe5d5e51affb0ef7eb36b371459c75e34f5c090a0870f4 1.29MB / 1.29MB 0.9s done
+#6 sha256:206356c42440674ecbdf1070cf70ce8ef7885ac2e5c56f1ecf800b758f6b0419 5.24MB / 29.78MB 2.6s
+#6 sha256:269d3f7471e27a9c2542916a49849e76630f22709b7e6063730b617d34d44d6f 8.39MB / 14.36MB 2.7s
+#6 sha256:269d3f7471e27a9c2542916a49849e76630f22709b7e6063730b617d34d44d6f 9.44MB / 14.36MB 2.9s
+#6 sha256:206356c42440674ecbdf1070cf70ce8ef7885ac2e5c56f1ecf800b758f6b0419 7.34MB / 29.78MB 2.9s
+#6 sha256:269d3f7471e27a9c2542916a49849e76630f22709b7e6063730b617d34d44d6f 10.49MB / 14.36MB 3.0s
+#6 sha256:269d3f7471e27a9c2542916a49849e76630f22709b7e6063730b617d34d44d6f 11.53MB / 14.36MB 3.2s
+#6 sha256:206356c42440674ecbdf1070cf70ce8ef7885ac2e5c56f1ecf800b758f6b0419 9.44MB / 29.78MB 3.2s
+#6 sha256:269d3f7471e27a9c2542916a49849e76630f22709b7e6063730b617d34d44d6f 12.58MB / 14.36MB 3.3s
+#6 sha256:269d3f7471e27a9c2542916a49849e76630f22709b7e6063730b617d34d44d6f 14.36MB / 14.36MB 3.5s done
+#6 sha256:206356c42440674ecbdf1070cf70ce8ef7885ac2e5c56f1ecf800b758f6b0419 11.53MB / 29.78MB 3.5s
+#6 sha256:206356c42440674ecbdf1070cf70ce8ef7885ac2e5c56f1ecf800b758f6b0419 13.63MB / 29.78MB 3.6s
+#6 sha256:206356c42440674ecbdf1070cf70ce8ef7885ac2e5c56f1ecf800b758f6b0419 16.78MB / 29.78MB 3.9s
+#6 sha256:206356c42440674ecbdf1070cf70ce8ef7885ac2e5c56f1ecf800b758f6b0419 18.87MB / 29.78MB 4.1s
+#6 sha256:206356c42440674ecbdf1070cf70ce8ef7885ac2e5c56f1ecf800b758f6b0419 20.97MB / 29.78MB 4.4s
+#6 sha256:206356c42440674ecbdf1070cf70ce8ef7885ac2e5c56f1ecf800b758f6b0419 23.07MB / 29.78MB 4.5s
+#6 sha256:206356c42440674ecbdf1070cf70ce8ef7885ac2e5c56f1ecf800b758f6b0419 25.17MB / 29.78MB 4.7s
+#6 sha256:206356c42440674ecbdf1070cf70ce8ef7885ac2e5c56f1ecf800b758f6b0419 27.26MB / 29.78MB 4.8s
+#6 sha256:206356c42440674ecbdf1070cf70ce8ef7885ac2e5c56f1ecf800b758f6b0419 29.78MB / 29.78MB 5.0s done
+#6 extracting sha256:206356c42440674ecbdf1070cf70ce8ef7885ac2e5c56f1ecf800b758f6b0419
+#6 extracting sha256:206356c42440674ecbdf1070cf70ce8ef7885ac2e5c56f1ecf800b758f6b0419 4.1s done
+#6 DONE 9.8s
+
+#6 [ 1/11] FROM docker.io/library/python:3.11.14-slim@sha256:c8271b1f627d0068857dce5b53e14a9558603b527e46f1f901722f935b786a39
+#6 extracting sha256:13159fd0b0512a3ecefe5d5e51affb0ef7eb36b371459c75e34f5c090a0870f4
+#6 extracting sha256:13159fd0b0512a3ecefe5d5e51affb0ef7eb36b371459c75e34f5c090a0870f4 0.2s done
+#6 DONE 10.0s
+
+#6 [ 1/11] FROM docker.io/library/python:3.11.14-slim@sha256:c8271b1f627d0068857dce5b53e14a9558603b527e46f1f901722f935b786a39
+#6 extracting sha256:269d3f7471e27a9c2542916a49849e76630f22709b7e6063730b617d34d44d6f
+#6 extracting sha256:269d3f7471e27a9c2542916a49849e76630f22709b7e6063730b617d34d44d6f 0.9s done
+#6 DONE 10.9s
+
+#6 [ 1/11] FROM docker.io/library/python:3.11.14-slim@sha256:c8271b1f627d0068857dce5b53e14a9558603b527e46f1f901722f935b786a39
+#6 extracting sha256:28c7e2bc4784ae35d32ed16d30b72e35df3c3f6a0214492f5be2b11e4b5ae2b0 0.1s done
+#6 DONE 10.9s
+
+#7 [ 2/11] WORKDIR /app
+#7 DONE 0.3s
+
+#8 [ 3/11] COPY requirements.txt /app/requirements.txt
+#8 DONE 0.1s
+
+#9 [ 4/11] RUN pip install --no-cache-dir -r requirements.txt
+#9 2.688 Looking in indexes: https://pypi.org/simple, https://download.pytorch.org/whl/cpu
+#9 4.112 Collecting numpy==2.4.6 (from -r requirements.txt (line 4))
+#9 4.344   Downloading numpy-2.4.6-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+#9 4.767 Collecting pandas==2.2.3 (from -r requirements.txt (line 5))
+#9 4.807   Downloading pandas-2.2.3-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (89 kB)
+#9 4.858      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 89.9/89.9 kB 2.0 MB/s eta 0:00:00
+#9 5.215 Collecting scipy==1.16.3 (from -r requirements.txt (line 6))
+#9 5.255   Downloading scipy-1.16.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (62 kB)
+#9 5.266      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.0/62.0 kB 7.6 MB/s eta 0:00:00
+#9 5.597 Collecting scikit-learn==1.7.2 (from -r requirements.txt (line 7))
+#9 5.636   Downloading scikit_learn-1.7.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (11 kB)
+#9 5.839 Collecting joblib==1.5.2 (from -r requirements.txt (line 8))
+#9 5.880   Downloading joblib-1.5.2-py3-none-any.whl.metadata (5.6 kB)
+#9 6.236 Collecting torch==2.9.1+cpu (from -r requirements.txt (line 9))
+#9 6.399   Downloading https://download-r2.pytorch.org/whl/cpu/torch-2.9.1%2Bcpu-cp311-cp311-manylinux_2_28_x86_64.whl.metadata (29 kB)
+#9 6.663 Collecting streamlit==1.50.0 (from -r requirements.txt (line 10))
+#9 6.704   Downloading streamlit-1.50.0-py3-none-any.whl.metadata (9.5 kB)
+#9 6.864 Collecting requests==2.34.2 (from -r requirements.txt (line 11))
+#9 6.904   Downloading requests-2.34.2-py3-none-any.whl.metadata (4.8 kB)
+#9 7.094 Collecting python-dateutil>=2.8.2 (from pandas==2.2.3->-r requirements.txt (line 5))
+#9 7.136   Downloading python_dateutil-4.0.0-py3-none-any.whl.metadata (7.3 kB)
+#9 7.316 Collecting pytz>=2020.1 (from pandas==2.2.3->-r requirements.txt (line 5))
+#9 7.357   Downloading pytz-2026.6-py2.py3-none-any.whl.metadata (22 kB)
+#9 7.491 Collecting tzdata>=2022.7 (from pandas==2.2.3->-r requirements.txt (line 5))
+#9 7.531   Downloading tzdata-2026.6-py2.py3-none-any.whl.metadata (1.4 kB)
+#9 7.855 Collecting threadpoolctl>=3.1.0 (from scikit-learn==1.7.2->-r requirements.txt (line 7))
+#9 7.894   Downloading threadpoolctl-3.8.0-py3-none-any.whl.metadata (29 kB)
+#9 8.147 Collecting filelock (from torch==2.9.1+cpu->-r requirements.txt (line 9))
+#9 8.187   Downloading filelock-4.2.10-py3-none-any.whl.metadata (2.3 kB)
+#9 8.390 Collecting typing-extensions>=4.10.0 (from torch==2.9.1+cpu->-r requirements.txt (line 9))
+#9 8.429   Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+#9 8.540 Collecting sympy>=1.13.3 (from torch==2.9.1+cpu->-r requirements.txt (line 9))
+#9 8.580   Downloading sympy-1.14.0-py3-none-any.whl.metadata (12 kB)
+#9 8.711 Collecting networkx>=2.5.1 (from torch==2.9.1+cpu->-r requirements.txt (line 9))
+#9 8.750   Downloading networkx-3.6.1-py3-none-any.whl.metadata (6.8 kB)
+#9 8.832 Collecting jinja2 (from torch==2.9.1+cpu->-r requirements.txt (line 9))
+#9 8.856   Downloading https://download.pytorch.org/whl/jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+#9 9.005 Collecting fsspec>=0.8.5 (from torch==2.9.1+cpu->-r requirements.txt (line 9))
+#9 9.048   Downloading fsspec-2026.9.0-py3-none-any.whl.metadata (10 kB)
+#9 9.255 Collecting altair!=5.4.0,!=5.4.1,<6,>=4.0 (from streamlit==1.50.0->-r requirements.txt (line 10))
+#9 9.300   Downloading altair-5.5.0-py3-none-any.whl.metadata (11 kB)
+#9 9.403 Collecting blinker<2,>=1.5.0 (from streamlit==1.50.0->-r requirements.txt (line 10))
+#9 9.445   Downloading blinker-1.9.0-py3-none-any.whl.metadata (1.6 kB)
+#9 9.595 Collecting cachetools<7,>=4.0 (from streamlit==1.50.0->-r requirements.txt (line 10))
+#9 9.633   Downloading cachetools-6.2.6-py3-none-any.whl.metadata (5.6 kB)
+#9 9.781 Collecting click<9,>=7.0 (from streamlit==1.50.0->-r requirements.txt (line 10))
+#9 9.822   Downloading click-8.5.1-py3-none-any.whl.metadata (2.6 kB)
+#9 9.953 Collecting packaging<26,>=20 (from streamlit==1.50.0->-r requirements.txt (line 10))
+#9 9.991   Downloading packaging-25.0-py3-none-any.whl.metadata (3.3 kB)
+#9 11.26 Collecting pillow<12,>=7.1.0 (from streamlit==1.50.0->-r requirements.txt (line 10))
+#9 11.29   Downloading pillow-11.3.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.0 kB)
+#9 12.05 Collecting protobuf<7,>=3.20 (from streamlit==1.50.0->-r requirements.txt (line 10))
+#9 12.09   Downloading protobuf-6.33.6-cp39-abi3-manylinux2014_x86_64.whl.metadata (593 bytes)
+#9 12.38 Collecting pyarrow>=7.0 (from streamlit==1.50.0->-r requirements.txt (line 10))
+#9 12.42   Downloading pyarrow-26.0.1-cp311-cp311-manylinux_2_28_x86_64.whl.metadata (3.0 kB)
+#9 12.56 Collecting tenacity<10,>=8.1.0 (from streamlit==1.50.0->-r requirements.txt (line 10))
+#9 12.60   Downloading tenacity-9.2.1-py3-none-any.whl.metadata (1.4 kB)
+#9 12.71 Collecting toml<2,>=0.10.1 (from streamlit==1.50.0->-r requirements.txt (line 10))
+#9 12.75   Downloading toml-0.10.2-py2.py3-none-any.whl.metadata (7.1 kB)
+#9 13.08 Collecting watchdog<7,>=2.1.5 (from streamlit==1.50.0->-r requirements.txt (line 10))
+#9 13.12   Downloading watchdog-6.0.0-py3-none-manylinux2014_x86_64.whl.metadata (44 kB)
+#9 13.12      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 44.3/44.3 kB 25.2 MB/s eta 0:00:00
+#9 13.29 Collecting gitpython!=3.1.19,<4,>=3.0.7 (from streamlit==1.50.0->-r requirements.txt (line 10))
+#9 13.33   Downloading gitpython-3.2.1-py3-none-any.whl.metadata (13 kB)
+#9 13.49 Collecting pydeck<1,>=0.8.0b4 (from streamlit==1.50.0->-r requirements.txt (line 10))
+#9 13.53   Downloading pydeck-0.9.3-py2.py3-none-any.whl.metadata (4.2 kB)
+#9 13.72 Collecting tornado!=6.5.0,<7,>=6.0.3 (from streamlit==1.50.0->-r requirements.txt (line 10))
+#9 13.75   Downloading tornado-6.6.1-cp311-abi3-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (2.6 kB)
+#9 14.13 Collecting charset_normalizer<4,>=2 (from requests==2.34.2->-r requirements.txt (line 11))
+#9 14.17   Downloading charset_normalizer-3.5.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (46 kB)
+#9 14.18      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 46.4/46.4 kB 10.4 MB/s eta 0:00:00
+#9 14.27 Collecting idna<4,>=2.5 (from requests==2.34.2->-r requirements.txt (line 11))
+#9 14.30   Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+#9 14.42 Collecting urllib3<3,>=1.26 (from requests==2.34.2->-r requirements.txt (line 11))
+#9 14.45   Downloading urllib3-2.8.0-py3-none-any.whl.metadata (7.4 kB)
+#9 14.53 Collecting certifi>=2023.5.7 (from requests==2.34.2->-r requirements.txt (line 11))
+#9 14.57   Downloading certifi-2026.10.23-py3-none-any.whl.metadata (2.5 kB)
+#9 14.82 Collecting jsonschema>=3.0 (from altair!=5.4.0,!=5.4.1,<6,>=4.0->streamlit==1.50.0->-r requirements.txt (line 10))
+#9 14.86   Downloading jsonschema-4.26.0-py3-none-any.whl.metadata (7.6 kB)
+#9 15.04 Collecting narwhals>=1.14.2 (from altair!=5.4.0,!=5.4.1,<6,>=4.0->streamlit==1.50.0->-r requirements.txt (line 10))
+#9 15.08   Downloading narwhals-2.28.0-py3-none-any.whl.metadata (15 kB)
+#9 15.33 Collecting gitdb<5,>=4.0.1 (from gitpython!=3.1.19,<4,>=3.0.7->streamlit==1.50.0->-r requirements.txt (line 10))
+#9 15.37   Downloading gitdb-4.0.12-py3-none-any.whl.metadata (1.2 kB)
+#9 15.69 Collecting MarkupSafe>=2.0 (from jinja2->torch==2.9.1+cpu->-r requirements.txt (line 9))
+#9 15.73   Downloading markupsafe-3.0.4-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+#9 15.85 Collecting mpmath<1.4,>=1.1.0 (from sympy>=1.13.3->torch==2.9.1+cpu->-r requirements.txt (line 9))
+#9 15.89   Downloading mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
+#9 16.07 Collecting smmap<6,>=3.0.1 (from gitdb<5,>=4.0.1->gitpython!=3.1.19,<4,>=3.0.7->streamlit==1.50.0->-r requirements.txt (line 10))
+#9 16.11   Downloading smmap-5.0.3-py3-none-any.whl.metadata (4.6 kB)
+#9 16.33 Collecting attrs>=22.2.0 (from jsonschema>=3.0->altair!=5.4.0,!=5.4.1,<6,>=4.0->streamlit==1.50.0->-r requirements.txt (line 10))
+#9 16.37   Downloading attrs-26.1.0-py3-none-any.whl.metadata (8.8 kB)
+#9 16.47 Collecting jsonschema-specifications>=2023.03.6 (from jsonschema>=3.0->altair!=5.4.0,!=5.4.1,<6,>=4.0->streamlit==1.50.0->-r requirements.txt (line 10))
+#9 16.51   Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl.metadata (2.9 kB)
+#9 16.63 Collecting referencing>=0.28.4 (from jsonschema>=3.0->altair!=5.4.0,!=5.4.1,<6,>=4.0->streamlit==1.50.0->-r requirements.txt (line 10))
+#9 16.67   Downloading referencing-0.37.0-py3-none-any.whl.metadata (2.8 kB)
+#9 17.46 Collecting rpds-py>=0.25.0 (from jsonschema>=3.0->altair!=5.4.0,!=5.4.1,<6,>=4.0->streamlit==1.50.0->-r requirements.txt (line 10))
+#9 17.50   Downloading rpds_py-2026.9.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.1 kB)
+#9 17.68 Downloading numpy-2.4.6-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.9 MB)
+#9 19.16    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.9/16.9 MB 13.0 MB/s eta 0:00:00
+#9 19.20 Downloading pandas-2.2.3-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (13.1 MB)
+#9 20.49    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.1/13.1 MB 9.9 MB/s eta 0:00:00
+#9 20.54 Downloading scipy-1.16.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (35.9 MB)
+#9 24.08    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.9/35.9 MB 12.6 MB/s eta 0:00:00
+#9 24.13 Downloading scikit_learn-1.7.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (9.7 MB)
+#9 25.00    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.7/9.7 MB 11.3 MB/s eta 0:00:00
+#9 25.04 Downloading joblib-1.5.2-py3-none-any.whl (308 kB)
+#9 25.06    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 308.4/308.4 kB 13.5 MB/s eta 0:00:00
+#9 25.11 Downloading https://download-r2.pytorch.org/whl/cpu/torch-2.9.1%2Bcpu-cp311-cp311-manylinux_2_28_x86_64.whl (184.5 MB)
+#9 46.52    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 184.5/184.5 MB 11.0 MB/s eta 0:00:00
+#9 46.57 Downloading streamlit-1.50.0-py3-none-any.whl (10.1 MB)
+#9 47.50    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.1/10.1 MB 10.9 MB/s eta 0:00:00
+#9 47.54 Downloading requests-2.34.2-py3-none-any.whl (73 kB)
+#9 47.55    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 73.1/73.1 kB 10.8 MB/s eta 0:00:00
+#9 47.60 Downloading altair-5.5.0-py3-none-any.whl (731 kB)
+#9 47.65    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 731.2/731.2 kB 15.7 MB/s eta 0:00:00
+#9 47.68 Downloading blinker-1.9.0-py3-none-any.whl (8.5 kB)
+#9 47.72 Downloading cachetools-6.2.6-py3-none-any.whl (11 kB)
+#9 47.76 Downloading certifi-2026.10.23-py3-none-any.whl (135 kB)
+#9 47.78    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 135.1/135.1 kB 12.5 MB/s eta 0:00:00
+#9 47.82 Downloading charset_normalizer-3.5.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (269 kB)
+#9 47.84    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 270.0/270.0 kB 16.2 MB/s eta 0:00:00
+#9 47.87 Downloading click-8.5.1-py3-none-any.whl (126 kB)
+#9 47.89    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 126.2/126.2 kB 14.0 MB/s eta 0:00:00
+#9 47.92 Downloading fsspec-2026.9.0-py3-none-any.whl (221 kB)
+#9 47.95    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 221.7/221.7 kB 12.0 MB/s eta 0:00:00
+#9 47.98 Downloading gitpython-3.2.1-py3-none-any.whl (231 kB)
+#9 48.01    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 231.5/231.5 kB 12.0 MB/s eta 0:00:00
+#9 48.04 Downloading idna-3.20-py3-none-any.whl (69 kB)
+#9 48.05    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 69.6/69.6 kB 15.5 MB/s eta 0:00:00
+#9 48.09 Downloading networkx-3.6.1-py3-none-any.whl (2.1 MB)
+#9 48.22    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 16.3 MB/s eta 0:00:00
+#9 48.26 Downloading packaging-25.0-py3-none-any.whl (66 kB)
+#9 48.27    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 66.5/66.5 kB 9.7 MB/s eta 0:00:00
+#9 48.32 Downloading pillow-11.3.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (6.6 MB)
+#9 48.84    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.6/6.6 MB 12.8 MB/s eta 0:00:00
+#9 48.88 Downloading protobuf-6.33.6-cp39-abi3-manylinux2014_x86_64.whl (323 kB)
+#9 48.90    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 323.4/323.4 kB 21.6 MB/s eta 0:00:00
+#9 48.94 Downloading pyarrow-26.0.1-cp311-cp311-manylinux_2_28_x86_64.whl (55.0 MB)
+#9 54.14    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 55.0/55.0 MB 9.5 MB/s eta 0:00:00
+#9 54.19 Downloading pydeck-0.9.3-py2.py3-none-any.whl (11.4 MB)
+#9 56.10    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.4/11.4 MB 6.4 MB/s eta 0:00:00
+#9 56.13 Downloading https://download.pytorch.org/whl/jinja2-3.1.6-py3-none-any.whl (134 kB)
+#9 56.15    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 134.9/134.9 kB 10.7 MB/s eta 0:00:00
+#9 56.18 Downloading python_dateutil-4.0.0-py3-none-any.whl (92 kB)
+#9 56.19    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 92.9/92.9 kB 16.7 MB/s eta 0:00:00
+#9 56.23 Downloading pytz-2026.6-py2.py3-none-any.whl (506 kB)
+#9 56.30    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 506.3/506.3 kB 8.7 MB/s eta 0:00:00
+#9 56.34 Downloading sympy-1.14.0-py3-none-any.whl (6.3 MB)
+#9 56.97    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.3/6.3 MB 10.0 MB/s eta 0:00:00
+#9 57.01 Downloading tenacity-9.2.1-py3-none-any.whl (32 kB)
+#9 57.05 Downloading threadpoolctl-3.8.0-py3-none-any.whl (32 kB)
+#9 57.09 Downloading toml-0.10.2-py2.py3-none-any.whl (16 kB)
+#9 57.13 Downloading tornado-6.6.1-cp311-abi3-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (534 kB)
+#9 57.16    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 534.5/534.5 kB 17.9 MB/s eta 0:00:00
+#9 57.21 Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+#9 57.21    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 45.6/45.6 kB 71.9 MB/s eta 0:00:00
+#9 57.25 Downloading tzdata-2026.6-py2.py3-none-any.whl (348 kB)
+#9 57.28    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 348.2/348.2 kB 13.8 MB/s eta 0:00:00
+#9 57.32 Downloading urllib3-2.8.0-py3-none-any.whl (135 kB)
+#9 57.34    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 135.7/135.7 kB 13.0 MB/s eta 0:00:00
+#9 57.38 Downloading watchdog-6.0.0-py3-none-manylinux2014_x86_64.whl (79 kB)
+#9 57.39    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 79.1/79.1 kB 9.8 MB/s eta 0:00:00
+#9 57.42 Downloading filelock-4.2.10-py3-none-any.whl (218 kB)
+#9 57.45    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 218.0/218.0 kB 10.7 MB/s eta 0:00:00
+#9 57.48 Downloading gitdb-4.0.12-py3-none-any.whl (62 kB)
+#9 57.49    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.8/62.8 kB 21.6 MB/s eta 0:00:00
+#9 57.53 Downloading jsonschema-4.26.0-py3-none-any.whl (90 kB)
+#9 57.56    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 90.6/90.6 kB 6.8 MB/s eta 0:00:00
+#9 57.59 Downloading markupsafe-3.0.4-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
+#9 57.64 Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)
+#9 57.69    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 10.8 MB/s eta 0:00:00
+#9 57.74 Downloading narwhals-2.28.0-py3-none-any.whl (490 kB)
+#9 57.78    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 490.6/490.6 kB 13.4 MB/s eta 0:00:00
+#9 57.82 Downloading attrs-26.1.0-py3-none-any.whl (67 kB)
+#9 57.83    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 67.5/67.5 kB 9.3 MB/s eta 0:00:00
+#9 57.87 Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl (18 kB)
+#9 57.91 Downloading referencing-0.37.0-py3-none-any.whl (26 kB)
+#9 57.96 Downloading rpds_py-2026.9.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (375 kB)
+#9 57.98    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 375.4/375.4 kB 18.0 MB/s eta 0:00:00
+#9 58.02 Downloading smmap-5.0.3-py3-none-any.whl (24 kB)
+#9 59.83 Installing collected packages: pytz, mpmath, watchdog, urllib3, tzdata, typing-extensions, tornado, toml, threadpoolctl, tenacity, sympy, smmap, rpds-py, pyarrow, protobuf, pillow, packaging, numpy, networkx, narwhals, MarkupSafe, joblib, idna, fsspec, filelock, click, charset_normalizer, certifi, cachetools, blinker, attrs, scipy, requests, referencing, python-dateutil, jinja2, gitdb, torch, scikit-learn, pydeck, pandas, jsonschema-specifications, gitpython, jsonschema, altair, streamlit
+#9 135.7 Successfully installed MarkupSafe-3.0.4 altair-5.5.0 attrs-26.1.0 blinker-1.9.0 cachetools-6.2.6 certifi-2026.10.23 charset_normalizer-3.5.2 click-8.5.1 filelock-4.2.10 fsspec-2026.9.0 gitdb-4.0.12 gitpython-3.2.1 idna-3.20 jinja2-3.1.6 joblib-1.5.2 jsonschema-4.26.0 jsonschema-specifications-2025.9.1 mpmath-1.3.0 narwhals-2.28.0 networkx-3.6.1 numpy-2.4.6 packaging-25.0 pandas-2.2.3 pillow-11.3.0 protobuf-6.33.6 pyarrow-26.0.1 pydeck-0.9.3 python-dateutil-4.0.0 pytz-2026.6 referencing-0.37.0 requests-2.34.2 rpds-py-2026.9.1 scikit-learn-1.7.2 scipy-1.16.3 smmap-5.0.3 streamlit-1.50.0 sympy-1.14.0 tenacity-9.2.1 threadpoolctl-3.8.0 toml-0.10.2 torch-2.9.1+cpu tornado-6.6.1 typing-extensions-4.16.0 tzdata-2026.6 urllib3-2.8.0 watchdog-6.0.0
+#9 135.7 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+#9 136.0 
+#9 136.0 [notice] A new release of pip is available: 24.0 -> 26.3
+#9 136.0 [notice] To update, run: pip install --upgrade pip
+#9 DONE 138.6s
+
+#10 [ 5/11] COPY app.py /app/
+#10 DONE 0.7s
+
+#11 [ 6/11] COPY src /app/src
+#11 DONE 0.2s
+
+#12 [ 7/11] COPY scripts /app/scripts
+#12 DONE 0.2s
+
+#13 [ 8/11] COPY milestone4 /app/milestone4
+#13 DONE 0.2s
+
+#14 [ 9/11] COPY experiments/end_to_end_20261116 /app/experiments/end_to_end_20261116
+#14 DONE 0.2s
+
+#15 [10/11] COPY deployment /app/deployment
+#15 DONE 0.2s
+
+#16 [11/11] RUN mkdir -p /state && useradd --uid 10001 --create-home aeris && chown aeris:aeris /state
+#16 DONE 0.7s
+
+#17 exporting to image
+#17 exporting layers
+#17 exporting layers 123.8s done
+#17 exporting manifest sha256:d2fdf8906a3c51ba27e45c02ec31008089cacfb6da52527b6a7dea18f172c470 0.1s done
+#17 exporting config sha256:7b1af19f2b96fc8d17269a513a25c8ae24027271a80721206a47c84e72698974 0.0s done
+#17 exporting attestation manifest sha256:5d6d5ea9b4182dd36797fa93928dffbda7dfd9a2c17cf9f8b2e8c5103b8ba2f9 0.1s done
+#17 exporting manifest list sha256:7783be279758fe042979ac5164da54bac08e73ee6287154723cb2fcd246ada86
+#17 exporting manifest list sha256:7783be279758fe042979ac5164da54bac08e73ee6287154723cb2fcd246ada86 0.1s done
+#17 naming to docker.io/library/aeris-local:20261116
+#17 naming to docker.io/library/aeris-local:20261116 0.0s done
+#17 unpacking to docker.io/library/aeris-local:20261116
+#17 unpacking to docker.io/library/aeris-local:20261116 78.0s done
+#17 DONE 202.3s
+
+#18 resolving provenance for metadata file
+#18 DONE 0.1s
+ aeris-local:20261116  Built

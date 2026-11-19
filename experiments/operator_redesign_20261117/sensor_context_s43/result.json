@@ -1,0 +1,90 @@
+{
+  "windows": 6930,
+  "accuracy": 0.80995670995671,
+  "balanced_accuracy": 0.7459415584415584,
+  "macro_f1": 0.7483442689297627,
+  "log_loss": 0.3771147308623464,
+  "multiclass_brier": 0.22828195236614612,
+  "ece_10_bins": 0.015645790727717365,
+  "confusion_matrix": [
+    [
+      217,
+      140,
+      34,
+      71
+    ],
+    [
+      101,
+      2657,
+      323,
+      153
+    ],
+    [
+      78,
+      249,
+      1829,
+      0
+    ],
+    [
+      4,
+      164,
+      0,
+      910
+    ]
+  ],
+  "per_class": {
+    "normal": {
+      "precision": 0.5425,
+      "recall": 0.4696969696969697,
+      "f1-score": 0.5034802784222738,
+      "support": 462.0
+    },
+    "damper_fault": {
+      "precision": 0.8277258566978193,
+      "recall": 0.8215831787260359,
+      "f1-score": 0.824643078833023,
+      "support": 3234.0
+    },
+    "cooling_valve_fault": {
+      "precision": 0.8366880146386093,
+      "recall": 0.8483302411873841,
+      "f1-score": 0.8424689083371718,
+      "support": 2156.0
+    },
+    "heating_valve_fault": {
+      "precision": 0.8024691358024691,
+      "recall": 0.8441558441558441,
+      "f1-score": 0.8227848101265823,
+      "support": 1078.0
+    },
+    "accuracy": 0.80995670995671,
+    "macro avg": {
+      "precision": 0.7523457517847245,
+      "recall": 0.7459415584415584,
+      "f1-score": 0.7483442689297627,
+      "support": 6930.0
+    },
+    "weighted avg": {
+      "precision": 0.807570203249156,
+      "recall": 0.80995670995671,
+      "f1-score": 0.8084889750748175,
+      "support": 6930.0
+    }
+  },
+  "seed": 43,
+  "seconds": 40.68373050000082,
+  "features": 304,
+  "additional_channels": [
+    "AHU Supply Air Temperature Setpoint (\u00b0K)",
+    "Supply Air Mass Flow Rate (kg/s)",
+    "Outdoor Air Mass Flow Rate (kg/s)",
+    "Return Air Mass Flow Rate in the Mixing Box (kg/s)",
+    "Measured AHU Supply Air Duct Static Pressure (Pa)",
+    "AHU Supply Air Duct Static Pressure Setpoint (Pa)",
+    "AHU Outdoor Air Wet Bulb Temperature (\u00b0K)"
+  ],
+  "selected_iteration": 1111,
+  "iterations_completed": 1200,
+  "fault_to_normal": 183,
+  "deployed": false
+}

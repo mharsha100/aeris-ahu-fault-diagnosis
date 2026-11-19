@@ -1,0 +1,7 @@
+calibrated_physics_v0_s43 0.691459456389617 252 {'weight': 0.5, 'factors': [0.8, 1, 1, 1], 'calibration_f1': 0.7033828502802384, 'calibration_false_normal': 16}
+calibrated_physics_v0_s44 0.6820025279148152 336 {'weight': 0.5, 'factors': [0.8, 1, 1, 1], 'calibration_f1': 0.7119859586471471, 'calibration_false_normal': 22}
+calibrated_physics_v1_s43 0.6878222967094738 126 {'weight': 0.65, 'factors': [0.8, 1, 1, 1], 'calibration_f1': 0.7052407239413142, 'calibration_false_normal': 11}
+calibrated_physics_v2_s42 0.6844989963663843 152 {'weight': 0.5, 'factors': [0.8, 1, 1, 1], 'calibration_f1': 0.7080879751013399, 'calibration_false_normal': 15}
+calibrated_physics_v2_s43 0.6815292213709937 106 {'weight': 0.65, 'factors': [0.8, 1, 0.85, 1], 'calibration_f1': 0.704208729304281, 'calibration_false_normal': 8}
+calibrated_physics_v1_s44 0.67858881141057 90 {'weight': 0.65, 'factors': [0.8, 1, 1, 1], 'calibration_f1': 0.6998505869473403, 'calibration_false_normal': 12}
+calibrated_physics_v2_s44 0.6848376454741276 159 {'weight': 0.65, 'factors': [0.8, 1, 0.85, 1], 'calibration_f1': 0.7078218697845131, 'calibration_false_normal': 9}

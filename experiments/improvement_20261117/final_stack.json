@@ -1,0 +1,111 @@
+{
+  "ready": {
+    "model_ready": true,
+    "app_up": true,
+    "bundle": "e2e_anchor_v2_s42",
+    "error": null
+  },
+  "summary": {
+    "genuine": {
+      "cohort": "genuine",
+      "time_window": "all persisted records since deployment ledger creation",
+      "eligible_predictions": 0,
+      "predictions_with_feedback": 0,
+      "feedback_coverage": null,
+      "agree": 0,
+      "disagree": 0,
+      "unsure": 0,
+      "agreement": null,
+      "reviewed_predictions": 0,
+      "overrides": 0,
+      "override_rate": null,
+      "satisfaction_responses": 0,
+      "satisfaction_sum": 0,
+      "satisfaction_mean": null,
+      "verified_labels": 0,
+      "verified_label_coverage": null,
+      "verified_quality_status": "insufficient independent-case evidence; no operational accuracy claim",
+      "genuine_ground_truth": false,
+      "ground_truth_status": "Cohort selection alone does not establish ground truth; inspection records require independent alignment and case support"
+    },
+    "test": {
+      "cohort": "test",
+      "time_window": "all persisted records since deployment ledger creation",
+      "eligible_predictions": 525,
+      "predictions_with_feedback": 6,
+      "feedback_coverage": 0.011428571428571429,
+      "agree": 0,
+      "disagree": 0,
+      "unsure": 6,
+      "agreement": null,
+      "reviewed_predictions": 6,
+      "overrides": 0,
+      "override_rate": 0.0,
+      "satisfaction_responses": 6,
+      "satisfaction_sum": 24,
+      "satisfaction_mean": 4.0,
+      "verified_labels": 0,
+      "verified_label_coverage": 0.0,
+      "verified_quality_status": "insufficient independent-case evidence; no operational accuracy claim",
+      "genuine_ground_truth": false,
+      "ground_truth_status": "Cohort selection alone does not establish ground truth; inspection records require independent alignment and case support"
+    }
+  },
+  "targets": {
+    "status": "success",
+    "data": {
+      "activeTargets": [
+        {
+          "discoveredLabels": {
+            "__address__": "app:8001",
+            "__metrics_path__": "/metrics",
+            "__scheme__": "http",
+            "__scrape_interval__": "5s",
+            "__scrape_timeout__": "5s",
+            "job": "aeris"
+          },
+          "labels": {
+            "instance": "app:8001",
+            "job": "aeris"
+          },
+          "scrapePool": "aeris",
+          "scrapeUrl": "http://app:8001/metrics",
+          "globalUrl": "http://app:8001/metrics",
+          "lastError": "",
+          "lastScrape": "2026-11-17T06:52:27.138673997Z",
+          "lastScrapeDuration": 0.231099329,
+          "health": "up",
+          "scrapeInterval": "5s",
+          "scrapeTimeout": "5s"
+        }
+      ],
+      "droppedTargets": [],
+      "droppedTargetCounts": {
+        "aeris": 0
+      }
+    }
+  },
+  "alerts": {
+    "status": "success",
+    "data": {
+      "alerts": []
+    }
+  },
+  "containers": [
+    {
+      "name": "/aeris-app-1",
+      "image_id": "sha256:edce93ead7eb8fa4bbe2c9b95967020b95b84d55253ce14160ee578597dd9069",
+      "health": "healthy"
+    },
+    {
+      "name": "/aeris-grafana-1",
+      "image_id": "sha256:35c41e0fd0295f5d0ee5db7e780cf33506abfaf47686196f825364889dee878b",
+      "health": "healthy"
+    },
+    {
+      "name": "/aeris-prometheus-1",
+      "image_id": "sha256:49214755b6153f90a597adcbff0252cc61069f8ab69ce8411285cd4a560e8038",
+      "health": "healthy"
+    }
+  ]
+}

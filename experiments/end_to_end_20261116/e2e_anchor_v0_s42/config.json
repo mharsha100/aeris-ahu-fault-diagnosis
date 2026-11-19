@@ -1,0 +1,28 @@
+{
+  "name": "e2e_anchor_v0_s42",
+  "version": "v0",
+  "parameters": {
+    "trees": 200,
+    "depth": 18,
+    "leaf": 3,
+    "features": "sqrt",
+    "rf_weight": "balanced_subsample",
+    "width": 32,
+    "dropout": 0.15,
+    "lr": 0.001,
+    "decay": 0.0001,
+    "batch": 256,
+    "weighted": true,
+    "dilations": [
+      1,
+      2,
+      4
+    ]
+  },
+  "epochs": 50,
+  "seed": 42,
+  "device": "cuda",
+  "checkpoint": "Best development macro F1; loss tie-break; no early stop",
+  "split": "aeris-windows-v1 frozen source train/validation/calibration",
+  "code_sha256": "0d0a8cfc7da3a90b428ad96f42135a8a6c85653a842bcb884542c9eb0a7b62da"
+}

@@ -1,0 +1,41 @@
+{
+  "runs": [
+    {
+      "run": "physics_v0_s42",
+      "completed_epochs": 50
+    },
+    {
+      "run": "physics_v0_s43",
+      "completed_epochs": 50
+    },
+    {
+      "run": "physics_v0_s44",
+      "completed_epochs": 50
+    },
+    {
+      "run": "physics_v1_s42",
+      "completed_epochs": 50
+    },
+    {
+      "run": "physics_v1_s43",
+      "completed_epochs": 50
+    },
+    {
+      "run": "physics_v1_s44",
+      "completed_epochs": 50
+    },
+    {
+      "run": "physics_v2_s42",
+      "completed_epochs": 50
+    },
+    {
+      "run": "physics_v2_s43",
+      "completed_epochs": 50
+    },
+    {
+      "run": "physics_v2_s44",
+      "completed_epochs": 50
+    }
+  ],
+  "total_epochs": 450
+}

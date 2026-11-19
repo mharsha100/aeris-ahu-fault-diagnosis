@@ -1,0 +1,92 @@
+{
+  "per_architecture": {
+    "v0": "e2e_anchor_v0_s42",
+    "v1": "e2e_anchor_v1_s42",
+    "v2": "e2e_anchor_v2_s42"
+  },
+  "decisions": [
+    {
+      "version": "v0",
+      "selected": "e2e_anchor_v0_s42",
+      "finalist_mean": 0.6963115005386871,
+      "finalist_std": 0.0011987384244774456,
+      "finalist_worst": 0.6946666672713148,
+      "retained": false,
+      "reasons": [
+        "e2e_final_v0_s43 failed false-normal/recall guard"
+      ],
+      "anchor": {
+        "macro_f1": 0.6889021342672248,
+        "log_loss": 0.48215417376065867,
+        "brier": 0.28411316256243313,
+        "fault_to_normal": 596,
+        "fault_windows": 6468,
+        "normal_false_alarm": 255,
+        "recall": [
+          0.44805194805194803,
+          0.8280766852195424,
+          0.7105751391465677,
+          0.8079777365491652
+        ],
+        "windows": 6930
+      }
+    },
+    {
+      "version": "v1",
+      "selected": "e2e_anchor_v1_s42",
+      "finalist_mean": 0.697336969633121,
+      "finalist_std": 0.0020297379736373814,
+      "finalist_worst": 0.6944860147488009,
+      "retained": false,
+      "reasons": [
+        "e2e_final_v1_s43 failed false-normal/recall guard",
+        "e2e_final_v1_s44 failed false-normal/recall guard"
+      ],
+      "anchor": {
+        "macro_f1": 0.6894553991714454,
+        "log_loss": 0.48312291936207646,
+        "brier": 0.2846406761101356,
+        "fault_to_normal": 601,
+        "fault_windows": 6468,
+        "normal_false_alarm": 253,
+        "recall": [
+          0.4523809523809524,
+          0.8169449598021027,
+          0.7249536178107606,
+          0.8107606679035251
+        ],
+        "windows": 6930
+      }
+    },
+    {
+      "version": "v2",
+      "selected": "e2e_anchor_v2_s42",
+      "finalist_mean": 0.6945696942276179,
+      "finalist_std": 0.002568569332199581,
+      "finalist_worst": 0.6909484712395719,
+      "retained": false,
+      "reasons": [
+        "e2e_final_v2_s43 failed false-normal/recall guard",
+        "e2e_final_v2_s44 failed false-normal/recall guard"
+      ],
+      "anchor": {
+        "macro_f1": 0.6899747121888447,
+        "log_loss": 0.4738258499231725,
+        "brier": 0.2790333957648244,
+        "fault_to_normal": 635,
+        "fault_windows": 6468,
+        "normal_false_alarm": 245,
+        "recall": [
+          0.4696969696969697,
+          0.8095238095238095,
+          0.7286641929499073,
+          0.8107606679035251
+        ],
+        "windows": 6930
+      }
+    }
+  ],
+  "scope": "Source development selection only; all target recordings retrospective; independent case floor not met.",
+  "bundle": "e2e_anchor_v2_s42",
+  "criteria": "selection_plan.json; all three seeds must pass safety guards. Fixed seed42 representative."
+}

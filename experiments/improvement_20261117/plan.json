@@ -1,0 +1,12 @@
+{
+  "created_before_results": true,
+  "selection_inputs": "frozen source train/validation/calibration only",
+  "max_diagnostic_trials": 8,
+  "max_seconds": 7200,
+  "hypotheses": [
+    "Temperature/command interaction ratios make physical faults easier for axis-aligned trees.",
+    "Compare boosted trees to diagnose RF underfitting; RF+TNN remains required for deployment.",
+    "Do not use dates, labels, simulated true positions or file identity as inputs."
+  ],
+  "promotion": "Macro F1 must improve by >=0.01 over matching Nov16 anchor; no increase in fault-normal or accepted false-normal counts; no per-class recall decrease >.03. Confirm three seeds for each architecture. All target results retrospective and only after selection."
+}

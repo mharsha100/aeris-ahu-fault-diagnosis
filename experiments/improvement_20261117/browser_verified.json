@@ -1,0 +1,33 @@
+{
+  "date": "2026-11-17T06:46:20.082Z",
+  "browser": "Actual in-app browser; default viewport",
+  "checks": {
+    "rendered_hybrid_result": true,
+    "feedback_form_saved_and_duplicate_save_exercised": true,
+    "exact_grouped_explanation_visible": true,
+    "selection_clears_stale_result": true,
+    "invalid_csv_error_visible": true,
+    "target_requires_review": true,
+    "model_evidence_and_per_class_metrics_visible": true,
+    "assurance_limits_visible": true,
+    "semester_evidence_visible": true,
+    "prometheus_graph_real_series_visible": true,
+    "grafana_health_and_missing_value_explanations_visible": true
+  },
+  "latency": {
+    "requests": 100,
+    "unique_prediction_ids": 100,
+    "p50_milliseconds": 235.10000000149012,
+    "p95_milliseconds": 322.67999999746667,
+    "max_milliseconds": 463.69999999552965,
+    "under_5000_milliseconds": 100,
+    "scope": "Warm V2 source-development windows 0–99. Browser window-fetch + inference + two animation frames. Excludes startup, model switching and concurrent-user load; local CPU evaluation was also running."
+  },
+  "proof_files": [
+    "diagnosis.jpg",
+    "explanation.jpg",
+    "monitoring.jpg",
+    "prometheus.jpg",
+    "grafana.jpg"
+  ]
+}

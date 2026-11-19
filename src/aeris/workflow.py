@@ -11,7 +11,7 @@ from .features import model_inputs
 from .training import load_source_partition, write_json
 from .adaptation import fine_tune_temporal, recalibrate, source_guardrail
 
-POLICY_VERSION = 'm4-research-review-v2'
+POLICY_VERSION = 'm4-research-review-v3-parent-retention'
 SETTINGS = {'CoolingSeason': {0,1,2}, 'HeatingSeason': {0,1,3}, 'ShoulderSeason': {0,1,2}}
 
 
@@ -30,7 +30,7 @@ def restore_packaged_forests(root):
             shutil.copyfile(source,dest)
 
 
-def diagnose(model, raw, *, setting, timestamps=None, recorded_source=False):
+def diagnose(model, raw, *, setting, timestamps=None, recorded_source=False, validated_adaptation_context=False):
     """One canonical 15-minute window; invalid input never produces a diagnosis."""
     raw=np.asarray(raw,dtype='float32')
     if raw.shape != (15,10) or not np.isfinite(raw).all():
@@ -46,11 +46,13 @@ def diagnose(model, raw, *, setting, timestamps=None, recorded_source=False):
     seq,tab=model_inputs(raw,model.scaler,model.protocol)
     prediction=model.predict(seq,tab)
     k=int(prediction['class_id'][0]); conf=float(prediction['confidence'][0]); reasons=[]
-    if not recorded_source and setting in SETTINGS: reasons.append('Uploaded or unverified AHU context: recorded-source applicability is not established.')
-    if setting not in SETTINGS: reasons.append('Exploratory or unknown AHU setting: transfer has not been validated.')
-    elif k not in SETTINGS[setting]: reasons.append('Predicted class is outside observed class/season coverage.')
+    if not recorded_source and not validated_adaptation_context and setting in SETTINGS: reasons.append('Uploaded or unverified AHU context: recorded-source applicability is not established.')
+    if setting not in SETTINGS and not (validated_adaptation_context and setting in ('SZVAV','SZCAV')): reasons.append('Exploratory or unknown AHU setting: transfer has not been validated.')
+    elif setting in SETTINGS and k not in SETTINGS[setting]: reasons.append('Predicted class is outside observed class/season coverage.')
     if model.configuration.get('learning_stage')=='verified_feedback': reasons.append('Experimental reference-feedback candidate: source retention is not operational approval.')
-    if conf<0.90: reasons.append('Confidence is below the provisional 0.90 review threshold.')
+    if bool(prediction.get('refinement_review',[False])[0]): reasons.append('Boosted refinement lacks confident agreement from the retained parent hybrid; technician review required.')
+    threshold=0.95 if validated_adaptation_context else 0.90
+    if conf<threshold: reasons.append(f'Confidence is below the provisional {threshold:.2f} review threshold'+(' for learning from an unreviewed input.' if validated_adaptation_context else '.'))
     if bool(prediction['branch_disagreement'][0]): reasons.append('Classical and temporal branches disagree.')
     out=int((np.abs(seq[0]).max(axis=1)>6).sum())
     if out: reasons.append(f'{out}/15 samples exceed the provisional source-scale support bound (6 standard deviations).')
@@ -58,6 +60,7 @@ def diagnose(model, raw, *, setting, timestamps=None, recorded_source=False):
             'class_id':k,'class_name':CLASS_NAMES[k],'confidence':conf,
             'probabilities':prediction['probabilities'][0].tolist(),
             'forest_probabilities':prediction['forest_probabilities'][0].tolist(),
+            **({'boosted_probabilities':prediction['boosted_probabilities'][0].tolist()} if 'boosted_probabilities' in prediction else {}),
             'temporal_probabilities':prediction['temporal_probabilities'][0].tolist(),
             'reasons':reasons,'source_support_warning_samples':out,
             'policy_version':POLICY_VERSION,'automatic_actuation_allowed':False,

@@ -1,0 +1,55 @@
+{
+  "up{job=\"aeris\"}": [
+    {
+      "metric": {
+        "__name__": "up",
+        "instance": "app:8001",
+        "job": "aeris"
+      },
+      "value": [
+        1794936734.833,
+        "1"
+      ]
+    }
+  ],
+  "aeris_requests_total{cohort=\"test\"}": [
+    {
+      "metric": {
+        "__name__": "aeris_requests_total",
+        "cohort": "test",
+        "instance": "app:8001",
+        "job": "aeris"
+      },
+      "value": [
+        1794936734.852,
+        "701"
+      ]
+    }
+  ],
+  "aeris_learning_stage": [
+    {
+      "metric": {
+        "__name__": "aeris_learning_stage",
+        "cohort": "test",
+        "instance": "app:8001",
+        "job": "aeris"
+      },
+      "value": [
+        1794936734.847,
+        "2"
+      ]
+    },
+    {
+      "metric": {
+        "__name__": "aeris_learning_stage",
+        "cohort": "genuine",
+        "instance": "app:8001",
+        "job": "aeris"
+      },
+      "value": [
+        1794936734.847,
+        "0"
+      ]
+    }
+  ]
+}

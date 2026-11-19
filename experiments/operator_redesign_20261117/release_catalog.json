@@ -1,0 +1,34 @@
+{
+  "models": [
+    {
+      "version": "v0",
+      "bundle": "boosted_v0_s42",
+      "stage": "Boosted refinement"
+    },
+    {
+      "version": "v1",
+      "bundle": "boosted_v1_s42",
+      "stage": "Boosted refinement"
+    },
+    {
+      "version": "v2",
+      "bundle": "boosted_v2_s42",
+      "stage": "Boosted refinement"
+    },
+    {
+      "version": "v0",
+      "bundle": "e2e_anchor_v0_s42",
+      "stage": "Prior baseline"
+    },
+    {
+      "version": "v1",
+      "bundle": "e2e_anchor_v1_s42",
+      "stage": "Prior baseline"
+    },
+    {
+      "version": "v2",
+      "bundle": "e2e_anchor_v2_s42",
+      "stage": "Prior baseline"
+    }
+  ]
+}

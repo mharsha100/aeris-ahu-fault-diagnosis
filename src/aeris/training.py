@@ -88,15 +88,17 @@ def load_source_partition(windows_root: Path, partition: str, protocol: dict) ->
 
 
 def train_temporal(model: TemporalTCN, train: dict, validation: dict, *, device: str,
-                   epochs: int, batch_size: int, patience: int, seed: int) -> tuple[list[dict], int]:
+                   epochs: int, batch_size: int, patience: int, seed: int,
+                   learning_rate: float = 0.001, weight_decay: float = 0.0001,
+                   class_weighted: bool = True, checkpoint_dir: Path | None = None) -> tuple[list[dict], int]:
     class_counts = np.bincount(train["y"], minlength=4)
     weights = len(train["y"]) / (4 * class_counts)
-    criterion = nn.CrossEntropyLoss(weight=torch.tensor(weights, dtype=torch.float32, device=device))
+    criterion = nn.CrossEntropyLoss(weight=torch.tensor(weights, dtype=torch.float32, device=device) if class_weighted else None)
     dataset = TensorDataset(torch.from_numpy(train["X_seq"]), torch.from_numpy(train["y"]))
     generator = torch.Generator().manual_seed(seed)
     loader = DataLoader(dataset, batch_size=batch_size, shuffle=True, generator=generator,
                         num_workers=0, pin_memory=device == "cuda")
-    optimizer = torch.optim.AdamW(model.parameters(), lr=0.001, weight_decay=0.0001)
+    optimizer = torch.optim.AdamW(model.parameters(), lr=learning_rate, weight_decay=weight_decay)
     scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode="max", factor=0.5, patience=3, min_lr=0.00001)
     best_score, best_loss, stale, best_epoch = -1.0, float("inf"), 0, 0
     best_state = None
@@ -132,6 +134,11 @@ def train_temporal(model: TemporalTCN, train: dict, validation: dict, *, device:
                "learning_rate": optimizer.param_groups[0]["lr"],
                "seconds": time.perf_counter() - started, "selected_checkpoint": improved}
         history.append(row)
+        if checkpoint_dir is not None:
+            checkpoint_dir.mkdir(parents=True, exist_ok=True)
+            pd.DataFrame(history).to_csv(checkpoint_dir / 'learning_curve.csv', index=False)
+            if improved:
+                torch.save(best_state, checkpoint_dir / 'best_state.pt')
         print(f"Epoch {epoch:02d}/{epochs} | loss={row['train_weighted_loss']:.4f} | val macro F1={score:.4f} | {row['seconds']:.1f}s", flush=True)
         if patience > 0 and epoch >= min(10, epochs) and stale >= patience:
             print(f"Early stopping; restoring epoch {best_epoch}.", flush=True)

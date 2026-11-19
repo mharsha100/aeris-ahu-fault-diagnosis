@@ -1,0 +1,113 @@
+{
+  "windows": 6930,
+  "accuracy": 0.7646464646464647,
+  "balanced_accuracy": 0.7140538033395175,
+  "macro_f1": 0.6951033520599624,
+  "log_loss": 0.4527838369066451,
+  "multiclass_brier": 0.2704817796722316,
+  "ece_10_bins": 0.021510858560358632,
+  "confusion_matrix": [
+    [
+      232,
+      147,
+      21,
+      62
+    ],
+    [
+      349,
+      2627,
+      122,
+      136
+    ],
+    [
+      258,
+      342,
+      1556,
+      0
+    ],
+    [
+      34,
+      160,
+      0,
+      884
+    ]
+  ],
+  "per_class": {
+    "normal": {
+      "precision": 0.26575028636884307,
+      "recall": 0.5021645021645021,
+      "f1-score": 0.34756554307116105,
+      "support": 462.0
+    },
+    "damper_fault": {
+      "precision": 0.8018925518925519,
+      "recall": 0.8123067408781695,
+      "f1-score": 0.8070660522273425,
+      "support": 3234.0
+    },
+    "cooling_valve_fault": {
+      "precision": 0.9158328428487346,
+      "recall": 0.7217068645640075,
+      "f1-score": 0.8072632944228275,
+      "support": 2156.0
+    },
+    "heating_valve_fault": {
+      "precision": 0.8170055452865065,
+      "recall": 0.8200371057513914,
+      "f1-score": 0.8185185185185185,
+      "support": 1078.0
+    },
+    "accuracy": 0.7646464646464647,
+    "macro avg": {
+      "precision": 0.700120306599159,
+      "recall": 0.7140538033395175,
+      "f1-score": 0.6951033520599624,
+      "support": 6930.0
+    },
+    "weighted avg": {
+      "precision": 0.8039487347941766,
+      "recall": 0.7646464646464647,
+      "f1-score": 0.7782755439452643,
+      "support": 6930.0
+    }
+  },
+  "name": "physics_v2_s44",
+  "version": "v2",
+  "seed": 44,
+  "epochs": 50,
+  "best_epoch": 16,
+  "seconds": 216.9352244000038,
+  "fusion": [
+    {
+      "weight": 0.25,
+      "macro_f1": 0.6700290318241455,
+      "fault_to_normal": 1774
+    },
+    {
+      "weight": 0.5,
+      "macro_f1": 0.6832568622387136,
+      "fault_to_normal": 1311
+    },
+    {
+      "weight": 0.65,
+      "macro_f1": 0.6934031949813507,
+      "fault_to_normal": 826
+    },
+    {
+      "weight": 0.75,
+      "macro_f1": 0.6951033520599624,
+      "fault_to_normal": 641
+    },
+    {
+      "weight": 0.85,
+      "macro_f1": 0.6914887179667657,
+      "fault_to_normal": 471
+    },
+    {
+      "weight": 0.9,
+      "macro_f1": 0.6880758357947625,
+      "fault_to_normal": 383
+    }
+  ],
+  "fault_to_normal": 641
+}

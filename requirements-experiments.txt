@@ -1,0 +1,2 @@
+# Optional isolated tabular-model investigation; not needed by the deployed parent.
+catboost==1.2.10

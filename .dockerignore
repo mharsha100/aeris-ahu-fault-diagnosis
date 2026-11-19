@@ -1,0 +1,13 @@
+.git
+data
+dist
+*.ipynb
+**/__pycache__
+**/*.docx
+**/*.zip
+**/*.pt
+**/*.joblib
+**/*.npz
+.env*
+experiments/model_exploration
+**/*.cbm
